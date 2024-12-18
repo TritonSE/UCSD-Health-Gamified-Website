@@ -1,9 +1,9 @@
 # UCSD-Health-Gamified-Website
 
 ## Frontend:
-`cd frontend`
+`cd frontend`  
 `npm run dev`
 
 ## Backend:
-`cd backend`
+`cd backend`  
 `node index.js`
