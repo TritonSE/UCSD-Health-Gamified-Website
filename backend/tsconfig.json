@@ -107,5 +107,9 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  }
+  },
+  "include": [
+    "**/*" // This will include all TypeScript files in the backend folder and subfolders
+  ],
+  "exclude": ["node_modules"]
 }
