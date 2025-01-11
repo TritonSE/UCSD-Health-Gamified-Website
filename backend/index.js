@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import express, { Request, Response } from "express";
+import express from "express";
 
 const app = express();
 const port = 5001;

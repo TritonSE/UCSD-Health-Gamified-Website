@@ -5,9 +5,6 @@
   },
   "extends": [
     "eslint:recommended",
-    // Remove this:
-    // "plugin:@typescript-eslint/recommended",
-    // Add these:
     "plugin:@typescript-eslint/strict-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
     "plugin:import/recommended",
@@ -18,27 +15,10 @@
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
-    // Add this:
-    "project": true
+    "project": "./tsconfig.json"
   },
-  "plugins": [
-    "@typescript-eslint",
-    // Add this:
-    "import"
-  ],
+  "plugins": ["@typescript-eslint", "react", "import"],
   "rules": {
-    // Add all of these:
-
-    // Uncomment this if you have verbatimModuleSyntax enabled and importing
-    // .ts files with a .js extension gives lint errors.
-    // "import/no-unresolved": "off",
-
-    // Uncomment these if you really need to.
-    // "@typescript-eslint/ban-ts-comment": "off",
-    // "@typescript-eslint/no-explicit-any": "off",
-    // "@typescript-eslint/no-non-null-assertion": "off",
-
-    // Avoid bugs.
     "@typescript-eslint/no-shadow": ["error", { "ignoreTypeValueShadow": true }],
     "@typescript-eslint/no-unsafe-unary-minus": "error",
     "@typescript-eslint/no-unused-expressions": "error",
