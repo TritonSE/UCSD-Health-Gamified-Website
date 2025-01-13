@@ -4,7 +4,11 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <h1> TSE x UCSD Health </h1>
-      <p> Use this page for testing components. REMOVE ALL CHANGES BEFORE COMMITING.</p>
+      <p>
+        {" "}
+        Use this page for pages and testing components. REMOVE ALL CHANGES BEFORE SUBMITTING A PULL
+        REQUEST.
+      </p>
     </div>
   );
 }
