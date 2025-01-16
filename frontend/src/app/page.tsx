@@ -1,6 +1,6 @@
-import styles from "./page.module.css";
 import LeftSide from "./components/leftSide";
 import RightSide from "./components/rightSide";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
