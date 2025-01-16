@@ -2,14 +2,14 @@ import React from "react";
 
 import styles from "./textBox.module.css";
 
-export interface TextBoxProps {
+export type TextBoxProps = {
   label: string;
   type: string;
   linkLabel?: string;
   link?: string;
   caption?: string;
   captionLabel?: string;
-}
+};
 
 export function TextBox({ label, type, link, linkLabel, caption }: TextBoxProps) {
   return (
