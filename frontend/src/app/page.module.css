@@ -1,3 +1,8 @@
+.RightSide {
+  background-color: aqua;
+  width: 50%;
+}
+
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -14,6 +19,8 @@
   padding: 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
+  background-color: white;
+  color: #1a1a1a;
 }
 
 @media (prefers-color-scheme: dark) {

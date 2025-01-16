@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+.loginButton {
+  display: flex;
+  width: 288px;
+  height: 48px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: black;
+  background-color: transparent;
+}
+
+.loginButton div {
+  border-radius: 4px;
+  border: 1px solid var(--Secondary-Accent1, #1c3a29);
+  background: rgba(255, 255, 255, 0);
+  display: flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.loginButton p {
+  color: var(--Secondary-Accent1, #1c3a29);
+  text-align: center;
+  /* Body/Medium (Reg) */
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
