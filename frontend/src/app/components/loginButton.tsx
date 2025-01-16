@@ -2,11 +2,15 @@ import React from "react";
 
 import styles from "./loginButton.module.css";
 
-export function LoginButton() {
+export interface LoginButtonProps {
+  label: string;
+}
+
+export function LoginButton({ label }: LoginButtonProps) {
   return (
     <button className={styles.loginButton}>
       <div>
-        <p>Sign In</p>
+        <p>{label}</p>
       </div>
     </button>
   );
