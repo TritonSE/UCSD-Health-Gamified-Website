@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
 
+.passwordInput {
+  -webkit-text-security: square;
+}
+
 .createAccount {
   margin-bottom: 16px;
 }
