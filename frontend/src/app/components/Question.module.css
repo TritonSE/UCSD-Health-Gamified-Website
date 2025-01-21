@@ -18,6 +18,7 @@
   font-weight: 400;
   line-height: 24px; /* 150% */
   align-self: stretch;
+  padding-left: 1%;
 }
 
 .buttonsContainer {
