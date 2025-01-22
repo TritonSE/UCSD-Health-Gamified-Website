@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -9,15 +7,28 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDeZLSITKgWEsfr_H_UcBvaUd6amWgKyfQ",
-  authDomain: "ucsd-health-2670f.firebaseapp.com",
-  projectId: "ucsd-health-2670f",
-  storageBucket: "ucsd-health-2670f.firebasestorage.app",
-  messagingSenderId: "536664906057",
-  appId: "1:536664906057:web:4d5f4960a1f4645bd62298",
-  measurementId: "G-ZQ963WJQES",
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+if (app) {
+  console.log("Firebase successfully connected");
+} else {
+  console.log("Firebase connection failed");
+}
+export const analytics = () => {
+  if (typeof window !== "undefined") {
+    return getAnalytics(app); // Safe to call in the browser
+  } else {
+    return null; // Analytics will not be initialized server-side
+  }
+};
+
+export { app };
