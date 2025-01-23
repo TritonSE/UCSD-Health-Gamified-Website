@@ -2,9 +2,11 @@
 
 import React, { useState } from "react";
 
+import { ExitNotif } from "./ExitNotif";
 import { Question } from "./Question";
 import styles from "./Quiz.module.css";
 import { Submit } from "./Submit";
+import { SubmitNotif } from "./SubmitNotif";
 
 type QuizProps = {
   title: string;
@@ -16,6 +18,20 @@ type QuizProps = {
 
 export const Quiz = ({ title, questions }: QuizProps) => {
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
+  const [cancel, setCancel] = useState<boolean>(false);
+  const [checkSubmit, setCheckSubmit] = useState<boolean>(false);
+
+  const handlePressCancel = () => {
+    setCancel(!cancel);
+  };
+
+  const handleLeave = () => {};
+
+  const handlePressSubmit = () => {
+    setCheckSubmit(!checkSubmit);
+  };
+
+  const handleSubmit = () => {};
 
   const handleSelect = (questionIndex: number, answer: string) => {
     setSelectedAnswers((prev) => ({ ...prev, [questionIndex]: answer }));
@@ -23,9 +39,19 @@ export const Quiz = ({ title, questions }: QuizProps) => {
 
   return (
     <div className={styles.quizBox}>
+      {cancel && (
+        <div className={styles.overlay}>
+          <ExitNotif cancelFunc={handlePressCancel} exitFunc={handleLeave} />
+        </div>
+      )}
+      {checkSubmit && (
+        <div className={styles.overlay}>
+          <SubmitNotif cancelFunc={handlePressSubmit} submitFunc={handleSubmit} />
+        </div>
+      )}
       <div className={styles.title}>
         <span className={styles.titleFont}>{title}</span>
-        <img src={"/close.svg"} />
+        <img src={"/close.svg"} onClick={handlePressCancel} />
       </div>
       <div className={styles.questionList}>
         {questions.map((q, index) => (
@@ -40,7 +66,7 @@ export const Quiz = ({ title, questions }: QuizProps) => {
           />
         ))}
       </div>
-      <Submit />
+      <Submit handleSubmit={handlePressSubmit} />
     </div>
   );
 };
