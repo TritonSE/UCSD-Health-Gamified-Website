@@ -25,13 +25,17 @@ export const Quiz = ({ title, questions }: QuizProps) => {
     setCancel(!cancel);
   };
 
-  const handleLeave = () => {};
+  const handleLeave = () => {
+    // TODO
+  };
 
   const handlePressSubmit = () => {
     setCheckSubmit(!checkSubmit);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    // TODO
+  };
 
   const handleSelect = (questionIndex: number, answer: string) => {
     setSelectedAnswers((prev) => ({ ...prev, [questionIndex]: answer }));
