@@ -1,18 +1,25 @@
-.page {
-  width: 100vw;
-  height: 100vh;
+/* page layout */
+.container {
   display: flex;
-  flex-direction: row;
-  /* justify-content: space-between; */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent overflow */
 }
 
-/* right side formatting */
-.right {
+.leftSide {
+  background-color: #bbd567;
+  width: 50%; /* Take up exactly 50% of the width */
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+}
+
+.rightSide {
+  background-color: white;
+  width: 50%; /* Take up the remaining 50% of the width */
+  display: flex;
   flex-direction: column;
-  height: 100%;
-  /* width: 50%; */
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
 }
 
 /* back to sign-in */
@@ -25,4 +32,29 @@
   width: 1.5rem;
   height: 1.5rem;
   margin-right: 0.5rem;
+}
+
+/* text */
+.title {
+  margin-bottom: 16px;
+  color: var(--Secondary-Accent1, #1c3a29);
+  /* Title/Medium (reg) */
+  font-family: "DM Sans";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 42px */
+  letter-spacing: 0.56px;
+}
+
+.signInLink {
+  margin-top: 6px;
+  color: var(--Secondary-Accent1, #1c3a29);
+  text-align: center;
+  /* Body/Medium (Reg) */
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
 }
