@@ -84,7 +84,7 @@ export const Quiz = ({ title, questions }: QuizProps) => {
               />
             ))}
             {/* This is a test for the incorrect module */}
-            <Incorrect message="YOUR WRONG WRONG WRONG lets test out the legnth of this and how it grows grow grow grow grow grow grow grow grow grow grow grow grow grow grow grow " />
+            <Incorrect message="Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" />
           </div>
           <Submit handleSubmit={handlePressSubmit} />
         </div>
