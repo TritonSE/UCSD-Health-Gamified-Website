@@ -8,6 +8,7 @@
   gap: 10px;
   border-radius: 64px;
   background: var(--color-action-submit);
+  cursor: pointer;
 }
 
 .text {

@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 .cancelButton {
@@ -23,6 +24,7 @@
   border-radius: 64px;
   border: 1px solid var(--Neutral-Black, #000);
   background: var(--background);
+  cursor: pointer;
 }
 
 .text {
