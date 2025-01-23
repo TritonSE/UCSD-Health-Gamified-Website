@@ -15,7 +15,7 @@ type QuizProps = {
 };
 
 export const Quiz = ({ title, questions }: QuizProps) => {
-  const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string | null>>({});
+  const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
 
   const handleSelect = (questionIndex: number, answer: string) => {
     setSelectedAnswers((prev) => ({ ...prev, [questionIndex]: answer }));
