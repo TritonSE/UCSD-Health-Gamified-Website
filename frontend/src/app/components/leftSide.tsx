@@ -13,9 +13,9 @@ export default function Home() {
         <div className={styles.positionedText}>
           <h1>Welcome to the E-Bike Training Course!</h1>
         </div>
-        <div>
+        {/* <div>
           <Image src="/logos.svg" alt="Business Logos" width={350} height={55} />
-        </div>
+        </div> */}
       </div>
     </div>
   );

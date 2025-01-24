@@ -23,6 +23,11 @@
   align-items: center; /* Centers vertically */
 }
 
+.rightSideContainer {
+  width: 100%;
+  max-width: 320px;
+}
+
 .underlined {
   text-decoration: underline;
 }
@@ -94,7 +99,8 @@ a.secondary {
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 150% */
-  width: 288px;
   text-decoration: underline;
-  margin-left: 175px;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
 }

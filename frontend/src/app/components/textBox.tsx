@@ -59,9 +59,9 @@ export function TextBox({
               type="button"
             >
               {showPassword ? (
-                <Image src="/close_eye.svg" alt="Hide Password" width={22} height={23} />
+                <Image src="/open_eye.svg" alt="Hide Password" width={22} height={23} />
               ) : (
-                <Image src="/open_eye.svg" alt="Show Password" width={22} height={23} />
+                <Image src="/close_eye.svg" alt="Show Password" width={22} height={23} />
               )}
             </button>
           )}

@@ -12,7 +12,7 @@ export default function SignIn() {
       </div>
 
       <div className={styles.rightSide}>
-        <div>
+        <div className={styles.rightSideContainer}>
           <h1 className={styles.loginTitle}>Sign-In</h1>
           <div className={styles.createAccount}>
             <TextBox label="Email" type="text" placeholder="name@gmail.com" />
