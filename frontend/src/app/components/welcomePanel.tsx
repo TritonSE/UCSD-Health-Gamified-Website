@@ -1,6 +1,6 @@
-import styles from "./leftSide.module.css";
+import styles from "./welcomePanel.module.css";
 
-export default function Home() {
+export default function WelcomePanel() {
   return (
     <div className={styles.container}>
       <div className={styles.background}></div>

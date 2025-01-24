@@ -1,8 +1,8 @@
 import { LoginButton } from "./loginButton";
-import styles from "./rightSide.module.css";
+import styles from "./createAccountPanel.module.css";
 import { TextBox } from "./textBox";
 
-export default function RightSide() {
+export default function CreateAccountPanel() {
   return (
     <div>
       <h1 className={styles.loginTitle}>Create an Account</h1>
