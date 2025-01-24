@@ -18,7 +18,7 @@ export default function SignIn() {
             <TextBox label="Email" type="text" placeholder="name@gmail.com" />
           </div>
           <div>
-            <TextBox label="Password" type="password" placeholder="••••••" />
+            <TextBox label="Password" type="password" placeholder="••••••" showPasswordToggle />
             <a className={styles.forgotPassword} href="">
               Forgot password?
             </a>

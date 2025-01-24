@@ -19,6 +19,20 @@
   width: 288px;
 }
 
+.inputContainer {
+  position: relative;
+}
+
+.visibilityIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .input {
   display: flex;
   padding: 6px 12px;
@@ -30,7 +44,6 @@
   flex: 1 0 0;
   background-color: transparent;
   width: 288px;
-
   color: var(--Secondary-Neutral-Gray6, #484848);
 
   /* Body/Medium (Reg) */
@@ -45,6 +58,10 @@
   border: 1px solid var(--Primary, #bbd567);
   outline-offset: 2px;
   outline: none;
+}
+
+.input::placeholder {
+  color: #d2d2d2;
 }
 
 .link {

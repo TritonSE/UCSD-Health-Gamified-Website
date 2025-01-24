@@ -9,9 +9,7 @@ export type LoginButtonProps = {
 export function LoginButton({ label }: LoginButtonProps) {
   return (
     <button className={styles.loginButton}>
-      <div>
-        <p>{label}</p>
-      </div>
+      <p>{label}</p>
     </button>
   );
 }

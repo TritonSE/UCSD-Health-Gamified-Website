@@ -88,7 +88,8 @@ a.secondary {
 }
 
 .forgotPassword {
-  font-family: "DM Sans" !important;
+  color: var(--Secondary-Accent1, #1c3a29);
+  font-family: "DM Sans";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
