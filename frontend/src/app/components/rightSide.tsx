@@ -7,10 +7,13 @@ export default function RightSide() {
     <div>
       <h1 className={styles.loginTitle}>Create an Account</h1>
       <div className={styles.createAccount}>
-        <TextBox label="Full Name" type="text" placeholder="First Last" />
+        <TextBox label="First Name" type="text" placeholder="Jane" />
       </div>
       <div className={styles.createAccount}>
-        <TextBox label="Email" type="text" placeholder="name@gmail.com" />
+        <TextBox label="Last Name" type="text" placeholder="Doe" />
+      </div>
+      <div className={styles.createAccount}>
+        <TextBox label="Email" type="text" placeholder="janedoe@gmail.com" />
       </div>
       <div className={styles.login}>
         <TextBox

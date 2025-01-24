@@ -3,7 +3,7 @@ import RightSide from "../components/rightSide";
 
 import styles from "./createAccount.module.css";
 
-export default function createAccount() {
+export default function CreateAccount() {
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
