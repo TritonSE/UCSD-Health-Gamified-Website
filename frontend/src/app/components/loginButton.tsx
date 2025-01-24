@@ -1,6 +1,4 @@
-import React from "react";
-
-import styles from "./loginButton.module.css";
+import styles from "./LoginButton.module.css";
 
 export type LoginButtonProps = {
   label: string;

@@ -1,17 +1,16 @@
-import SignInPanel from "../components/SignInPanel";
+import CreateAccountPanel from "../components/CreateAccountPanel";
 import WelcomePanel from "../components/WelcomePanel";
 
-import styles from "./SignIn.module.css";
+import styles from "./SignUp.module.css";
 
-export default function SignIn() {
+export default function SignUp() {
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
         <WelcomePanel />
       </div>
-
       <div className={styles.rightSide}>
-        <SignInPanel />
+        <CreateAccountPanel />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { ChangeEvent, useState } from "react";
 
-import styles from "./textBox.module.css";
+import styles from "./TextBox.module.css";
 
 export type TextBoxProps = {
   label: string;
@@ -12,18 +12,9 @@ export type TextBoxProps = {
   caption?: string;
   captionLabel?: string;
   placeholder: string;
-  showPasswordToggle?: boolean;
 };
 
-export function TextBox({
-  label,
-  type,
-  link,
-  linkLabel,
-  caption,
-  placeholder,
-  showPasswordToggle = false,
-}: TextBoxProps) {
+export function TextBox({ label, type, link, linkLabel, caption, placeholder }: TextBoxProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [currentInputType, setCurrentInputType] = useState(type);
   const [inputValue, setInputValue] = useState("");
@@ -52,7 +43,7 @@ export function TextBox({
             placeholder={placeholder}
             className={styles.input}
           />
-          {showPasswordToggle && type === "password" && inputValue.length > 0 && (
+          {type === "password" && inputValue.length > 0 && (
             <button
               onClick={togglePasswordVisibility}
               className={styles.visibilityIcon}
