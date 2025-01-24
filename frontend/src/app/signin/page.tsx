@@ -5,14 +5,13 @@ import styles from "./SignIn.module.css";
 
 export default function SignIn() {
   return (
-    <div className={styles.container}>
-      <div className={styles.leftSide}>
+    <main className={styles.container}>
+      <section className={styles.leftSide}>
         <WelcomePanel />
-      </div>
-
-      <div className={styles.rightSide}>
+      </section>
+      <section className={styles.rightSide}>
         <SignInPanel />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

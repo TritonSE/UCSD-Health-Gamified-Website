@@ -5,13 +5,13 @@ import styles from "./SignUp.module.css";
 
 export default function SignUp() {
   return (
-    <div className={styles.container}>
-      <div className={styles.leftSide}>
+    <main className={styles.container}>
+      <section className={styles.leftSide}>
         <WelcomePanel />
-      </div>
-      <div className={styles.rightSide}>
+      </section>
+      <section className={styles.rightSide}>
         <CreateAccountPanel />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

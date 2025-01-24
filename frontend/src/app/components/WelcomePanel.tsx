@@ -8,7 +8,13 @@ export default function WelcomePanel() {
       <div className={styles.background}></div>
       <div className={styles.components}>
         <div className={styles["svg-container"]}>
-          <Image src="/Timmy.svg" alt="Timmy!" width={320} height={417} />
+          <Image
+            src="/Timmy.svg"
+            alt="Timmy, the tire mascot"
+            width={320}
+            height={417}
+            aria-hidden
+          />
         </div>
         <div className={styles.positionedText}>
           <h2>Welcome to the E-Bike Training Course!</h2>

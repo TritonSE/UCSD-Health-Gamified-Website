@@ -76,6 +76,5 @@ a.secondary {
   line-height: 24px; /* 150% */
   text-decoration: underline;
   display: block;
-  width: fit-content;
-  margin-left: auto;
+  text-align: right;
 }
