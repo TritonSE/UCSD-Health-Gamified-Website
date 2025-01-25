@@ -1,12 +1,10 @@
-import React from "react";
-
 import styles from "./Incorrect.module.css";
 
 type IncorrectProps = {
   message: string;
 };
 
-export const Incorrect: React.FC<IncorrectProps> = ({ message }) => {
+export const Incorrect = ({ message }: IncorrectProps) => {
   return (
     <div className={styles.textBox}>
       <h1 className={styles.title}>Incorrect</h1>

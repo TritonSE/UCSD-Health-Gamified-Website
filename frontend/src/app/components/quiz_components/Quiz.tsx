@@ -3,7 +3,9 @@
 import React, { useState } from "react";
 
 import { ExitNotif } from "./ExitNotif";
+import { Grade } from "./Grade";
 import { Incorrect } from "./Incorrect";
+import { NextButtons } from "./NextButtons";
 import { Question } from "./Question";
 import styles from "./Quiz.module.css";
 import { Submit } from "./Submit";
@@ -23,6 +25,9 @@ export const Quiz = ({ title, questions }: QuizProps) => {
   const [cancel, setCancel] = useState<boolean>(false);
   const [checkSubmit, setCheckSubmit] = useState<boolean>(false);
   const [starting, setStarting] = useState<boolean>(false);
+  const [submitted, setSubmitted] = useState<boolean>(false);
+  const [label, setLabel] = useState<string>("Next Module");
+  const [score, setScore] = useState<number>(0);
 
   const handlePressCancel = () => {
     setCancel(!cancel);
@@ -40,11 +45,22 @@ export const Quiz = ({ title, questions }: QuizProps) => {
 
   const handleSubmit = () => {
     // TODO
-    setStarting(false);
+    if (score < 75 && score > 74) {
+      setScore(Math.floor(score));
+    } else {
+      setScore(Math.round(score));
+    }
+    window.scrollTo(0, 0);
+    setSubmitted(true);
     setCheckSubmit(false);
+    if (score < 75) {
+      setLabel("Retake Quiz");
+    }
   };
 
   const handleStart = () => {
+    setScore(0);
+    setSubmitted(false);
     setStarting(true);
   };
 
@@ -54,39 +70,50 @@ export const Quiz = ({ title, questions }: QuizProps) => {
 
   return (
     <div className={styles.bigDiv}>
-      {!starting && <TitleScreen handleStart={handleStart} />};
+      {!starting && <TitleScreen handleStart={handleStart} />}
       {starting && (
-        <div className={styles.quizBox}>
-          {cancel && (
-            <div className={styles.overlay}>
-              <ExitNotif cancelFunc={handlePressCancel} exitFunc={handleLeave} />
+        <div className={styles.entireQuiz}>
+          {submitted && <Grade score={score} />}
+          <div className={styles.quizBox}>
+            {cancel && (
+              <div className={styles.overlay}>
+                <ExitNotif cancelFunc={handlePressCancel} exitFunc={handleLeave} />
+              </div>
+            )}
+            {checkSubmit && (
+              <div className={styles.overlay}>
+                <SubmitNotif cancelFunc={handlePressSubmit} submitFunc={handleSubmit} />
+              </div>
+            )}
+            <div className={styles.title}>
+              <span className={styles.titleFont}>{title}</span>
+              {!submitted && (
+                <img src={"/close.svg"} style={{ cursor: "pointer" }} onClick={handlePressCancel} />
+              )}
+            </div>
+            <div className={styles.questionList}>
+              {questions.map((q, index) => (
+                <Question
+                  key={index}
+                  question={q.question}
+                  options={q.options}
+                  selected={(selectedAnswers[index] as "A." | "B." | "C." | "D." | "E.") || null}
+                  onSelect={(answer) => {
+                    handleSelect(index, answer);
+                  }}
+                />
+              ))}
+              {/* This is a test for the incorrect module */}
+              <Incorrect message="Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" />
+            </div>
+            <Submit handleSubmit={handlePressSubmit} />
+          </div>
+          {submitted && (
+            <div className={styles.nextModule}>
+              <NextButtons kind="primary" label={label} handleClick={handleLeave} />
+              <NextButtons kind="secondary" label="Go Back" handleClick={handleLeave} />
             </div>
           )}
-          {checkSubmit && (
-            <div className={styles.overlay}>
-              <SubmitNotif cancelFunc={handlePressSubmit} submitFunc={handleSubmit} />
-            </div>
-          )}
-          <div className={styles.title}>
-            <span className={styles.titleFont}>{title}</span>
-            <img src={"/close.svg"} style={{ cursor: "pointer" }} onClick={handlePressCancel} />
-          </div>
-          <div className={styles.questionList}>
-            {questions.map((q, index) => (
-              <Question
-                key={index}
-                question={q.question}
-                options={q.options}
-                selected={(selectedAnswers[index] as "A." | "B." | "C." | "D." | "E.") || null}
-                onSelect={(answer) => {
-                  handleSelect(index, answer);
-                }}
-              />
-            ))}
-            {/* This is a test for the incorrect module */}
-            <Incorrect message="Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" />
-          </div>
-          <Submit handleSubmit={handlePressSubmit} />
         </div>
       )}
       ;
