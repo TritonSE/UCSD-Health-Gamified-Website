@@ -106,7 +106,7 @@ export const Quiz = ({ title, questions }: QuizProps) => {
               {/* This is a test for the incorrect module */}
               <Incorrect message="Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" />
             </div>
-            <Submit handleSubmit={handlePressSubmit} />
+            {!submitted && <Submit handleSubmit={handlePressSubmit} />}
           </div>
           {submitted && (
             <div className={styles.nextModule}>
