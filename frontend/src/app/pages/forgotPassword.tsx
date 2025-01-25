@@ -1,7 +1,7 @@
 import ForgotPasswordForm from "../components/forgotPasswordForm";
 import LeftSide from "../components/leftSide";
 
-import styles from "./forgotPasswordForm.module.css";
+import styles from "./forgotPassword.module.css";
 
 export default function forgotPassword() {
   return (
