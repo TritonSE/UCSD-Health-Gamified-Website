@@ -16,11 +16,11 @@
   cursor: pointer;
 }
 
-.loginButton:hover {
+.loginButton:is(:focus-visible, :hover) {
   background-color: #1c3a29;
 }
 
-.loginButton:hover p {
+.loginButton:is(:focus-visible, :hover) p {
   color: white;
 }
 

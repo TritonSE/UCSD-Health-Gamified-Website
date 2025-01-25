@@ -48,6 +48,8 @@ export function TextBox({ label, type, link, linkLabel, caption, placeholder }: 
               onClick={togglePasswordVisibility}
               className={styles.visibilityIcon}
               type="button"
+              aria-label={showPassword ? "Hide Password" : "Show Password"}
+              aria-pressed={showPassword}
             >
               {showPassword ? (
                 <Image src="/open_eye.svg" alt="Hide Password" width={22} height={23} />

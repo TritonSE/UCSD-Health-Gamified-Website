@@ -23,19 +23,7 @@
 
 .inputContainer {
   position: relative;
-}
-
-.visibilityIcon {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.input {
+  display: flex;
   display: flex;
   width: 100%;
   padding: 6px 12px;
@@ -47,19 +35,35 @@
   flex: 1 0 0;
   background-color: transparent;
   color: var(--Secondary-Neutral-Gray6, #484848);
+}
 
+.inputContainer:focus-within {
+  border: 1px solid var(--Primary, #bbd567);
+  outline-offset: 2px;
+  outline: none;
+}
+
+.visibilityIcon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  color: inherit;
   /* Body/Medium (Reg) */
   font-family: "DM Sans";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 150% */
-}
-
-.input:focus {
-  border: 1px solid var(--Primary, #bbd567);
-  outline-offset: 2px;
-  outline: none;
 }
 
 .input::placeholder {
@@ -102,18 +106,4 @@
   font-weight: 400;
   line-height: 150%; /* 15px */
   letter-spacing: 0.2px;
-}
-
-.button {
-  display: flex;
-  align-items: center;
-  background-color: #ffffff00;
-  box-shadow: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-}
-
-.button svg {
-  display: block;
 }
