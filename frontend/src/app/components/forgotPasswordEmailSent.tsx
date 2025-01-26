@@ -1,14 +1,9 @@
-import React, { useState } from "react";
-
 import styles from "./forgotPasswordForm.module.css";
-import { LoginButton } from "./loginButton";
-import { TextBox } from "./textBox";
 
-export default function RightSide({ setEmailState }: { setEmailState: (email: string) => void }) {
-  const [email, setEmail] = useState("");
-
+export default function RightSide({ email }: { email: string }) {
   return (
     <div className={styles.formContainer}>
+      {/* sign in link */}
       <div className={styles.signInLink}>
         <svg
           width="24"
@@ -26,29 +21,27 @@ export default function RightSide({ setEmailState }: { setEmailState: (email: st
         </svg>
         <a href="">Back to Sign-In</a>
       </div>
-      <h1 className={styles.formTitle}>Forgot Password?</h1>
+      {/* heading */}
+      <h1 className={styles.formTitle}>Email Sent!</h1>
+      {/* description */}
       <div className={styles.formField}>
-        Please enter your email address to reset your password.
+        We sent an email to <b>{email}</b> with a link to reset your password.
       </div>
+      {/* click to resend */}
+      <br />
+      <br />
+      <br />
+      <br />
+
       <div className={styles.formField}>
-        <TextBox
-          label="Email address"
-          type="text"
-          placeholder="name@gmail.com"
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setEmail(e.target.value);
-          }}
-        />
+        Didn&apos;t see an email?{" "}
+        <a href="" className={styles.link}>
+          Click to resend
+        </a>
       </div>
       <br />
-      <div className={styles.formField}>
-        <LoginButton
-          label="Send"
-          onClick={() => {
-            setEmailState(email);
-          }}
-        />
-      </div>
+      <br />
+      <br />
     </div>
   );
 }
