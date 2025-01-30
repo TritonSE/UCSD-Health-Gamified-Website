@@ -17,7 +17,7 @@ export default function RightSide({ setEmailState }: { setEmailState: (email: st
       <div className={styles.formField}>
         Please enter your email address to reset your password.
       </div>
-      <div className={styles.formField}>
+      <div className={`${styles.formField} ${styles.smallSpaceBelow}`}>
         <TextBox
           label="Email address"
           type="text"
@@ -27,10 +27,9 @@ export default function RightSide({ setEmailState }: { setEmailState: (email: st
           }}
         />
       </div>
-      <br />
       <div className={styles.formField}>
         <LoginButton
-          label="Send"
+          label="Send link"
           onClick={() => {
             setEmailState(email);
           }}
