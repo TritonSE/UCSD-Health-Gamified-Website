@@ -1,7 +1,7 @@
 import BackToSignIn from "./backToSignIn";
 import styles from "./forgotPasswordForm.module.css";
 
-export default function RightSide({ email }: { email: string }) {
+export default function RightSide({ _email }: { _email: string }) {
   return (
     <div className={styles.formContainer}>
       {/* sign in link */}

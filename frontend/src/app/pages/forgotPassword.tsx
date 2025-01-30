@@ -23,7 +23,7 @@ export default function ForgotPassword() {
             }}
           />
         )}
-        {email && <ForgotPasswordEmailSent email={email} />}
+        {email && <ForgotPasswordEmailSent _email={email} />}
       </div>
     </div>
   );

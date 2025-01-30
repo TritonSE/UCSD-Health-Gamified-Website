@@ -1,4 +1,5 @@
 .signInLink {
+  font-family: "DM Sans";
   color: var(--Secondary-Accent1, #1c3a29);
   display: flex;
   justify-content: left;
@@ -9,7 +10,6 @@
 .signInLink a {
   color: var(--Secondary-Accent1, #1c3a29);
   /* Body/Medium (Reg) */
-  font-family: "DM Sans";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
