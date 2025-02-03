@@ -1,0 +1,15 @@
+.svg {
+  height: 100%;
+  margin-inline: auto;
+}
+
+#path_star {
+  transition: scale 0.2s;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#path_star:hover {
+  scale: 1.1;
+  cursor: pointer;
+}

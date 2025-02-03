@@ -1,0 +1,10 @@
+.path_mask {
+  fill: none;
+  stroke: white;
+}
+
+@keyframes DrawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
