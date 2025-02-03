@@ -12,21 +12,33 @@ export type TextBoxProps = {
   caption?: string;
   captionLabel?: string;
   placeholder: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export function TextBox({ label, type, link, linkLabel, caption, placeholder }: TextBoxProps) {
+export function TextBox({
+  label,
+  type,
+  link,
+  linkLabel,
+  caption,
+  placeholder,
+  onChange,
+}: TextBoxProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [currentInputType, setCurrentInputType] = useState(type);
   const [inputValue, setInputValue] = useState("");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+    if (onChange) {
+      onChange(event);
+    }
+  };
 
   const togglePasswordVisibility = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setShowPassword((prev) => !prev);
     setCurrentInputType((prev) => (prev === "password" ? "text" : "password"));
-  };
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
   };
 
   return (
@@ -37,7 +49,7 @@ export function TextBox({ label, type, link, linkLabel, caption, placeholder }: 
         </label>
         <div className={styles.inputContainer}>
           <input
-            onChange={handleInputChange}
+            onChange={handleChange}
             value={inputValue}
             type={currentInputType}
             placeholder={placeholder}

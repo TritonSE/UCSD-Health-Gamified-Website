@@ -13,7 +13,7 @@
   --Secondary-Neutral-Gray5: #6c6c6c;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --background: #ffffff;
     --foreground: #ededed;
@@ -45,7 +45,7 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   html {
     color-scheme: dark;
   }
