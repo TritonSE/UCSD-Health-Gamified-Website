@@ -71,7 +71,7 @@ export default function SignInPanel() {
             handleChange("password", value);
           }}
         />
-        <a className={styles.forgotPassword} href="">
+        <a className={styles.forgotPassword} href="/forgotpassword">
           Forgot password?
         </a>
       </div>
