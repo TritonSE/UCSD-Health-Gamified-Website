@@ -17,24 +17,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 5px;
 }
-
-/* .background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 50%;
-  background-color: #bbd567;
-  z-index: 1;
-} */
 
 .svg-container {
   position: relative;
-  /* top: 249px;
-  left: 200px;
-  width: 320px;
-  height: 417.34px; */
   z-index: 2;
 }
 .positionedText {
@@ -46,9 +33,9 @@
   height: auto;
   color: #1c3a29;
   font-family: "Rammetto One";
-  font-size: 28;
+  font-size: 20px;
   line-height: 1.5;
-  letter-spacing: 0.02;
+  letter-spacing: 0.56px;
   text-align: center;
   font-weight: normal;
 }

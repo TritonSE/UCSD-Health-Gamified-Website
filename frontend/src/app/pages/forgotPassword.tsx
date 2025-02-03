@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
+import WelcomePanel from "../components/WelcomePanel";
 import ForgotPasswordEmailSent from "../components/forgotPasswordEmailSent";
 import ForgotPasswordForm from "../components/forgotPasswordForm";
-import LeftSide from "../components/leftSide";
 
 import styles from "./forgotPassword.module.css";
 export default function ForgotPassword() {
@@ -13,7 +13,7 @@ export default function ForgotPassword() {
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
-        <LeftSide />
+        <WelcomePanel />
       </div>
       <div className={styles.forgotPasswordForm}>
         {!email && (

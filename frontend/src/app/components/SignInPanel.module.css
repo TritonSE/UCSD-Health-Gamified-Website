@@ -1,4 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+.rightSideContainer {
+  width: 100%;
+  max-width: 320px;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+a.primary {
+  background: var(--foreground);
+  color: var(--background);
+  gap: 8px;
+}
+
+a.secondary {
+  border-color: var(--gray-alpha-200);
+  min-width: 180px;
+}
 
 .passwordInput {
   -webkit-text-security: square;
@@ -47,4 +65,17 @@
   text-decoration-thickness: auto;
   text-underline-offset: auto;
   text-underline-position: from-font;
+}
+
+.forgotPassword {
+  color: var(--Secondary-Accent1, #1c3a29);
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  text-decoration: underline;
+  margin-left: auto;
+  display: block;
+  width: fit-content;
 }

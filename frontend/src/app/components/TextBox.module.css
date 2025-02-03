@@ -2,10 +2,13 @@
 
 .textBox {
   display: flex;
-  width: 320px;
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
+}
+
+.textBox form {
+  width: 100%;
 }
 
 .label {
@@ -16,11 +19,13 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 150% */
-  width: 320px;
 }
 
-.input {
+.inputContainer {
+  position: relative;
   display: flex;
+  display: flex;
+  width: 100%;
   padding: 6px 12px;
   align-items: flex-start;
   gap: 10px;
@@ -29,10 +34,30 @@
   border: 1px solid var(--Neutral-Gray2, #d9d9d9);
   flex: 1 0 0;
   background-color: transparent;
-  width: 320px;
-
   color: var(--Secondary-Neutral-Gray6, #484848);
+}
 
+.inputContainer:focus-within {
+  border: 1px solid var(--Primary, #bbd567);
+  outline-offset: 2px;
+  outline: none;
+}
+
+.visibilityIcon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  color: inherit;
   /* Body/Medium (Reg) */
   font-family: "DM Sans";
   font-size: 16px;
@@ -41,10 +66,8 @@
   line-height: 24px; /* 150% */
 }
 
-.input:focus {
-  border: 1px solid var(--Primary, #bbd567);
-  outline-offset: 2px;
-  outline: none;
+.input::placeholder {
+  color: #d2d2d2;
 }
 
 .link {
