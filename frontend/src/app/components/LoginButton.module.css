@@ -10,14 +10,16 @@
   gap: 10px;
   flex-shrink: 0;
   border-radius: 4px;
-  border: 1px solid var(--Secondary-Accent1, #1c3a29);
-  background-color: transparent;
+  border: 1px solid var(--Secondary-Accent1, #7cad91);
+  background: #7cad91;
   transition: background-color 0.2s;
   cursor: pointer;
+  color: white;
 }
 
 .loginButton:is(:focus-visible, :hover) {
   background-color: #1c3a29;
+  border: 1px solid var(--Secondary-Accent1, #1c3a29);
 }
 
 .loginButton:is(:focus-visible, :hover) p {
@@ -25,7 +27,7 @@
 }
 
 .loginButton p {
-  color: var(--Secondary-Accent1, #1c3a29);
+  color: white;
   text-align: center;
   /* Body/Medium (Reg) */
   font-family: "DM Sans";

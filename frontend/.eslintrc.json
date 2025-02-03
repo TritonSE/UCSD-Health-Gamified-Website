@@ -10,6 +10,7 @@
     "prettier",
     // Keep this one at the end.
     // See docs: https://nextjs.org/docs/app/building-your-application/configuring/eslint#additional-configurations
+    "next/babel",
     "next/core-web-vitals"
   ],
   // You might not need this.
