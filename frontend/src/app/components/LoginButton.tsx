@@ -8,7 +8,7 @@ export type LoginButtonProps = {
 
 export function LoginButton({ label, disabled, onClick }: LoginButtonProps) {
   return (
-    <button className={styles.loginButton} disabled={!disabled} onClick={onClick}>
+    <button className={styles.loginButton} disabled={disabled} onClick={onClick}>
       <p>{label}</p>
     </button>
   );

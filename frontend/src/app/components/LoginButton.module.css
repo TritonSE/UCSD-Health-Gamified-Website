@@ -14,10 +14,12 @@
   background-color: #1c3a29;
   transition: background-color 0.2s;
   cursor: pointer;
+  color: white;
 }
 
 .loginButton:is(:enabled, :focus-visible, :hover) {
   background-color: #1c3a29;
+  border: 1px solid var(--Secondary-Accent1, #1c3a29);
 }
 
 .loginButton:is(:enabled, :focus-visible, :hover) p {

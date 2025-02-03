@@ -14,6 +14,8 @@ export type TextBoxProps = {
   placeholder: string;
   value: string;
   onChange: (value: string) => void;
+  onBlur?: () => void;
+  error?: string;
 };
 
 export function TextBox({
@@ -25,10 +27,11 @@ export function TextBox({
   placeholder,
   value,
   onChange,
+  onBlur,
+  error,
 }: TextBoxProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [currentInputType, setCurrentInputType] = useState(type);
-  // const [inputValue, setInputValue] = useState("");
 
   const togglePasswordVisibility = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -37,7 +40,6 @@ export function TextBox({
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    // setInputValue(e.target.value);
     onChange(e.target.value);
   };
 
@@ -47,10 +49,13 @@ export function TextBox({
         <label className={styles.label}>
           <p>{label}</p>
         </label>
-        <div className={styles.inputContainer}>
+        <div
+          className={`${styles.inputContainer} ${error && type === "password" ? styles.errorBox : ""}`}
+        >
           <input
             onChange={handleInputChange}
             value={value}
+            onBlur={onBlur}
             type={currentInputType}
             placeholder={placeholder}
             className={styles.input}
@@ -73,7 +78,17 @@ export function TextBox({
         </div>
       </form>
       <div className={styles.link}>{linkLabel && <a href={link}>{linkLabel}</a>}</div>
-      <div className={styles.caption}>{caption && <p>{caption}</p>}</div>
+      <div className={styles.caption}>
+        {caption && !error && value && value.length === 0 && <p>{caption}</p>}
+      </div>
+      <div>
+        {error && (
+          <div className={styles.error}>
+            <Image src="/red_exclamation.svg" alt="Warning!" width={12} height={12} />
+            <p>{error}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

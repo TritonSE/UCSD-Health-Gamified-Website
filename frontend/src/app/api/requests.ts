@@ -1,18 +1,6 @@
 type Method = "GET" | "POST" | "PUT";
 
-/**
- * The first part of the backend API URL, which we will automatically prepend to
- * every request. This means in the rest of our code, we can write "/api/foo"
- * instead of "http://localhost:3001/api/foo".
- *
- * See https://vitejs.dev/guide/env-and-mode for more info about env variables
- * in Vite projects.
- */
-import dotenv from "dotenv";
-
-dotenv.config();
-
-const API_BASE_URL = process.env.API_BASE_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 /**
  * A wrapper around the built-in `fetch()` function that abstracts away some of
@@ -102,7 +90,7 @@ export async function post(
   body: unknown,
   headers: Record<string, string> = {},
 ): Promise<Response> {
-  const response = await fetchRequest("POST", "http://localhost:5001" + url, body, headers);
+  const response = await fetchRequest("POST", API_BASE_URL + url, body, headers);
   await assertOk(response);
   return response;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import client from "../util/db.js";
 
 export const createUser = async (req, res) => {

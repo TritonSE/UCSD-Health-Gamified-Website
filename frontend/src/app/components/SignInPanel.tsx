@@ -11,7 +11,7 @@ export default function SignInPanel() {
     email: "",
     password: "",
   });
-
+  const [emailError, setEmailError] = useState("");
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
 
   const handleChange = (field: string, value: string) => {
@@ -25,15 +25,23 @@ export default function SignInPanel() {
     console.log("placeholder");
   };
 
+  const trackEmail = (name: string) => {
+    if (!name.includes("@") || !name.split("@")[1].includes(".")) {
+      setEmailError("Please enter a valid email address.");
+    } else {
+      setEmailError("");
+    }
+  };
+
   const checkFormValidity = () => {
     const { email, password } = loginInfo;
-    const isValid = email !== "" && password !== "";
+    const isValid = email !== "" && password !== "" && emailError === "";
     setIsButtonEnabled(isValid);
   };
 
   useEffect(() => {
     checkFormValidity();
-  }, [loginInfo]);
+  }, [loginInfo, emailError]);
 
   return (
     <div className={styles.rightSideContainer}>
@@ -47,6 +55,10 @@ export default function SignInPanel() {
           onChange={(value) => {
             handleChange("email", value);
           }}
+          onBlur={() => {
+            trackEmail(loginInfo.email);
+          }}
+          error={emailError}
         />
       </div>
       <div>
@@ -65,7 +77,7 @@ export default function SignInPanel() {
       </div>
       <br />
       <div className={styles.createAccount}>
-        <LoginButton label="Sign in" disabled={isButtonEnabled} onClick={handleSubmit} />
+        <LoginButton label="Sign in" disabled={!isButtonEnabled} onClick={handleSubmit} />
         <p className={styles.signInLink}>
           Don&apos;t have an account?{" "}
           <a className={styles.underlined} href="/signup">

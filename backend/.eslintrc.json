@@ -3,7 +3,6 @@
     "es2021": true,
     "node": true
   },
-  "files": ["*.ts", "*.tsx"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/strict-type-checked",
