@@ -12,12 +12,23 @@ export type TextBoxProps = {
   caption?: string;
   captionLabel?: string;
   placeholder: string;
+  value: string;
+  onChange: (value: string) => void;
 };
 
-export function TextBox({ label, type, link, linkLabel, caption, placeholder }: TextBoxProps) {
+export function TextBox({
+  label,
+  type,
+  link,
+  linkLabel,
+  caption,
+  placeholder,
+  value,
+  onChange,
+}: TextBoxProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [currentInputType, setCurrentInputType] = useState(type);
-  const [inputValue, setInputValue] = useState("");
+  // const [inputValue, setInputValue] = useState("");
 
   const togglePasswordVisibility = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -26,7 +37,8 @@ export function TextBox({ label, type, link, linkLabel, caption, placeholder }: 
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
+    // setInputValue(e.target.value);
+    onChange(e.target.value);
   };
 
   return (
@@ -38,12 +50,12 @@ export function TextBox({ label, type, link, linkLabel, caption, placeholder }: 
         <div className={styles.inputContainer}>
           <input
             onChange={handleInputChange}
-            value={inputValue}
+            value={value}
             type={currentInputType}
             placeholder={placeholder}
             className={styles.input}
           />
-          {type === "password" && inputValue.length > 0 && (
+          {type === "password" && value.length > 0 && (
             <button
               onClick={togglePasswordVisibility}
               className={styles.visibilityIcon}
