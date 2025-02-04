@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { ModuleNumbers } from "../ModuleMap/ModuleMap";
 
 import styles from "./Bike.module.css";
+// import { useRouter } from "next/navigation";
 
 const BIKE_PATHS = {
   "0": "M 400 160",
@@ -31,6 +32,7 @@ export default function Bike({ modulePreview, currentModule, bikeIsAnimating }: 
   const bikeContainerRef = useRef<SVGGElement>(null);
   const bikePedalRef = useRef<SVGGElement>(null);
   const bikePedalRectRef = useRef<SVGRectElement>(null);
+  // const router = useRouter();
 
   const getBikeAnimation = () => {
     if (modulePreview === 1 || modulePreview === 9) {
@@ -77,11 +79,15 @@ export default function Bike({ modulePreview, currentModule, bikeIsAnimating }: 
     bikePedalContainer.style.animation = "";
     bikePedalRect.style.animation = "";
 
-    const handleAnimation = () => {
-      bikeIsAnimating.current = false;
+    const handleEndAnimation = (event: AnimationEvent) => {
+      if (event.target === bikeElement) {
+        bikeIsAnimating.current = false;
+        console.log("Navigating to Module ", modulePreview);
+        // router.push(`/module/${modulePreview}`);
+      }
     };
 
-    bikeElement.addEventListener("animationend", handleAnimation);
+    bikeElement.addEventListener("animationend", handleEndAnimation);
     bikeIsAnimating.current = true;
 
     requestAnimationFrame(() => {
@@ -91,7 +97,7 @@ export default function Bike({ modulePreview, currentModule, bikeIsAnimating }: 
     });
 
     return () => {
-      bikeElement.removeEventListener("animationend", handleAnimation);
+      bikeElement.removeEventListener("animationend", handleEndAnimation);
     };
   }, [modulePreview, currentModule]);
 
