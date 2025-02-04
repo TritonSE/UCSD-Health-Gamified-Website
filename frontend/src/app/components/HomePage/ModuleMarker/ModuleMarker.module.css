@@ -1,19 +1,23 @@
-.active {
-  --marker-color: #ff8500;
+.active,
+.navigatable {
+  transition: scale 0.2s;
+  transform-origin: center;
+  transform-box: fill-box;
   pointer-events: all;
 }
 
-.active:hover {
+.active:hover,
+.navigatable:hover {
+  scale: 1.1;
   cursor: pointer;
+}
+
+.active {
+  --marker-color: #ff8500;
 }
 
 .navigatable {
   --marker-color: #b4b4b4;
-  pointer-events: all;
-}
-
-.navigatable:hover {
-  cursor: pointer;
 }
 
 .disabled {
