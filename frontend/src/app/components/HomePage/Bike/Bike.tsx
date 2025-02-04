@@ -25,6 +25,8 @@ type BikeProps = {
   bikeIsAnimating: React.MutableRefObject<boolean>;
 };
 
+const BIKE_ANIMATION_DURATION = 2;
+
 export default function Bike({ modulePreview, currentModule, bikeIsAnimating }: BikeProps) {
   const bikeContainerRef = useRef<SVGGElement>(null);
   const bikePedalRef = useRef<SVGGElement>(null);
@@ -32,38 +34,34 @@ export default function Bike({ modulePreview, currentModule, bikeIsAnimating }: 
 
   const getBikeAnimation = () => {
     if (modulePreview === 1 || modulePreview === 9) {
-      return `${styles.moveAlong} 1.5s ease-in-out forwards`;
+      return `${styles.moveAlong} ${BIKE_ANIMATION_DURATION * 0.75}s ease-in-out forwards`;
     }
     if (modulePreview === 4) {
-      return `${styles.moveAlong4} 2s ease-in-out forwards`;
+      return `${styles.moveAlong4} ${BIKE_ANIMATION_DURATION}s ease-in-out forwards`;
     }
     if (modulePreview === 7) {
-      return `${styles.moveAlong7} 2s ease-in-out forwards`;
+      return `${styles.moveAlong7} ${BIKE_ANIMATION_DURATION}s ease-in-out forwards`;
     }
-    return `${styles.moveAlong} 2s ease-in-out forwards`;
+    return `${styles.moveAlong} ${BIKE_ANIMATION_DURATION}s ease-in-out forwards`;
   };
 
   const getPedalAnimation = () => {
     if (modulePreview === 1 || modulePreview === 9) {
       return {
-        container: `${styles.ShortSpin} 1.25s ease-in-out`,
-        rect: `${styles.ShortSpin} 1.25s ease-in-out reverse`,
+        container: `${styles.ShortSpin} ${BIKE_ANIMATION_DURATION * 0.75}s ease-in-out`,
+        rect: `${styles.ShortSpin} ${BIKE_ANIMATION_DURATION * 0.75}s ease-in-out reverse`,
       };
     } else {
       return {
-        container: `${styles.Spin} 1.75s ease-in-out`,
-        rect: `${styles.Spin} 1.75s ease-in-out reverse`,
+        container: `${styles.Spin} ${BIKE_ANIMATION_DURATION}s ease-in-out`,
+        rect: `${styles.Spin} ${BIKE_ANIMATION_DURATION}s ease-in-out reverse`,
       };
     }
   };
 
   const handleBikeFlip = () => {
-    if (modulePreview >= 8) {
-      return `scaleY(1)`;
-    }
-    if (modulePreview >= 5) {
-      return `scaleY(-1)`;
-    }
+    if (modulePreview >= 8) return `scaleY(1)`;
+    if (modulePreview >= 5) return `scaleY(-1)`;
     return "";
   };
 
@@ -73,27 +71,30 @@ export default function Bike({ modulePreview, currentModule, bikeIsAnimating }: 
     const bikePedalContainer = bikePedalRef.current;
     const bikePedalRect = bikePedalRectRef.current;
 
-    if (bikeElement) {
-      bikeElement.style.animation = "";
-      bikeIsAnimating.current = true;
-      requestAnimationFrame(() => {
-        bikeElement.style.animation = getBikeAnimation();
-      });
-      bikeElement.addEventListener("animationend", () => {
-        bikeIsAnimating.current = false;
-      });
-    }
+    if (!bikeElement || !bikePedalContainer || !bikePedalRect || modulePreview === 0) return;
 
-    if (bikePedalContainer && bikePedalRect && modulePreview > 0) {
-      bikePedalContainer.style.animation = "";
-      bikePedalRect.style.animation = "";
+    bikeElement.style.animation = "";
+    bikePedalContainer.style.animation = "";
+    bikePedalRect.style.animation = "";
 
-      requestAnimationFrame(() => {
-        bikePedalContainer.style.animation = getPedalAnimation().container;
-        bikePedalRect.style.animation = getPedalAnimation().rect;
-      });
-    }
-  }, [modulePreview]);
+    const handleAnimation = () => {
+      bikeIsAnimating.current = false;
+    };
+
+    bikeElement.addEventListener("animationend", handleAnimation);
+    bikeIsAnimating.current = true;
+
+    requestAnimationFrame(() => {
+      bikeElement.style.animation = getBikeAnimation();
+      bikePedalContainer.style.animation = getPedalAnimation().container;
+      bikePedalRect.style.animation = getPedalAnimation().rect;
+    });
+
+    return () => {
+      bikeElement.removeEventListener("animationend", handleAnimation);
+    };
+  }, [modulePreview, currentModule]);
+
   return (
     // prettier-ignore
     <g
@@ -103,6 +104,8 @@ export default function Bike({ modulePreview, currentModule, bikeIsAnimating }: 
         transform: handleBikeFlip(),
       }}
       ref={bikeContainerRef}
+      // Necessary to properly reset animation state for Firefox 
+      key={"bike-" + modulePreview}
     >
       <g id="BIKE">
         <g>
