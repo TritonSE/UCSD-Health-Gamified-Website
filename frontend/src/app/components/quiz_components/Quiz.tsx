@@ -17,6 +17,7 @@ type QuizProps = {
   questions: {
     question: string;
     options: string[];
+    correctAnswer: string;
   }[];
 };
 
@@ -44,11 +45,17 @@ export const Quiz = ({ title, questions }: QuizProps) => {
   };
 
   const handleSubmit = () => {
-    // TODO
-    if (score < 75 && score > 74) {
-      setScore(Math.floor(score));
+    let correctCount = 0;
+    for (const [index, answer] of Object.entries(selectedAnswers)) {
+      if (answer === questions[Number(index)].correctAnswer) {
+        correctCount++;
+      }
+    }
+    const calculatedScore = (correctCount / questions.length) * 100;
+    if (calculatedScore < 75 && calculatedScore > 74) {
+      setScore(Math.floor(calculatedScore));
     } else {
-      setScore(Math.round(score));
+      setScore(Math.round(calculatedScore));
     }
     window.scrollTo(0, 0);
     setSubmitted(true);
@@ -60,11 +67,15 @@ export const Quiz = ({ title, questions }: QuizProps) => {
 
   const handleStart = () => {
     setScore(0);
+    setSelectedAnswers({});
     setSubmitted(false);
     setStarting(true);
   };
 
   const handleSelect = (questionIndex: number, answer: string) => {
+    if (submitted) {
+      return;
+    }
     setSelectedAnswers((prev) => ({ ...prev, [questionIndex]: answer }));
   };
 
@@ -101,6 +112,9 @@ export const Quiz = ({ title, questions }: QuizProps) => {
                   onSelect={(answer) => {
                     handleSelect(index, answer);
                   }}
+                  isSubmitted={submitted}
+                  isCorrect={selectedAnswers[index] === q.correctAnswer}
+                  correctAnswer={q.correctAnswer}
                 />
               ))}
               {/* This is a test for the incorrect module */}

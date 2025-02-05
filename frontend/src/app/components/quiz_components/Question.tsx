@@ -8,10 +8,33 @@ type QuestionProps = {
   options: string[];
   selected: "A." | "B." | "C." | "D." | "E." | null;
   onSelect: (answer: "A." | "B." | "C." | "D." | "E.") => void;
+  isSubmitted: boolean;
+  isCorrect: boolean;
+  correctAnswer: string;
 };
 
-export const Question = ({ question, options, selected, onSelect }: QuestionProps) => {
+export const Question = ({
+  question,
+  options,
+  selected,
+  onSelect,
+  isSubmitted,
+  isCorrect,
+  correctAnswer,
+}: QuestionProps) => {
   const letters = ["A.", "B.", "C.", "D."];
+
+  const getButtonState = (buttonIndex: number) => {
+    if (isSubmitted && letters[buttonIndex] === correctAnswer) {
+      return "correct";
+    }
+
+    if (isSubmitted && selected === letters[buttonIndex]) {
+      return isCorrect ? "correct" : "wrong";
+    }
+
+    return selected === letters[buttonIndex] ? "selected" : "primary";
+  };
 
   return (
     <div className={styles.quizContainer}>
@@ -21,7 +44,7 @@ export const Question = ({ question, options, selected, onSelect }: QuestionProp
           <QuizButton
             key={index}
             label={option}
-            kind={selected === letters[index] ? "selected" : "primary"}
+            kind={getButtonState(index)}
             letter={letters[index] as "A." | "B." | "C." | "D." | "E."}
             onClick={() => {
               onSelect(letters[index] as "A." | "B." | "C." | "D." | "E.");
