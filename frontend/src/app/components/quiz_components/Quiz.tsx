@@ -4,7 +4,6 @@ import React, { useState } from "react";
 
 import { ExitNotif } from "./ExitNotif";
 import { Grade } from "./Grade";
-import { Incorrect } from "./Incorrect";
 import { NextButtons } from "./NextButtons";
 import { Question } from "./Question";
 import styles from "./Quiz.module.css";
@@ -18,6 +17,7 @@ type QuizProps = {
     question: string;
     options: string[];
     correctAnswer: string;
+    incorrectMessage: string;
   }[];
 };
 
@@ -52,6 +52,11 @@ export const Quiz = ({ title, questions }: QuizProps) => {
       }
     }
     const calculatedScore = (correctCount / questions.length) * 100;
+    if (calculatedScore < 75) {
+      setLabel("Retake Quiz");
+    } else if (calculatedScore > 75) {
+      setLabel("Next Module");
+    }
     if (calculatedScore < 75 && calculatedScore > 74) {
       setScore(Math.floor(calculatedScore));
     } else {
@@ -60,13 +65,9 @@ export const Quiz = ({ title, questions }: QuizProps) => {
     window.scrollTo(0, 0);
     setSubmitted(true);
     setCheckSubmit(false);
-    if (score < 75) {
-      setLabel("Retake Quiz");
-    }
   };
 
   const handleStart = () => {
-    setScore(0);
     setSelectedAnswers({});
     setSubmitted(false);
     setStarting(true);
@@ -115,10 +116,9 @@ export const Quiz = ({ title, questions }: QuizProps) => {
                   isSubmitted={submitted}
                   isCorrect={selectedAnswers[index] === q.correctAnswer}
                   correctAnswer={q.correctAnswer}
+                  incorrectMessage={q.incorrectMessage}
                 />
               ))}
-              {/* This is a test for the incorrect module */}
-              <Incorrect message="Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test" />
             </div>
             {!submitted && <Submit handleSubmit={handlePressSubmit} />}
           </div>

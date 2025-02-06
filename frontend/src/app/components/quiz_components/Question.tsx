@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Incorrect } from "./Incorrect";
 import styles from "./Question.module.css";
 import { QuizButton } from "./QuizButton";
 
@@ -11,6 +12,7 @@ type QuestionProps = {
   isSubmitted: boolean;
   isCorrect: boolean;
   correctAnswer: string;
+  incorrectMessage: string;
 };
 
 export const Question = ({
@@ -21,6 +23,7 @@ export const Question = ({
   isSubmitted,
   isCorrect,
   correctAnswer,
+  incorrectMessage,
 }: QuestionProps) => {
   const letters = ["A.", "B.", "C.", "D."];
 
@@ -52,6 +55,7 @@ export const Question = ({
           />
         ))}
       </div>
+      {isSubmitted && !isCorrect && <Incorrect message={incorrectMessage} />}
     </div>
   );
 };

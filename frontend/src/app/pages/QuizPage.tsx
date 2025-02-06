@@ -8,11 +8,13 @@ export default function QuizPage() {
       question: "1. What is the capital of France?",
       options: ["Paris", "London", "Rome", "Berlin"],
       correctAnswer: "A.",
+      incorrectMessage: "You are WRONG",
     },
     {
       question: "2. Which planet is known as the Red Planet?",
       options: ["Earth", "Mars", "Jupiter", "Venus"],
       correctAnswer: "D.",
+      incorrectMessage: "You are WRONG",
     },
   ];
   return (
