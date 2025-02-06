@@ -1,0 +1,41 @@
+/* background + layout */
+.container {
+    background-color: white;
+    width: 100%;
+    position: relative;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* text */
+.subtitle {
+    font-size: 28px;
+    color: black;
+    font-family: "DM Sans";
+    margin-top: 20vh;
+    margin-left: 8vw;
+}
+
+.title {
+    font-size: 40px;
+    color: black;
+    font-family: "Rammetto One";
+    margin-left: 8vw;
+    margin-bottom: 10vh;
+}
+
+/* mascot */
+.mascot {
+    position: absolute;
+    bottom: -108px;
+    right: 80px;
+
+}
+
+.mascotHand {
+    position: absolute;
+    bottom: -10px;
+    right: 116px;
+}
