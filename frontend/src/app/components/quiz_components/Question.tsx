@@ -12,7 +12,6 @@ type QuestionProps = {
   isSubmitted: boolean;
   isCorrect: boolean;
   correctAnswer: string;
-  incorrectMessage: string;
 };
 
 export const Question = ({
@@ -23,7 +22,6 @@ export const Question = ({
   isSubmitted,
   isCorrect,
   correctAnswer,
-  incorrectMessage,
 }: QuestionProps) => {
   const letters = ["A.", "B.", "C.", "D."];
 
@@ -38,6 +36,9 @@ export const Question = ({
 
     return selected === letters[buttonIndex] ? "selected" : "primary";
   };
+
+  const correctAnswerIndex = letters.indexOf(correctAnswer);
+  const correctAnswerText = correctAnswerIndex !== -1 ? options[correctAnswerIndex] : "";
 
   return (
     <div className={styles.quizContainer}>
@@ -55,7 +56,9 @@ export const Question = ({
           />
         ))}
       </div>
-      {isSubmitted && !isCorrect && <Incorrect message={incorrectMessage} />}
+      {isSubmitted && !isCorrect && (
+        <Incorrect message={`Correct answer is ${correctAnswer} ${correctAnswerText}`} />
+      )}
     </div>
   );
 };

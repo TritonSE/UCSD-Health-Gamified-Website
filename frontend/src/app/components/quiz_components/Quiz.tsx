@@ -17,7 +17,6 @@ type QuizProps = {
     question: string;
     options: string[];
     correctAnswer: string;
-    incorrectMessage: string;
   }[];
 };
 
@@ -116,7 +115,6 @@ export const Quiz = ({ title, questions }: QuizProps) => {
                   isSubmitted={submitted}
                   isCorrect={selectedAnswers[index] === q.correctAnswer}
                   correctAnswer={q.correctAnswer}
-                  incorrectMessage={q.incorrectMessage}
                 />
               ))}
             </div>
