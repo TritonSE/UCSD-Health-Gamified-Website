@@ -1,4 +1,5 @@
-import Mod1FactorTitle from "../components/Mod1FactorTitle";
+import Mod1ChooseBike from "../components/Mod1ChooseBike";
+import Mod1Factors from "../components/Mod1Factors";
 import Mod1Intro from "../components/Mod1Intro";
 import ModTitle from "../components/ModTitle";
 
@@ -12,10 +13,9 @@ export default function Module1() {
       {/* content */}
       <div className={styles.content}>
         <ModTitle module_num={1} module_name="What is an E-bike?" />
-        <Mod1Intro />
-        <br />
-        <br />
-        <Mod1FactorTitle number={1} step="What types of riding do YOU want to do?" />
+        <Mod1Intro/>
+        <Mod1ChooseBike/>
+        <Mod1Factors/>
       </div>
     </div>
   );

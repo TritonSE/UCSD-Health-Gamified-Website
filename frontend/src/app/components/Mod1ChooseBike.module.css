@@ -1,0 +1,29 @@
+/* text */
+.title {
+    font-size: 32px;
+    color: black;
+    font-family: "Rammetto One";
+    margin-left: 8vw;
+    padding-top: 16vh;
+    font-weight: 400;
+  }
+  
+.description {
+    font-size: 22px;
+    color: black;
+    font-family: "DM Sans";
+    margin-top: 2vh;
+    margin-left: 8vw;
+    font-weight: 400;
+    margin-right: 2vw;
+    margin-bottom: 4vh;
+}
+
+/* cards */
+.cardContainer {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16vh;
+}
