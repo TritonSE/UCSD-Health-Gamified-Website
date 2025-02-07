@@ -16,6 +16,7 @@
     font-family: "DM Sans";
     margin-top: 20vh;
     margin-left: 8vw;
+    font-weight: 400;
 }
 
 .title {
@@ -24,6 +25,7 @@
     font-family: "Rammetto One";
     margin-left: 8vw;
     margin-bottom: 10vh;
+    font-weight: 400;
 }
 
 /* mascot */
