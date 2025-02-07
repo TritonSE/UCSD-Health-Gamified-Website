@@ -106,7 +106,7 @@ export const Quiz = ({ title, questions }: QuizProps) => {
               {questions.map((q, index) => (
                 <Question
                   key={index}
-                  question={q.question}
+                  question={`${index + 1}. ${q.question}`}
                   options={q.options}
                   selected={(selectedAnswers[index] as "A." | "B." | "C." | "D." | "E.") || null}
                   onSelect={(answer) => {
