@@ -20,7 +20,16 @@ type QuizProps = {
   }[];
 };
 
-export const Quiz = ({ title, questions }: QuizProps) => {
+function shuffleArray<T>(array: T[]): T[] {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+}
+
+export const Quiz = ({ title, questions: originalQuestions }: QuizProps) => {
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
   const [cancel, setCancel] = useState<boolean>(false);
   const [checkSubmit, setCheckSubmit] = useState<boolean>(false);
@@ -28,6 +37,7 @@ export const Quiz = ({ title, questions }: QuizProps) => {
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [label, setLabel] = useState<string>("Next Module");
   const [score, setScore] = useState<number>(0);
+  const [randomizedQuestions, setRandomizedQuestions] = useState(() => originalQuestions);
 
   const handlePressCancel = () => {
     setCancel(!cancel);
@@ -46,11 +56,11 @@ export const Quiz = ({ title, questions }: QuizProps) => {
   const handleSubmit = () => {
     let correctCount = 0;
     for (const [index, answer] of Object.entries(selectedAnswers)) {
-      if (answer === questions[Number(index)].correctAnswer) {
+      if (answer === randomizedQuestions[Number(index)].correctAnswer) {
         correctCount++;
       }
     }
-    const calculatedScore = (correctCount / questions.length) * 100;
+    const calculatedScore = (correctCount / randomizedQuestions.length) * 100;
     if (calculatedScore < 75) {
       setLabel("Retake Quiz");
     } else if (calculatedScore > 75) {
@@ -70,6 +80,24 @@ export const Quiz = ({ title, questions }: QuizProps) => {
     setSelectedAnswers({});
     setSubmitted(false);
     setStarting(true);
+    setRandomizedQuestions(
+      shuffleArray(
+        originalQuestions.map((q) => {
+          // Same logic as above for re-randomizing
+          const correctOptionIndex = ["A.", "B.", "C.", "D."].indexOf(q.correctAnswer);
+          const correctOptionText = q.options[correctOptionIndex];
+          const shuffledOptions = shuffleArray(q.options);
+          const newCorrectIndex = shuffledOptions.indexOf(correctOptionText);
+          const newCorrectAnswer = ["A.", "B.", "C.", "D."][newCorrectIndex];
+
+          return {
+            ...q,
+            options: shuffledOptions,
+            correctAnswer: newCorrectAnswer,
+          };
+        }),
+      ),
+    );
   };
 
   const handleSelect = (questionIndex: number, answer: string) => {
@@ -103,7 +131,7 @@ export const Quiz = ({ title, questions }: QuizProps) => {
               )}
             </div>
             <div className={styles.questionList}>
-              {questions.map((q, index) => (
+              {randomizedQuestions.map((q, index) => (
                 <Question
                   key={index}
                   question={`${index + 1}. ${q.question}`}
