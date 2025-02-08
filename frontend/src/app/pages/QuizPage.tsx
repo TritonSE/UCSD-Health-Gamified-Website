@@ -29,6 +29,11 @@ export default function QuizPage() {
       options: ["Go", "Au", "Ag", "Fe"],
       correctAnswer: "B.",
     },
+    {
+      question: "Who is the new president of TSE",
+      options: ["Benjamin Johnson", "Vivian Liu", "Yash Ravipati", "Eshaan Sharma"],
+      correctAnswer: "A.",
+    },
   ];
   return (
     <div className={styles.quiz}>
