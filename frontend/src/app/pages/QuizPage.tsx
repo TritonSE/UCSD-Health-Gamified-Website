@@ -12,7 +12,7 @@ export default function QuizPage() {
     {
       question: "Which planet is known as the Red Planet?",
       options: ["Earth", "Mars", "Jupiter", "Venus"],
-      correctAnswer: "D.",
+      correctAnswer: "B.",
     },
     {
       question: "What is the largest ocean on Earth?",
