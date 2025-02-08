@@ -1,0 +1,32 @@
+.infoCard {
+  width: 85%;
+  border-radius: 20px;
+  background: #ffe5c9;
+  position: absolute;
+  top: 140px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0;
+  padding: 53px;
+}
+
+.infoCard.active {
+  opacity: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.container.active {
+  opacity: 1;
+}
+
+.icon {
+  height: 69px !important;
+}

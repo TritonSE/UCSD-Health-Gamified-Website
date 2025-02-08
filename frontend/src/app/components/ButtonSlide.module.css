@@ -1,0 +1,45 @@
+.buttonSlide {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 68px;
+  width: 85%;
+  margin: auto;
+  border: 2px solid #bbd567;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+
+.button {
+  display: flex;
+  height: 110px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #b4b4b4;
+  text-align: center;
+  font-family: "Rammetto One";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 29px */
+  letter-spacing: 0.58px;
+  border-radius: 68px;
+  background-color: transparent;
+  border: none;
+  word-wrap: break-word; /* Ensure text wraps within the button */
+  overflow-wrap: break-word; /* Ensure text wraps within the button */
+  white-space: normal; /* Allow text to wrap */
+  flex-grow: 1; /* Make buttons fill the available space evenly */
+  padding: 0 20px; /* Add some horizontal padding */
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button.active {
+  background-color: #bbd567; /* Example active button background color */
+  color: #000; /* Example active button text color */
+  transition: all 0.4s ease;
+}
