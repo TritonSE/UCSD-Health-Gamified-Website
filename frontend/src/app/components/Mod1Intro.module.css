@@ -1,11 +1,13 @@
 /* background */
 .container {
+  position: relative;
   background: rgba(187, 213, 103, 1);
   width: 100%;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 68vh;
 }
 
 /* text */
