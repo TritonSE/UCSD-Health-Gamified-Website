@@ -13,9 +13,6 @@ connectMongo();
 app.use(express.json());
 app.use(cors());
 
-// app.get("/", (req, res) => {
-//   res.send("Hello from the Express backend!");
-// });
 app.use("/api/user", userRoutes);
 
 app.listen(port, () => {

@@ -5,11 +5,11 @@ import styles from "./ForgotPasswordForm.module.css";
 import { LoginButton } from "./LoginButton";
 import { TextBox } from "./TextBox";
 
-export default function ForgotPasswordForm({
-  setEmailState,
-}: {
+export type ForgotPasswordFormProps = {
   setEmailState: (email: string) => void;
-}) {
+};
+
+export default function ForgotPasswordForm({ setEmailState }: ForgotPasswordFormProps) {
   const [email, setEmail] = useState("");
 
   return (

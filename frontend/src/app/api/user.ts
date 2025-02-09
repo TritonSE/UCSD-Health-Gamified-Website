@@ -18,7 +18,6 @@ export async function createUser(user: User): Promise<APIResult<UserJSON>> {
   try {
     const response = await post("/api/user/signup", user);
     const json = (await response.json()) as UserJSON;
-    console.log(json);
     return { success: true, data: json };
   } catch (error) {
     return handleAPIError(error);

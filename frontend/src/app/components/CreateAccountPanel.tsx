@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
 } from "firebase/auth";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { createUser } from "../api/user";
@@ -30,62 +31,55 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
     lastNameError: "",
     emailError: "",
     passwordError: "",
+    otherError: "",
   });
 
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
 
   const firebaseAuth = (): Promise<UserCredential> => {
     return new Promise((resolve, reject) => {
-      if (
-        errors.firstNameError ||
-        errors.lastNameError ||
-        errors.emailError ||
-        errors.passwordError ||
-        !formData.firstName ||
-        !formData.lastName ||
-        !formData.email ||
-        !formData.password
-      ) {
-        // setError("Please fill out all fields appropriately.");
-        alert("Please fill out all fields appropriately.");
-        reject(new Error("Validation failed"));
-        return;
-      } else {
-        createUserWithEmailAndPassword(auth, formData.email, formData.password)
-          .then((userCredential) => {
-            const user = userCredential.user;
-            setErrors({
-              firstNameError: "",
-              lastNameError: "",
-              emailError: "",
-              passwordError: "",
-            });
-            sendEmailVerification(user)
-              .then(() => {
-                localStorage.setItem("emailForSignIn", formData.email);
-                localStorage.setItem("user", JSON.stringify(user));
-                resolve(userCredential);
-              })
-              .catch((error: Error) => {
-                setIsAccountCreated(false);
-                console.error("Error sending verification email: ", error);
-                reject(error);
-              });
-          })
-          .catch((error: unknown) => {
-            const firebaseError = error as { code?: string; message: string };
-            const errorCode = firebaseError.code ?? "unknown_error";
-            const errorMessage = firebaseError.message;
+      createUserWithEmailAndPassword(auth, formData.email, formData.password)
+        .then((userCredential) => {
+          const user = userCredential.user;
 
-            console.log(errorCode, errorMessage);
-            setIsAccountCreated(false);
-            if (errorCode === "auth/email-already-in-use") {
-              // setError("Email already in use!");
-              alert("Email already in use!");
-            }
-            reject(new Error(errorCode));
+          setErrors({
+            firstNameError: "",
+            lastNameError: "",
+            emailError: "",
+            passwordError: "",
+            otherError: "",
           });
-      }
+
+          sendEmailVerification(user)
+            .then(() => {
+              localStorage.setItem("emailForSignIn", formData.email);
+              localStorage.setItem("user", JSON.stringify(user));
+              resolve(userCredential);
+            })
+            .catch((error: Error) => {
+              setIsAccountCreated(false);
+              console.error("Error sending verification email: ", error);
+              reject(error);
+            });
+        })
+        .catch((error: unknown) => {
+          const firebaseError = error as { code?: string; message: string };
+          const errorCode = firebaseError.code ?? "unknown_error";
+          const errorMessage = firebaseError.message;
+
+          console.log(errorCode, errorMessage);
+
+          setIsAccountCreated(false);
+
+          if (errorCode === "auth/email-already-in-use") {
+            setErrors((prev) => ({
+              ...prev,
+              ["otherError"]: "Email already in use!",
+            }));
+          }
+
+          reject(new Error(errorCode));
+        });
     });
   };
 
@@ -102,26 +96,26 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
           .then((result) => {
             if (result.success) {
               console.log("MongoDB user creation successful:", userCredential.user);
-
-              setFormData({
-                firstName: "",
-                lastName: "",
-                email: "",
-                password: "",
-              });
               setIsAccountCreated(true);
             } else {
               alert(result.error);
             }
           })
-          .catch((reason) => {
+          .catch((_) => {
             setIsAccountCreated(false);
-            alert(reason);
           });
       })
       .catch((error) => {
         console.error("Error during signup process:", error);
+
         setIsAccountCreated(false);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          password: "",
+        });
+
         alert("An error has occurred");
       });
   };
@@ -197,7 +191,7 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
 
   useEffect(() => {
     checkFormValidity();
-  }, [formData]);
+  }, [formData, errors]);
 
   return (
     <div className={styles.createAccountContainer}>
@@ -257,6 +251,12 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
           error={errors.passwordError}
         />
       </div>
+      {errors.otherError && (
+        <div className={styles.error}>
+          <Image src="/red_exclamation.svg" alt="Warning!" width={18} height={18} />
+          <p>{errors.otherError}</p>
+        </div>
+      )}
       <div className={styles.createAccount}>
         <LoginButton label="Sign Up" disabled={!isButtonEnabled} onClick={handleSubmit} />
         <p className={styles.signInLink}>

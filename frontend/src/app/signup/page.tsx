@@ -17,8 +17,11 @@ export default function SignUp() {
         <WelcomePanel />
       </section>
       <section className={styles.rightSide}>
-        {!isAccountCreated && <CreateAccountPanel setIsAccountCreated={setIsAccountCreated} />}
-        {isAccountCreated && <VerifyEmail />}
+        {isAccountCreated ? (
+          <VerifyEmail />
+        ) : (
+          <CreateAccountPanel setIsAccountCreated={setIsAccountCreated} />
+        )}
       </section>
     </main>
   );

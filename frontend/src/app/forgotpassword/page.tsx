@@ -17,14 +17,15 @@ export default function ForgotPassword() {
         <WelcomePanel />
       </div>
       <div className={styles.forgotPasswordForm}>
-        {!email && (
+        {!email ? (
           <ForgotPasswordForm
             setEmailState={(e) => {
               setEmail(e);
             }}
           />
+        ) : (
+          <ForgotPasswordEmailSent _email={email} />
         )}
-        {email && <ForgotPasswordEmailSent _email={email} />}
       </div>
     </div>
   );
