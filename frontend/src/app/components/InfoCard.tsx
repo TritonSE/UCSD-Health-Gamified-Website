@@ -34,7 +34,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
           />
           <div className={styles.content}>{content}</div>
         </div>
-        <div>
+        <div className={styles.imageContainer}>
           <Image
             className={styles.image}
             src={imageUrl}

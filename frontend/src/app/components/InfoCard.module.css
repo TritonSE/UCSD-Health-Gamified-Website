@@ -9,7 +9,7 @@
   bottom: 0;
   margin: auto;
   opacity: 0;
-  padding: 53px;
+  padding: 76px 53px;
 }
 
 .infoCard.active {
@@ -23,10 +23,60 @@
   transition: opacity 0.4s ease;
 }
 
+.container div {
+  width: 50%;
+}
+
 .container.active {
   opacity: 1;
 }
 
 .icon {
   height: 69px !important;
+  width: auto !important;
+  margin-bottom: 50px;
+}
+
+.content {
+  color: #000;
+
+  /* Body/Large (Reg) */
+  font-family: "DM Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 145.455% */
+  width: 100% !important;
+}
+
+.image {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 16px;
+  border: 3px solid var(--Secondary-Neutral-White, #fff);
+  width: 381px !important;
+  height: 254px !important;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .image {
+    width: 100%;
+  }
 }
