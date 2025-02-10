@@ -156,7 +156,6 @@ export const Quiz = ({ title, questions: originalQuestions }: QuizProps) => {
           )}
         </div>
       )}
-      ;
     </div>
   );
 };
