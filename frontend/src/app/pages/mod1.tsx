@@ -2,7 +2,6 @@ import ButtonCardSlider from "../components/ButtonCardSlider";
 import InfoItem from "../components/InfoItem";
 import Mod1ChooseBike from "../components/Mod1ChooseBike";
 import Mod1FactorTitle from "../components/Mod1FactorTitle";
-import Mod1Factors from "../components/Mod1Factors";
 import Mod1Intro from "../components/Mod1Intro";
 import ModTitle from "../components/ModTitle";
 
@@ -43,11 +42,15 @@ export default function Module1() {
       <div className={styles.sidebar}>Sidebar!</div>
       {/* content */}
       <div className={styles.content}>
+        {/* title and intro */}
         <ModTitle module_num={1} module_name="What is an E-bike?" />
         <Mod1Intro />
         <Mod1ChooseBike />
-        <Mod1Factors />
+        <p className={styles.text}>When choosing your E-bike, consider the following factors:</p>
+        {/* factor 1 */}
+        <Mod1FactorTitle number={1} step="Consider your riding style" />
         <ButtonCardSlider titles={titles_part1} cards={cards_part1} />
+        {/* factor 2 */}
         <Mod1FactorTitle number={2} step="Consider your physical abilities & experience" />
         <InfoItem
           icon={"module1/fitness_level_icon.svg"}

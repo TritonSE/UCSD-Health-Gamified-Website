@@ -32,6 +32,7 @@
   white-space: normal; /* Allow text to wrap */
   flex-grow: 1; /* Make buttons fill the available space evenly */
   padding: 0 20px; /* Add some horizontal padding */
+  width: 100%; /* Set the width to 100% */
 }
 
 .button:hover {
