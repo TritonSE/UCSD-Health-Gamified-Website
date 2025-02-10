@@ -90,7 +90,7 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
 
         // MongoDB creation
         createUser({
-          name: formData.firstName + formData.lastName,
+          name: formData.firstName + " " + formData.lastName,
           email: formData.email,
         })
           .then((result) => {
