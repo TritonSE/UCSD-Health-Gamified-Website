@@ -6,7 +6,6 @@
   padding: 0.75rem 0.75rem;
   border-radius: 50px;
   font: var(--font-label);
-  cursor: pointer;
   font-family: "DM Sans";
   font-size: 14px;
   font-style: normal;
@@ -56,4 +55,8 @@
 
 .spacing {
   padding-left: 1%;
+}
+
+.notSubmitted {
+  cursor: pointer;
 }

@@ -18,6 +18,7 @@ export type ButtonProps = {
   label: string;
   kind?: "primary" | "selected" | "correct" | "wrong";
   letter?: "A." | "B." | "C." | "D." | "E.";
+  submitted?: boolean;
 } & React.ComponentProps<"button">;
 
 /**
@@ -35,7 +36,7 @@ export type ButtonProps = {
  * with our own styling and restrictions on what can be put inside of it.
  */
 export const QuizButton = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
-  { label, kind = "primary", letter = "A.", className, ...props },
+  { label, submitted = false, kind = "primary", letter = "A.", className, ...props },
   ref,
 ) {
   let icon = null;
@@ -55,6 +56,9 @@ export const QuizButton = React.forwardRef<HTMLButtonElement, ButtonProps>(funct
       buttonClass += ` ${styles.wrong}`;
       icon = <img src={"/incorrect.svg"} />; // X mark
       break;
+  }
+  if (!submitted) {
+    buttonClass += ` ${styles.notSubmitted}`;
   }
   if (className) {
     buttonClass += ` ${className}`;

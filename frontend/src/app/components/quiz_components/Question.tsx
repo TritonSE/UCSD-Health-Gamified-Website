@@ -50,6 +50,7 @@ export const Question = ({
             label={option}
             kind={getButtonState(index)}
             letter={letters[index] as "A." | "B." | "C." | "D." | "E."}
+            submitted={isSubmitted}
             onClick={() => {
               onSelect(letters[index] as "A." | "B." | "C." | "D." | "E.");
             }}
