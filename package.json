@@ -7,6 +7,7 @@
   "description": "`cd frontend`  \r `npm install`  \r `npm run dev`",
   "main": "index.js",
   "dependencies": {
+    "@babel/preset-react": "^7.26.3",
     "acorn": "^8.14.0",
     "acorn-jsx": "^5.3.2",
     "ajv": "^6.12.6",

@@ -1,10 +1,13 @@
 "use client";
+import { UserCredential, signInWithEmailAndPassword } from "firebase/auth";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 import { LoginButton } from "./LoginButton";
 import styles from "./SignInPanel.module.css";
 import { TextBox } from "./TextBox";
+import { auth } from "../firebase-config.js";
 
 export default function SignInPanel() {
   const [loginInfo, setLoginInfo] = useState({
@@ -12,7 +15,25 @@ export default function SignInPanel() {
     password: "",
   });
   const [emailError, setEmailError] = useState("");
+  const [signInError, setSignInError] = useState("");
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+
+  const firebaseAuth = (): Promise<UserCredential> => {
+    return new Promise((resolve, reject) => {
+      signInWithEmailAndPassword(auth, loginInfo.email, loginInfo.password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          resolve(userCredential);
+        })
+        .catch((error) => {
+          const firebaseError = error as { code?: string; message: string };
+          const errorCode = firebaseError.code ?? "unknown_error";
+          const errorMessage = firebaseError.message;
+          console.log(errorCode, errorMessage);
+          reject(error);
+        });
+    });
+  };
 
   const handleChange = (field: string, value: string) => {
     setLoginInfo((prev) => ({
@@ -22,7 +43,16 @@ export default function SignInPanel() {
   };
 
   const handleSubmit = () => {
-    console.log("placeholder");
+    firebaseAuth()
+      .then((userCredential) => {
+        console.log("Firebase sign in successful");
+        setSignInError("");
+        window.location.href = "/";
+      })
+      .catch((error) => {
+        console.error("Error during the sign-in process:", error);
+        setSignInError("Incorrect email or password.");
+      });
   };
 
   const trackEmail = (name: string) => {
@@ -76,6 +106,14 @@ export default function SignInPanel() {
         </a>
       </div>
       <br />
+      <div>
+        {signInError && (
+          <div className={styles.error}>
+            <Image src="/red_exclamation.svg" alt="Warning!" width={18} height={18} />
+            <p>{signInError}</p>
+          </div>
+        )}
+      </div>
       <div className={styles.createAccount}>
         <LoginButton label="Sign in" disabled={!isButtonEnabled} onClick={handleSubmit} />
         <p className={styles.signInLink}>

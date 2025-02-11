@@ -116,7 +116,7 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
           password: "",
         });
 
-        alert("An error has occurred");
+        //alert("An error has occurred");
       });
   };
 
