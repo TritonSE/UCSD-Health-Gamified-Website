@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 
+import ForgotPasswordEmailSent from "../components/ForgotPasswordEmailSent";
+import ForgotPasswordForm from "../components/ForgotPasswordForm";
 import WelcomePanel from "../components/WelcomePanel";
-import ForgotPasswordEmailSent from "../components/forgotPasswordEmailSent";
-import ForgotPasswordForm from "../components/forgotPasswordForm";
 
-import styles from "./forgotPassword.module.css";
+import styles from "./ForgotPassword.module.css";
+
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
 
@@ -16,14 +17,15 @@ export default function ForgotPassword() {
         <WelcomePanel />
       </div>
       <div className={styles.forgotPasswordForm}>
-        {!email && (
+        {!email ? (
           <ForgotPasswordForm
             setEmailState={(e) => {
               setEmail(e);
             }}
           />
+        ) : (
+          <ForgotPasswordEmailSent _email={email} />
         )}
-        {email && <ForgotPasswordEmailSent _email={email} />}
       </div>
     </div>
   );
