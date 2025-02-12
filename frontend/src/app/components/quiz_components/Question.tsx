@@ -57,8 +57,11 @@ export const Question = ({
           />
         ))}
       </div>
-      {isSubmitted && !isCorrect && (
-        <Incorrect message={`The correct answer is: ${correctAnswer} ${correctAnswerText}`} />
+      {isSubmitted && (
+        <Incorrect
+          correct={isCorrect}
+          message={`The correct answer is: ${correctAnswer} ${correctAnswerText}`}
+        />
       )}
     </div>
   );

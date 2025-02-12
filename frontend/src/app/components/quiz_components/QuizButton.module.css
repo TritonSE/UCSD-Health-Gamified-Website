@@ -15,25 +15,25 @@
 
 .primary {
   background-color: var(--background);
-  border: 0.125rem solid var(--color-action-border);
+  border: 1px solid var(--color-action-border);
   color: var(--color-action-border);
 }
 
 .selected {
   background-color: var(--color-action-selected);
-  border: 0.125rem solid var(--color-action-border);
+  border: 1px solid var(--color-action-border);
   color: var(--color-action-border);
 }
 
 .correct {
   background-color: var(--color-action-correct);
-  border: 0.125rem solid var(--color-action-border);
+  border: 1px solid var(--color-action-border);
   color: var(--color-text-primary);
 }
 
 .wrong {
   background-color: var(--color-action-wrong);
-  border: 0.125rem solid var(--color-action-border);
+  border: 1px solid var(--color-action-border);
   color: var(--color-text-primary);
 }
 

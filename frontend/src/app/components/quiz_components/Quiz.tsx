@@ -13,6 +13,7 @@ import { TitleScreen } from "./TitleScreen";
 
 type QuizProps = {
   title: string;
+  description: string;
   questions: {
     question: string;
     options: string[];
@@ -29,13 +30,14 @@ function shuffleArray<T>(array: T[]): T[] {
   return newArray;
 }
 
-export const Quiz = ({ title, questions: originalQuestions }: QuizProps) => {
+export const Quiz = ({ title, description, questions: originalQuestions }: QuizProps) => {
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
   const [cancel, setCancel] = useState<boolean>(false);
   const [checkSubmit, setCheckSubmit] = useState<boolean>(false);
   const [starting, setStarting] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [label, setLabel] = useState<string>("Next Module");
+  const [quizTitle, setTitle] = useState<string>(title);
   const [score, setScore] = useState<number>(0);
   const [randomizedQuestions, setRandomizedQuestions] = useState(() => originalQuestions);
 
@@ -45,6 +47,7 @@ export const Quiz = ({ title, questions: originalQuestions }: QuizProps) => {
 
   const handleLeave = () => {
     // TODO
+    setTitle(title);
     setStarting(false);
     setCancel(false);
   };
@@ -72,6 +75,7 @@ export const Quiz = ({ title, questions: originalQuestions }: QuizProps) => {
       setScore(Math.round(calculatedScore));
     }
     window.scrollTo(0, 0);
+    setTitle(quizTitle + " Results");
     setSubmitted(true);
     setCheckSubmit(false);
   };
@@ -111,49 +115,57 @@ export const Quiz = ({ title, questions: originalQuestions }: QuizProps) => {
     <div className={styles.bigDiv}>
       {!starting && <TitleScreen handleStart={handleStart} />}
       {starting && (
-        <div className={styles.entireQuiz}>
-          {submitted && <Grade score={score} />}
-          <div className={styles.quizBox}>
-            {cancel && (
-              <div className={styles.overlay}>
-                <ExitNotif cancelFunc={handlePressCancel} exitFunc={handleLeave} />
-              </div>
-            )}
-            {checkSubmit && (
-              <div className={styles.overlay}>
-                <SubmitNotif cancelFunc={handlePressSubmit} submitFunc={handleSubmit} />
-              </div>
-            )}
-            <div className={styles.title}>
-              <span className={styles.titleFont}>{title}</span>
-              {!submitted && (
-                <img src={"/close.svg"} style={{ cursor: "pointer" }} onClick={handlePressCancel} />
-              )}
-            </div>
-            <div className={styles.questionList}>
-              {randomizedQuestions.map((q, index) => (
-                <Question
-                  key={index}
-                  question={`${index + 1}. ${q.question}`}
-                  options={q.options}
-                  selected={(selectedAnswers[index] as "A." | "B." | "C." | "D." | "E.") || null}
-                  onSelect={(answer) => {
-                    handleSelect(index, answer);
-                  }}
-                  isSubmitted={submitted}
-                  isCorrect={selectedAnswers[index] === q.correctAnswer}
-                  correctAnswer={q.correctAnswer}
-                />
-              ))}
-            </div>
-            {!submitted && <Submit handleSubmit={handlePressSubmit} />}
-          </div>
-          {submitted && (
-            <div className={styles.nextModule}>
-              <NextButtons kind="primary" label={label} handleClick={handleLeave} />
-              <NextButtons kind="secondary" label="Go Back" handleClick={handleLeave} />
+        <div className={styles.exitQuiz}>
+          {!submitted && (
+            <div className={styles.exit}>
+              <img src={"/close.svg"} style={{ cursor: "pointer" }} onClick={handlePressCancel} />
+              <span className={styles.exitText} onClick={handlePressCancel}>
+                Exit Quiz
+              </span>
             </div>
           )}
+          <div className={styles.entireQuiz}>
+            {submitted && <Grade score={score} />}
+            <div className={styles.quizBox}>
+              {cancel && (
+                <div className={styles.overlay}>
+                  <ExitNotif cancelFunc={handlePressCancel} exitFunc={handleLeave} />
+                </div>
+              )}
+              {checkSubmit && (
+                <div className={styles.overlay}>
+                  <SubmitNotif cancelFunc={handlePressSubmit} submitFunc={handleSubmit} />
+                </div>
+              )}
+              <div className={styles.title}>
+                <span className={styles.titleFont}>{quizTitle}</span>
+                {!submitted && <span className={styles.descriptionFont}>{description}</span>}
+              </div>
+              <div className={styles.questionList}>
+                {randomizedQuestions.map((q, index) => (
+                  <Question
+                    key={index}
+                    question={`${index + 1}. ${q.question}`}
+                    options={q.options}
+                    selected={(selectedAnswers[index] as "A." | "B." | "C." | "D." | "E.") || null}
+                    onSelect={(answer) => {
+                      handleSelect(index, answer);
+                    }}
+                    isSubmitted={submitted}
+                    isCorrect={selectedAnswers[index] === q.correctAnswer}
+                    correctAnswer={q.correctAnswer}
+                  />
+                ))}
+              </div>
+              {!submitted && <Submit handleSubmit={handlePressSubmit} />}
+              {submitted && (
+                <div className={styles.nextModule}>
+                  <NextButtons kind="primary" label={label} handleClick={handleLeave} />
+                  <NextButtons kind="secondary" label="Go Back" handleClick={handleLeave} />
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       )}
     </div>

@@ -6,8 +6,6 @@
   align-items: flex-start;
   gap: 8px;
   border-radius: 16px;
-  border: 1px solid var(--color-action-submit);
-  background: #f9f9f9;
 }
 
 .title {
@@ -34,4 +32,14 @@
   font-weight: 400;
   line-height: 20px; /* 142.857% */
   align-self: stretch;
+}
+
+.correct {
+  border: 2px solid var(--color-action-correct);
+  background: #f9fff9;
+}
+
+.incorrect {
+  border: 2px solid var(--color-action-wrong);
+  background: #fff9ff;
 }

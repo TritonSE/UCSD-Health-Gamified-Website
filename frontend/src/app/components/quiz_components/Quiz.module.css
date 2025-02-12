@@ -8,9 +8,10 @@
 
 .title {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
 }
 
 .titleFont {
@@ -24,17 +25,24 @@
   letter-spacing: 0.64px;
 }
 
+.descriptionFont {
+  color: #000;
+
+  /* Body/Large (Reg) */
+  font-family: "DM Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 145.455% */
+}
+
 .quizBox {
   display: inline-flex;
   padding: 32px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 60px;
-  max-width: 600px;
+  gap: 40px;
   width: 100%;
-  border-radius: 16px;
-  background: var(--background);
-  box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.25);
 }
 
 .overlay {
@@ -53,16 +61,43 @@
 .bigDiv {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
-.entireQuiz {
+.exitQuiz {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 600px;
   width: 100%;
-  padding-bottom: 40px;
+}
+
+.exit {
+  display: flex;
+  width: 100%;
+  padding: 40px;
+  align-items: center;
+  gap: 8px;
+}
+
+.exitText {
+  color: #000;
+  cursor: pointer;
+  /* Title/XSmall (Bold) */
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 27px */
+  letter-spacing: 0.36px;
+}
+
+.entireQuiz {
+  display: flex;
+  width: 100%;
+  padding: 32px 120px;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 40px;
 }
 
