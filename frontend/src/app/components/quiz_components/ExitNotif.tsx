@@ -15,11 +15,11 @@ export const ExitNotif = ({
         <p className={styles.description}>Your progress will not be saved.</p>
       </div>
       <div className={styles.buttons}>
-        <button className={styles.submitButton} onClick={exitFunc} {...props}>
-          <p className={styles.text}>Exit</p>
-        </button>
         <button className={styles.cancelButton} onClick={cancelFunc} {...props}>
           <p className={styles.text}>Cancel</p>
+        </button>
+        <button className={styles.submitButton} onClick={exitFunc} {...props}>
+          <p className={styles.text}>Exit</p>
         </button>
       </div>
     </div>

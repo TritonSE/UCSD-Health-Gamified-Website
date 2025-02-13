@@ -15,11 +15,11 @@ export const SubmitNotif = ({
         <p className={styles.description}>You are about to submit your quiz.</p>
       </div>
       <div className={styles.buttons}>
-        <button className={styles.submitButton} onClick={submitFunc} {...props}>
-          <p className={styles.text}>Submit</p>
-        </button>
         <button className={styles.cancelButton} onClick={cancelFunc} {...props}>
           <p className={styles.text}>Cancel</p>
+        </button>
+        <button className={styles.submitButton} onClick={submitFunc} {...props}>
+          <p className={styles.text}>Submit</p>
         </button>
       </div>
     </div>
