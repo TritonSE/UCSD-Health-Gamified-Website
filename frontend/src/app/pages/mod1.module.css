@@ -12,13 +12,14 @@
 
 .text {
   font-size: 22px;
-  color: black;
+  color: var(--foreground);
   font-family: "DM Sans";
   margin-top: 2vh;
   margin-left: 6.5vw;
   font-weight: 400;
   margin-bottom: 4vh;
 }
+
 /* TODO: REMOVE BELOW LATER */
 .sidebar {
   background: darkgray;
