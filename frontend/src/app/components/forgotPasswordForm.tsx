@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
+import BackToSignIn from "./BackToSignIn";
+import styles from "./ForgotPasswordForm.module.css";
 import { LoginButton } from "./LoginButton";
 import { TextBox } from "./TextBox";
-import BackToSignIn from "./backToSignIn";
-import styles from "./forgotPasswordForm.module.css";
 
 export default function RightSide({ setEmailState }: { setEmailState: (email: string) => void }) {
   const [email, setEmail] = useState("");

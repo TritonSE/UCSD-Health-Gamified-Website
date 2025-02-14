@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
+import ForgotPasswordEmailSent from "../components/ForgotPasswordEmailSent";
+import ForgotPasswordForm from "../components/ForgotPasswordForm";
 import WelcomePanel from "../components/WelcomePanel";
-import ForgotPasswordEmailSent from "../components/forgotPasswordEmailSent";
-import ForgotPasswordForm from "../components/forgotPasswordForm";
 
 import styles from "./forgotPassword.module.css";
 export default function ForgotPassword() {

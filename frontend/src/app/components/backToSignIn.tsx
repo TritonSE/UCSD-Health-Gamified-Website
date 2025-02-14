@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import styles from "./backToSignIn.module.css";
+import styles from "./BackToSignIn.module.css";
 
 export default function BackToSignIn() {
   return (

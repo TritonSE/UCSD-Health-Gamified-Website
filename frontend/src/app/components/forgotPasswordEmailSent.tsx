@@ -1,5 +1,5 @@
-import BackToSignIn from "./backToSignIn";
-import styles from "./forgotPasswordForm.module.css";
+import BackToSignIn from "./BackToSignIn";
+import styles from "./ForgotPasswordForm.module.css";
 
 export default function RightSide({ _email }: { _email: string }) {
   return (
