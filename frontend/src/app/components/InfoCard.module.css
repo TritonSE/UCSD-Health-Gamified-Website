@@ -56,7 +56,7 @@
   border-radius: 16px;
   border: 3px solid var(--Secondary-Neutral-White, #fff);
   width: 381px !important;
-  height: 254px !important;
+  -webkit-user-drag: none;
 }
 
 .imageContainer {
