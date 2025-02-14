@@ -18,7 +18,9 @@ export default function AnimatedPath({
   const isModuleAccessible = modulePreview + 1 >= 9;
 
   const getStarColor = () => {
-    return modulePreview >= 8 ? "#FFBC00" : "#B4B4B4";
+    if(modulePreview<8)
+      return "#B4B4B4"
+    return modulePreview == 8 ? "#FFBC00" : "#3BB966";
   };
 
   useEffect(() => {

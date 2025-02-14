@@ -13,11 +13,11 @@
 }
 
 .active {
-  --marker-color: #ff8500;
+  --marker-color: #3bb966;
 }
 
 .navigatable {
-  --marker-color: #b4b4b4;
+  --marker-color: #ff8500;
 }
 
 .disabled {
