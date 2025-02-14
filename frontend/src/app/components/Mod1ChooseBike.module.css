@@ -1,7 +1,7 @@
 /* text */
 .title {
   font-size: 32px;
-  color: black;
+  color: var(--foreground);
   font-family: "Rammetto One";
   margin-left: 8vw;
   padding-top: 16vh;
@@ -10,7 +10,7 @@
 
 .description {
   font-size: 22px;
-  color: black;
+  color: var(--foreground);
   font-family: "DM Sans";
   margin-top: 2vh;
   margin-left: 8vw;

@@ -24,7 +24,8 @@
 }
 
 .container div {
-  width: 50%;
+  min-width: 50%;
+  flex: 1;
 }
 
 .container.active {

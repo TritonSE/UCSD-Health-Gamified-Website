@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 68vh;
+  min-height: 68vh;
 }
 
 /* text */
