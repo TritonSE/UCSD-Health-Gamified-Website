@@ -5,7 +5,11 @@ import styles from "./ForgotPasswordForm.module.css";
 import { LoginButton } from "./LoginButton";
 import { TextBox } from "./TextBox";
 
-export default function RightSide({ setEmailState }: { setEmailState: (email: string) => void }) {
+export type ForgotPasswordFormProps = {
+  setEmailState: (email: string) => void;
+};
+
+export default function ForgotPasswordForm({ setEmailState }: ForgotPasswordFormProps) {
   const [email, setEmail] = useState("");
 
   return (
@@ -22,14 +26,16 @@ export default function RightSide({ setEmailState }: { setEmailState: (email: st
           label="Email address"
           type="text"
           placeholder="name@gmail.com"
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setEmail(e.target.value);
+          value={email}
+          onChange={(value) => {
+            setEmail(value);
           }}
         />
       </div>
       <div className={styles.formField}>
         <LoginButton
           label="Send link"
+          disabled={!email.includes("@") || !email.split("@")[1].includes(".")}
           onClick={() => {
             setEmailState(email);
           }}
