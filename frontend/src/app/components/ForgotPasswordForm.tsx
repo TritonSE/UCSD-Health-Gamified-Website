@@ -1,4 +1,7 @@
+import { sendPasswordResetEmail } from "firebase/auth";
 import React, { useState } from "react";
+
+import { auth } from "../firebase-config.js";
 
 import BackToSignIn from "./BackToSignIn";
 import styles from "./ForgotPasswordForm.module.css";
@@ -11,6 +14,20 @@ export type ForgotPasswordFormProps = {
 
 export default function ForgotPasswordForm({ setEmailState }: ForgotPasswordFormProps) {
   const [email, setEmail] = useState("");
+
+  const sendResetEmail = () => {
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        setEmailState(email);
+      })
+      .catch((error: unknown) => {
+        const firebaseError = error as { code?: string; message: string };
+        const errorCode = firebaseError.code ?? "unknown_error";
+        const errorMessage = firebaseError.message;
+
+        console.log(errorCode, errorMessage);
+      });
+  };
 
   return (
     <div className={styles.formContainer}>
@@ -37,7 +54,7 @@ export default function ForgotPasswordForm({ setEmailState }: ForgotPasswordForm
           label="Send link"
           disabled={!email.includes("@") || !email.split("@")[1].includes(".")}
           onClick={() => {
-            setEmailState(email);
+            sendResetEmail();
           }}
         />
       </div>

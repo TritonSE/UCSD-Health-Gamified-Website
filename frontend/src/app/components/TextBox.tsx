@@ -10,7 +10,6 @@ export type TextBoxProps = {
   linkLabel?: string;
   link?: string;
   caption?: string;
-  captionLabel?: string;
   placeholder: string;
   value: string;
   onChange: (value: string) => void;
@@ -79,7 +78,7 @@ export function TextBox({
       </form>
       <div className={styles.link}>{linkLabel && <a href={link}>{linkLabel}</a>}</div>
       <div className={styles.caption}>
-        {caption && !error && value && value.length === 0 && <p>{caption}</p>}
+        {caption && !error && value.length === 0 && <p>{caption}</p>}
       </div>
       <div>
         {error && (
