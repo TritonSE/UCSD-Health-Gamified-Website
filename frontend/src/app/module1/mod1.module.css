@@ -8,6 +8,7 @@
 .content {
   width: 100%;
   height: 100%;
+  margin-left: var(--sidebar-size);
 }
 
 .text {
@@ -23,6 +24,8 @@
 /* TODO: REMOVE BELOW LATER */
 .sidebar {
   background: darkgray;
-  width: 20vw;
+  width: var(--sidebar-size);
   height: 100vh;
+  position: fixed;
 }
+
