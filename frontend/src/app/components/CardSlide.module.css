@@ -45,8 +45,7 @@
 }
 
 .cardSlide:hover .title {
-  bottom: 40%;
-  transform: translateY(40%);
+  transform: translateY(-100%);
 }
 
 .cardSlide:hover .content {
