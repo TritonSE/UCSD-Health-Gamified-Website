@@ -6,9 +6,11 @@ import { auth } from "../firebase-config.js";
 
 import BackToSignIn from "./BackToSignIn";
 import styles from "./VerifyEmail.module.css";
+import Image from "next/image";
 
 export default function VerifyEmail() {
   const [email, setEmail] = useState<string>("");
+  const [verificationError, setVerificationError] = useState("");
   //const [user, setUser] = useState<any>(null);
 
   const resendEmail = () => {
@@ -20,6 +22,9 @@ export default function VerifyEmail() {
         })
         .catch((error) => {
           console.error("Error sending verification email: ", error);
+          if (error.code === "auth/too-many-requests") {
+            setVerificationError("Too many requests. Please try again later.");
+          }
         });
     } else {
       console.error("No user found.");
@@ -53,6 +58,12 @@ export default function VerifyEmail() {
           Click to resend
         </a>
       </p>
+      {verificationError && (
+        <div className={styles.error}>
+          <Image src="/red_exclamation.svg" alt="Warning!" width={18} height={18} />
+          <p>{verificationError}</p>
+        </div>
+      )}
     </div>
   );
 }

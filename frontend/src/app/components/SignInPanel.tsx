@@ -1,5 +1,5 @@
 "use client";
-import { UserCredential, signInWithEmailAndPassword } from "firebase/auth";
+import { UserCredential, signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -8,6 +8,8 @@ import { LoginButton } from "./LoginButton";
 import styles from "./SignInPanel.module.css";
 import { TextBox } from "./TextBox";
 import { auth } from "../firebase-config.js";
+
+import { updateUser, getUser } from "../api/user";
 
 export default function SignInPanel() {
   const [loginInfo, setLoginInfo] = useState({
@@ -29,7 +31,7 @@ export default function SignInPanel() {
           const firebaseError = error as { code?: string; message: string };
           const errorCode = firebaseError.code ?? "unknown_error";
           const errorMessage = firebaseError.message;
-          console.log(errorCode, errorMessage);
+          console.error(errorCode, errorMessage);
           reject(error);
         });
     });
@@ -42,17 +44,68 @@ export default function SignInPanel() {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e?: React.FormEvent<HTMLFormElement>) => {
+    if (e) e.preventDefault();
     firebaseAuth()
       .then((userCredential) => {
-        console.log("Firebase sign in successful");
-        setSignInError("");
-        window.location.href = "/";
+        const user = userCredential.user;
+        if (!user.emailVerified) {
+          console.error("Email is not verified!");
+          setSignInError("Email is not verified!");
+        } else {
+          getUser(loginInfo.email)
+            .then((result) => {
+              if ("data" in result) {
+                if (result.data.firstLogin) {
+                  console.log("Firebase sign in successful");
+                  setSignInError("");
+                  window.location.href = "/";
+                  updateUser({
+                    name: result.data.name,
+                    email: result.data.email,
+                    firstLogin: false,
+                  })
+                    .then((result) => {
+                      console.log("First login updated");
+                    })
+                    .catch((error) => {
+                      console.error("Error updating first login: ", error);
+                    });
+                } else {
+                  console.log("Firebase sign in successful");
+                  setSignInError("");
+                  window.location.href = "/signup";
+                }
+              }
+            })
+            .catch((error) => {
+              console.error("Error getting user: ", error);
+            });
+        }
       })
       .catch((error) => {
         console.error("Error during the sign-in process:", error);
         setSignInError("Incorrect email or password.");
       });
+  };
+
+  const sendEmail = () => {
+    const user = auth.currentUser;
+    if (user) {
+      sendEmailVerification(user)
+        .then(() => {
+          console.log("Email sent.");
+          setSignInError("Verification email has been sent!");
+        })
+        .catch((error) => {
+          console.error("Error sending verification email: ", error);
+          if (error.code === "auth/too-many-requests") {
+            setSignInError("Too many email verification requests. Please try again later.");
+          }
+        });
+    } else {
+      console.error("No user found.");
+    }
   };
 
   const trackEmail = (name: string) => {
@@ -110,7 +163,19 @@ export default function SignInPanel() {
         {signInError && (
           <div className={styles.error}>
             <Image src="/red_exclamation.svg" alt="Warning!" width={18} height={18} />
-            <p>{signInError}</p>
+            <p>
+              {signInError}{" "}
+              {signInError === "Email is not verified!" && (
+                <a href="#" onClick={sendEmail}>
+                  <u>Click to send</u>
+                </a>
+              )}
+              {signInError === "Verification email has been sent!" && (
+                <a href="#" onClick={sendEmail}>
+                  <u>Click to resend</u>
+                </a>
+              )}
+            </p>
           </div>
         )}
       </div>

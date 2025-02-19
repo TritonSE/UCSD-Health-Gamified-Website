@@ -92,6 +92,7 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
         createUser({
           name: formData.firstName + " " + formData.lastName,
           email: formData.email,
+          firstLogin: true,
         })
           .then((result) => {
             if (result.success) {
