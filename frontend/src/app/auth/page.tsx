@@ -1,7 +1,7 @@
 "use client";
 
 import { applyActionCode } from "firebase/auth";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import WelcomePanel from "../components/WelcomePanel";
@@ -10,6 +10,7 @@ import { auth } from "../firebase-config.js";
 import styles from "./Auth.module.css";
 
 export default function Auth() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const actionExecuted = useRef(false);
 
@@ -30,7 +31,8 @@ export default function Auth() {
 
     switch (mode) {
       case "resetPassword":
-        window.location.href = "/resetpassword";
+        actionExecuted.current = true;
+        router.replace(`/resetpassword?oobCode=${oobCode}`);
         break;
       case "verifyEmail":
         actionExecuted.current = true;

@@ -146,10 +146,10 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
           });
       })
       .catch((_) => {
-        setErrors((prev) => ({
-          ...prev,
-          ["otherError"]: "Error creating account!",
-        }));
+        // setErrors((prev) => ({
+        //   ...prev,
+        //   ["otherError"]: "Error creating account!",
+        // }));
       });
   };
 
