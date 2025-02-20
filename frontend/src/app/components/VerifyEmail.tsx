@@ -1,5 +1,6 @@
 "use client";
 import { sendEmailVerification } from "firebase/auth";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { auth } from "../firebase-config.js";
@@ -9,7 +10,7 @@ import styles from "./VerifyEmail.module.css";
 
 export default function VerifyEmail() {
   const [email, setEmail] = useState<string>("");
-  //const [user, setUser] = useState<any>(null);
+  const [verificationError, setVerificationError] = useState("");
 
   const resendEmail = () => {
     const user = auth.currentUser;
@@ -18,8 +19,15 @@ export default function VerifyEmail() {
         .then(() => {
           console.log("Email sent.");
         })
-        .catch((error) => {
+        .catch((error: unknown) => {
           console.error("Error sending verification email: ", error);
+
+          const firebaseError = error as { code?: string; message: string };
+          const errorCode = firebaseError.code ?? "unknown_error";
+
+          if (errorCode === "auth/too-many-requests") {
+            setVerificationError("Too many requests. Please try again later.");
+          }
         });
     } else {
       console.error("No user found.");
@@ -28,7 +36,7 @@ export default function VerifyEmail() {
 
   useEffect(() => {
     const emailForSignIn = localStorage.getItem("emailForSignIn");
-    //const user = localStorage.getItem("user");
+
     if (emailForSignIn) {
       setEmail(emailForSignIn);
       localStorage.removeItem("emailForSignIn");
@@ -53,6 +61,12 @@ export default function VerifyEmail() {
           Click to resend
         </a>
       </p>
+      {verificationError && (
+        <div className={styles.error}>
+          <Image src="/red_exclamation.svg" alt="Warning!" width={18} height={18} />
+          <p>{verificationError}</p>
+        </div>
+      )}
     </div>
   );
 }
