@@ -59,7 +59,6 @@ export default function SignInPanel() {
                 if (result.data.firstLogin) {
                   console.log("Firebase sign in successful");
                   setSignInError("");
-                  window.location.href = "/";
                   updateUser({
                     name: result.data.name,
                     email: result.data.email,
@@ -71,10 +70,11 @@ export default function SignInPanel() {
                     .catch((error) => {
                       console.error("Error updating first login: ", error);
                     });
+                  //window.location.href = "/";
                 } else {
                   console.log("Firebase sign in successful");
                   setSignInError("");
-                  window.location.href = "/signup";
+                  //window.location.href = "/signup";
                 }
               }
             })
