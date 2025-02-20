@@ -290,7 +290,7 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
           <p>{errors.otherError}</p>
         </div>
       )}
-      <div className={styles.createAccount}>
+      <div>
         <LoginButton label="Sign Up" disabled={!isButtonEnabled} onClick={handleSubmit} />
         <p className={styles.signInLink}>
           Already have an account? <a href="/signin">Sign-in</a>

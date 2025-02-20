@@ -1,11 +1,12 @@
 import { confirmPasswordReset } from "firebase/auth";
-import React, { useState } from "react";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
 
 import { auth } from "../firebase-config.js";
 
 import BackToSignIn from "./BackToSignIn";
-import styles from "./ForgotPasswordForm.module.css";
 import { LoginButton } from "./LoginButton";
+import styles from "./ResetPasswordPanel.module.css";
 import { TextBox } from "./TextBox";
 
 export default function ResetPasswordPanel() {
@@ -16,6 +17,8 @@ export default function ResetPasswordPanel() {
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
 
   const [passwordReset, setPasswordReset] = useState(false);
+
+  const [resetError, setResetError] = useState("");
 
   const handleSubmit = () => {
     const getOobCodeFromUrl = (url: string) => {
@@ -36,6 +39,7 @@ export default function ResetPasswordPanel() {
 
         console.log(errorCode, errorMessage);
         setPasswordReset(false);
+        setResetError("Already reset password!");
       });
   };
 
@@ -56,6 +60,13 @@ export default function ResetPasswordPanel() {
       setConfirmPasswordError("");
     }
   };
+
+  useEffect(() => {
+    if (password !== "" && confirmPassword !== "") {
+      trackPassword();
+      trackConfirmPassword();
+    }
+  }, [password, confirmPassword]);
 
   return (
     <>
@@ -80,8 +91,6 @@ export default function ResetPasswordPanel() {
               }}
               error={passwordError}
             />
-          </div>
-          <div className={styles.formField}>
             <TextBox
               label="Confirm Password"
               type="password"
@@ -96,7 +105,13 @@ export default function ResetPasswordPanel() {
               error={confirmPasswordError}
             />
           </div>
-          <div className={styles.formField}>
+          {resetError && (
+            <div className={styles.error}>
+              <Image src="/red_exclamation.svg" alt="Warning!" width={18} height={18} />
+              <p>{resetError}</p>
+            </div>
+          )}
+          <div>
             <LoginButton
               label="Reset"
               disabled={password !== confirmPassword || password === "" || confirmPassword === ""}
