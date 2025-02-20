@@ -1,15 +1,14 @@
 "use client";
-import { UserCredential, signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
-
-import { useEffect, useState } from "react";
+import { UserCredential, sendEmailVerification, signInWithEmailAndPassword } from "firebase/auth";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+import { getUser, updateUser } from "../api/user";
+import { auth } from "../firebase-config.js";
 
 import { LoginButton } from "./LoginButton";
 import styles from "./SignInPanel.module.css";
 import { TextBox } from "./TextBox";
-import { auth } from "../firebase-config.js";
-
-import { updateUser, getUser } from "../api/user";
 
 export default function SignInPanel() {
   const [loginInfo, setLoginInfo] = useState({
@@ -24,15 +23,15 @@ export default function SignInPanel() {
     return new Promise((resolve, reject) => {
       signInWithEmailAndPassword(auth, loginInfo.email, loginInfo.password)
         .then((userCredential) => {
-          const user = userCredential.user;
           resolve(userCredential);
         })
-        .catch((error) => {
+        .catch((error: unknown) => {
           const firebaseError = error as { code?: string; message: string };
           const errorCode = firebaseError.code ?? "unknown_error";
           const errorMessage = firebaseError.message;
           console.error(errorCode, errorMessage);
-          reject(error);
+
+          reject(new Error(errorCode));
         });
     });
   };
@@ -50,31 +49,30 @@ export default function SignInPanel() {
       .then((userCredential) => {
         const user = userCredential.user;
         if (!user.emailVerified) {
-          console.error("Email is not verified!");
           setSignInError("Email is not verified!");
         } else {
           getUser(loginInfo.email)
             .then((result) => {
               if ("data" in result) {
+                console.log("Firebase sign in successful");
+                setSignInError("");
+
                 if (result.data.firstLogin) {
-                  console.log("Firebase sign in successful");
-                  setSignInError("");
+                  // First time using logging in
                   updateUser({
-                    name: result.data.name,
-                    email: result.data.email,
+                    ...result.data,
                     firstLogin: false,
                   })
-                    .then((result) => {
-                      console.log("First login updated");
+                    .then((_) => {
+                      // TODO: replace with intro video page
+                      window.location.href = "/";
                     })
                     .catch((error) => {
                       console.error("Error updating first login: ", error);
                     });
-                  //window.location.href = "/";
                 } else {
-                  console.log("Firebase sign in successful");
-                  setSignInError("");
-                  //window.location.href = "/signup";
+                  // TODO: replace with homepage
+                  window.location.href = "/signup";
                 }
               }
             })
@@ -97,9 +95,13 @@ export default function SignInPanel() {
           console.log("Email sent.");
           setSignInError("Verification email has been sent!");
         })
-        .catch((error) => {
+        .catch((error: unknown) => {
           console.error("Error sending verification email: ", error);
-          if (error.code === "auth/too-many-requests") {
+
+          const firebaseError = error as { code?: string; message: string };
+          const errorCode = firebaseError.code ?? "unknown_error";
+
+          if (errorCode === "auth/too-many-requests") {
             setSignInError("Too many email verification requests. Please try again later.");
           }
         });

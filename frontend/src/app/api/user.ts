@@ -1,10 +1,11 @@
-import { handleAPIError, put, post, get } from "./requests";
+import { get, handleAPIError, post, put } from "./requests";
 
 import type { APIResult } from "./requests";
 
 export type User = {
   name: string;
   email: string;
+  module: number;
   firstLogin: boolean;
 };
 
@@ -36,7 +37,7 @@ export async function updateUser(user: User): Promise<APIResult<UserJSON>> {
   }
 }
 
-export async function getUser(email: String): Promise<APIResult<UserJSON>> {
+export async function getUser(email: string): Promise<APIResult<UserJSON>> {
   try {
     const response = await get(`/api/user/get/${email}`);
     const json = (await response.json()) as UserJSON;

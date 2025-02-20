@@ -1,60 +1,71 @@
 "use client";
 
+import { applyActionCode } from "firebase/auth";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+
+import WelcomePanel from "../components/WelcomePanel";
 import { auth } from "../firebase-config.js";
 
-import { applyActionCode } from "firebase/auth";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-
 import styles from "./Auth.module.css";
-import WelcomePanel from "../components/WelcomePanel";
 
 export default function Auth() {
-    const searchParams = useSearchParams();
-    const [titleMessage, setTitleMessage] = useState("Redirecting...");
-    const [message, setMessage] = useState("Please wait a moment...");
- 
-    useEffect(() => {
-        const mode = searchParams.get("mode");
-        const oobCode = searchParams.get("oobCode");
+  const searchParams = useSearchParams();
+  const actionExecuted = useRef(false);
 
-        switch (mode) {
-            case 'resetPassword':
-                window.location.href = "/resetpassword";
-                break;
-            case 'verifyEmail':
-                setTitleMessage("Validating Email...");
-                setMessage("");
-                applyActionCode(auth, oobCode as string)
-                .then(() => {
-                    console.log("email verified!");
-                    window.location.href = "/emailverified";
-                })
-                .catch((error) => {
-                    alert(error);
-                    setTitleMessage("Error validating email");
-                    setMessage("Please try again.");
-                })
-                break;
-            default:
-                setTitleMessage("Error authenticating");
-                setMessage("");
-        }
-    }, [searchParams]);
+  const [titleMessage, setTitleMessage] = useState("Redirecting...");
+  const [message, setMessage] = useState("Please wait a moment...");
 
-    return (
-        <main className={styles.container}>
-            <section className={styles.leftSide}>
-                <WelcomePanel />
-            </section>
-            <section className={styles.rightSide}>
-                <div className={styles.title}>
-                    <h1>{titleMessage}</h1>
-                    <p className={styles.text}>
-                        {message}
-                    </p>
-                </div>
-            </section>
-        </main>
-    );
+  useEffect(() => {
+    if (actionExecuted.current) return;
+
+    const mode = searchParams.get("mode");
+    const oobCode = searchParams.get("oobCode");
+
+    if (!oobCode) {
+      setTitleMessage("Error Authenticating");
+      setMessage("");
+      return;
+    }
+
+    switch (mode) {
+      case "resetPassword":
+        window.location.href = "/resetpassword";
+        break;
+      case "verifyEmail":
+        actionExecuted.current = true;
+
+        setTitleMessage("Verifying Email...");
+        setMessage("");
+
+        applyActionCode(auth, oobCode)
+          .then(() => {
+            console.log("email verified!");
+            window.location.href = "/emailverified";
+          })
+          .catch((error) => {
+            alert(error);
+            setTitleMessage("Error Verifying Email");
+            setMessage("Please try again.");
+          });
+        break;
+      default:
+        setTitleMessage("Error Authenticating");
+        setMessage("");
+    }
+  }, [searchParams]);
+
+  return (
+    <main className={styles.container}>
+      <section className={styles.leftSide}>
+        <WelcomePanel />
+      </section>
+      <section className={styles.rightSide}>
+        <div className={styles.title}>
+          <h1>{titleMessage}</h1>
+          <p className={styles.text}>{message}</p>
+        </div>
+      </section>
+    </main>
+  );
 }

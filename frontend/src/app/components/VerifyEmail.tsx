@@ -1,17 +1,16 @@
 "use client";
 import { sendEmailVerification } from "firebase/auth";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { auth } from "../firebase-config.js";
 
 import BackToSignIn from "./BackToSignIn";
 import styles from "./VerifyEmail.module.css";
-import Image from "next/image";
 
 export default function VerifyEmail() {
   const [email, setEmail] = useState<string>("");
   const [verificationError, setVerificationError] = useState("");
-  //const [user, setUser] = useState<any>(null);
 
   const resendEmail = () => {
     const user = auth.currentUser;
@@ -20,9 +19,13 @@ export default function VerifyEmail() {
         .then(() => {
           console.log("Email sent.");
         })
-        .catch((error) => {
+        .catch((error: unknown) => {
           console.error("Error sending verification email: ", error);
-          if (error.code === "auth/too-many-requests") {
+
+          const firebaseError = error as { code?: string; message: string };
+          const errorCode = firebaseError.code ?? "unknown_error";
+
+          if (errorCode === "auth/too-many-requests") {
             setVerificationError("Too many requests. Please try again later.");
           }
         });
@@ -33,7 +36,7 @@ export default function VerifyEmail() {
 
   useEffect(() => {
     const emailForSignIn = localStorage.getItem("emailForSignIn");
-    //const user = localStorage.getItem("user");
+
     if (emailForSignIn) {
       setEmail(emailForSignIn);
       localStorage.removeItem("emailForSignIn");

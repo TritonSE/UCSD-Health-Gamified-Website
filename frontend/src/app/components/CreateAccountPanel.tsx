@@ -92,6 +92,7 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
         createUser({
           name: formData.firstName + " " + formData.lastName,
           email: formData.email,
+          module: 1,
           firstLogin: true,
         })
           .then((result) => {
@@ -117,7 +118,7 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
           password: "",
         });
 
-        //alert("An error has occurred");
+        alert("An error has occurred");
       });
   };
 
