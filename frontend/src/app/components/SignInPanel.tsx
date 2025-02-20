@@ -76,8 +76,8 @@ export default function SignInPanel() {
                 }
               }
             })
-            .catch((error) => {
-              console.error("Error getting user: ", error);
+            .catch((_) => {
+              setSignInError("Error signing in.");
             });
         }
       })

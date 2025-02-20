@@ -2,6 +2,7 @@
 import {
   UserCredential,
   createUserWithEmailAndPassword,
+  deleteUser,
   sendEmailVerification,
 } from "firebase/auth";
 import Image from "next/image";
@@ -40,8 +41,6 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
     return new Promise((resolve, reject) => {
       createUserWithEmailAndPassword(auth, formData.email, formData.password)
         .then((userCredential) => {
-          const user = userCredential.user;
-
           setErrors({
             firstNameError: "",
             lastNameError: "",
@@ -50,17 +49,7 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
             otherError: "",
           });
 
-          sendEmailVerification(user)
-            .then(() => {
-              localStorage.setItem("emailForSignIn", formData.email);
-              localStorage.setItem("user", JSON.stringify(user));
-              resolve(userCredential);
-            })
-            .catch((error: Error) => {
-              setIsAccountCreated(false);
-              console.error("Error sending verification email: ", error);
-              reject(error);
-            });
+          resolve(userCredential);
         })
         .catch((error: unknown) => {
           const firebaseError = error as { code?: string; message: string };
@@ -98,27 +87,69 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
           .then((result) => {
             if (result.success) {
               console.log("MongoDB user creation successful:", userCredential.user);
+
+              sendEmailVerification(userCredential.user)
+                .then(() => {
+                  localStorage.setItem("emailForSignIn", formData.email);
+                  localStorage.setItem("user", JSON.stringify(userCredential.user));
+                })
+                .catch((error: Error) => {
+                  setIsAccountCreated(false);
+                  console.error("Error sending verification email: ", error);
+                });
+
               setIsAccountCreated(true);
             } else {
-              alert(result.error);
+              setIsAccountCreated(false);
+
+              deleteUser(userCredential.user)
+                .then(() => {
+                  setIsAccountCreated(false);
+                  setFormData({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    password: "",
+                  });
+                })
+                .catch((error: unknown) => {
+                  console.error(error);
+                });
+
+              setErrors((prev) => ({
+                ...prev,
+                ["otherError"]: "Error creating account!",
+              }));
             }
           })
           .catch((_) => {
             setIsAccountCreated(false);
+
+            deleteUser(userCredential.user)
+              .then(() => {
+                setIsAccountCreated(false);
+                setFormData({
+                  firstName: "",
+                  lastName: "",
+                  email: "",
+                  password: "",
+                });
+              })
+              .catch((error: unknown) => {
+                console.error(error);
+              });
+
+            setErrors((prev) => ({
+              ...prev,
+              ["otherError"]: "Error creating account!",
+            }));
           });
       })
-      .catch((error) => {
-        console.error("Error during signup process:", error);
-
-        setIsAccountCreated(false);
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          password: "",
-        });
-
-        alert("An error has occurred");
+      .catch((_) => {
+        setErrors((prev) => ({
+          ...prev,
+          ["otherError"]: "Error creating account!",
+        }));
       });
   };
 
