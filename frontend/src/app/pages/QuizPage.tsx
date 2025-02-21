@@ -13,36 +13,48 @@ export default function QuizPage() {
   const handleSidebarToggle = (collapsed: boolean) => {
     setIsSidebarCollapsed(collapsed);
   };
-  const sampleQuestions = [
+  const sampleQuestions: Question[] = [
     {
       question: "What is the capital of France?",
       options: ["Paris", "London", "Rome", "Berlin"],
       correctAnswer: "A.",
+      type: "single",
     },
     {
       question: "Which planet is known as the Red Planet?",
       options: ["Earth", "Mars", "Jupiter", "Venus"],
       correctAnswer: "B.",
+      type: "single",
     },
     {
       question: "What is the largest ocean on Earth?",
       options: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
       correctAnswer: "C.",
+      type: "single",
     },
     {
       question: "Who wrote 'To Kill a Mockingbird'?",
       options: ["Mark Twain", "Harper Lee", "F. Scott Fitzgerald", "J.K. Rowling"],
       correctAnswer: "B.",
+      type: "single",
     },
     {
       question: "What is the chemical symbol for gold?",
       options: ["Go", "Au", "Ag", "Fe"],
       correctAnswer: "B.",
+      type: "single",
     },
     {
       question: "Who is the new president of TSE",
       options: ["Benjamin Johnson", "Vivian Liu", "Yash Ravipati", "Eshaan Sharma"],
       correctAnswer: "A.",
+      type: "single",
+    },
+    {
+      question: "Select all that apply: Which of these are mammals?",
+      options: ["Dog", "Fish", "Bird", "Cat"],
+      correctAnswer: ["A.", "D."],
+      type: "multiple",
     },
   ];
   return (
