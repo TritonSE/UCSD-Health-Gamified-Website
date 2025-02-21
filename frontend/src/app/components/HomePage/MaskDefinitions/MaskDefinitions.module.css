@@ -1,6 +1,14 @@
 .path_mask {
   fill: none;
   stroke: white;
+  stroke-dashoffset: 0;
+}
+
+/* To avoid FOUC, inactive paths are hidden using a stroke dasharray and offset that is greater than the SVG length.
+The inactive paths will have the proper values after the useEffect is ran. */
+.inactive {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
 }
 
 @keyframes DrawPath {

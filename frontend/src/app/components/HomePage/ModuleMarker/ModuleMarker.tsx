@@ -1,14 +1,17 @@
-import { MutableRefObject, ReactNode } from "react";
+"use client";
 
-import { ModuleNumbers } from "../ModuleMap/ModuleMap";
+import { Dispatch, MutableRefObject, ReactNode, SetStateAction } from "react";
+import toast from "react-hot-toast";
+
+import { ModuleNumbers, UserData } from "../ModuleMap/ModuleMap";
 
 import styles from "./ModuleMarker.module.css";
 
 type ModuleMarkerProps = {
   bikeIsAnimating: MutableRefObject<boolean>;
-  modulePreview: number;
   moduleNumber: ModuleNumbers;
-  setModulePreview: (moduleNumber: ModuleNumbers) => void;
+  userData: UserData;
+  setUserData: Dispatch<SetStateAction<UserData>>;
   cx: string;
   cy: string;
   children: ReactNode;
@@ -16,31 +19,47 @@ type ModuleMarkerProps = {
 
 export default function ModuleMarker({
   bikeIsAnimating,
-  modulePreview,
+  userData,
+  setUserData,
   moduleNumber,
-  setModulePreview,
   cx,
   cy,
   children,
 }: ModuleMarkerProps) {
+  const modulePreview = userData.currentModule;
   const isModuleAccessible = modulePreview >= moduleNumber;
-  const isModuleNavigatable = modulePreview + 1 === moduleNumber;
+  const isModuleCompleted = userData.lastCompletedModule >= moduleNumber;
+  const isModuleNavigatable = userData.lastCompletedModule >= moduleNumber - 1;
 
   return (
     <g
-      className={`
-        ${isModuleAccessible ? styles.active : ""}
-        ${isModuleNavigatable ? styles.navigatable : ""}
-        ${!isModuleAccessible && !isModuleNavigatable ? styles.disabled : ""}
-      `}
+      className={[
+        isModuleAccessible ? styles.active : "",
+        isModuleCompleted ? styles.completed : "",
+        isModuleNavigatable ? styles.navigatable : "",
+        !isModuleAccessible && !isModuleNavigatable ? styles.disabled : "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
       onClick={() => {
         if (
           modulePreview >= moduleNumber ||
           modulePreview + 1 < moduleNumber ||
+          !isModuleNavigatable ||
           bikeIsAnimating.current
-        )
+        ) {
+          toast(
+            <div className={`${styles.module_error_toast} toast`}>
+              <p>
+                <span>Error: </span>This module is locked!{" "}
+              </p>
+              <p>{`Make sure you've submitted your answers and passed the previous module quiz.`}</p>
+            </div>,
+            { id: "module_error_toast", duration: 2500 },
+          );
           return;
-        setModulePreview(moduleNumber);
+        }
+        setUserData((prev) => ({ ...prev, currentModule: moduleNumber }));
       }}
     >
       {children}

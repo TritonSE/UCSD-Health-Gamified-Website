@@ -22,13 +22,13 @@ const BIKE_PATHS = {
 
 type BikeProps = {
   modulePreview: ModuleNumbers;
-  currentModule: ModuleNumbers;
+  initialModule: ModuleNumbers;
   bikeIsAnimating: React.MutableRefObject<boolean>;
 };
 
 const BIKE_ANIMATION_DURATION = 2;
 
-export default function Bike({ modulePreview, currentModule, bikeIsAnimating }: BikeProps) {
+export default function Bike({ modulePreview, initialModule, bikeIsAnimating }: BikeProps) {
   const bikeContainerRef = useRef<SVGGElement>(null);
   const bikePedalRef = useRef<SVGGElement>(null);
   const bikePedalRectRef = useRef<SVGRectElement>(null);
@@ -68,7 +68,7 @@ export default function Bike({ modulePreview, currentModule, bikeIsAnimating }: 
   };
 
   useEffect(() => {
-    if (modulePreview === currentModule || bikeIsAnimating.current) return;
+    if (modulePreview === initialModule || bikeIsAnimating.current) return;
     const bikeElement = bikeContainerRef.current;
     const bikePedalContainer = bikePedalRef.current;
     const bikePedalRect = bikePedalRectRef.current;
@@ -99,7 +99,7 @@ export default function Bike({ modulePreview, currentModule, bikeIsAnimating }: 
     return () => {
       bikeElement.removeEventListener("animationend", handleEndAnimation);
     };
-  }, [modulePreview, currentModule]);
+  }, [modulePreview]);
 
   return (
     // prettier-ignore

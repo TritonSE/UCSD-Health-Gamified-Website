@@ -7,36 +7,41 @@ import { ROAD_MASK_PATHS } from "./maskData";
 
 type MaskDefinitionsProps = {
   modulePreview: ModuleNumbers;
+  initialModule: ModuleNumbers;
 };
 
 const DRAW_PATH_DURATION = 1.2;
 
-export default function MaskDefinitions({ modulePreview }: MaskDefinitionsProps) {
+export default function MaskDefinitions({ modulePreview, initialModule }: MaskDefinitionsProps) {
   const maskPathRefs = useRef<SVGPathElement[]>([]);
 
   useEffect(() => {
     maskPathRefs.current.forEach((path, index) => {
-      const pathNumber = index + 1;
+      if (index < modulePreview) return;
       const svgPath = path;
       const length = svgPath.getTotalLength().toString();
       svgPath.style.strokeDasharray = length;
       svgPath.style.strokeDashoffset = length;
-      if (pathNumber <= modulePreview) {
-        svgPath.style.strokeDashoffset = "0";
-      }
     });
   }, []);
 
   useEffect(() => {
+    if (modulePreview === initialModule) return;
     const pathElement = maskPathRefs.current[modulePreview - 1];
     if (!pathElement) return;
     pathElement.style.animation = `${styles.DrawPath} ${DRAW_PATH_DURATION}s ease-in-out forwards`;
   }, [modulePreview]);
 
   return (
-    // prettier-ignore
     <defs>
-      <linearGradient id="bike_headlight_gradient" x1="437.371" y1="153.907" x2="470.953" y2="146.266" gradientUnits="userSpaceOnUse">
+      <linearGradient
+        id="bike_headlight_gradient"
+        x1="437.371"
+        y1="153.907"
+        x2="470.953"
+        y2="146.266"
+        gradientUnits="userSpaceOnUse"
+      >
         <stop stopColor="#FCD579" />
         <stop offset="1" stopColor="white" stopOpacity="0" />
       </linearGradient>
@@ -50,7 +55,12 @@ export default function MaskDefinitions({ modulePreview }: MaskDefinitionsProps)
             ref={(el) => {
               if (el) maskPathRefs.current.push(el);
             }}
-            className={styles.path_mask}
+            className={[
+              styles.path_mask,
+              modulePreview < maskPath.moduleNumber ? styles.inactive : "",
+            ]
+              .filter(Boolean)
+              .join(" ")}
             d={maskPath.d}
             stroke="white"
             strokeWidth={maskPath.strokeWidth}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import styles from "./Sidebar.module.css";
 
 export default function Sidebar() {
@@ -15,7 +16,7 @@ export default function Sidebar() {
       <button className={styles.collapseButton} onClick={toggleSidebar}>
         {isCollapsed ? ">" : "<"}
       </button>
-      {!isCollapsed }
+      {!isCollapsed}
     </nav>
   );
 }

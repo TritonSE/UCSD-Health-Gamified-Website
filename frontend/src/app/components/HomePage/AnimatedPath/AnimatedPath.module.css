@@ -1,7 +1,3 @@
-.all_road_paths {
-  opacity: 0;
-}
-
 #path_star {
   transform-box: fill-box;
   transform-origin: center;
