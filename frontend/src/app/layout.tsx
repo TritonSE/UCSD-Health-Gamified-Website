@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { Toaster } from "react-hot-toast";
 
 import type { Metadata } from "next";
 import "./globals.css";
@@ -26,7 +27,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Toaster
+          toastOptions={{
+            style: {
+              boxShadow: "none",
+              backgroundColor: "#FAFFEA",
+              borderRadius: "16",
+              maxWidth: "55ch",
+              border: "1px solid #1c3a29",
+            },
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

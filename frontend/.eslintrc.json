@@ -75,6 +75,9 @@
 
     // Disabled because of too many false positives.
     "@typescript-eslint/no-unnecessary-condition": "off",
-    "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+
+    // Disabled because of Typescript incompatibility
+    "@typescript-eslint/non-nullable-type-assertion-style": "off"
   }
 }
