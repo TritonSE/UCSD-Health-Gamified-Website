@@ -28,7 +28,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Toaster toastOptions={{ className: "custom-toast", style: { boxShadow: "none" } }} />
+        <Toaster
+          toastOptions={{
+            style: {
+              boxShadow: "none",
+              backgroundColor: "#FAFFEA",
+              borderRadius: "16",
+              maxWidth: "55ch",
+              border: "1px solid #1c3a29",
+            },
+          }}
+        />
         {children}
       </body>
     </html>

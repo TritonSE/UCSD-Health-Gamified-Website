@@ -17,6 +17,8 @@ type ModuleMarkerProps = {
   children: ReactNode;
 };
 
+const TOAST_DURATION = 2500;
+
 export default function ModuleMarker({
   bikeIsAnimating,
   userData,
@@ -42,20 +44,19 @@ export default function ModuleMarker({
         .filter(Boolean)
         .join(" ")}
       onClick={() => {
-        if (
-          modulePreview >= moduleNumber ||
-          modulePreview + 1 < moduleNumber ||
-          !isModuleNavigatable ||
-          bikeIsAnimating.current
-        ) {
+        if (modulePreview >= moduleNumber || bikeIsAnimating.current) {
+          return;
+        }
+
+        if (!isModuleNavigatable) {
           toast(
             <div className={`${styles.module_error_toast} toast`}>
               <p>
-                <span>Error: </span>This module is locked!{" "}
+                <span>Error: </span>This module is locked!
               </p>
               <p>{`Make sure you've submitted your answers and passed the previous module quiz.`}</p>
             </div>,
-            { id: "module_error_toast", duration: 2500 },
+            { id: "module_error_toast", duration: TOAST_DURATION },
           );
           return;
         }
