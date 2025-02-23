@@ -76,3 +76,9 @@
   font-weight: 700;
   line-height: 32px;
 }
+
+@media (max-width: 768px) {
+  .hideMobile {
+    display: none;
+  }
+}

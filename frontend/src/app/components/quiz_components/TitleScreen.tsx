@@ -8,7 +8,7 @@ export const TitleScreen = ({
 }: { handleStart: () => void } & React.ComponentProps<"button">) => {
   return (
     <div className={styles.titleScreen}>
-      <img src={"/TimmyStart.svg"} />
+      <img className={styles.hideMobile} src={"/TimmyStart.svg"} />
       <div className={styles.ready}>
         <h1 className={styles.title}>READY TO TAKE THE MODULE QUIZ?</h1>
         <p className={styles.description}>
