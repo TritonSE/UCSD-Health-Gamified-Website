@@ -1,18 +1,8 @@
-"use client";
-
-import { useState } from "react";
-
-import Sidebar from "../components/Sidebar/Sidebar";
 import { Question, Quiz } from "../components/quiz_components/Quiz";
 
 import styles from "./QuizPage.module.css";
 
 export default function QuizPage() {
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
-
-  const handleSidebarToggle = (collapsed: boolean) => {
-    setIsSidebarCollapsed(collapsed);
-  };
   const sampleQuestions: Question[] = [
     {
       question: "What is the capital of France?",
@@ -65,18 +55,13 @@ export default function QuizPage() {
   ];
   return (
     <div className={styles.quizContainer}>
-      <Sidebar onToggle={handleSidebarToggle} />
-      <main
-        className={`${styles.mainContent} ${isSidebarCollapsed ? styles.sidebarCollapsed : ""}`}
-      >
-        <div className={styles.quiz}>
-          <Quiz
-            title="Example Quiz"
-            description="No time limit! Make sure to answer all the questions."
-            questions={sampleQuestions}
-          />
-        </div>
-      </main>
+      <div className={styles.quiz}>
+        <Quiz
+          title="Example Quiz"
+          description="No time limit! Make sure to answer all the questions."
+          questions={sampleQuestions}
+        />
+      </div>
     </div>
   );
 }
