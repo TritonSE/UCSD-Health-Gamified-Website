@@ -7,10 +7,10 @@ import { QuizButton } from "./QuizButton";
 type MultiSelectQuestionProps = {
   question: string;
   options: string[];
-  selected: string[]; // Array of selected answers
-  onSelect: (answer: string) => void; // Toggle selection
+  selected: string[];
+  onSelect: (answer: string) => void;
   isSubmitted: boolean;
-  correctAnswers: string[]; // Array of correct answers
+  correctAnswers: string[];
   passed: boolean;
 };
 

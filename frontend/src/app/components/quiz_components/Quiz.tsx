@@ -118,7 +118,7 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
             return {
               ...q,
               options: shuffledOptions,
-              correctAnswers: newCorrectAnswers,
+              correctAnswer: newCorrectAnswers,
             };
           } else {
             // Handle single-select questions (existing logic)
@@ -146,13 +146,11 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
       const isMultiSelect = randomizedQuestions[questionIndex].type === "multiple";
 
       if (isMultiSelect) {
-        // Toggle the answer in the array
         const newAnswers = currentAnswers.includes(answer)
           ? currentAnswers.filter((a) => a !== answer)
           : [...currentAnswers, answer];
         return { ...prev, [questionIndex]: newAnswers };
       } else {
-        // Single select behavior
         return { ...prev, [questionIndex]: [answer] };
       }
     });

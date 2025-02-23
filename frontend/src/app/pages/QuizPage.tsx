@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import Sidebar from "../components/Sidebar/Sidebar";
-import { Quiz } from "../components/quiz_components/Quiz";
+import { Question, Quiz } from "../components/quiz_components/Quiz";
 
 import styles from "./QuizPage.module.css";
 
