@@ -65,7 +65,6 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
     for (const [index, answers] of Object.entries(selectedAnswers)) {
       const question = randomizedQuestions[Number(index)];
       if (question.type === "multiple") {
-        console.log(question, " question ", question.correctAnswer, " correct answer ");
         const isCorrect =
           answers.length === question.correctAnswer.length &&
           answers.every((a) => question.correctAnswer.includes(a));
