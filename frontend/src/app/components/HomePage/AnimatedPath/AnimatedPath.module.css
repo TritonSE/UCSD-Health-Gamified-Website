@@ -1,0 +1,18 @@
+#path_star {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.active {
+  cursor: pointer;
+  transition: scale 0.2s;
+}
+
+.active:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.inactive {
+  cursor: not-allowed;
+}
