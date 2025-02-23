@@ -22,7 +22,7 @@ export const Grade = ({ score }: GradeProps) => {
   }
   return (
     <div className={styles.grade}>
-      <img src={timmy} />
+      <img className={styles.hideMobile} src={timmy} />
       <div className={styles.score}>
         <div className={styles.gradeScore}>{score + "%"}</div>
         <div className={styles.how}>{how}</div>
