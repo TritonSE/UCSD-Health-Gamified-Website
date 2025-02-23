@@ -12,7 +12,10 @@ export type TextBoxProps = {
   caption?: string;
   captionLabel?: string;
   placeholder: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  onChange: (value: string) => void;
+  onBlur?: () => void;
+  error?: string;
 };
 
 export function TextBox({
@@ -22,23 +25,22 @@ export function TextBox({
   linkLabel,
   caption,
   placeholder,
+  value,
   onChange,
+  onBlur,
+  error,
 }: TextBoxProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [currentInputType, setCurrentInputType] = useState(type);
-  const [inputValue, setInputValue] = useState("");
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-    if (onChange) {
-      onChange(event);
-    }
-  };
 
   const togglePasswordVisibility = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setShowPassword((prev) => !prev);
     setCurrentInputType((prev) => (prev === "password" ? "text" : "password"));
+  };
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange(e.target.value);
   };
 
   return (
@@ -47,15 +49,18 @@ export function TextBox({
         <label className={styles.label}>
           <p>{label}</p>
         </label>
-        <div className={styles.inputContainer}>
+        <div
+          className={`${styles.inputContainer} ${error && type === "password" ? styles.errorBox : ""}`}
+        >
           <input
-            onChange={handleChange}
-            value={inputValue}
+            onChange={handleInputChange}
+            value={value}
+            onBlur={onBlur}
             type={currentInputType}
             placeholder={placeholder}
             className={styles.input}
           />
-          {type === "password" && inputValue.length > 0 && (
+          {type === "password" && value.length > 0 && (
             <button
               onClick={togglePasswordVisibility}
               className={styles.visibilityIcon}
@@ -73,7 +78,17 @@ export function TextBox({
         </div>
       </form>
       <div className={styles.link}>{linkLabel && <a href={link}>{linkLabel}</a>}</div>
-      <div className={styles.caption}>{caption && <p>{caption}</p>}</div>
+      <div className={styles.caption}>
+        {caption && !error && value && value.length === 0 && <p>{caption}</p>}
+      </div>
+      <div>
+        {error && (
+          <div className={styles.error}>
+            <Image src="/red_exclamation.svg" alt="Warning!" width={12} height={12} />
+            <p>{error}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

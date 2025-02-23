@@ -1,0 +1,47 @@
+/* background */
+.container {
+  position: relative;
+  background: rgba(187, 213, 103, 1);
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 68vh;
+}
+
+/* text */
+.title {
+  font-size: 32px;
+  color: black;
+  font-family: "Rammetto One";
+  margin-left: 8vw;
+  padding-top: 16vh;
+  font-weight: 400;
+}
+
+.description {
+  font-size: 22px;
+  color: black;
+  font-family: "DM Sans";
+  margin-top: 2vh;
+  margin-left: 8vw;
+  font-weight: 400;
+  margin-right: 2vw;
+  margin-bottom: 14vh;
+}
+
+/* image */
+.imageContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: auto;
+  height: auto;
+  padding: 2vh 5vw;
+}

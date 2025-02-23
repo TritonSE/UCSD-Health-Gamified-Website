@@ -51,3 +51,31 @@
   text-underline-offset: auto;
   text-underline-position: from-font;
 }
+
+.error {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+
+  border-radius: 4px;
+  border: 1px solid var(--Secondary-Functional-Error, #b93b3b26);
+  background-color: #b93b3b26;
+}
+
+.error p {
+  /* Caption/Small */
+  opacity: 100%;
+  color: var(--Functional-Error, #b93b3b);
+  font-family: "DM Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 15px */
+  letter-spacing: 0.2px;
+}

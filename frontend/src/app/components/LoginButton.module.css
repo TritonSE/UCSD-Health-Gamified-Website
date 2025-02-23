@@ -11,21 +11,23 @@
   flex-shrink: 0;
   border-radius: 4px;
   border: 1px solid var(--Secondary-Accent1, #1c3a29);
-  background-color: transparent;
+  background-color: #1c3a29;
   transition: background-color 0.2s;
   cursor: pointer;
+  color: white;
 }
 
-.loginButton:is(:focus-visible, :hover) {
+.loginButton:is(:enabled, :focus-visible, :hover) {
   background-color: #1c3a29;
+  border: 1px solid var(--Secondary-Accent1, #1c3a29);
 }
 
-.loginButton:is(:focus-visible, :hover) p {
+.loginButton:is(:enabled, :focus-visible, :hover) p {
   color: white;
 }
 
 .loginButton p {
-  color: var(--Secondary-Accent1, #1c3a29);
+  color: var(--Secondary-Accent1, white);
   text-align: center;
   /* Body/Medium (Reg) */
   font-family: "DM Sans";
@@ -33,4 +35,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 150% */
+}
+
+.loginButton:disabled {
+  border: 1px solid var(--Secondary-Accent1, #7cad91);
+  background-color: #7cad91;
 }
