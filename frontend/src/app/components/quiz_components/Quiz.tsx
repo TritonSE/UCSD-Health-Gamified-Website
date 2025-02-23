@@ -43,7 +43,6 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
   const [label, setLabel] = useState<string>("Next Module");
   const [quizTitle, setTitle] = useState<string>(title);
   const [score, setScore] = useState<number>(0);
-  const [passed, setPassed] = useState<boolean>(false);
   const [randomizedQuestions, setRandomizedQuestions] = useState(() => originalQuestions);
 
   const handlePressCancel = () => {
@@ -77,10 +76,8 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
     }
     const calculatedScore = (correctCount / randomizedQuestions.length) * 100;
     if (calculatedScore < 75) {
-      setPassed(false);
       setLabel("Retake Quiz");
     } else if (calculatedScore > 75) {
-      setPassed(true);
       setLabel("Next Module");
     }
     if (calculatedScore < 75 && calculatedScore > 74) {
@@ -199,7 +196,6 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
                       }}
                       isSubmitted={submitted}
                       correctAnswers={q.correctAnswer as string[]}
-                      passed={passed}
                     />
                   ) : (
                     <Question
@@ -213,9 +209,8 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
                         handleSelect(index, answer);
                       }}
                       isSubmitted={submitted}
-                      isCorrect={selectedAnswers[index] === q.correctAnswer}
+                      isCorrect={selectedAnswers[index]?.[0] === q.correctAnswer}
                       correctAnswer={q.correctAnswer as string}
-                      passed={passed}
                     />
                   ),
                 )}

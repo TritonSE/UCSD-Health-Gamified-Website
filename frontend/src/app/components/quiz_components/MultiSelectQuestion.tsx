@@ -11,7 +11,6 @@ type MultiSelectQuestionProps = {
   onSelect: (answer: string) => void;
   isSubmitted: boolean;
   correctAnswers: string[];
-  passed: boolean;
 };
 
 export const MultiSelectQuestion = ({
@@ -21,7 +20,6 @@ export const MultiSelectQuestion = ({
   onSelect,
   isSubmitted,
   correctAnswers,
-  passed,
 }: MultiSelectQuestionProps) => {
   const letters = ["A.", "B.", "C.", "D."];
 
@@ -29,13 +27,10 @@ export const MultiSelectQuestion = ({
     const currentLetter = letters[buttonIndex];
 
     if (isSubmitted) {
-      const isCorrectAnswer = correctAnswers.includes(currentLetter);
-      const wasSelected = selected.includes(currentLetter);
-
-      if (isCorrectAnswer && wasSelected) {
+      if (correctAnswers.includes(currentLetter)) {
         return "correct";
       }
-      if (wasSelected) {
+      if (selected.includes(currentLetter)) {
         return "wrong";
       }
     }
@@ -56,10 +51,8 @@ export const MultiSelectQuestion = ({
   };
 
   const getIncorrectMessage = () => {
-    if (!passed && !isCorrect()) {
-      return "That is not the correct combination of answers.";
-    }
     const correctAnswerTexts = correctAnswers
+      .sort()
       .map((letter) => {
         const index = letters.indexOf(letter);
         return `${letter} ${options[index]}`;
@@ -71,6 +64,7 @@ export const MultiSelectQuestion = ({
   return (
     <div className={styles.quizContainer}>
       <span className={styles.question}>{question}</span>
+      {!isSubmitted && <span className={styles.selectAll}>*Select all that apply.</span>}
       <div className={styles.buttonsContainer}>
         {options.map((option, index) => (
           <QuizButton
@@ -79,6 +73,7 @@ export const MultiSelectQuestion = ({
             kind={getButtonState(index)}
             letter={letters[index] as "A." | "B." | "C." | "D."}
             submitted={isSubmitted}
+            questionType="Multiple"
             onClick={() => {
               toggleSelection(letters[index]);
             }}

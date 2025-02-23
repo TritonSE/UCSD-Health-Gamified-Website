@@ -19,6 +19,7 @@ export type ButtonProps = {
   kind?: "primary" | "selected" | "correct" | "wrong";
   letter?: "A." | "B." | "C." | "D." | "E.";
   submitted?: boolean;
+  questionType?: "Single" | "Multiple";
 } & React.ComponentProps<"button">;
 
 /**
@@ -36,11 +37,28 @@ export type ButtonProps = {
  * with our own styling and restrictions on what can be put inside of it.
  */
 export const QuizButton = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
-  { label, submitted = false, kind = "primary", letter = "A.", className, ...props },
+  {
+    label,
+    submitted = false,
+    kind = "primary",
+    letter = "A.",
+    questionType = "Single",
+    className,
+    ...props
+  },
   ref,
 ) {
   let icon = null;
-  let buttonClass = styles.button;
+  let buttonClass;
+  switch (questionType) {
+    case "Single":
+      buttonClass = styles.button;
+      break;
+    case "Multiple":
+      buttonClass = styles.multipleButton;
+      break;
+  }
+
   switch (kind) {
     case "primary":
       buttonClass += ` ${styles.primary}`;

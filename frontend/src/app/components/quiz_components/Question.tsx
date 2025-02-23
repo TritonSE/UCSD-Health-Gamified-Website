@@ -12,7 +12,6 @@ type QuestionProps = {
   isSubmitted: boolean;
   isCorrect: boolean;
   correctAnswer: string;
-  passed: boolean;
 };
 
 export const Question = ({
@@ -23,7 +22,6 @@ export const Question = ({
   isSubmitted,
   isCorrect,
   correctAnswer,
-  passed,
 }: QuestionProps) => {
   const letters = ["A.", "B.", "C.", "D."];
 
@@ -41,10 +39,7 @@ export const Question = ({
 
   const correctAnswerIndex = letters.indexOf(correctAnswer);
   const correctAnswerText = correctAnswerIndex !== -1 ? options[correctAnswerIndex] : "";
-  let incorrectDesc = `The correct answer is: ${correctAnswer} ${correctAnswerText}`;
-  if (!passed && !isCorrect) {
-    incorrectDesc = "That is not the correct answer.";
-  }
+  const incorrectDesc = `The correct answer is: ${correctAnswer} ${correctAnswerText}`;
   return (
     <div className={styles.quizContainer}>
       <span className={styles.question}>{question}</span>
