@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import styles from "./Grade.module.css";
 
 type GradeProps = {
@@ -22,7 +24,13 @@ export const Grade = ({ score }: GradeProps) => {
   }
   return (
     <div className={styles.grade}>
-      <img className={styles.hideMobile} src={timmy} />
+      <Image
+        className={styles.hideMobile}
+        src={timmy}
+        width={230}
+        height={250}
+        alt="Timmy the Tire Grade"
+      />
       <div className={styles.score}>
         <div className={styles.gradeScore}>{score + "%"}</div>
         <div className={styles.how}>{how}</div>

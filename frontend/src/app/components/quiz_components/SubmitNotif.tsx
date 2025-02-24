@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 import styles from "./Notif.module.css";
@@ -9,7 +10,12 @@ export const SubmitNotif = ({
 }: { cancelFunc: () => void } & { submitFunc: () => void } & React.ComponentProps<"button">) => {
   return (
     <div className={styles.notif}>
-      <img src={"/TimmySubmit.svg"} />
+      <Image
+        src="/TimmySubmit.svg"
+        width={165}
+        height={160}
+        alt="Timmy the Tire Submit notification"
+      />
       <div className={styles.info}>
         <p className={styles.title}>Submit Quiz?</p>
         <p className={styles.description}>You are about to submit your quiz.</p>

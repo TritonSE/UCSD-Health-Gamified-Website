@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState } from "react";
 
 import { ExitNotif } from "./ExitNotif";
@@ -159,7 +160,14 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
         <div className={styles.exitQuiz}>
           {!submitted && (
             <div className={styles.exit}>
-              <img src={"/close.svg"} style={{ cursor: "pointer" }} onClick={handlePressCancel} />
+              <Image
+                src={"/close.svg"}
+                width={24}
+                height={24}
+                alt="Exit Image"
+                style={{ cursor: "pointer" }}
+                onClick={handlePressCancel}
+              />
               <span className={styles.exitText} onClick={handlePressCancel}>
                 Exit Quiz
               </span>

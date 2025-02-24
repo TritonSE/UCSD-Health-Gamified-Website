@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 import styles from "./QuizButton.module.css";
@@ -68,11 +69,11 @@ export const QuizButton = React.forwardRef<HTMLButtonElement, ButtonProps>(funct
       break;
     case "correct":
       buttonClass += ` ${styles.correct}`;
-      icon = <img src={"/correct.svg"} />; // Checkmark
+      icon = <Image src="/correct.svg" width={20} height={20} alt="correct sign" />; // Checkmark
       break;
     case "wrong":
       buttonClass += ` ${styles.wrong}`;
-      icon = <img src={"/incorrect.svg"} />; // X mark
+      icon = <Image src="/incorrect.svg" width={20} height={20} alt="incorrect sign" />; // X mark
       break;
   }
   if (!submitted) {

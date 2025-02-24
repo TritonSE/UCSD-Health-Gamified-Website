@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 import styles from "./TitleScreen.module.css";
@@ -8,7 +9,13 @@ export const TitleScreen = ({
 }: { handleStart: () => void } & React.ComponentProps<"button">) => {
   return (
     <div className={styles.titleScreen}>
-      <img className={styles.hideMobile} src={"/TimmyStart.svg"} />
+      <Image
+        className={styles.hideMobile}
+        src="/TimmyStart.svg"
+        width={280}
+        height={271}
+        alt="Timmy the Tire Start picture"
+      />
       <div className={styles.ready}>
         <h1 className={styles.title}>READY TO TAKE THE MODULE QUIZ?</h1>
         <p className={styles.description}>

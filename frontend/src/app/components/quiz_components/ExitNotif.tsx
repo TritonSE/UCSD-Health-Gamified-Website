@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 import styles from "./Notif.module.css";
@@ -9,7 +10,7 @@ export const ExitNotif = ({
 }: { cancelFunc: () => void } & { exitFunc: () => void } & React.ComponentProps<"button">) => {
   return (
     <div className={styles.notif}>
-      <img src={"/TimmyExit.svg"} />
+      <Image src="/TimmyExit.svg" width={144} height={160} alt="Timmy the Tire Exit" />
       <div className={styles.info}>
         <p className={styles.title}>Exit Quiz?</p>
         <p className={styles.description}>Your progress will not be saved.</p>
