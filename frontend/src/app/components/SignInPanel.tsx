@@ -1,6 +1,10 @@
 "use client";
-
+import { UserCredential, sendEmailVerification, signInWithEmailAndPassword } from "firebase/auth";
+import Image from "next/image";
 import { useEffect, useState } from "react";
+
+import { getUser, updateUser } from "../api/user";
+import { auth } from "../firebase-config.js";
 
 import { LoginButton } from "./LoginButton";
 import styles from "./SignInPanel.module.css";
@@ -12,7 +16,25 @@ export default function SignInPanel() {
     password: "",
   });
   const [emailError, setEmailError] = useState("");
+  const [signInError, setSignInError] = useState("");
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+
+  const firebaseAuth = (): Promise<UserCredential> => {
+    return new Promise((resolve, reject) => {
+      signInWithEmailAndPassword(auth, loginInfo.email, loginInfo.password)
+        .then((userCredential) => {
+          resolve(userCredential);
+        })
+        .catch((error: unknown) => {
+          const firebaseError = error as { code?: string; message: string };
+          const errorCode = firebaseError.code ?? "unknown_error";
+          const errorMessage = firebaseError.message;
+          console.error(errorCode, errorMessage);
+
+          reject(new Error(errorCode));
+        });
+    });
+  };
 
   const handleChange = (field: string, value: string) => {
     setLoginInfo((prev) => ({
@@ -21,8 +43,71 @@ export default function SignInPanel() {
     }));
   };
 
-  const handleSubmit = () => {
-    console.log("placeholder");
+  const handleSubmit = (e?: React.FormEvent<HTMLFormElement>) => {
+    if (e) e.preventDefault();
+    firebaseAuth()
+      .then((userCredential) => {
+        const user = userCredential.user;
+        if (!user.emailVerified) {
+          setSignInError("Email is not verified!");
+        } else {
+          getUser(loginInfo.email)
+            .then((result) => {
+              if ("data" in result) {
+                console.log("Firebase sign in successful");
+                setSignInError("");
+
+                if (result.data.firstLogin) {
+                  // First time using logging in
+                  updateUser({
+                    ...result.data,
+                    firstLogin: false,
+                  })
+                    .then((_) => {
+                      // TODO: replace with intro video page
+                      window.location.href = "/";
+                    })
+                    .catch((error) => {
+                      console.error("Error updating first login: ", error);
+                    });
+                } else {
+                  // TODO: replace with homepage
+                  window.location.href = "/signup";
+                }
+              }
+            })
+            .catch((_) => {
+              setSignInError("Error signing in.");
+            });
+        }
+      })
+      .catch((error) => {
+        console.error("Error during the sign-in process:", error);
+        setSignInError("Incorrect email or password.");
+      });
+  };
+
+  const sendEmail = () => {
+    const user = auth.currentUser;
+    if (user) {
+      sendEmailVerification(user)
+        .then(() => {
+          console.log("Email sent.");
+          setSignInError("Verification email has been sent!");
+        })
+        .catch((error: unknown) => {
+          console.error("Error sending verification email: ", error);
+
+          const firebaseError = error as { code?: string; message: string };
+          const errorCode = firebaseError.code ?? "unknown_error";
+
+          if (errorCode === "auth/too-many-requests") {
+            setSignInError("Too many email verification requests. Please try again later.");
+          }
+        });
+    } else {
+      console.error("No user found.");
+    }
   };
 
   const trackEmail = (name: string) => {
@@ -76,6 +161,26 @@ export default function SignInPanel() {
         </a>
       </div>
       <br />
+      <div>
+        {signInError && (
+          <div className={styles.error}>
+            <Image src="/red_exclamation.svg" alt="Warning!" width={18} height={18} />
+            <p>
+              {signInError}{" "}
+              {signInError === "Email is not verified!" && (
+                <a href="#" onClick={sendEmail}>
+                  <u>Click to send</u>
+                </a>
+              )}
+              {signInError === "Verification email has been sent!" && (
+                <a href="#" onClick={sendEmail}>
+                  <u>Click to resend</u>
+                </a>
+              )}
+            </p>
+          </div>
+        )}
+      </div>
       <div className={styles.createAccount}>
         <LoginButton label="Sign in" disabled={!isButtonEnabled} onClick={handleSubmit} />
         <p className={styles.signInLink}>
