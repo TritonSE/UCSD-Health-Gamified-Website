@@ -85,7 +85,10 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
     } else {
       setScore(Math.round(calculatedScore));
     }
-    window.scrollTo(0, 0);
+    const quizElement = document.getElementById("Quiz");
+    if (quizElement) {
+      quizElement.scrollTop = 0;
+    }
     setTitle(quizTitle + " Results");
     setSubmitted(true);
     setCheckSubmit(false);
@@ -154,7 +157,7 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
   };
 
   return (
-    <div className={styles.bigDiv}>
+    <div id="Quiz" className={styles.bigDiv}>
       {!starting && <TitleScreen handleStart={handleStart} />}
       {starting && (
         <div className={styles.exitQuiz}>
