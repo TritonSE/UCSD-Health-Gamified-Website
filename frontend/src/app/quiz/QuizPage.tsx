@@ -31,7 +31,7 @@ export default function QuizPage() {
     },
     {
       question: "What is the chemical symbol for gold?",
-      options: ["Go", "Au", "Ag", "Fe"],
+      options: ["Go", "Au", "Ag", "Fe", "Na"],
       correctAnswer: "B.",
       type: "single",
     },
@@ -43,8 +43,8 @@ export default function QuizPage() {
     },
     {
       question: "Select all that apply: Which of these are mammals?",
-      options: ["Dog", "Fish", "Bird", "Cat"],
-      correctAnswer: ["A.", "D."],
+      options: ["Dog", "Fish", "Bird", "Cat", "Human"],
+      correctAnswer: ["A.", "D.", "E."],
       type: "multiple",
     },
     {

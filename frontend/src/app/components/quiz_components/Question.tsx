@@ -23,7 +23,7 @@ export const Question = ({
   isCorrect,
   correctAnswer,
 }: QuestionProps) => {
-  const letters = ["A.", "B.", "C.", "D."];
+  const letters = ["A.", "B.", "C.", "D.", "E."];
 
   const getButtonState = (buttonIndex: number) => {
     if (isSubmitted && letters[buttonIndex] === correctAnswer) {

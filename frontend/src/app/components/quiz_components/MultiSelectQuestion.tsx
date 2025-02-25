@@ -21,7 +21,7 @@ export const MultiSelectQuestion = ({
   isSubmitted,
   correctAnswers,
 }: MultiSelectQuestionProps) => {
-  const letters = ["A.", "B.", "C.", "D."];
+  const letters = ["A.", "B.", "C.", "D.", "E."];
 
   const getButtonState = (buttonIndex: number) => {
     const currentLetter = letters[buttonIndex];
@@ -71,7 +71,7 @@ export const MultiSelectQuestion = ({
             key={index}
             label={option}
             kind={getButtonState(index)}
-            letter={letters[index] as "A." | "B." | "C." | "D."}
+            letter={letters[index] as "A." | "B." | "C." | "D." | "E."}
             submitted={isSubmitted}
             questionType="Multiple"
             onClick={() => {

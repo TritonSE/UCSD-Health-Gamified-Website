@@ -101,7 +101,7 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
     setRandomizedQuestions(
       shuffleArray(
         originalQuestions.map((q: Question) => {
-          const letters = ["A.", "B.", "C.", "D."];
+          const letters = ["A.", "B.", "C.", "D.", "E."];
           const shuffledOptions = shuffleArray(q.options);
 
           if (q.type === "multiple") {
