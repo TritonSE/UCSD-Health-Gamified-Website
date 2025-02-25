@@ -16,10 +16,10 @@ import { LoginButton } from "./LoginButton";
 import { TextBox } from "./TextBox";
 
 export type CreateAccountPanelProps = {
-  setIsAccountCreated: React.Dispatch<React.SetStateAction<boolean>>;
+  setAccountCreated: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccountPanelProps) {
+export default function CreateAccountPanel({ setAccountCreated }: CreateAccountPanelProps) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -58,7 +58,7 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
 
           console.log(errorCode, errorMessage);
 
-          setIsAccountCreated(false);
+          setAccountCreated("");
 
           if (errorCode === "auth/email-already-in-use") {
             setErrors((prev) => ({
@@ -90,21 +90,18 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
 
               sendEmailVerification(userCredential.user)
                 .then(() => {
-                  localStorage.setItem("emailForSignIn", formData.email);
-                  localStorage.setItem("user", JSON.stringify(userCredential.user));
+                  setAccountCreated(formData.email);
                 })
                 .catch((error: Error) => {
-                  setIsAccountCreated(false);
+                  setAccountCreated("");
                   console.error("Error sending verification email: ", error);
                 });
-
-              setIsAccountCreated(true);
             } else {
-              setIsAccountCreated(false);
+              setAccountCreated("");
 
               deleteUser(userCredential.user)
                 .then(() => {
-                  setIsAccountCreated(false);
+                  setAccountCreated("");
                   setFormData({
                     firstName: "",
                     lastName: "",
@@ -123,11 +120,11 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
             }
           })
           .catch((_) => {
-            setIsAccountCreated(false);
+            setAccountCreated("");
 
             deleteUser(userCredential.user)
               .then(() => {
-                setIsAccountCreated(false);
+                setAccountCreated("");
                 setFormData({
                   firstName: "",
                   lastName: "",

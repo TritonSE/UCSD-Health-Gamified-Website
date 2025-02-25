@@ -1,15 +1,18 @@
 "use client";
 import { sendEmailVerification } from "firebase/auth";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { auth } from "../firebase-config.js";
 
 import BackToSignIn from "./BackToSignIn";
 import styles from "./VerifyEmail.module.css";
 
-export default function VerifyEmail() {
-  const [email, setEmail] = useState<string>("");
+export type VerifyEmailProps = {
+  email: string;
+};
+
+export default function VerifyEmail({ email }: VerifyEmailProps) {
   const [verificationError, setVerificationError] = useState("");
 
   const resendEmail = () => {
@@ -33,17 +36,6 @@ export default function VerifyEmail() {
       console.error("No user found.");
     }
   };
-
-  useEffect(() => {
-    const emailForSignIn = localStorage.getItem("emailForSignIn");
-
-    if (emailForSignIn) {
-      setEmail(emailForSignIn);
-      localStorage.removeItem("emailForSignIn");
-      localStorage.setItem("emailForVerify", emailForSignIn);
-      console.log("Email for verify: ", localStorage.getItem("emailForVerify"));
-    }
-  });
 
   return (
     <div className={styles.verifyEmail}>

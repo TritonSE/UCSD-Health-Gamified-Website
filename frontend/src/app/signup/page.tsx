@@ -9,7 +9,7 @@ import WelcomePanel from "../components/WelcomePanel";
 import styles from "./SignUp.module.css";
 
 export default function SignUp() {
-  const [isAccountCreated, setIsAccountCreated] = useState(false);
+  const [accountCreated, setAccountCreated] = useState("");
 
   return (
     <main className={styles.container}>
@@ -17,10 +17,10 @@ export default function SignUp() {
         <WelcomePanel />
       </section>
       <section className={styles.rightSide}>
-        {isAccountCreated ? (
-          <VerifyEmail />
+        {accountCreated !== "" ? (
+          <VerifyEmail email={accountCreated} />
         ) : (
-          <CreateAccountPanel setIsAccountCreated={setIsAccountCreated} />
+          <CreateAccountPanel setAccountCreated={setAccountCreated} />
         )}
       </section>
     </main>
