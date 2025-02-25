@@ -87,7 +87,7 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
     }
     const quizElement = document.getElementById("Quiz");
     if (quizElement) {
-      quizElement.scrollTop = 0;
+      quizElement.scrollTo({ top: 0, behavior: "smooth" });
     }
     setTitle(quizTitle + " Results");
     setSubmitted(true);

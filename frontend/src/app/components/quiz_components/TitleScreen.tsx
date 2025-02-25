@@ -12,7 +12,7 @@ export const TitleScreen = ({
       <Image
         className={styles.hideMobile}
         src="/TimmyStart.svg"
-        width={280}
+        width={260}
         height={271}
         alt="Timmy the Tire Start picture"
       />
