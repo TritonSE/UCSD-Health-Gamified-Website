@@ -8,6 +8,7 @@ export default function Mod1Factor3() {
   // NOTE: we could probably move cardStyle into a separate CSS file?
   const cardStyle = {
     container: {
+      backgroundColor: "#bbd567",
       width: "20%",
       borderRadius: "20px",
       aspectRatio: "1 / 1",
@@ -16,6 +17,7 @@ export default function Mod1Factor3() {
       alignItems: "center",
     },
     container_flipped: {
+      backgroundColor: "#f6ffd7",
       width: "20%",
       borderRadius: "20px",
       aspectRatio: "1 / 1",
