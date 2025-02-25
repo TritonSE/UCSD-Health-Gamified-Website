@@ -4,6 +4,7 @@
   align-items: flex-start;
   gap: 40px;
   align-self: stretch;
+  margin-top: 25px;
 }
 
 .score {
