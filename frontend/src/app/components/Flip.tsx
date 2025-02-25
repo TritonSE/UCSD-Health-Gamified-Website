@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+
+import styles from "./Flip.module.css";
 
 export type FlipProps = {
   front_icon?: string;
@@ -16,31 +20,41 @@ export type FlipProps = {
 
 export default function Flip({
   front_icon,
-  front_icon_alt,
+  front_icon_alt = "default alt text",
   front_text,
   back_text,
-  styles,
+  styles: customStyles,
 }: FlipProps) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   return (
-    <div style={styles?.container}>
+    <div
+      className={`${styles.container} ${isFlipped ? styles.container_flipped : ""}`}
+      style={customStyles?.container}
+      onMouseEnter={() => {
+        setIsFlipped(true);
+      }}
+      onMouseLeave={() => {
+        setIsFlipped(false);
+      }}
+    >
       {/* Front */}
-      <div>
+      <div className={styles.front} style={customStyles?.container}>
         {front_icon && (
           <Image
-            style={styles?.icon}
+            style={customStyles?.icon}
             src={front_icon}
-            layout="responsive"
             width={69}
             height={69}
             alt={front_icon_alt}
           />
         )}
-        <div style={styles?.title}>{front_text}</div>
+        <div style={customStyles?.title}>{front_text}</div>
       </div>
       {/* Back */}
-      {/* <div>
-                <p>{back_text}</p>
-            </div> */}
+      <div className={styles.back} style={customStyles?.container_flipped}>
+        <p style={customStyles?.title}>{back_text}</p>
+      </div>
     </div>
   );
 }
