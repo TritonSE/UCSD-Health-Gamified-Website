@@ -42,9 +42,13 @@ export function TextBox({
     onChange(e.target.value);
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <div className={styles.textBox}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label className={styles.label}>
           <p>{label}</p>
         </label>
