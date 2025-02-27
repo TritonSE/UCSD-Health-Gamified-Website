@@ -1,6 +1,6 @@
-import Mod2Maintain from "./components/Mod2Maintain";
-import Mod2Title from "./components/Mod2Title";
-import Sidebar from "./components/HomePage/Sidebar/Sidebar";
+import Mod2Maintain from "../components/Mod2Maintain";
+import Mod2Title from "../components/Mod2Title";
+import Sidebar from "../components/HomePage/Sidebar/Sidebar";
 
 import styles from "./page.module.css";
 

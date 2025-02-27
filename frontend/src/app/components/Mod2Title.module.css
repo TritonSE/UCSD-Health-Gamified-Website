@@ -1,0 +1,46 @@
+/* background + layout */
+.container {
+    background-color: var(--background);
+    width: 100%;
+    position: relative;
+    height: 32vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* text */
+  .subtitle {
+    font-size: 28px;
+    color: var(--foreground);
+    font-family: "DM Sans";
+    margin-top: 20vh;
+    margin-left: 8vw;
+    font-weight: 400;
+  }
+  
+  .title {
+    font-size: 40px;
+    color: var(--foreground);
+    font-family: "Rammetto One";
+    margin-left: 8vw;
+    margin-bottom: 10vh;
+    font-weight: 400;
+    max-width: 933px;
+    margin-top: 195px;
+  }
+  
+  /* mascot */
+  .mascot {
+    position: absolute;
+    bottom: -108px;
+    right: 80px;
+    z-index: 0;
+  }
+  
+  .mascotHand {
+    position: absolute;
+    bottom: -10px;
+    right: 116px;
+    z-index: 2;
+  }
