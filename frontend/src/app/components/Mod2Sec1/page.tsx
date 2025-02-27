@@ -1,6 +1,6 @@
-import Mod2Maintain from "../components/Mod2Maintain";
-import Mod2Title from "../components/Mod2Title";
-import Sidebar from "../components/HomePage/Sidebar/Sidebar";
+import Mod2Maintain from "../Mod2Maintain";
+import Mod2Title from "../Mod2Title";
+import Sidebar from "../HomePage/Sidebar/Sidebar";
 import styles from "./mod2.module.css"
 
 export default function Section1() {
