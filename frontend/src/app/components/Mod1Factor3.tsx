@@ -35,7 +35,7 @@ export default function Mod1Factor3() {
     },
   };
   return (
-    <>
+    <div style={{ marginTop: "80px" }}>
       <Mod1FactorTitle number={3} step="Evaluate key features" />
       <div className={styles.row}>
         <Flip
@@ -71,6 +71,6 @@ export default function Mod1Factor3() {
           styles={cardStyle}
         />
       </div>
-    </>
+    </div>
   );
 }

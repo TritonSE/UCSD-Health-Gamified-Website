@@ -5,7 +5,7 @@ import Mod1FactorTitle from "./Mod1FactorTitle";
 
 export default function Mod1Factor4() {
   return (
-    <>
+    <div style={{ marginTop: "80px" }}>
       <Mod1FactorTitle number={4} step="Set a budget" />
       <InfoItem
         icon={"/module1/feature_icon.svg"}
@@ -17,6 +17,6 @@ export default function Mod1Factor4() {
         content={"Determine your budget to narrow down your options."}
         iconAlt={"Dollar icon"}
       ></InfoItem>
-    </>
+    </div>
   );
 }

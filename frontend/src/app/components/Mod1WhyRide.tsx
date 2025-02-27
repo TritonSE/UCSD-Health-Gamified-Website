@@ -1,13 +1,12 @@
 import React from "react";
 
+import styles from "./Mod1WhyRide.module.css";
+
 export default function Mod1WhyRide() {
   return (
-    <>
-      <br />
-      <br />
-      <br /> {/* TODO: REMOVE LATER */}
-      <h1>Why ride?</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>WHY RIDE A LEGAL E-BIKE?</h1>
       {/* note: heading above seems styled the same as INTRODUCTION */}
-    </>
+    </div>
   );
 }
