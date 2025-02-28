@@ -7,36 +7,31 @@ export default function Mod1Factor5() {
   const titles = ["CLASS 1", "CLASS 2", "CLASS 3"];
   const cards = [
     {
-      icon: "/module1/road_icon.svg",
       content:
         "Equipped with a pedal-assist motor that activates only when you're pedaling (no throttle). The motor's assistance is limited to 20 mph (32 km/h).",
-      imageUrl: "/module1/bike_commute.svg",
-      iconAlt: "Road icon",
-      imageAlt: "Bike for commuting",
+      content2title: "Understanding the Difference",
+      content2:
+        "Ideal for commuting and recreational riding, especially in areas with speed limits.",
     },
     {
-      icon: "/module1/beach_icon.svg",
       content:
         "Equipped with a throttle that allows you to accelerate without pedaling. The motor's assistance is limited to 20 mph (32 km/h).",
-      imageUrl: "/module1/bike_recreational.svg",
-      iconAlt: "Beach icon",
-      imageAlt: "Bike for recreational riding",
+      content2title: "Understanding the Difference",
+      content2: "Offers more convenience for riders who prefer not to pedal constantly.",
     },
     {
-      icon: "/module1/mountain_icon.svg",
       content:
         "Only for riders age 16 and older. Equipped with a pedal-assist motor that activates only when you're pedaling (no throttle). The motor's assistance is limited to 28 mph (45 km/h).",
-      imageUrl: "/module1/bike_mountain.svg",
-      iconAlt: "Mountain icon",
-      imageAlt: "Bike for mountain biking",
+      content2title: "Understanding the Difference",
+      content2:
+        "Provides higher speeds for longer distances, but are subject to more regulations such as age, and are often not allowed on paths or trails due to their higher speed.",
     },
   ];
 
   return (
     <div style={{ marginTop: "80px" }}>
       <Mod1FactorTitle number={5} step="Consider e-bike classification" />
-      {/* TODO: refactor the below slider to match the Figma */}
-      <ButtonCardSlider titles={titles} cards={cards} />
+      <ButtonCardSlider titles={titles} cards={cards} show_numbers={true} />
     </div>
   );
 }
