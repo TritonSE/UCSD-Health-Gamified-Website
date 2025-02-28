@@ -57,11 +57,12 @@
   font-family: "DM Sans";
   font-size: 22px;
   font-weight: 400;
-  height: 300px;
+  height: 333px;
   line-height: 150%;
   letter-spacing: 2%;
   margin: 32px;
-  margin-top: -32px;
+  margin-top: -52px;
+  transform: translateX(-24px);
   overflow-y: scroll;
 }
 
@@ -110,12 +111,12 @@
     width: 100%;
   }
 }
+
 .number {
   font-family: "DM Sans";
   font-size: 48px;
   font-weight: 700;
   line-height: 150%;
-  letter-spacing: 2%;
   color: white;
   background: #1c3a29;
   border-radius: 100px;
