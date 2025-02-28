@@ -7,6 +7,8 @@ import InfoCard from "./InfoCard";
 
 type Card = {
   content: string;
+  content2title?: string;
+  content2?: string;
   imageUrl?: string;
   imageAlt?: string;
   icon?: string;
@@ -35,6 +37,8 @@ const ButtonCardSlider: React.FC<ButtonCardSliderProps> = ({ titles, cards, show
           key={index}
           icon={card.icon}
           content={card.content}
+          content2title={card.content2title}
+          content2={card.content2}
           imageUrl={card.imageUrl}
           iconAlt={card.iconAlt}
           imageAlt={card.imageAlt}

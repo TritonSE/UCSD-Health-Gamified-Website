@@ -5,6 +5,8 @@ import styles from "./InfoCard.module.css";
 
 type InfoCardProps = {
   content: string;
+  content2title?: string;
+  content2?: string;
   number?: number;
   icon?: string;
   iconAlt?: string;
@@ -15,6 +17,8 @@ type InfoCardProps = {
 
 const InfoCard: React.FC<InfoCardProps> = ({
   content,
+  content2,
+  content2title,
   number,
   icon,
   iconAlt,
@@ -52,6 +56,13 @@ const InfoCard: React.FC<InfoCardProps> = ({
               height={300}
               alt={imageAlt}
             />
+          </div>
+        )}
+        {/* right side text */}
+        {content2 && (
+          <div className={styles.content2}>
+            {content2title && <h1>{content2title}</h1>}
+            <p>{content2}</p>
           </div>
         )}
       </div>

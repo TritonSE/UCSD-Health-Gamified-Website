@@ -40,7 +40,6 @@
 
 .content {
   color: #000;
-
   /* Body/Large (Reg) */
   font-family: "DM Sans";
   font-size: 22px;
@@ -48,6 +47,36 @@
   font-weight: 400;
   line-height: 32px; /* 145.455% */
   width: 100% !important;
+}
+
+.content2 {
+  display: flex;
+  flex-direction: column;
+  background: #1c3a29;
+  color: #fff;
+  font-family: "DM Sans";
+  font-size: 22px;
+  font-weight: 400;
+  height: 300px;
+  line-height: 150%;
+  letter-spacing: 2%;
+  margin: 32px;
+  margin-top: -32px;
+  overflow-y: scroll;
+}
+
+.content2 h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 32px;
+  margin-top: auto;
+  margin-bottom: 12px;
+}
+
+.content2 p {
+  margin-bottom: 32px;
+  margin-left: 32px;
+  margin-right: 32px;
 }
 
 .image {
