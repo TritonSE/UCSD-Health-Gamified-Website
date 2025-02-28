@@ -81,3 +81,19 @@
     width: 100%;
   }
 }
+.number {
+  font-family: "DM Sans";
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 2%;
+  color: white;
+  background: #1c3a29;
+  border-radius: 100px;
+  width: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}

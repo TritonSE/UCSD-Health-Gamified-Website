@@ -4,19 +4,21 @@ import React from "react";
 import styles from "./InfoCard.module.css";
 
 type InfoCardProps = {
-  icon: string;
   content: string;
-  imageUrl: string;
-  iconAlt: string;
-  imageAlt: string;
+  number?: number;
+  icon?: string;
+  iconAlt?: string;
+  imageUrl?: string;
+  imageAlt?: string;
   active: boolean;
 };
 
 const InfoCard: React.FC<InfoCardProps> = ({
-  icon,
   content,
-  imageUrl,
+  number,
+  icon,
   iconAlt,
+  imageUrl,
   imageAlt,
   active,
 }) => {
@@ -24,26 +26,34 @@ const InfoCard: React.FC<InfoCardProps> = ({
     <div className={`${styles.infoCard} ${active ? styles.active : ""}`}>
       <div className={`${styles.container} ${active ? styles.active : ""}`}>
         <div>
-          <Image
-            className={styles.icon}
-            src={icon}
-            layout="responsive"
-            width={69}
-            height={69}
-            alt={iconAlt}
-          />
+          {/* number */}
+          {number && <p className={styles.number}>{number}</p>}
+          {/* icon */}
+          {icon && (
+            <Image
+              className={styles.icon}
+              src={icon}
+              layout="responsive"
+              width={69}
+              height={69}
+              alt={iconAlt}
+            />
+          )}
           <div className={styles.content}>{content}</div>
         </div>
-        <div className={styles.imageContainer}>
-          <Image
-            className={styles.image}
-            src={imageUrl}
-            layout="responsive"
-            width={500}
-            height={300}
-            alt={imageAlt}
-          />
-        </div>
+        {/* image */}
+        {imageUrl && (
+          <div className={styles.imageContainer}>
+            <Image
+              className={styles.image}
+              src={imageUrl}
+              layout="responsive"
+              width={500}
+              height={300}
+              alt={imageAlt}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -6,19 +6,20 @@ import ButtonSlide from "./ButtonSlide";
 import InfoCard from "./InfoCard";
 
 type Card = {
-  icon: string;
   content: string;
-  imageUrl: string;
-  iconAlt: string;
-  imageAlt: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  icon?: string;
+  iconAlt?: string;
 };
 
 type ButtonCardSliderProps = {
   titles: string[];
   cards: Card[];
+  show_numbers: boolean;
 };
 
-const ButtonCardSlider: React.FC<ButtonCardSliderProps> = ({ titles, cards }) => {
+const ButtonCardSlider: React.FC<ButtonCardSliderProps> = ({ titles, cards, show_numbers }) => {
   const [selectedCardIndex, setSelectedCardIndex] = useState<number>(0);
 
   const handleButtonClick = (index: number) => {
@@ -37,6 +38,7 @@ const ButtonCardSlider: React.FC<ButtonCardSliderProps> = ({ titles, cards }) =>
           imageUrl={card.imageUrl}
           iconAlt={card.iconAlt}
           imageAlt={card.imageAlt}
+          number={show_numbers ? index + 1 : undefined}
           active={index === selectedCardIndex}
         />
       ))}
