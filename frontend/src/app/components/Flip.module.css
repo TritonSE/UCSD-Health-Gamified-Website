@@ -29,8 +29,9 @@
 }
 
 .front {
+  display: flex;
+  flex-direction: column;
   padding: 100px 30px;
-  color: #1c3a29;
   text-align: center;
 
   /* Title/Medium (Bold) */
@@ -45,8 +46,6 @@
 
 .back {
   padding: 100px 30px;
-
-  color: var(--Secondary-Accent1, #1c3a29);
   text-align: center;
 
   /* Body/Large (Reg) */

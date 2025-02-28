@@ -10,6 +10,8 @@ export type FlipProps = {
   front_icon_alt?: string;
   front_text: string;
   back_text: string;
+  frontColor?: string;
+  backColor?: string;
   styles?: {
     container?: React.CSSProperties;
     container_flipped?: React.CSSProperties;
@@ -23,6 +25,8 @@ export default function Flip({
   front_icon_alt = "default alt text",
   front_text,
   back_text,
+  frontColor,
+  backColor,
   styles: customStyles,
 }: FlipProps) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -39,7 +43,10 @@ export default function Flip({
       }}
     >
       {/* Front */}
-      <div className={styles.front} style={customStyles?.container}>
+      <div
+        className={styles.front}
+        style={{ ...customStyles?.container, backgroundColor: frontColor }}
+      >
         {front_icon && (
           <Image
             style={customStyles?.icon}
@@ -49,10 +56,15 @@ export default function Flip({
             alt={front_icon_alt}
           />
         )}
-        <div style={customStyles?.title}>{front_text}</div>
+        <div style={customStyles?.title}>
+          <span>{front_text}</span>
+        </div>
       </div>
       {/* Back */}
-      <div className={styles.back} style={customStyles?.container_flipped}>
+      <div
+        className={styles.back}
+        style={{ ...customStyles?.container_flipped, backgroundColor: backColor }}
+      >
         <p style={customStyles?.title}>{back_text}</p>
       </div>
     </div>
