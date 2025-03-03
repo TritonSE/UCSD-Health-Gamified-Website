@@ -35,10 +35,10 @@ export default function Mod1Factor1() {
   ];
 
   return (
-    <>
+    <div>
       <p className={styles.text}>When choosing your E-bike, consider the following factors:</p>
       <Mod1FactorTitle number={1} step="Consider your riding style" />
-      <ButtonCardSlider titles={titles_part1} cards={cards_part1} />
-    </>
+      <ButtonCardSlider titles={titles_part1} cards={cards_part1} show_numbers={false} />
+    </div>
   );
 }

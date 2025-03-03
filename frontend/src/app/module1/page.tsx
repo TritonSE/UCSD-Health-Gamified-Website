@@ -1,5 +1,6 @@
 import React from "react";
 
+import Sidebar from "../components/HomePage/Sidebar/Sidebar";
 import Mod1ChooseBike from "../components/Mod1ChooseBike";
 import Mod1Factor1 from "../components/Mod1Factor1";
 import Mod1Factor2 from "../components/Mod1Factor2";
@@ -15,8 +16,10 @@ import styles from "./mod1.module.css";
 export default function Module1() {
   return (
     <div className={styles.container}>
-      {/* sidebar (temporary one, this should be replaced later) */}
-      <div className={styles.sidebar}>Sidebar!</div>
+      {/* sidebar */}
+      <div className={styles.hideModile}>
+        <Sidebar />
+      </div>
       {/* content */}
       <div className={styles.content}>
         {/* title and intro */}
