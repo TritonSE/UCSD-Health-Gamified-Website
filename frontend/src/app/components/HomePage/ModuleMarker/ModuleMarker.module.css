@@ -1,0 +1,56 @@
+.active,
+.navigatable {
+  transition: scale 0.2s;
+  transform-origin: center;
+  transform-box: fill-box;
+  pointer-events: all;
+}
+
+.active:hover,
+.navigatable:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.active {
+  --marker-color: #fcd579;
+}
+
+.active.navigatable {
+  --marker-color: #fcd579;
+}
+
+.active.completed {
+  --marker-color: #3bb966;
+}
+
+.navigatable {
+  --marker-color: #ff8500;
+}
+
+.disabled {
+  --marker-color: #b4b4b4;
+}
+
+.disabled:hover {
+  cursor: not-allowed;
+}
+
+.marker_text {
+  font-family: "Rammetto One";
+  font-size: 24px;
+}
+
+.module_error_toast {
+  font-family: "DM Sans";
+  text-align: center;
+}
+
+.module_error_toast p:first-child {
+  font-weight: bold;
+}
+
+.module_error_toast span {
+  font-weight: bold;
+  color: #b93b3b;
+}
