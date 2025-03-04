@@ -14,13 +14,16 @@ export type VerifyEmailProps = {
 
 export default function VerifyEmail({ email }: VerifyEmailProps) {
   const [verificationError, setVerificationError] = useState("");
+  const [emailResent, setEmailResent] = useState("");
 
   const resendEmail = () => {
     const user = auth.currentUser;
     if (user) {
       sendEmailVerification(user)
         .then(() => {
-          console.log("Email sent.");
+          console.log("Email sent. Please wait 1 minute before trying again.");
+          setVerificationError("");
+          setEmailResent("Email resent! Please wait 1 minute before trying again.");
         })
         .catch((error: unknown) => {
           console.error("Error sending verification email: ", error);
@@ -29,6 +32,7 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
           const errorCode = firebaseError.code ?? "unknown_error";
 
           if (errorCode === "auth/too-many-requests") {
+            setEmailResent("");
             setVerificationError("Too many requests. Please try again later.");
           }
         });
@@ -57,6 +61,11 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
         <div className={styles.error}>
           <Image src="/red_exclamation.svg" alt="Warning!" width={18} height={18} />
           <p>{verificationError}</p>
+        </div>
+      )}
+      {emailResent && (
+        <div className={styles.emailresent}>
+          <p>{emailResent}</p>
         </div>
       )}
     </div>
