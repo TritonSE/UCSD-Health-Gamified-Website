@@ -40,7 +40,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
               layout="responsive"
               width={69}
               height={69}
-              alt={iconAlt}
+              alt={iconAlt ?? ""}
             />
           )}
           <div className={styles.content}>{content}</div>
@@ -54,7 +54,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
               layout="responsive"
               width={500}
               height={300}
-              alt={imageAlt}
+              alt={imageAlt ?? ""}
             />
           </div>
         )}

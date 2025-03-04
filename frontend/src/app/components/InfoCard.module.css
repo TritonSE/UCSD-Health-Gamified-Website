@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
 .infoCard {
   width: 85%;
   border-radius: 20px;
@@ -60,7 +62,7 @@
   height: 333px;
   line-height: 150%;
   letter-spacing: 2%;
-  margin: 32px;
+  margin: 48px;
   margin-top: -52px;
   transform: translateX(-24px);
   overflow-y: scroll;
@@ -113,7 +115,7 @@
 }
 
 .number {
-  font-family: "DM Sans";
+  font-family: "Rubik";
   font-size: 48px;
   font-weight: 700;
   line-height: 150%;
