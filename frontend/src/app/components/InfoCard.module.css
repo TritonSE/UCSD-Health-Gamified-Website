@@ -65,7 +65,7 @@
   margin: 48px;
   margin-top: -52px;
   transform: translateX(-24px);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .content2 h1 {
