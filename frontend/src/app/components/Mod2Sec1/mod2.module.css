@@ -1,6 +1,4 @@
 .container {
-  width: 100vw;
-  height: 100vh;
   flex-direction: column;
   width: 100%;
 }
@@ -33,7 +31,6 @@
   margin: 0.5rem 0;
 }
 
-/* Card positioning adjustments */
 .topCenter {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
@@ -77,4 +74,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 0.5rem;
+}
+
+.text{
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: 22px;
 }
