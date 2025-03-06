@@ -1,12 +1,10 @@
 import Mod2Maintain from "../Mod2Maintain";
 import Mod2Title from "../Mod2Title";
-import Sidebar from "../HomePage/Sidebar/Sidebar";
 import styles from "./mod2.module.css"
 
 export default function Section1() {
   return (
     <div className={styles.container}>
-      <Sidebar />
       {/* content */}
       <div className={styles.content}>
         {/* title and intro */}

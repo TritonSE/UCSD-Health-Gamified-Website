@@ -1,18 +1,15 @@
-import Mod2Maintain from "../components/Mod2Maintain";
-import Mod2Title from "../components/Mod2Title";
+import styles from "./mod2.module.css";
+import Section1 from "../components/Mod2Sec1/Section1";
+import Helmet from "../components/Mod2Sec1/Helmet";
 import Sidebar from "../components/HomePage/Sidebar/Sidebar";
-import styles from "./mod2.module.css"
 
-export default function Section1() {
+export default function Section() {
   return (
     <div className={styles.container}>
       <Sidebar />
-      {/* content */}
       <div className={styles.content}>
-        {/* title and intro */}
-        <Mod2Title module_num={2} module_name="Maintaining Your Bike and 
-Keeping it Road Ready" />
-        <Mod2Maintain />
+        <Section1 />
+        <Helmet />
       </div>
     </div>
   );
