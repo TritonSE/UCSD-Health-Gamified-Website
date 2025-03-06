@@ -8,8 +8,7 @@ export default function Section1() {
       {/* content */}
       <div className={styles.content}>
         {/* title and intro */}
-        <Mod2Title module_num={2} module_name="Maintaining Your Bike and 
-Keeping it Road Ready" />
+        <Mod2Title module_num={2} module_name="Maintaining Your Bike and Keeping it Road Ready" />
         <Mod2Maintain />
       </div>
     </div>
