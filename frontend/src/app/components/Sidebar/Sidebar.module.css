@@ -12,16 +12,18 @@
 }
 
 .nav.collapsed {
-  width: 60px;
+  width: 92px;
 }
 
 .collapseButton {
-  position: absolute;
-  top: 20px;
-  right: 10px;
+  display: flex;
+  margin-left: auto;
   background: none;
   border: none;
-  color: white;
-  font-size: 20px;
   cursor: pointer;
+  transition: margin 0.3 ease;
+}
+
+.collapseButton.open {
+  margin-right: 13px;
 }

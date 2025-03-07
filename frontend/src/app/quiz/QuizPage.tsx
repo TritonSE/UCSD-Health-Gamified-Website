@@ -1,4 +1,4 @@
-import Sidebar from "../components/HomePage/Sidebar/Sidebar";
+import Sidebar from "../components/Sidebar/Sidebar";
 import { Question, Quiz } from "../components/quiz_components/Quiz";
 
 import styles from "./QuizPage.module.css";
