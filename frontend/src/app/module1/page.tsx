@@ -8,9 +8,11 @@ import Mod1Factor3 from "../components/Mod1Factor3";
 import Mod1Factor4 from "../components/Mod1Factor4";
 import Mod1Factor5 from "../components/Mod1Factor5";
 import Mod1Intro from "../components/Mod1Intro";
-import Mod1WhyNotBike from "../components/Mod1WhyNotBike.tsx";
+import Mod1Risks from "../components/Mod1Risks";
+import Mod1WhyNotBike from "../components/Mod1WhyNotBike";
 import Mod1WhyRide from "../components/Mod1WhyRide";
 import ModTitle from "../components/ModTitle";
+import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod1.module.css";
 
@@ -35,6 +37,11 @@ export default function Module1() {
         <Mod1Factor5 />
         <Mod1WhyRide />
         <Mod1WhyNotBike />
+        <Mod1Risks />
+        {/* quiz */}
+        <div className={styles.quiz}>
+          <TitleScreen />
+        </div>
       </div>
     </div>
   );
