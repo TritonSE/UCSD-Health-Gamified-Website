@@ -8,6 +8,7 @@ import Mod1Factor3 from "../components/Mod1Factor3";
 import Mod1Factor4 from "../components/Mod1Factor4";
 import Mod1Factor5 from "../components/Mod1Factor5";
 import Mod1Intro from "../components/Mod1Intro";
+import Mod1WhyNotBike from "../components/Mod1WhyNotBike.tsx";
 import Mod1WhyRide from "../components/Mod1WhyRide";
 import ModTitle from "../components/ModTitle";
 
@@ -33,6 +34,7 @@ export default function Module1() {
         <Mod1Factor4 />
         <Mod1Factor5 />
         <Mod1WhyRide />
+        <Mod1WhyNotBike />
       </div>
     </div>
   );
