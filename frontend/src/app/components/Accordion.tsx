@@ -15,14 +15,14 @@ export default function Accordion({ title, content }: AccordionProps) {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className={`${styles.accordion} ${!isOpen ? styles.accordionClosed : ""}`}>
+    <div
+      className={`${styles.accordion} ${!isOpen ? styles.accordionClosed : ""}`}
+      onClick={() => {
+        setIsOpen(!isOpen);
+      }}
+    >
       {/* title */}
-      <div
-        className={styles.titleContainer}
-        onClick={() => {
-          setIsOpen(!isOpen);
-        }}
-      >
+      <div className={styles.titleContainer}>
         <h1 className={styles.title}>{title}</h1>
         {/* button */}
         <div className={`${styles.button} ${isOpen ? styles.buttonOpen : styles.buttonClose}`}>
