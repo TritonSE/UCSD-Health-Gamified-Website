@@ -5,7 +5,7 @@ import styles from "./Mod1Intro.module.css";
 export default function Mod1Intro() {
   return (
     <div className={styles.container}>
-      <span>
+      <span className={styles.float}>
         <h1 className={styles.title}>INTRODUCTION</h1>
         <p className={styles.description}>
           E-bikes are popular for commuting, recreation, and transportation. To ensure a safe and
@@ -14,7 +14,7 @@ export default function Mod1Intro() {
           of choosing the best e-bike for your needs.
         </p>
       </span>
-      <span className={styles.imageContainer}>
+      <span className={`${styles.imageContainer} ${styles.float}`}>
         <Image src="/bike.svg" width={446} height={229} alt="bike" className={styles.image} />
       </span>
     </div>
