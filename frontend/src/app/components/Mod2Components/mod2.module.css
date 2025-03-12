@@ -29,6 +29,8 @@
   align-items: center;
   z-index: 1;
   margin: 0.5rem 0;
+  position: relative;
+  width: fit-content;
 }
 
 .topCenter {
@@ -80,4 +82,39 @@
   font-family: "DM Sans";
   font-weight: 400;
   font-size: 22px;
+}
+
+.circle1 {
+  position: absolute;
+  top: 70%;
+  left: -3%;
+  transform: translate(-50%, -50%);
+}
+
+.circle2 {
+  position: absolute;
+  top: 86%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+}
+
+.circle3 {
+  position: absolute;
+  top: 88%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+}
+
+.circle4 {
+  position: absolute;
+  top: 6%;
+  left: 33%;
+  transform: translate(-50%, -50%);
+}
+
+.circle5 {
+  position: absolute;
+  top: 70%;
+  left: 78%;
+  transform: translate(-50%, -50%);
 }

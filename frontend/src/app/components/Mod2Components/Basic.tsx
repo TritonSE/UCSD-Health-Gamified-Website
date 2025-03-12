@@ -1,5 +1,6 @@
 import styles from "./mod2.module.css";
 import Image from "next/image";
+import Circle from "../Circle/Circle";
 
 export default function Basic() {
   return (
@@ -17,6 +18,23 @@ export default function Basic() {
             width={871.5}
             height={403}
           />
+           <div className={styles.circle1}>
+          <Circle number={1} />
+        </div>
+        <div className={styles.circle2}>
+          <Circle number={2} />
+        </div>
+        <div className={styles.circle3}>
+          <Circle number={3} />
+        </div>
+        <div className={styles.circle4}>
+          <Circle number={4} />
+        </div>
+        <div className={styles.circle5}>
+          <Circle number={5} />
+        </div>
+           <div>
+    </div>
         </div>
     </div>
   );

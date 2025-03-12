@@ -1,11 +1,6 @@
 import Image from "next/image";
 import styles from "./mod2.module.css";
-import dynamic from 'next/dynamic';
-
-const FlipCard = dynamic(
-  () => import('../FlippedCard/FlippedCard'),
-  { ssr: false }
-);
+import FlipCard from "../FlippedCard/FlippedCard";
 
 export default function Helmet() {
   return (
