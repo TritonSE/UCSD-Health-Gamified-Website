@@ -1,65 +1,63 @@
 .container {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    padding-bottom: 120px;
-  }
-  
-  .card {
-    width: 315px;
-    height: 205px;
-    border: 2px solid #1C3A29;
-    background-color: #BBD567;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-  
-  .content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .imageContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: auto;
-    transition: all 0.3s ease;
-  }
-  
-  .image {
-    object-fit: contain;
-  }
-  
-  .textOverlay {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    padding: 1.5rem;
-    text-align: center;
-    color: #1C3A29;
-    font-family: "DM Sans";
-    font-size: 18px;
-    font-weight: 400;
-  }
-  
-  .card:hover .imageContainer {
-    opacity: 0;
-  }
-  
-  .card:hover .textOverlay {
-    opacity: 1;
-  }
-  
- 
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-bottom: 120px;
+}
+
+.card {
+  width: 315px;
+  height: 205px;
+  border: 2px solid #1c3a29;
+  background-color: #bbd567;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.imageContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.image {
+  object-fit: contain;
+}
+
+.textOverlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1.5rem;
+  text-align: center;
+  color: #1c3a29;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.card:hover .imageContainer {
+  opacity: 0;
+}
+
+.card:hover .textOverlay {
+  opacity: 1;
+}

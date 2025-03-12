@@ -1,11 +1,13 @@
-import Mod2Maintain from "./components/Mod2Maintain";
-import Mod2Title from "./components/Mod2Title";
-import Sidebar from "./components/HomePage/Sidebar/Sidebar";
-import Section from "./module2/page";
 import styles from "./page.module.css";
 
-export default function Module2() {
+export default function Home() {
   return (
-   <Section/>
+    <div className={styles.page}>
+      <h1> TSE x UCSD Health </h1>
+      <p>
+        Use this page for pages and testing components. REMOVE ALL CHANGES BEFORE SUBMITTING A PULL
+        REQUEST.
+      </p>
+    </div>
   );
 }

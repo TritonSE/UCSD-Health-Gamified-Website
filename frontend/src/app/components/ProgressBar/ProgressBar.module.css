@@ -1,0 +1,28 @@
+.progress_bar {
+  padding-block: 2rem;
+  max-width: var(--module-width);
+  width: 100%;
+  margin-inline: auto;
+  position: relative;
+}
+
+.clipping_progress_bar {
+  position: absolute;
+  left: 0;
+  transition: clip-path 0.4s ease-in-out;
+}
+
+.progress_bar h3 {
+  color: var(--Secondary-Neutral-Gray4, #909090);
+  font-family: "DM Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.text_container {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+}

@@ -1,19 +1,16 @@
-import Image from "next/image";
-import styles from "./mod2.module.css";
-import dynamic from 'next/dynamic';
+"use client";
 
-const FlipCard = dynamic(
-  () => import('../FlippedCard/FlippedCard'),
-  { ssr: false }
-);
+import Image from "next/image";
+
+import FlipCard from "../FlippedCard/FlippedCard";
+
+import styles from "./mod2.module.css";
 
 export default function Helmet() {
   return (
-    <div className={styles.container}>
-      <div className={styles.headerText}>
-        CHOOSING THE RIGHT HELMET
-      </div>
-      
+    <section className={styles.container}>
+      <div className={styles.headerText}>CHOOSING THE RIGHT HELMET</div>
+
       <div className={styles.gridLayout}>
         {/* Top Center Card */}
         <div className={styles.topCenter}>
@@ -44,12 +41,7 @@ export default function Helmet() {
 
         {/* Helmet Image */}
         <div className={styles.image}>
-          <Image
-            src="/helmet.svg"
-            alt="Helmet Diagram"
-            width={330}
-            height={258}
-          />
+          <Image src="/helmet.svg" alt="Helmet Diagram" width={330} height={258} />
         </div>
 
         {/* Bottom Left Card */}
@@ -70,6 +62,6 @@ export default function Helmet() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

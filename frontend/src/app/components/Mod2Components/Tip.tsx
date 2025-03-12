@@ -1,18 +1,14 @@
-import styles from "./mod2.module.css";
-import dynamic from 'next/dynamic';
+"use client";
 
-const HoverCard = dynamic(
-  () => import('../HoverCard/HoverCard'),
-  { ssr: false }
-);
+import HoverCard from "../HoverCard/HoverCard";
+
+import styles from "./mod2.module.css";
 
 export default function Tip() {
   return (
-    <div className={styles.container}>
-      <div className={styles.headerText}>
-      ADDITIONAL TIPS
-      </div>
-      <HoverCard/>
-    </div>
+    <section className={styles.container}>
+      <div className={styles.headerText}>ADDITIONAL TIPS</div>
+      <HoverCard />
+    </section>
   );
 }

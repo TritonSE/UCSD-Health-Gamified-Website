@@ -1,24 +1,29 @@
 "use client";
-import { useState } from 'react';
 import Image from "next/image";
-import styles from './FlippedCard.module.css';
+import { useState } from "react";
 
-interface FlipCardProps {
+import styles from "./FlippedCard.module.css";
+
+type FlipCardProps = {
   frontImage: string;
   frontText: string;
   backContent: string;
-}
+};
 
 const FlipCard = ({ frontImage, frontText, backContent }: FlipCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div 
+    <div
       className={styles.cardContainer}
-      onMouseEnter={() => setIsFlipped(true)}
-      onMouseLeave={() => setIsFlipped(false)}
+      onMouseEnter={() => {
+        setIsFlipped(true);
+      }}
+      onMouseLeave={() => {
+        setIsFlipped(false);
+      }}
     >
-      <div className={`${styles.card} ${isFlipped ? styles.flipped : ''}`}>
+      <div className={`${styles.card} ${isFlipped ? styles.flipped : ""}`}>
         {/* Front Side */}
         <div className={styles.front}>
           <div className={styles.imageWrapper}>
