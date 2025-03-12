@@ -1,6 +1,7 @@
 import React from "react";
 
-import Flip from "./Flip";
+import Flip from "../Flip";
+
 import styles from "./Mod1Factor3.module.css";
 import Mod1FactorTitle from "./Mod1FactorTitle";
 

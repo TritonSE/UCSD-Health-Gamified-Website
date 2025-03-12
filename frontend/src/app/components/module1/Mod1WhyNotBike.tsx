@@ -1,12 +1,8 @@
-import Accordion from "./Accordion";
-import styles from "./Mod1WhyNotBike.module.css";
+import Accordion from "../Accordion";
 
 export default function Mod1WhyNotBike() {
   return (
     <div>
-      <h1 className={styles.title}>
-        They’re <span>NOT BICYCLES!</span> Here’s why:
-      </h1>
       <Accordion
         title="Electric Motorcycles vs. Bicycles"
         content="Electric motorcycles are not bicycles and require a motorcycle license, registration and insurance, and additional modifications to be street legal to operate."

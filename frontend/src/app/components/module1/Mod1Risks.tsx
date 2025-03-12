@@ -1,4 +1,5 @@
-import Flip from "./Flip";
+import Flip from "../Flip";
+
 import styles from "./Mod1Risks.module.css";
 
 export default function Mod1Risks() {

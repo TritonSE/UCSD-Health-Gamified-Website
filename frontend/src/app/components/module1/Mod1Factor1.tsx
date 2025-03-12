@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "../module1/mod1.module.css";
+import styles from "../../module1/mod1.module.css";
 
 import ButtonCardSlider from "./ButtonCardSlider";
 import Mod1FactorTitle from "./Mod1FactorTitle";
