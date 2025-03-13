@@ -8,16 +8,18 @@ interface CircleProps {
 
 const Circle = ({ number }: CircleProps) => {
   const [activeTextbox, setActiveTextbox] = useState<number | null>(null);
+  const [activated, setActivated] = useState(false);
 
   useEffect(() => {
     if (activeTextbox !== null) {
-      document.body.style.overflow = 'hidden'; // Disable scrolling when popup is open
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = ''; // Re-enable scrolling when popup is closed
+      document.body.style.overflow = '';
     }
   }, [activeTextbox]);
 
   const handleClick = () => {
+    setActivated(true);
     setActiveTextbox(number);
   };
 
@@ -41,7 +43,7 @@ const Circle = ({ number }: CircleProps) => {
           width: '45px',
           height: '45px',
           borderRadius: '50%',
-          backgroundColor: '#909090',
+          backgroundColor: activated ? '#1C3A29' : '#909090',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -67,9 +69,9 @@ const Circle = ({ number }: CircleProps) => {
               width: '100vw',
               height: '100vh',
               zIndex: 999,
-              pointerEvents: 'all', // Ensures nothing else is clickable
+              pointerEvents: 'all',
             }}
-            onClick={handleCloseTextbox} // Click outside to close
+            onClick={handleCloseTextbox}
           ></div>
 
           {/* Centered Popup */}
