@@ -1,6 +1,7 @@
 .container {
   flex-direction: column;
   width: 100%;
+  position: relative;
 }
 
 .imageContainer {
@@ -134,4 +135,25 @@
   top: 70%;
   left: 80%;
   transform: translate(-50%, -50%);
+}
+
+/*.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} not working now*/
+
+.popupContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
