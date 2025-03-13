@@ -13,7 +13,6 @@
 }
 
 .slider_track {
-  flex: 1;
   height: 100%;
   display: flex;
   width: 100%;
@@ -22,7 +21,12 @@
 
 .slider_track > section {
   min-width: 100%;
-  max-width: var(--MAX-WIDTH);
+  display: grid;
+  grid-template-columns: 1fr min(var(--module-width), 100%) 1fr;
+}
+
+.slider_track > section > * {
+  grid-column: 2;
 }
 
 .scroll_snap_container h2 {

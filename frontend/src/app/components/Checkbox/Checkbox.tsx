@@ -18,6 +18,23 @@ const optionTexts: Record<string, { header: string; text: string }> = {
   },
 };
 
+const SelectedRectangle = ({
+  header,
+  text,
+  isVisible,
+}: {
+  header: string;
+  text: string;
+  isVisible: boolean;
+}) => {
+  return (
+    <div className={`${styles.selectedRectangle} ${isVisible ? styles.visible : ""}`}>
+      <div className={styles.popupHeader}>{header}</div>
+      <div className={styles.popupText}>{text}</div>
+    </div>
+  );
+};
+
 const Checkbox = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
@@ -64,23 +81,6 @@ const Checkbox = () => {
           />
         ))}
       </div>
-    </div>
-  );
-};
-
-const SelectedRectangle = ({
-  header,
-  text,
-  isVisible,
-}: {
-  header: string;
-  text: string;
-  isVisible: boolean;
-}) => {
-  return (
-    <div className={`${styles.selectedRectangle} ${isVisible ? styles.visible : ""}`}>
-      <div className={styles.popupHeader}>{header}</div>
-      <div className={styles.popupText}>{text}</div>
     </div>
   );
 };

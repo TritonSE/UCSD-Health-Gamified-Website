@@ -1,0 +1,5 @@
+#section1_container {
+  gap: 3rem;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}

@@ -19,14 +19,8 @@ export default function BikeMechanic() {
   return (
     <section className={styles.bike_mechanic_container}>
       <h2>WHEN TO TAKE BIKE TO A MECHANIC</h2>
-      <div className={styles.svg_container}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1413"
-          height="1114"
-          fill="none"
-          viewBox="0 0 1413 1114"
-        >
+      <div id={styles.svg_container}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1413 1114">
           <g
             className={styles.mechanic_svg}
             style={{ transform: `translateY(43px) rotate(${rotation}deg)` }}

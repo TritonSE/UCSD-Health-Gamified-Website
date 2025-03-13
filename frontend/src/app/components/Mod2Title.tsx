@@ -5,7 +5,7 @@ export type ModIntroProps = {
   module_name: string;
 };
 
-export default function ModIntro({ module_num, module_name }: ModIntroProps) {
+export default function Mod2Title({ module_num, module_name }: ModIntroProps) {
   return (
     <div className={styles.container}>
       {/* title */}

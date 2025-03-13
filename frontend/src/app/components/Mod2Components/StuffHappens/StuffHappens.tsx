@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+import InjuredMascot from "./InjuredMascot";
 import styles from "./StuffHappens.module.css";
 
 export default function StuffHappens() {
@@ -7,12 +6,7 @@ export default function StuffHappens() {
     <section className={styles.stuff_happens_container}>
       <h2 className={styles.title}>Stuff Happens</h2>
       <div className={styles.content_container}>
-        <Image
-          src="/module2/injured_mascot.svg"
-          width={330}
-          height={365.66}
-          alt="Injured Timmy Mascot"
-        />
+        <InjuredMascot />
         <p className={styles.content_text}>
           Like any vehicle, sometimes things happen rendering your bike inoperable, such as a flat
           tire, a broken part, a dead battery or an electronic malfunction.

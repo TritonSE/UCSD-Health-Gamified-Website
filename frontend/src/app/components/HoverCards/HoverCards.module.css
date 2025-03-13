@@ -1,18 +1,28 @@
 .container {
   display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding-bottom: 120px;
+  height: fit-content;
+}
+
+.container :first-child {
+  border-radius: 8px 0 0 8px;
+  border-right: none;
+}
+
+.container :last-child {
+  border-radius: 0 8px 8px 0;
+  border-left: none;
 }
 
 .card {
-  width: 315px;
-  height: 205px;
+  flex: 1;
+  display: block;
+  aspect-ratio: 1.53;
   border: 2px solid #1c3a29;
   background-color: #bbd567;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .content {
@@ -22,20 +32,11 @@
 }
 
 .imageContainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
-  height: auto;
-  transition: all 0.3s ease;
-}
-
-.image {
-  object-fit: contain;
+  transition: opacity 0.3s ease;
+  height: 100%;
 }
 
 .textOverlay {
@@ -52,6 +53,8 @@
   font-family: "DM Sans";
   font-size: 18px;
   font-weight: 400;
+  position: absolute;
+  inset: 0;
 }
 
 .card:hover .imageContainer {

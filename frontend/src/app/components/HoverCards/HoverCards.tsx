@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import styles from "./HoverCard.module.css";
+import styles from "./HoverCards.module.css";
 
 type HoverCardProps = {
   imageSrc: string;
@@ -13,10 +13,7 @@ const HoverCard = ({ imageSrc, text, width = 180, height = 150 }: HoverCardProps
   return (
     <div className={styles.card}>
       <div className={styles.content}>
-        <div
-          className={styles.imageContainer}
-          style={{ width: `${width}px`, height: `${height}px` }}
-        >
+        <div className={styles.imageContainer}>
           <Image
             src={imageSrc}
             alt="Card Image"

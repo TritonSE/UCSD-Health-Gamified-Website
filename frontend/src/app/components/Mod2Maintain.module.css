@@ -1,5 +1,5 @@
 /* background */
-.container {
+#container {
   position: relative;
   background: rgba(187, 213, 103, 1);
   width: 100%;
@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   height: 100%;
+  grid-column: 1/-1;
 }
 
 .content_wrapper {
