@@ -1,33 +1,23 @@
-"use client";
-import React, { useState } from 'react';
+"use client"
+import { useEffect, useState } from 'react';
 import Textbox from '../Textbox/Textbox';
 
-interface Circle {
+interface CircleProps {
   number: number;
 }
 
-const Circle = ({ number }: Circle) => {
-  const [isClicked, setIsClicked] = useState(false);
+const Circle = ({ number }: CircleProps) => {
   const [activeTextbox, setActiveTextbox] = useState<number | null>(null);
 
-  const circleStyle = {
-    width: '45px',
-    height: '45px',
-    borderRadius: '50%',
-    backgroundColor: isClicked ? '#1C3A29' : '#909090',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: 'white',
-    fontSize: '20px',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s ease',
-  };
+  useEffect(() => {
+    if (activeTextbox !== null) {
+      document.body.style.overflow = 'hidden'; // Disable scrolling when popup is open
+    } else {
+      document.body.style.overflow = ''; // Re-enable scrolling when popup is closed
+    }
+  }, [activeTextbox]);
 
   const handleClick = () => {
-    if (!isClicked) {
-      setIsClicked(true);
-    }
     setActiveTextbox(number);
   };
 
@@ -35,31 +25,71 @@ const Circle = ({ number }: Circle) => {
     setActiveTextbox(null);
   };
 
-  const textboxContent: { [key: number]: { header: string; text: string; width:number;height:number } } = {
-    1: { header: 'Popup 1', text: 'This is the content for Textbox 1.' ,width:719,height:577},
-    2: { header: 'Popup 2', text: 'This is the content for Textbox 2.',width:719,height:361 },
-    3: { header: 'Popup 3', text: 'This is the content for Textbox 3.',width:719,height:397 },
-    4: { header: 'Popup 4', text: 'This is the content for Textbox 4.',width:719,height:469 },
-    5: { header: 'Popup 5', text: 'This is the content for Textbox 5.' ,width:719,height:329},
+  const textboxContent: { [key: number]: { header: string; text: string; width: number; height: number } } = {
+    1: { header: 'Tire Pressure', text: 'Check tire pressure monthly...', width: 719, height: 577 },
+    2: { header: 'Chain Lubrication', text: 'Lubricate the chain every 100 miles...', width: 719, height: 361 },
+    3: { header: 'Brake Check', text: 'Ensure brakes are working before each ride.', width: 719, height: 397 },
+    4: { header: 'Gear Maintenance', text: 'Keep gears clean and properly adjusted.', width: 719, height: 469 },
+    5: { header: 'Frame Inspection', text: 'Regularly check for cracks or damage.', width: 719, height: 329 },
   };
 
   return (
     <>
-      <div style={circleStyle} onClick={handleClick}>
+      {/* Clickable Circle */}
+      <div
+        style={{
+          width: '45px',
+          height: '45px',
+          borderRadius: '50%',
+          backgroundColor: '#909090',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'white',
+          fontSize: '20px',
+          cursor: 'pointer',
+          transition: 'background-color 0.3s ease',
+        }}
+        onClick={handleClick}
+      >
         {number}
       </div>
 
+      {/* Popup */}
       {activeTextbox !== null && (
-        <div
-        >
-          <Textbox
-            header={textboxContent[activeTextbox].header}
-            text={textboxContent[activeTextbox].text}
-            width={textboxContent[activeTextbox].width}
-            height={textboxContent[activeTextbox].height}
-            onClose={handleCloseTextbox}
-          />
-        </div>
+        <>
+          {/* Fullscreen Overlay to Disable Page Interaction */}
+          <div
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              zIndex: 999,
+              pointerEvents: 'all', // Ensures nothing else is clickable
+            }}
+            onClick={handleCloseTextbox} // Click outside to close
+          ></div>
+
+          {/* Centered Popup */}
+          <div
+            style={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+            }}
+          >
+            <Textbox
+              header={textboxContent[activeTextbox].header}
+              text={textboxContent[activeTextbox].text}
+              width={textboxContent[activeTextbox].width}
+              height={textboxContent[activeTextbox].height}
+              onClose={handleCloseTextbox}
+            />
+          </div>
+        </>
       )}
     </>
   );

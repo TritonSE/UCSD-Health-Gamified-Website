@@ -1,36 +1,49 @@
 .container {
+  display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.image {
+  position: relative;
+}
+
+.section1_container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 .headerText {
   font-family: "Rammetto One";
   font-weight: 400;
   font-size: 32px;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .gridLayout {
   display: grid;
-  grid-template-columns: minmax(200px, 1fr) auto minmax(200px, 1fr);
+  grid-template-columns: 1fr auto 1fr;
   grid-template-rows: auto auto auto;
   gap: 0.5rem;
   width: 100%;
-  max-width: 1000px;
+  height: 100%;
   margin: 0 auto;
   position: relative;
   padding: 1rem;
-}
-
-.image {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  margin: 0.5rem 0;
-  position: relative;
-  width: fit-content;
 }
 
 .topCenter {
@@ -78,43 +91,45 @@
   margin-top: 0.5rem;
 }
 
-.text{
+.text {
   font-family: "DM Sans";
   font-weight: 400;
   font-size: 22px;
+  text-align: center;
 }
 
+/* Updated Circle Positioning */
 .circle1 {
   position: absolute;
-  top: 70%;
-  left: -3%;
+  top: 70%;  /* Percentage-based positioning */
+  left: 10%;
   transform: translate(-50%, -50%);
 }
 
 .circle2 {
   position: absolute;
-  top: 86%;
-  left: 15%;
+  top: 85%;
+  left: 25%;
   transform: translate(-50%, -50%);
 }
 
 .circle3 {
   position: absolute;
-  top: 88%;
-  left: 42%;
+  top: 87%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .circle4 {
   position: absolute;
-  top: 6%;
-  left: 33%;
+  top: 10%;
+  left: 40%;
   transform: translate(-50%, -50%);
 }
 
 .circle5 {
   position: absolute;
   top: 70%;
-  left: 78%;
+  left: 80%;
   transform: translate(-50%, -50%);
 }

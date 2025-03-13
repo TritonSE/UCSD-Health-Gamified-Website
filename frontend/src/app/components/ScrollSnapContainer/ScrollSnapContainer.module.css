@@ -1,0 +1,62 @@
+.scroll_snap_container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.slider_container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider_track {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.slider_track > section {
+  min-width: 100%;
+  max-width: var(--MAX-WIDTH);
+}
+
+.scroll_snap_container h2 {
+  font-family: "Rammetto One";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.64px;
+  text-transform: uppercase;
+}
+
+.scroll_snap_container p {
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.button_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--module-width);
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.button_container button {
+  cursor: pointer;
+  border-radius: 64px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: 1px solid black;
+  background: var(--Functional-Disabled, #d8d8d8);
+}

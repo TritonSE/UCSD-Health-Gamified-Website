@@ -1,150 +1,148 @@
 .container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 80px;
-    padding: 2rem;
-  }
-  
-  .mainContainer {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .outerRectangle {
-    width: 328px;
-    height: 423px;
-    background-color: #BBD567;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .innerRectangle {
-    width: 286px;
-    height: 358px;
-    background-color: #FAFFEA;
-    border-radius: 10px;
-    position: relative;
-    padding: 20px;
-  }
-  
-  .textRectangle {
-    width: 241px;
-    height: 52px;
-    background-color: #1C3A29;
-    border-radius: 8px;
-    position: absolute;
-    top: -21px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'DM Sans';
-    font-weight: 700;
-    font-size: 28px;
-    color: #ffffff;
-  }
-  
-  .checkboxGroup {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-  
-  .checkboxLabel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'DM Sans';
-    font-weight: 700;
-    font-size: 36px;
-    cursor: pointer;
-    gap: 10px;
-    color: #000000; 
-  }
-  
-  .checkboxInput {
-    appearance: none;
-    width: 40px;
-    height: 40px;
-    border: 2px solid #000000;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  .checkboxInput:checked {
-    border-color: #7AA000;
-    background-color: transparent;
-  }
-  
-  .checkboxInput:checked::after {
-    content: "✔";
-    font-size: 30px;
-    color: #7AA000;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .checkedText {
-    color: #7AA000;
-  }
-  
-  .rightContent {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: flex-start; 
-    width: 631px;
-  }
-  
-  .selectedRectangle {
-    width: 631px;
-    height: 114px;
-    background-color: #BBD567;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    font-family: 'DM Sans';
-    padding: 15px;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .selectedRectangle.visible {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  .popupHeader {
-    font-size: 22px;
-    font-weight: 700;
-    color: #000000;
-    font-family: "DM Sans";
-    text-align: left; 
-    width: 100%;
-  }
-  
-  .popupText {
-    font-size: 18px;
-    font-weight: 400;
-    font-family: "DM Sans";
-    color: #000000;
-    text-align: left;
-    width: 100%;
-  }
-  
-  
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 2rem;
+}
+
+.mainContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.outerRectangle {
+  width: 328px;
+  height: 423px;
+  background-color: #bbd567;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerRectangle {
+  width: 286px;
+  height: 358px;
+  background-color: #faffea;
+  border-radius: 10px;
+  position: relative;
+  padding: 20px;
+}
+
+.textRectangle {
+  width: 241px;
+  height: 52px;
+  background-color: #1c3a29;
+  border-radius: 8px;
+  position: absolute;
+  top: -21px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 28px;
+  color: #ffffff;
+}
+
+.checkboxGroup {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 36px;
+  cursor: pointer;
+  gap: 10px;
+  color: #000000;
+}
+
+.checkboxInput {
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkboxInput:checked {
+  border-color: #7aa000;
+  background-color: transparent;
+}
+
+.checkboxInput:checked::after {
+  content: "✔";
+  font-size: 30px;
+  color: #7aa000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkedText {
+  color: #7aa000;
+}
+
+.rightContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  width: 631px;
+}
+
+.selectedRectangle {
+  width: 631px;
+  height: 114px;
+  background-color: #bbd567;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: "DM Sans";
+  padding: 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.selectedRectangle.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popupHeader {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000000;
+  font-family: "DM Sans";
+  text-align: left;
+  width: 100%;
+}
+
+.popupText {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "DM Sans";
+  color: #000000;
+  text-align: left;
+  width: 100%;
+}

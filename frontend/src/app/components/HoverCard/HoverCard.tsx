@@ -1,24 +1,19 @@
-"use client";
 import Image from "next/image";
+
 import styles from "./HoverCard.module.css";
 
-interface HoverCardProps {
+type HoverCardProps = {
   imageSrc: string;
   text: string;
   width?: number;
   height?: number;
-}
+};
 
-const HoverCard = ({ 
-  imageSrc, 
-  text, 
-  width = 180,
-  height = 150
-}: HoverCardProps) => {
+const HoverCard = ({ imageSrc, text, width = 180, height = 150 }: HoverCardProps) => {
   return (
     <div className={styles.card}>
       <div className={styles.content}>
-        <div 
+        <div
           className={styles.imageContainer}
           style={{ width: `${width}px`, height: `${height}px` }}
         >
