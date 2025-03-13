@@ -1,10 +1,6 @@
 .container {
-  display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
+  width: 100%;
 }
 
 .imageContainer {
@@ -15,8 +11,14 @@
   width: 100%;
   height: auto;
 }
-
 .image {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin: 0.5rem 0;
   position: relative;
 }
 
@@ -44,8 +46,9 @@
   margin: 0 auto;
   position: relative;
   padding: 1rem;
+  justify-items: center;
+  align-items: center;
 }
-
 .topCenter {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
@@ -98,10 +101,9 @@
   text-align: center;
 }
 
-/* Updated Circle Positioning */
 .circle1 {
   position: absolute;
-  top: 70%;  /* Percentage-based positioning */
+  top: 70%;
   left: 10%;
   transform: translate(-50%, -50%);
 }
