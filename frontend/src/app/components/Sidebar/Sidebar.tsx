@@ -4,13 +4,20 @@ import Image from "next/image";
 import { useState } from "react";
 
 import { Account } from "./Account";
+import { MapButton } from "./MapButton";
 import { Modules } from "./Modules";
 import styles from "./Sidebar.module.css";
 
 export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [mapKind, setMapKind] = useState<"primary" | "secondary">("primary");
+
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
+  };
+
+  const handleMap = () => {
+    setMapKind((prevKind) => (prevKind === "primary" ? "secondary" : "primary"));
   };
 
   return (
@@ -35,6 +42,7 @@ export default function Sidebar() {
           />
         )}
       </button>
+      <MapButton isCollapsed={isCollapsed} kind={mapKind} handleClick={handleMap} />
       <Modules isCollapsed={isCollapsed} />
       <Account isCollapsed={isCollapsed} />
     </nav>
