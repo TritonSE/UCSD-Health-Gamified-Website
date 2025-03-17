@@ -45,3 +45,16 @@
   height: auto;
   padding: 2vh 5vw;
 }
+
+@keyframes float {
+  from {
+    transform: translateY(400px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.float {
+  animation: float 1s;
+}

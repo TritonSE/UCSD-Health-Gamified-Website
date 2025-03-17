@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
-import Flip from "./Flip";
+import Flip from "../Flip";
+
 import styles from "./Mod1WhyRide.module.css";
 
 export default function Mod1WhyRide() {

@@ -1,4 +1,5 @@
-import CardSlide from "./CardSlide";
+import CardSlide from "../CardSlide";
+
 import styles from "./Mod1ChooseBike.module.css";
 
 export default function Mod1ChooseBike() {
