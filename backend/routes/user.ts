@@ -1,7 +1,7 @@
 /* eslint-disable */
 import express from "express";
-import { createUser, updateUser, getUser } from "../controllers/user.js";
-import { createUserValidator, updateUserValidator } from "../validators/user.js";
+import { createUser, updateUser, getUser } from "../controllers/user.ts";
+import { createUserValidator, updateUserValidator } from "../validators/user.ts";
 
 const router = express.Router();
 

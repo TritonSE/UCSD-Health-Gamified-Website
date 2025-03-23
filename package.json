@@ -5,7 +5,7 @@
   "name": "ucsd-health-gamified-website",
   "version": "1.0.0",
   "description": "`cd frontend`  \r `npm install`  \r `npm run dev`",
-  "main": "index.js",
+  "main": "index.ts",
   "dependencies": {
     "acorn": "^8.14.0",
     "acorn-jsx": "^5.3.2",
