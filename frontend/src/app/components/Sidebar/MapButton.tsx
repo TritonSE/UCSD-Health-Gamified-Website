@@ -38,7 +38,7 @@ export const MapButton: React.FC<Props> = ({
   }
   return (
     <button
-      className={buttonClass}
+      className={isCollapsed ? `${buttonClass} ${styles.collapsed}` : buttonClass}
       onClick={handleClick}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -46,7 +46,7 @@ export const MapButton: React.FC<Props> = ({
     >
       {!isHovering && <Image src={Map} width={24} height={20} alt="Map Picture" />}
       {isHovering && <Image src={"/Map_Hover.svg"} width={24} height={20} alt="Map Picture" />}
-      {!isCollapsed && <p className={styles.text}>Map</p>}
+      <p className={`${styles.text} ${isCollapsed ? styles.collapsed : ""}`}>Map</p>
     </button>
   );
 };

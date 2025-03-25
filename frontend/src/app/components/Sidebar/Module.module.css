@@ -1,0 +1,114 @@
+.module {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  justify-content: center;
+  transition: gap 0.3s ease-in-out;
+}
+
+.module.collapsed {
+  gap: 0;
+}
+
+.moduleText {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  align-self: stretch;
+  opacity: 1; /* Ensure it starts visible */
+  transition:
+    width 0.3s ease-in-out,
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    max-height 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.moduleText.collapsed {
+  opacity: 0;
+  max-height: 0;
+  width: 0;
+}
+
+.moduleTitleText {
+  /* Body/Small (Reg) */
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+}
+
+.moduleTimeText {
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 114.286% */
+}
+
+.moduleNumber {
+  display: flex;
+  height: 28px;
+  width: 29px; /* Same as height */
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px; /* Ensures a perfect circle */
+}
+
+.moduleNumberText {
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+}
+
+.boarderPrimary {
+  border: 2px solid var(--Secondary-Neutral-White, #fff);
+}
+
+.boarderInactive {
+  border: 1px solid var(--Secondary-Neutral-Gray4, #909090);
+}
+
+.boarderComplete {
+  background: #bbd567;
+}
+
+.numberPrimary {
+  color: #fff;
+}
+
+.numberInactive {
+  color: #909090;
+}
+
+.numberComplete {
+  color: #1c3a29;
+}
+
+.titlePrimary {
+  color: #fff;
+}
+
+.titleInactive {
+  color: #909090;
+}
+
+.titleComplete {
+  color: #bbd567;
+}
+
+.timeInactive {
+  color: #909090;
+}
+
+.timePrimary {
+  color: #d9d9d9;
+}
