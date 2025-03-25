@@ -1,27 +1,21 @@
 /* eslint-disable */
-import { MongoClient, ServerApiVersion } from "mongodb";
+import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 dotenv.config();
 
 const uri = process.env.MONGODB_URI;
 
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
-
 export async function connectMongo() {
   try {
-    await client.connect();
-    await client.db("admin").command({ ping: 1 });
+    await mongoose.connect(uri);
+
     console.log("Connected to MongoDB successfully!");
   } catch (err) {
     console.error("Error connecting to MongoDB:", err);
+    process.exit(1);
   }
 }
 
-export default client;
+export default mongoose;
+
