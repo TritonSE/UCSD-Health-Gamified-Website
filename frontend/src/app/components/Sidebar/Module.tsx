@@ -6,6 +6,7 @@ type Props = {
   moduleName: string;
   moduleTime: number;
   moduleNumber: number;
+  addLine?: boolean;
   handleClick: () => void;
 };
 
@@ -15,42 +16,63 @@ export const Module = ({
   moduleName,
   moduleTime,
   moduleNumber,
+  addLine = true,
   handleClick,
 }: Props) => {
-  let moudleTitleText = styles.moduleTitleText;
+  let moduleTitleText = styles.moduleTitleText;
   let moduleTimeText = styles.moduleTimeText;
   let moduleNumberText = styles.moduleNumberText;
   let moduleNumberBoarder = styles.moduleNumber;
+  let modules = styles.module;
+  let color = "#BBD567";
   switch (kind) {
     case "primary":
-      moudleTitleText += ` ${styles.titlePrimary}`;
+      modules += ` ${styles.primaryBackground}`;
+      moduleTitleText += ` ${styles.titlePrimary}`;
       moduleTimeText += ` ${styles.timePrimary}`;
       moduleNumberText += ` ${styles.numberPrimary}`;
       moduleNumberBoarder += ` ${styles.boarderPrimary}`;
+      color = "#FFF";
       break;
     case "inactive":
-      moudleTitleText += ` ${styles.titleInactive}`;
+      moduleTitleText += ` ${styles.titleInactive}`;
       moduleTimeText += ` ${styles.timeInactive}`;
       moduleNumberText += ` ${styles.numberInactive}`;
       moduleNumberBoarder += ` ${styles.boarderInactive}`;
+      color = "#909090";
       break;
     case "complete":
-      moudleTitleText += ` ${styles.titleComplete}`;
+      moduleTitleText += ` ${styles.titleComplete}`;
       moduleTimeText += ` ${styles.timePrimary}`;
       moduleNumberText += ` ${styles.numberComplete}`;
       moduleNumberBoarder += ` ${styles.boarderComplete}`;
       break;
   }
+
+  if (isCollapsed) {
+    modules += ` ${styles.collapsed}`;
+  }
+
   return (
-    <div
-      className={isCollapsed ? `${styles.module} ${styles.collapsed}` : styles.module}
-      onClick={handleClick}
-    >
-      <div className={moduleNumberBoarder}>
-        <p className={moduleNumberText}>{moduleNumber}</p>
+    <div className={modules} onClick={handleClick}>
+      <div className={styles.column}>
+        <div className={moduleNumberBoarder}>
+          <p className={moduleNumberText}>{moduleNumber}</p>
+        </div>
+        {addLine && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1"
+            height="28"
+            viewBox="0 0 1 28"
+            fill="none"
+          >
+            <path d="M0.5 1L0.5 27" stroke={color} stroke-linecap="round" />
+          </svg>
+        )}
       </div>
       <div className={isCollapsed ? `${styles.moduleText} ${styles.collapsed}` : styles.moduleText}>
-        <p className={moudleTitleText}>{moduleName}</p>
+        <p className={moduleTitleText}>{moduleName}</p>
         <p className={moduleTimeText}>{moduleTime + " min"}</p>
       </div>
     </div>

@@ -86,6 +86,7 @@ export const Modules = ({ isCollapsed = false }) => {
           moduleName="Test"
           moduleTime={10}
           moduleNumber={9}
+          addLine={false}
           handleClick={handleClick}
           kind="inactive"
         />
