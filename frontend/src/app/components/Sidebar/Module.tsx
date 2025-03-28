@@ -67,7 +67,7 @@ export const Module = ({
             viewBox="0 0 1 28"
             fill="none"
           >
-            <path d="M0.5 1L0.5 27" stroke={color} stroke-linecap="round" />
+            <path d="M0.5 1L0.5 27" stroke={color} strokeLinecap="round" />
           </svg>
         )}
       </div>
