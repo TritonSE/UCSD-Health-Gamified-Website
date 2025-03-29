@@ -6,6 +6,7 @@
 
 .svg {
   overflow: visible;
+  margin-top: 10px;
 }
 
 .circleText {
@@ -32,4 +33,26 @@
   font-weight: 400;
   line-height: 150%; /* 36px */
   letter-spacing: 0.48px;
+}
+
+.verticalBarContainer {
+  position: relative;
+  height: 100px;
+}
+
+.verticalBarSvg {
+  overflow: visible;
+  margin-top: 16px;
+}
+
+.verticalText {
+  color: #fff;
+  text-align: center;
+
+  /* Body/Small (Reg) */
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
 }

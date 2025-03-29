@@ -56,6 +56,7 @@ export const Modules = ({ isCollapsed = false }) => {
           moduleNumber={5}
           handleClick={handleClick}
           kind="primary"
+          highlighted={true}
         />
         <Module
           isCollapsed={isCollapsed}

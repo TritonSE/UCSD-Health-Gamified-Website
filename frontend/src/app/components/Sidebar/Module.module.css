@@ -38,6 +38,7 @@
     transform 0.3s ease-in-out,
     max-height 0.3s ease-in-out;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .moduleText.collapsed {

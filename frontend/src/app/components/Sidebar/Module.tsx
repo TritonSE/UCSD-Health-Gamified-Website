@@ -3,6 +3,7 @@ import styles from "./Module.module.css";
 type Props = {
   isCollapsed?: boolean;
   kind?: "primary" | "inactive" | "complete";
+  highlighted?: boolean;
   moduleName: string;
   moduleTime: number;
   moduleNumber: number;
@@ -13,6 +14,7 @@ type Props = {
 export const Module = ({
   isCollapsed = false,
   kind = "inactive",
+  highlighted = false,
   moduleName,
   moduleTime,
   moduleNumber,
@@ -27,7 +29,6 @@ export const Module = ({
   let color = "#BBD567";
   switch (kind) {
     case "primary":
-      modules += ` ${styles.primaryBackground}`;
       moduleTitleText += ` ${styles.titlePrimary}`;
       moduleTimeText += ` ${styles.timePrimary}`;
       moduleNumberText += ` ${styles.numberPrimary}`;
@@ -48,6 +49,10 @@ export const Module = ({
       moduleNumberText += ` ${styles.numberComplete}`;
       moduleNumberBoarder += ` ${styles.boarderComplete}`;
       break;
+  }
+
+  if (highlighted) {
+    modules += ` ${styles.primaryBackground}`;
   }
 
   if (isCollapsed) {

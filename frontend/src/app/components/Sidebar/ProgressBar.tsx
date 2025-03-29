@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { animated, useSpring } from "react-spring";
 
@@ -30,6 +32,15 @@ export const ProgressBar = ({ percentage, isCollapsed = false }: Props) => {
 
   const animatedStrokeDashoffset = animatedPercentage.val.to((val) => {
     return circumference - (val / 100) * circumference;
+  });
+
+  const animatedHeight = animatedPercentage.val.to((val) => {
+    if (val <= 1) return 0;
+    if (val <= 10) return 16;
+
+    // Scale values from 17-100% to fill the remaining 84% of the bar
+    // This maps the range [17, 100] to [17, 100]
+    return 16 + ((val - 16) * 84) / 84;
   });
 
   return (
@@ -68,6 +79,31 @@ export const ProgressBar = ({ percentage, isCollapsed = false }: Props) => {
           <text x="50%" y="125%" className={styles.circleSubText} textAnchor="middle">
             progress
           </text>
+        </svg>
+      )}
+      {isCollapsed && (
+        <svg width={16} height={100} viewBox={`0 0 16 100`} className={styles.verticalBarSvg}>
+          <rect width="16" height="100" rx="8" fill="white" />
+
+          <animated.rect
+            x="0"
+            y={animatedHeight.to((h) => 100 - h)}
+            width="16"
+            height={animatedHeight.to((h) => h)}
+            rx="8"
+            fill="#BBD567"
+          />
+
+          <animated.text
+            x="8"
+            y="120"
+            textAnchor="middle"
+            className={styles.verticalText}
+            fill="white"
+            fontSize="14"
+          >
+            {animatedPercentage.val.to((val: number) => Math.round(val) + "%")}
+          </animated.text>
         </svg>
       )}
     </div>
