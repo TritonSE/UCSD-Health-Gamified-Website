@@ -29,6 +29,9 @@ export const Module = ({
   let color = "#BBD567";
   switch (kind) {
     case "primary":
+      if (!highlighted) {
+        modules += ` ${styles.hover}`;
+      }
       moduleTitleText += ` ${styles.titlePrimary}`;
       moduleTimeText += ` ${styles.timePrimary}`;
       moduleNumberText += ` ${styles.numberPrimary}`;
@@ -44,6 +47,9 @@ export const Module = ({
       color = "#909090";
       break;
     case "complete":
+      if (!highlighted) {
+        modules += ` ${styles.hover}`;
+      }
       moduleTitleText += ` ${styles.titleComplete}`;
       moduleTimeText += ` ${styles.timePrimary}`;
       moduleNumberText += ` ${styles.numberComplete}`;
