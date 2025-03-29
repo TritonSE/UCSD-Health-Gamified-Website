@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Account } from "./Account";
 import { MapButton } from "./MapButton";
@@ -11,11 +11,16 @@ import styles from "./Sidebar.module.css";
 
 export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [percent, setPercent] = useState<number>(0);
   const [mapKind, setMapKind] = useState<"primary" | "secondary">("primary");
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
   };
+
+  useEffect(() => {
+    setPercent(50); // Change this to whatever initial value you want
+  }, []);
 
   const handleMap = () => {
     setMapKind((prevKind) => (prevKind === "primary" ? "secondary" : "primary"));
@@ -43,7 +48,7 @@ export default function Sidebar() {
           />
         )}
       </button>
-      <ProgressBar isCollapsed={isCollapsed} percentage={50} />
+      <ProgressBar isCollapsed={isCollapsed} percentage={percent} />
       <MapButton isCollapsed={isCollapsed} kind={mapKind} handleClick={handleMap} />
       <Modules isCollapsed={isCollapsed} />
       <Account isCollapsed={isCollapsed} />

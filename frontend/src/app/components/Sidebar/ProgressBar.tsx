@@ -1,6 +1,3 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
 import { animated, useSpring } from "react-spring";
 
 import styles from "./ProgressBar.module.css";
@@ -11,18 +8,10 @@ type Props = {
 };
 
 export const ProgressBar = ({ percentage, isCollapsed = false }: Props) => {
-  /* eslint-disable-next-line */
-  const [offset, setOffset] = useState<number>(0); // IDK whats going on this needs to be here to work?
-
   const size = 187;
   const strokeWidth = 18.5;
   const radius = (size - strokeWidth) / 2;
   const circumference = Math.PI * radius;
-
-  useEffect(() => {
-    const progressOffset = (percentage / 100) * circumference;
-    setOffset(progressOffset);
-  }, [percentage, circumference]); // IDK whats going on this needs to be here to work?
 
   const animatedPercentage = useSpring({
     val: percentage,
