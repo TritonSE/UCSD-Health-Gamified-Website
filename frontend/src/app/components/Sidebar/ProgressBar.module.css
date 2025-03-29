@@ -1,12 +1,17 @@
-.fonts {
-  width: 100px;
-  height: 88px;
-  flex-shrink: 0;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.fontPercentage {
-  color: #fff;
+.svg {
+  overflow: visible;
+}
+
+.circleText {
+  fill: #fff;
   text-align: center;
+
   /* Title/XLarge (Reg) */
   font-family: "DM Sans";
   font-size: 48px;
@@ -16,9 +21,10 @@
   letter-spacing: 0.96px;
 }
 
-.fontProgress {
-  color: #fff;
+.circleSubText {
+  fill: #fff;
   text-align: center;
+
   /* Title/Small (Reg) */
   font-family: "DM Sans";
   font-size: 24px;

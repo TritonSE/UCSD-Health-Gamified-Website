@@ -7,6 +7,11 @@
   align-self: stretch;
   justify-content: center;
   transition: gap 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: auto;
 }
 
 .column {

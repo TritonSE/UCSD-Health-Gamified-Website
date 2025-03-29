@@ -36,6 +36,7 @@ export const Module = ({
       break;
     case "inactive":
       moduleTitleText += ` ${styles.titleInactive}`;
+      modules += ` ${styles.pointer}`;
       moduleTimeText += ` ${styles.timeInactive}`;
       moduleNumberText += ` ${styles.numberInactive}`;
       moduleNumberBoarder += ` ${styles.boarderInactive}`;

@@ -1,3 +1,6 @@
+import React, { useEffect, useState } from "react";
+import { animated, useSpring } from "react-spring";
+
 import styles from "./ProgressBar.module.css";
 
 type Props = {
@@ -6,29 +9,67 @@ type Props = {
 };
 
 export const ProgressBar = ({ percentage, isCollapsed = false }: Props) => {
+  /* eslint-disable-next-line */
+  const [offset, setOffset] = useState<number>(0); // IDK whats going on this needs to be here to work?
+
+  const size = 187;
+  const strokeWidth = 18.5;
+  const radius = (size - strokeWidth) / 2;
+  const circumference = Math.PI * radius;
+
+  useEffect(() => {
+    const progressOffset = (percentage / 100) * circumference;
+    setOffset(progressOffset);
+  }, [percentage, circumference]); // IDK whats going on this needs to be here to work?
+
+  const animatedPercentage = useSpring({
+    val: percentage,
+    from: { val: 0 },
+    config: { tension: 30, friction: 12 },
+  });
+
+  const animatedStrokeDashoffset = animatedPercentage.val.to((val) => {
+    return circumference - (val / 100) * circumference;
+  });
+
   return (
-    <div>
+    <div className={styles.container}>
       {!isCollapsed && (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="187"
-          height="102"
-          viewBox="0 0 187 102"
-          fill="none"
+          width={size}
+          height={size / 2}
+          viewBox={`0 0 ${size} ${size / 2}`}
+          className={styles.svg}
         >
+          {/* Background half-circle */}
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M0 93.5C0 41.8614 41.8614 0 93.5 0C145.139 0 187 41.8614 187 93.5H170C170 51.2502 135.75 17 93.5 17C51.2502 17 17 51.2502 17 93.5H0Z"
-            fill="white"
+            d={`M ${size - strokeWidth / 2},${size / 2} A ${radius} ${radius} 0 0 0 ${strokeWidth / 2},${size / 2}`}
+            stroke="#FFF"
+            strokeWidth={strokeWidth}
+            fill="transparent"
+            strokeLinecap="round"
           />
-          <circle cx="8.5" cy="93.5" r="8.5" fill="white" />
-          <circle cx="178.5" cy="93.5" r="8.5" fill="white" />
+
+          {/* Progress half-circle */}
+          <animated.path
+            d={`M ${strokeWidth / 2},${size / 2} A ${radius} ${radius} 0 0 1 ${size - strokeWidth / 2},${size / 2}`}
+            stroke="#BBD567"
+            strokeWidth={strokeWidth}
+            fill="transparent"
+            strokeDasharray={circumference}
+            strokeDashoffset={animatedStrokeDashoffset}
+            strokeLinecap="round"
+          />
+
+          {/* Animated Centered Text */}
+          <animated.text x="50%" y="100%" className={styles.circleText} textAnchor="middle">
+            {animatedPercentage.val.to((val: number) => Math.round(val) + "%")}
+          </animated.text>
+          <text x="50%" y="125%" className={styles.circleSubText} textAnchor="middle">
+            progress
+          </text>
         </svg>
       )}
-      {/* {isCollapsed &&
-                
-        } */}
     </div>
   );
 };
