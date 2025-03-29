@@ -1,7 +1,7 @@
 .nav {
   width: 288px;
   height: 100%;
-  background: var(--Secondary-Accent1, #1c3a29);
+  background: #1c3a29;
   position: relative;
   left: 0;
   top: 0;

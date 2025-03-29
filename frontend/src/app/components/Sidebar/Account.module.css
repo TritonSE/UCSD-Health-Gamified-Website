@@ -16,7 +16,7 @@
 }
 
 .name {
-  color: var(--Secondary-Neutral-White, #fff);
+  color: #fff;
 
   /* Body/Medium (Bold) */
   font-family: "DM Sans";
@@ -28,7 +28,7 @@
 }
 
 .email {
-  color: var(--Secondary-Neutral-White, #fff);
+  color: #fff;
 
   /* Caption/Small */
   font-family: "DM Sans";

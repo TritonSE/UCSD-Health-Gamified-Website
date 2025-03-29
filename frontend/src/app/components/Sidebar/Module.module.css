@@ -82,11 +82,11 @@
 }
 
 .boarderPrimary {
-  border: 2px solid var(--Secondary-Neutral-White, #fff);
+  border: 2px solid #fff;
 }
 
 .boarderInactive {
-  border: 1px solid var(--Secondary-Neutral-Gray4, #909090);
+  border: 1px solid #909090;
 }
 
 .boarderComplete {
