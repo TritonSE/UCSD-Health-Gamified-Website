@@ -168,7 +168,7 @@
   background: rgba(187, 213, 103, 0.25); /* Opaque light green background */
   z-index: -1; /* Place behind the module content */
   opacity: 0; /* Initially hidden */
-  transition: opacity 0.4s ease-in-out; /* Smooth transition */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition */
 }
 
 .hover:hover::before {
