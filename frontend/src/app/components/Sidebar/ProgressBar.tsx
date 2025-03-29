@@ -25,7 +25,7 @@ export const ProgressBar = ({ percentage, isCollapsed = false }: Props) => {
 
   const animatedHeight = animatedPercentage.val.to((val) => {
     if (val <= 1) return 0;
-    if (val <= 10) return 16;
+    if (val <= 10) return 10;
 
     // Scale values from 17-100% to fill the remaining 84% of the bar
     // This maps the range [17, 100] to [17, 100]
