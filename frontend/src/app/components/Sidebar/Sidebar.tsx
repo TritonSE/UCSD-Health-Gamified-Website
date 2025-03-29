@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Account } from "./Account";
 import { MapButton } from "./MapButton";
 import { Modules } from "./Modules";
+import { ProgressBar } from "./ProgressBar";
 import styles from "./Sidebar.module.css";
 
 export default function Sidebar() {
@@ -42,6 +43,7 @@ export default function Sidebar() {
           />
         )}
       </button>
+      <ProgressBar percentage={10} />
       <MapButton isCollapsed={isCollapsed} kind={mapKind} handleClick={handleMap} />
       <Modules isCollapsed={isCollapsed} />
       <Account isCollapsed={isCollapsed} />

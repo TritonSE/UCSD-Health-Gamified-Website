@@ -1,0 +1,29 @@
+.fonts {
+  width: 100px;
+  height: 88px;
+  flex-shrink: 0;
+}
+
+.fontPercentage {
+  color: #fff;
+  text-align: center;
+  /* Title/XLarge (Reg) */
+  font-family: "DM Sans";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 72px */
+  letter-spacing: 0.96px;
+}
+
+.fontProgress {
+  color: #fff;
+  text-align: center;
+  /* Title/Small (Reg) */
+  font-family: "DM Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 36px */
+  letter-spacing: 0.48px;
+}
