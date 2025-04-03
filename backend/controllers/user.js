@@ -2,7 +2,6 @@
 import client from "../util/db.js";
 import { User } from "../models/user.js";
 
-
 export const createUser = async (req, res) => {
   try {
     const newUser = req.body;
