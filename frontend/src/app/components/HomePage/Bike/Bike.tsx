@@ -82,7 +82,6 @@ export default function Bike({ modulePreview, initialModule, bikeIsAnimating }: 
     const handleEndAnimation = (event: AnimationEvent) => {
       if (event.target === bikeElement) {
         bikeIsAnimating.current = false;
-        console.log("Navigating to Module ", modulePreview);
         // router.push(`/module/${modulePreview}`);
       }
     };

@@ -14,7 +14,7 @@ export default function Mod1ChooseBike() {
         <CardSlide title="SAVE TIME" content="Get to school faster without breaking a sweat." />
         <CardSlide title="SAVE MONEY" content="Reduce transportation costs." />
         <CardSlide
-          title="SAVE ACTIVE"
+          title="STAY ACTIVE"
           content="Enjoy the benefits of cycling while getting a boost from the electric motor."
         />
       </div>
