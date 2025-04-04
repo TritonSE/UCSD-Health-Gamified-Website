@@ -4,7 +4,6 @@ import { validationResult } from "express-validator";
 import validationErrorParser from "../util/validationErrorParser.js";
 
 export const createUser = async (req, res) => {
-  console.log("req:", req.body);
   const errors = validationResult(req);
 
   try {
