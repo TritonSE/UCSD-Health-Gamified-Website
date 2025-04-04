@@ -20,16 +20,6 @@ export const createUserValidator = [
     .withMessage("Invalid email format")
     .bail()
     .normalizeEmail(),
-
-  body("password")
-    .exists()
-    .withMessage("Password is required")
-    .bail()
-    .isString()
-    .withMessage("Password must be a string")
-    .bail()
-    .isLength({ min: 8 })
-    .withMessage("Password must be at least 8 characters long"),
 ];
 
 // Validator for updating user info

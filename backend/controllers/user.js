@@ -1,16 +1,20 @@
 /* eslint-disable */
-import client from "../util/db.js";
 import { User } from "../models/user.js";
+import { validationResult } from "express-validator";
+import validationErrorParser from "../util/validationErrorParser.js";
 
 export const createUser = async (req, res) => {
+  console.log("req:", req.body);
+  const errors = validationResult(req);
+
   try {
+    validationErrorParser(errors);
     const newUser = req.body;
 
     if (!newUser.name || !newUser.email) {
       return res.status(400).json({ error: "Name and email are required." });
     }
 
-    //const _ = await users.insertOne(newUser);
     const savedUser = await User.create(newUser);
 
     res.status(201).json(savedUser);
