@@ -1,0 +1,88 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: auto;
+}
+
+.congrats {
+  color: black;
+  font-family: "Rammetto One";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 2%;
+  width: 800px;
+  text-transform: uppercase;
+}
+
+.printInstruction {
+  color: black;
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 2%;
+  width: 800px;
+}
+
+.icons {
+  display: flex;
+  margin-left: auto;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 155px;
+  height: 27px;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.certificate {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+@media print {
+  .container {
+    visibility: hidden;
+  }
+
+  .content {
+    visibility: hidden;
+  }
+
+  .sidebar {
+    visibility: hidden;
+  }
+
+  .icons {
+    visibility: hidden;
+  }
+
+  .certificate {
+    visibility: visible;
+    transform-origin: top left; /* Ensure it scales from top-left */
+    transform: translateX(-275px) translateY(-100px) scale(1.3);
+  }
+
+  @page {
+    size: landscape;
+    margin: 0;
+  }
+}
