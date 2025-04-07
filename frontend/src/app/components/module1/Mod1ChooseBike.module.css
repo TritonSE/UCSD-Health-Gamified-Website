@@ -3,19 +3,18 @@
   font-size: 32px;
   color: var(--foreground);
   font-family: "Rammetto One";
-  margin-left: 8vw;
   padding-top: 16vh;
   font-weight: 400;
+  text-align: center;
 }
 
 .description {
+  text-align: center;
   font-size: 22px;
   color: var(--foreground);
   font-family: "DM Sans";
   margin-top: 2vh;
-  margin-left: 8vw;
   font-weight: 400;
-  margin-right: 2vw;
   margin-bottom: 4vh;
 }
 
