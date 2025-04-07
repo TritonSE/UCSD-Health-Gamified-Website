@@ -24,7 +24,7 @@ export default function Module1() {
       {/* content */}
       <div className={styles.content}>
         {/* title and intro */}
-        <ModTitle module_num={1} module_name="What is an E-bike?" />
+        <ModTitle module_num={1} module_name="WHAT IS AN E BIKE?" />
         <Mod1Intro />
         <Mod1ChooseBike />
         {/* factors */}
