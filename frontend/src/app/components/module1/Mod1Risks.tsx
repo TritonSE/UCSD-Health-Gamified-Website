@@ -61,8 +61,8 @@ export default function Mod1Risks() {
         />
       </div>
       <p className={styles.text}>
-        By understanding the different e-bike classifications, the importance of riding a legal
-        e-bike, and the risks associated with illegal or unclassified bicycles, you can make an
+        By understanding the different E bike classifications, the importance of riding a legal E
+        bike, and the risks associated with illegal or unclassified bicycles, you can make an
         informed decision that ensures a safe and enjoyable riding experience.
       </p>
     </div>

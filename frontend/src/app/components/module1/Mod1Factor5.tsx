@@ -30,7 +30,7 @@ export default function Mod1Factor5() {
 
   return (
     <div style={{ marginTop: "80px" }}>
-      <Mod1FactorTitle number={5} step="Consider e-bike classification" />
+      <Mod1FactorTitle number={5} step="Consider E bike classification" />
       <ButtonCardSlider titles={titles} cards={cards} show_numbers={true} />
     </div>
   );
