@@ -48,7 +48,7 @@
 }
 
 .card2 span {
-  color: #fff;
+  color: #fff !important;
 }
 
 .card2 {
