@@ -6,36 +6,37 @@ export default function Mod1Risks() {
   // styling of cards
   const cardStyle = {
     container: {
-      backgroundColor: "#bbd567",
       width: "25%",
-      borderRadius: "20px",
-      aspectRatio: "1 / 1",
+      borderRadius: "8px",
+      aspectRatio: "6 / 5",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
     },
     container_flipped: {
-      backgroundColor: "#f6ffd7",
       width: "25%",
-      borderRadius: "20px",
-      aspectRatio: "1 / 1",
+      borderRadius: "8px",
+      aspectRatio: "6 / 5",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
     },
     front_text: {
       color: "#1C3A29",
-      textAlign: "center",
     },
     back_text: {
       color: "#1C3A29",
-      textAlign: "center",
+      fontSize: "18px",
+      fontStyle: "normal",
+      fontWeight: 700,
+      lineHeight: "150%" /* 27px */,
+      letterSpacing: "0.36px",
     },
   };
 
   return (
     <div>
-      <h1 className={styles.title}>Risks associated with illegal or unclassified bicycles:</h1>
+      <h1 className={styles.title}>Risks associated with illegal or unclassified bicycles</h1>
       <div className={styles.row}>
         <Flip
           front_text="Safety Risks"
