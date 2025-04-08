@@ -9,7 +9,7 @@ export default function Mod1Factor4() {
       <Mod1FactorTitle number={4} step="Set a budget" />
       <InfoItem
         icon={"/module1/feature_icon.svg"}
-        content={"E-bikes vary in price based on features and components."}
+        content={"E bikes vary in price based on features and components."}
         iconAlt={"Feature icon"}
       ></InfoItem>
       <InfoItem
