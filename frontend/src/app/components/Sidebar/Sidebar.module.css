@@ -12,10 +12,6 @@
   transition: width 0.3s ease;
 }
 
-.nav::-webkit-scrollbar {
-  display: none;
-}
-
 .nav.collapsed {
   width: 92px;
 }
