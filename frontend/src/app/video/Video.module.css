@@ -1,0 +1,92 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Pastel-Green, #faffea);
+  width: 100%;
+  height: 100vh;
+}
+
+.title {
+  color: #000;
+  font-family: "Rammetto One";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 60px */
+  letter-spacing: 0.8px;
+  padding-bottom: 32px;
+}
+
+.titleContainer {
+  display: flex;
+  width: 100%;
+  justify-content: left;
+}
+
+.ytContainer {
+  width: 854px;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 854px;
+}
+
+.buttonContainer {
+  padding-top: 24px;
+}
+
+.buttonInitial {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  background: var(--Functional-Disabled, #d8d8d8);
+  display: flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex: 1 0 0;
+  align-self: stretch;
+  border-width: 0px;
+}
+
+.buttonFinal {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  background: var(--Secondary-Accent1, #1c3a29);
+  display: flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex: 1 0 0;
+  align-self: stretch;
+  border-width: 0px;
+}
+
+.buttonText {
+  color: var(--Neutral-White, #fff);
+  text-align: center;
+
+  /* Body/Medium (Reg) */
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
