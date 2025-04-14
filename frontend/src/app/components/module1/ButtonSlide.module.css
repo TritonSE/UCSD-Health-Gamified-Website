@@ -1,0 +1,51 @@
+.buttonSlide {
+  display: flex;
+  align-items: center;
+  position: relative; /* Allows absolute positioning of the moving blob */
+  width: 85%;
+  margin: auto;
+  border: 2px solid #bbd567;
+  border-radius: 68px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  overflow: hidden; /* Prevents overflow from transition */
+}
+
+.button {
+  flex: 1; /* Makes buttons equally spaced */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110px;
+  padding: 0 5%;
+  color: #b4b4b4;
+  font-family: "Rammetto One";
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.58px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  z-index: 1; /* Ensure text is above the moving blob */
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button.active {
+  color: #000; /* Active button text color */
+  transition: color 0.4s ease;
+}
+
+.movingBlob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(100% / 3); /* Adjust depending on number of buttons */
+  background-color: #bbd567; /* Green blob */
+  border-radius: 68px;
+  transition: transform 0.4s ease-in-out;
+  z-index: 0; /* Behind the buttons */
+}
