@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 32px;
+  margin-left: 88px;
+}
+
+.bubble {
+  background-color: #ffe5c9;
+  padding: 24px 32px;
+  border-radius: 6px;
+  line-height: 1.6;
+  position: relative;
+  font-family: "DM Sans";
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: auto;
+  margin-right: 96px;
+}
+
+/* the "point" of the chat bubble */
+.bubble::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  bottom: -56px;
+  width: 0;
+  height: 0;
+  border-width: 56px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fce7ca;
+  transform: rotate(35deg);
+  z-index: -1;
+}
