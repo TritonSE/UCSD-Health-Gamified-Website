@@ -19,13 +19,13 @@ export default function CertificatePage() {
     if (!certificateRef.current) return;
 
     toPng(certificateRef.current, { cacheBust: true })
-      .then((dataUrl) => {
+      .then((dataUrl: string) => {
         const link = document.createElement("a");
         link.download = "certificate.png";
         link.href = dataUrl;
         link.click();
       })
-      .catch((err) => {
+      .catch((err: unknown) => {
         console.log(err);
       });
   };
