@@ -2,6 +2,7 @@
   width: 100%;
   height: 100vh;
   display: flex;
+  overflow-x: auto;
 }
 
 .content {
@@ -14,6 +15,7 @@
   max-width: 800px;
   height: auto;
   margin: auto;
+  position: relative;
 }
 
 .congrats {
@@ -25,6 +27,29 @@
   letter-spacing: 2%;
   width: 800px;
   text-transform: uppercase;
+}
+
+.star1 {
+  top: 18px;
+  left: -65px;
+  position: absolute;
+}
+
+.star2 {
+  top: -15px;
+  left: 780px;
+  position: absolute;
+}
+
+.star3 {
+  top: 18px;
+  left: 810px;
+  position: absolute;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 .printInstruction {
@@ -54,8 +79,12 @@
 }
 
 .certificate {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  background-color: white;
+  width: 800px;
+  height: 564px;
+  box-shadow: 2px 6px 18px rgba(0, 0, 0, 0.3);
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 @media print {
@@ -78,7 +107,8 @@
   .certificate {
     visibility: visible;
     transform-origin: top left; /* Ensure it scales from top-left */
-    transform: translateX(-275px) translateY(-100px) scale(1.3);
+    transform: translateX(-288px) translateY(-100px) scale(1.33);
+    box-shadow: none;
   }
 
   @page {

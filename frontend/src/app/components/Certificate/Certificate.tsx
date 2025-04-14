@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 import styles from "./Certificate.module.css";
 
@@ -9,184 +10,141 @@ export type CertificateNameProps = {
 };
 
 export default function Certificate({ name }: CertificateNameProps) {
+  const nameRef = useRef<HTMLDivElement>(null);
+
+  const today = new Date();
+  const formattedDate = today.toLocaleDateString("en-US");
+
+  const adjustFontSize = () => {
+    if (!nameRef.current) return;
+
+    let fontSize = 36;
+    const baseTop = 235;
+
+    const maxHeight = 47;
+    const nameHeight = nameRef.current.scrollHeight;
+
+    if (nameHeight > maxHeight) {
+      const scaleFactor = Math.pow(maxHeight / nameHeight, 1);
+      fontSize = Math.max(fontSize * scaleFactor, 20);
+    }
+
+    console.log(fontSize);
+    nameRef.current.style.fontSize = `${fontSize}px`;
+
+    const newTop = baseTop + (36 - fontSize) + 5;
+    nameRef.current.style.top = `${newTop}px`;
+  };
+
+  useEffect(() => {
+    adjustFontSize();
+
+    window.addEventListener("resize", adjustFontSize);
+    return () => {
+      window.removeEventListener("resize", adjustFontSize);
+    };
+  }, [name, nameRef]);
+
   return (
     <main>
       <div className={styles.container}>
-        <Image
-          src="/certificate/background.svg"
-          alt="UC San Diego Health"
-          width={800}
-          height={564}
-          className={styles.image}
-          aria-hidden
-        />
         <div className={styles.leftGraphic}>
           <Image
-            src="/certificate/ucsd-health.svg"
-            alt="UC San Diego Health"
-            width={226}
-            height={28}
-            className={styles.healthLogo}
+            src="/certificate/left-frame.svg"
+            alt="Timmy"
+            width={291}
+            height={564}
+            className={styles.leftFrame}
             aria-hidden
           />
           <Image
-            src="/certificate/logos.svg"
-            alt="Logos"
-            width={174}
-            height={50}
-            className={styles.logos}
-            aria-hidden
-          />
-          <div className={styles.row}>
-            <Image
-              src="/certificate/dot.svg"
-              alt="dot"
-              width={6}
-              height={6}
-              className={styles.dot1}
-              aria-hidden
-            />
-            <Image
-              src="/certificate/white-line.svg"
-              alt="line"
-              width={263}
-              height={1}
-              className={styles.line}
-              aria-hidden
-            />
-            <Image
-              src="/certificate/dot.svg"
-              alt="dot"
-              width={6}
-              height={6}
-              className={styles.dot2}
-              aria-hidden
-            />
-          </div>
-          <Image
-            src="/certificate/certif-text.svg"
-            alt="Certificate of Completion"
-            width={255}
-            height={96}
-            className={styles.certif}
-            aria-hidden
-          />
-          <div className={styles.row}>
-            <Image
-              src="/certificate/dot.svg"
-              alt="dot"
-              width={6}
-              height={6}
-              className={styles.dot3}
-              aria-hidden
-            />
-            <Image
-              src="/certificate/white-line.svg"
-              alt="line"
-              width={263}
-              height={1}
-              className={styles.line2}
-              aria-hidden
-            />
-            <Image
-              src="/certificate/dot.svg"
-              alt="dot"
-              width={6}
-              height={6}
-              className={styles.dot4}
-              aria-hidden
-            />
-          </div>
-          <Image
-            src="/TimmyOk.svg"
-            alt="Timmy, the tire mascot"
-            width={204}
-            height={198}
-            className={styles.timmy}
+            src="/certificate/right-dot.svg"
+            alt="Timmy's right arm"
+            width={38}
+            height={38}
+            className={styles.rightArm}
             aria-hidden
           />
         </div>
         <div className={styles.rightGraphic}>
           <Image
-            src="/certificate/award-to-text.svg"
-            alt="This Certificate of Completion is awarded to"
-            width={240}
-            height={46}
-            className={styles.awardText}
+            src="/certificate/certif-complete-text.svg"
+            alt="Certificate of Completion"
+            width={365}
+            height={122}
+            style={{ objectFit: "contain" }}
+            className={styles.certifComplete}
             aria-hidden
           />
 
-          <p className={styles.name}>{name}</p>
+          <Image
+            src="/certificate/award-to.svg"
+            alt="Certificate is awarded to"
+            width={317}
+            height={21}
+            className={styles.awardTo}
+            aria-hidden
+          />
+
+          <p ref={nameRef} className={styles.name}>
+            {name}
+          </p>
 
           <Image
-            src="/certificate/big-divide.svg"
-            alt="Black divide line"
-            width={420}
+            src="/certificate/line.svg"
+            alt="Line"
+            width={370}
             height={1}
-            className={styles.blackLine}
+            className={styles.line}
             aria-hidden
           />
 
           <Image
-            src="/certificate/success-text.svg"
-            alt="Completion of E-Bike safety course text"
-            width={344}
-            height={76}
-            className={styles.completionText}
+            src="/certificate/recognition.svg"
+            alt="In recognition of..."
+            width={327}
+            height={14}
+            className={styles.recognition}
             aria-hidden
           />
 
           <Image
-            src="/certificate/sign-1.svg"
-            alt="This Certificate of Completion is awarded to"
-            width={115}
-            height={63}
-            className={styles.signature1}
+            src="/certificate/success.svg"
+            alt="Successful completion"
+            width={390}
+            height={28}
+            className={styles.success}
             aria-hidden
           />
 
-          <Image
-            src="/certificate/sign-line.svg"
-            alt="This Certificate of Completion is awarded to"
-            width={101}
-            height={1}
-            className={styles.signLine1}
-            aria-hidden
-          />
+          <p className={styles.dateText}>{formattedDate}</p>
+
+          <div className={styles.row}>
+            <Image
+              src="/certificate/date.svg"
+              alt="Date"
+              width={100}
+              height={26}
+              className={styles.date}
+              aria-hidden
+            />
+
+            <Image
+              src="/certificate/signature.svg"
+              alt="Signature"
+              width={100}
+              height={26}
+              className={styles.signature}
+              aria-hidden
+            />
+          </div>
 
           <Image
-            src="/certificate/date.svg"
-            alt="This Certificate of Completion is awarded to"
-            width={32}
-            height={8}
-            className={styles.date}
-            aria-hidden
-          />
-
-          <Image
-            src="/certificate/sign-2.svg"
-            alt="This Certificate of Completion is awarded to"
-            width={124}
-            height={81}
-            className={styles.signature2}
-            aria-hidden
-          />
-
-          <Image
-            src="/certificate/sign-line.svg"
-            alt="This Certificate of Completion is awarded to"
-            width={128}
-            height={1}
-            className={styles.signLine2}
-            aria-hidden
-          />
-
-          <Image
-            src="/certificate/signature-text.svg"
-            alt="This Certificate of Completion is awarded to"
-            width={73}
-            height={9}
-            className={styles.signature}
+            src="/certificate/new-logos.svg"
+            alt="Logos"
+            width={454}
+            height={54}
+            className={styles.newLogos}
             aria-hidden
           />
         </div>

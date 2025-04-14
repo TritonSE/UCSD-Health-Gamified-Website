@@ -1,6 +1,6 @@
 "use client";
 import { onAuthStateChanged } from "firebase/auth";
-import html2canvas from "html2canvas";
+import { toPng } from "html-to-image";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -18,23 +18,21 @@ export default function CertificatePage() {
   const handleDownloadPDF = () => {
     if (!certificateRef.current) return;
 
-    html2canvas(certificateRef.current)
-      .then((canvas) => {
-        const dataURL = canvas.toDataURL("image/png");
+    toPng(certificateRef.current, { cacheBust: true })
+      .then((dataUrl) => {
         const link = document.createElement("a");
-        link.href = dataURL;
         link.download = "certificate.png";
+        link.href = dataUrl;
         link.click();
       })
-      .catch((error) => {
-        console.error("Error saving certificate as image:", error);
+      .catch((err) => {
+        console.log(err);
       });
   };
 
   useEffect(() => {
     const getName = onAuthStateChanged(auth, (user) => {
       if (user?.email) {
-        console.log("Logged in as:", user.email);
         getUser(user.email)
           .then((result) => {
             if (result.success) {
@@ -63,9 +61,35 @@ export default function CertificatePage() {
           <Sidebar />
         </div>
         <div className={styles.content}>
-          <p className={styles.congrats}>
-            Congratulations! You’ve officially completed the E-Bike safety course!
-          </p>
+          <div className={styles.row}>
+            <Image
+              src="/certificate/star1.svg"
+              alt="Star"
+              width={35}
+              height={35}
+              className={styles.star1}
+            />
+
+            <p className={styles.congrats}>
+              Congratulations! You’ve officially completed the E-Bike safety course!
+            </p>
+
+            <Image
+              src="/certificate/star2.svg"
+              alt="Star"
+              width={32}
+              height={32}
+              className={styles.star2}
+            />
+
+            <Image
+              src="/certificate/star3.svg"
+              alt="Star"
+              width={50}
+              height={50}
+              className={styles.star3}
+            />
+          </div>
 
           <div ref={certificateRef} className={styles.certificate}>
             <Certificate name={name} />
@@ -78,23 +102,11 @@ export default function CertificatePage() {
                 window.print();
               }}
             >
-              <Image
-                src="/certificate/print.svg"
-                alt="Print"
-                width={73}
-                height={27}
-                className={styles.signature}
-              />
+              <Image src="/certificate/print.svg" alt="Print" width={24} height={24} />
             </button>
 
             <button className={styles.button} onClick={handleDownloadPDF}>
-              <Image
-                src="/certificate/save.svg"
-                alt="Save"
-                width={73}
-                height={27}
-                className={styles.signature}
-              />
+              <Image src="/certificate/download.svg" alt="Save" width={24} height={24} />
             </button>
           </div>
 

@@ -4,7 +4,6 @@
   min-width: 800px;
   height: auto;
   min-height: 564px;
-  box-shadow: 2px 6px 18px rgba(0, 0, 0, 0.3);
 }
 
 .leftGraphic {
@@ -19,27 +18,10 @@
   flex-direction: column;
   z-index: 10;
   position: absolute;
+  border: #040404;
 }
 
-.image {
-  position: absolute;
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.front {
-  z-index: 0;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-}
-
-.dot1 {
-  top: 188px;
-  left: 43px;
+.leftFrame {
   z-index: 0;
   position: absolute;
   -webkit-user-drag: none;
@@ -47,9 +29,9 @@
   -webkit-user-select: none;
 }
 
-.dot2 {
-  top: 188px;
-  left: 306px;
+.rightArm {
+  top: 405px;
+  left: 270px;
   z-index: 0;
   position: absolute;
   -webkit-user-drag: none;
@@ -57,9 +39,9 @@
   -webkit-user-select: none;
 }
 
-.dot3 {
-  top: 288px;
-  left: 43px;
+.certifComplete {
+  top: 56px;
+  left: 341px;
   z-index: 0;
   position: absolute;
   -webkit-user-drag: none;
@@ -67,85 +49,11 @@
   -webkit-user-select: none;
 }
 
-.dot4 {
-  top: 289px;
-  left: 306px;
+.awardTo {
+  top: 205px;
+  left: 341px;
   z-index: 0;
   position: absolute;
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.line {
-  top: 190px;
-  left: 46px;
-  z-index: 0;
-  width: 263px;
-  height: auto;
-  position: absolute;
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.line2 {
-  top: 290px;
-  left: 46px;
-  z-index: 0;
-  width: 263px;
-  height: auto;
-  position: absolute;
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.healthLogo {
-  position: absolute;
-  top: 48px;
-  left: 64px;
-  z-index: 0;
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.logos {
-  position: absolute;
-  top: 102px;
-  left: 90px;
-  z-index: 0;
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.certif {
-  position: absolute;
-  top: 195px;
-  left: 49px;
-  z-index: 0;
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.timmy {
-  position: absolute;
-  top: 336px;
-  left: 74px;
-  z-index: 0;
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.awardText {
-  position: absolute;
-  top: 134px;
-  left: 444px;
-  z-index: 0;
   -webkit-user-drag: none;
   user-select: none;
   -webkit-user-select: none;
@@ -153,95 +61,92 @@
 
 .name {
   position: absolute;
-  top: 205px;
-  left: 453px;
+  top: 235px;
+  left: 341px;
   z-index: 0;
-  width: 221px;
-  height: 59px;
-  font-weight: 700;
-  font-size: 45px;
+  width: 440px;
+  max-height: 47px;
+  font-family: "DM Sans";
+  font-weight: 900;
+  font-size: 36px;
   color: #040404;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  text-align: left;
 }
 
-.blackLine {
-  position: absolute;
-  top: 270px;
-  left: 359px;
+.line {
+  top: 290px;
+  left: 341px;
+  width: 403px;
+  height: auto;
   z-index: 0;
+  position: absolute;
   -webkit-user-drag: none;
   user-select: none;
   -webkit-user-select: none;
 }
 
-.completionText {
-  position: absolute;
-  top: 295px;
-  left: 397px;
+.recognition {
+  top: 300px;
+  left: 341px;
   z-index: 0;
+  position: absolute;
   -webkit-user-drag: none;
   user-select: none;
   -webkit-user-select: none;
 }
 
-.signLine1 {
-  position: absolute;
-  top: 502px;
-  left: 432px;
+.success {
+  top: 330px;
+  left: 341px;
   z-index: 0;
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.signLine2 {
   position: absolute;
-  top: 502px;
-  left: 598px;
-  z-index: 0;
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.signature1 {
-  position: absolute;
-  top: 428px;
-  left: 426px;
-  z-index: 0;
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.signature2 {
-  position: absolute;
-  top: 411px;
-  left: 613px;
-  z-index: 0;
   -webkit-user-drag: none;
   user-select: none;
   -webkit-user-select: none;
 }
 
 .date {
-  position: absolute;
-  top: 512px;
-  left: 464px;
+  top: 417px;
+  left: 341px;
   z-index: 0;
+  position: absolute;
   -webkit-user-drag: none;
   user-select: none;
   -webkit-user-select: none;
 }
 
-.signature {
-  position: absolute;
-  top: 512px;
-  left: 626px;
+.dateText {
+  top: 395px;
+  left: 341px;
   z-index: 0;
+  position: absolute;
+  font-family: "DM Sans";
+  font-weight: 300;
+  font-size: 14px;
+  color: black;
+}
+
+.signature {
+  top: 417px;
+  left: 660px;
+  z-index: 0;
+  position: absolute;
   -webkit-user-drag: none;
   user-select: none;
   -webkit-user-select: none;
+}
+
+.newLogos {
+  top: 475px;
+  left: 321px;
+  z-index: 0;
+  position: absolute;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
