@@ -1,5 +1,6 @@
 import React from "react";
 
+import ChatBubble from "./ChatBubble";
 import InfoItem from "./InfoItem";
 import Mod1FactorTitle from "./Mod1FactorTitle";
 
@@ -23,6 +24,11 @@ export default function Mod1Factor2() {
         }
         iconAlt={"Graph icon"}
       ></InfoItem>
+
+      <ChatBubble
+        icon="/Timmy.svg"
+        message="Set a budget! E Bikes vary in price based on features and components. Determine your budget to narrow down your options!"
+      />
     </>
   );
 }
