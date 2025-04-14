@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
-import styles from "./IntroVideo.module.css";
+import React, { useState } from "react";
 import { ReactTyped } from "react-typed";
-import { useState } from "react";
+
+import styles from "./IntroVideo.module.css";
 
 export default function IntroVideo() {
   const [textLoaded, isTextLoaded] = useState(false);

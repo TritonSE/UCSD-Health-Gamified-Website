@@ -1,0 +1,78 @@
+@keyframes moveAlong {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes moveAlong4 {
+  0% {
+    offset-distance: 0%;
+  }
+
+  45% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(-1);
+  }
+
+  100% {
+    transform: scaleY(-1);
+    offset-distance: 100%;
+  }
+}
+
+@keyframes moveAlong7 {
+  0% {
+    offset-distance: 0%;
+  }
+
+  55% {
+    transform: scaleY(-1);
+  }
+
+  60% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(1);
+    offset-distance: 100%;
+  }
+}
+
+@keyframes ShortSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes Spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1080deg);
+  }
+}
+
+.bike_container {
+  transform-box: fill-box;
+  transform-origin: center;
+  offset-distance: 100%;
+}
+
+.bike_pedal {
+  transform-origin: 370px 175px;
+}
+
+.bike_pedal_rect {
+  transform-origin: 370px 186.5px;
+}

@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+
 import styles from "./Video.module.css";
-import { useEffect } from "react";
 
 export default function IntroVideo() {
   const [videoTimed, setVideoTimed] = React.useState(false);

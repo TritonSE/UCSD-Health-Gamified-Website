@@ -1,0 +1,87 @@
+/* open accordion */
+.accordion {
+  width: 84%;
+  background: #1c3a29;
+  margin: auto;
+  margin-bottom: 24px;
+  font-family: "DM Sans";
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 12px;
+  transition:
+    background-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+/* closed accordion */
+.accordionClosed {
+  background: #ffffff;
+  box-shadow: 0px 4px 16px rgba(28, 58, 41, 0.1);
+}
+
+.accordionClosed .title {
+  color: #1c3a29;
+}
+
+/* title */
+.titleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+}
+
+.title {
+  color: #bbd567;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* content */
+.contentContainer {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease-out;
+}
+
+.content {
+  opacity: 1;
+  color: #ffffff;
+  transition: 0.3s ease-in 0.2s;
+}
+
+/* toggle button */
+.button {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+
+/* button transition when closing */
+.buttonClose {
+  background: #1c3a29;
+  transform: rotate(180deg);
+}
+
+.buttonClose img {
+  filter: grayscale(100%) brightness(0%) invert(100%);
+}
+
+/* button transition when opening */
+.buttonOpen {
+  background: #bbd567;
+  transform: rotate(0deg);
+}
+
+/* horizontal row */
+.hr {
+  color: #ffffff;
+  opacity: 0.15;
+  margin: 24px 0;
+}

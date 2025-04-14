@@ -21,7 +21,6 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
     if (user) {
       sendEmailVerification(user)
         .then(() => {
-          console.log("Email sent. Please wait 1 minute before trying again.");
           setVerificationError("");
           setEmailResent("Email resent! Please wait 1 minute before trying again.");
         })
