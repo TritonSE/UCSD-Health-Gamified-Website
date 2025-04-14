@@ -6,7 +6,6 @@ import Mod1ChooseBike from "../components/module1/Mod1ChooseBike";
 import Mod1Factor1 from "../components/module1/Mod1Factor1";
 import Mod1Factor2 from "../components/module1/Mod1Factor2";
 import Mod1Factor3 from "../components/module1/Mod1Factor3";
-import Mod1Factor4 from "../components/module1/Mod1Factor4";
 import Mod1Factor5 from "../components/module1/Mod1Factor5";
 import Mod1Intro from "../components/module1/Mod1Intro";
 import Mod1WhyRide from "../components/module1/Mod1WhyRide";
@@ -31,9 +30,10 @@ export default function Module1() {
         <Mod1Factor1 />
         <Mod1Factor2 />
         <Mod1Factor3 />
-        <Mod1Factor4 />
+        {/* NOTE: Factor4 was merged into 5 */}
         <Mod1Factor5 />
         <Mod1WhyRide />
+        {/* TODO: Modify component below + change name */}
         <MiniQuiz />
       </div>
     </div>

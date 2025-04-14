@@ -1,9 +1,7 @@
 import React from "react";
 
-import styles from "../../module1/mod1.module.css";
-
 import ButtonCardSlider from "./ButtonCardSlider";
-import Mod1FactorTitle from "./Mod1FactorTitle";
+import styles from "./Mod1ChooseBike.module.css";
 
 export default function Mod1Factor1() {
   const titles_part1 = ["COMMUTING", "RECREATIONAL RIDING", "MOUNTAIN BIKING"];
@@ -36,8 +34,10 @@ export default function Mod1Factor1() {
 
   return (
     <div>
-      <p className={styles.text}>When choosing your E bike, consider the following factors:</p>
-      <Mod1FactorTitle number={1} step="Consider your riding style" />
+      <h1 className={styles.title}>WHAT TYPES OF RIDING DO YOU WANT TO DO?</h1>
+      <p className={styles.description}>
+        When choosing your E bike, consider the following factors:
+      </p>
       <ButtonCardSlider titles={titles_part1} cards={cards_part1} show_numbers={false} />
     </div>
   );

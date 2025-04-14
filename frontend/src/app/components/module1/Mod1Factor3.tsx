@@ -3,7 +3,6 @@ import React from "react";
 import Flip from "../Flip";
 
 import styles from "./Mod1Factor3.module.css";
-import Mod1FactorTitle from "./Mod1FactorTitle";
 
 export default function Mod1Factor3() {
   // NOTE: we could probably move cardStyle into a separate CSS file?
@@ -37,7 +36,7 @@ export default function Mod1Factor3() {
   };
   return (
     <div style={{ marginTop: "80px" }}>
-      <Mod1FactorTitle number={3} step="Evaluate key features" />
+      <h1 className={styles.title}>EVALUATE KEY FEATURES</h1>
       <div className={styles.row}>
         <Flip
           front_text="Motor Power"
