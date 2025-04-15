@@ -75,8 +75,6 @@ export default function CreateAccountPanel({ setAccountCreated }: CreateAccountP
   const handleSubmit = () => {
     firebaseAuth()
       .then((userCredential) => {
-        console.log("Firebase authentication successful:", userCredential.user);
-
         // MongoDB creation
         createUser({
           name: formData.firstName + " " + formData.lastName,
@@ -86,8 +84,6 @@ export default function CreateAccountPanel({ setAccountCreated }: CreateAccountP
         })
           .then((result) => {
             if (result.success) {
-              console.log("MongoDB user creation successful:", userCredential.user);
-
               sendEmailVerification(userCredential.user)
                 .then(() => {
                   setAccountCreated(formData.email);
