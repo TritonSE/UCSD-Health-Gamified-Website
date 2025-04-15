@@ -14,7 +14,7 @@ export default function SimpleWay() {
         </p>
       </div>
         <Checkbox />
-        <p className={styles.text}>Click checklist to see the tips on the right!</p>
+        <p className={styles.headerSubtext}>Click checklist to see the tips on the right!</p>
     </section>
   );
 }

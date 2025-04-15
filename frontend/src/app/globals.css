@@ -45,13 +45,3 @@ a {
     color-scheme: dark;
   }
 }
-@media (max-width: 1366px) {
-  :root {
-    --module-width: 90%;
-  }
-}
-@media (max-width: 1280px) {
-  :root {
-    --module-width: 93%;
-  }
-}
