@@ -5,11 +5,15 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import WelcomePanel from "../components/WelcomePanel";
+// import { useAuth } from "../contexts/AuthContext";
 import { auth } from "../firebase-config.js";
 
 import styles from "./Auth.module.css";
 
 export default function Auth() {
+  // Example usage of useAuth
+  // const { currentUser } = useAuth();
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const actionExecuted = useRef(false);
