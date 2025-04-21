@@ -57,8 +57,8 @@ export default function IntroVideo() {
           <path
             d="M675.221 431.421C712.632 431.421 742.96 401.093 742.96 363.682C742.96 326.271 712.632 295.943 675.221 295.943C637.81 295.943 607.482 326.271 607.482 363.682C607.482 401.093 637.81 431.421 675.221 431.421Z"
             stroke="#D3D3DD"
-            stroke-width="9.84291"
-            stroke-miterlimit="10"
+            strokeWidth="9.84291"
+            strokeMiterlimit="10"
           />
           <path
             d="M675.22 415.396C703.782 415.396 726.935 392.243 726.935 363.681C726.935 335.12 703.782 311.967 675.22 311.967C646.659 311.967 623.506 335.12 623.506 363.681C623.506 392.243 646.659 415.396 675.22 415.396Z"
@@ -72,51 +72,51 @@ export default function IntroVideo() {
           <path
             d="M795.896 369.372C794.006 426.047 750.324 472.131 694.672 477.781"
             stroke="#4E4E68"
-            stroke-width="9.84291"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
+            strokeWidth="9.84291"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
           />
           <path
             d="M778.789 376.774C774.242 415.851 746.308 447.781 709.357 458.215"
             stroke="#4E4E68"
-            stroke-width="9.84291"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
+            strokeWidth="9.84291"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
           />
           <path
             d="M570.316 361.931C572.206 305.255 615.889 259.171 671.541 253.521"
             stroke="#4E4E68"
-            stroke-width="9.84291"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
+            strokeWidth="9.84291"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
           />
           <path
             d="M587.424 354.509C591.971 315.432 619.905 283.502 656.856 273.068"
             stroke="#4E4E68"
-            stroke-width="9.84291"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
+            strokeWidth="9.84291"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
           />
           <path
             d="M635.16 383.23C646.978 383.23 656.559 373.649 656.559 361.831C656.559 350.013 646.978 340.433 635.16 340.433C623.342 340.433 613.762 350.013 613.762 361.831C613.762 373.649 623.342 383.23 635.16 383.23Z"
             stroke="#ED351D"
-            stroke-width="7.87432"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="7.87432"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M704.1 383.23C715.918 383.23 725.498 373.649 725.498 361.831C725.498 350.013 715.918 340.433 704.1 340.433C692.282 340.433 682.701 350.013 682.701 361.831C682.701 373.649 692.282 383.23 704.1 383.23Z"
             stroke="#ED351D"
-            stroke-width="7.87432"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="7.87432"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M656.559 361.831C658.921 360.689 663.39 358.878 669.295 358.819C675.555 358.74 680.319 360.67 682.721 361.831"
             stroke="#ED351D"
-            stroke-width="7.87432"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="7.87432"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M746.774 421.098L755.115 432.944L833.342 377.864L825.001 366.017L746.774 421.098Z"
@@ -157,9 +157,9 @@ export default function IntroVideo() {
           <path
             d="M655.715 378.446C656.896 385.041 662.664 390.061 669.633 390.061C676.602 390.061 682.369 385.041 683.551 378.446"
             stroke="#171759"
-            stroke-width="7.28375"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="7.28375"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M637.01 479.887L575.314 491.994C572.558 492.526 569.704 490.793 568.916 488.136L546.514 411.322C545.727 408.644 547.341 406.046 550.097 405.495L611.792 393.388C614.548 392.856 617.403 394.589 618.19 397.246L640.593 474.06C641.38 476.738 639.766 479.336 637.01 479.887Z"
@@ -203,7 +203,7 @@ export default function IntroVideo() {
                 strings={[
                   "Over the past three years, we&apos;ve seen a <b>rise in serious e-bike injuries</b> in San Diego County, including areas like North County and UCSD. These injuries can be <b>serious and life-changing</b>, so it&apos;s important to know how to stay safe while riding.",
                 ]}
-                typeSpeed={17}
+                typeSpeed={20}
                 onStringTyped={() => {
                   isTextLoaded(true);
                 }}

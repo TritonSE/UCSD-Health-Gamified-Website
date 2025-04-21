@@ -42,7 +42,7 @@ export default function IntroVideo() {
             className={videoTimed ? styles.buttonFinal : styles.buttonInitial}
             onClick={handleSubmit}
           >
-            <p className={styles.buttonText}>Let&apos;s get started!</p>
+            <p className={styles.buttonText}>Ready to hit the road?</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
