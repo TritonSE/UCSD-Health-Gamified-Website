@@ -136,17 +136,35 @@
   -webkit-user-select: none;
 }
 
-.newLogos {
-  top: 475px;
-  left: 321px;
+.signaturePic {
+  top: 365px;
+  left: 650px;
   z-index: 0;
   position: absolute;
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-user-select: none;
+  font-family: "DM Sans";
+  font-weight: 300;
+  font-size: 14px;
+  color: black;
 }
 
 .row {
   display: flex;
   flex-direction: row;
+}
+
+.logos {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  top: 475px;
+  left: 321px;
+  z-index: 0;
+  width: 454px;
+  height: 54px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
 }

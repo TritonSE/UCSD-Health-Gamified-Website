@@ -117,7 +117,18 @@ export default function Certificate({ name }: CertificateNameProps) {
             aria-hidden
           />
 
-          <p className={styles.dateText}>{formattedDate}</p>
+          <div className={styles.row}>
+            <p className={styles.dateText}>{formattedDate}</p>
+
+            <Image
+              src="/certificate/JustinSignature.png"
+              alt="Date"
+              width={115}
+              height={60}
+              className={styles.signaturePic}
+              aria-hidden
+            />
+          </div>
 
           <div className={styles.row}>
             <Image
@@ -139,14 +150,30 @@ export default function Certificate({ name }: CertificateNameProps) {
             />
           </div>
 
-          <Image
-            src="/certificate/new-logos.svg"
-            alt="Logos"
-            width={454}
-            height={54}
-            className={styles.newLogos}
-            aria-hidden
-          />
+          <div className={styles.logos}>
+            <Image
+              src="/certificate/UCSDHealth.svg"
+              alt="Logos"
+              width={180}
+              height={29}
+              aria-hidden
+            />
+            <Image src="/certificate/SKlogo.png" alt="Logos" width={49} height={46} aria-hidden />
+            <Image
+              src="/certificate/Rady'sChildrenHealth.svg"
+              alt="Logos"
+              width={100}
+              height={51}
+              aria-hidden
+            />
+            <Image
+              src="/certificate/Primary-Logo-TealGreen.png"
+              alt="Logos"
+              width={74}
+              height={54}
+              aria-hidden
+            />
+          </div>
         </div>
       </div>
     </main>
