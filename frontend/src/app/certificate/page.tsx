@@ -91,23 +91,25 @@ export default function CertificatePage() {
             />
           </div>
 
-          <div ref={certificateRef} className={styles.certificate}>
-            <Certificate name={name} />
-          </div>
+          <div className={styles.certificateWrapper}>
+            <div ref={certificateRef} className={styles.certificate}>
+              <Certificate name={name} />
+            </div>
 
-          <div className={styles.icons}>
-            <button
-              className={styles.button}
-              onClick={() => {
-                window.print();
-              }}
-            >
-              <Image src="/certificate/print.svg" alt="Print" width={24} height={24} />
-            </button>
+            <div className={styles.icons}>
+              <button
+                className={styles.button}
+                onClick={() => {
+                  window.print();
+                }}
+              >
+                <Image src="/certificate/print.svg" alt="Print" width={24} height={24} />
+              </button>
 
-            <button className={styles.button} onClick={handleDownloadPDF}>
-              <Image src="/certificate/download.svg" alt="Save" width={24} height={24} />
-            </button>
+              <button className={styles.button} onClick={handleDownloadPDF}>
+                <Image src="/certificate/download.svg" alt="Save" width={24} height={24} />
+              </button>
+            </div>
           </div>
 
           <p className={styles.printInstruction}>
