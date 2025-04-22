@@ -17,3 +17,27 @@
   text-transform: uppercase;
   margin-bottom: 36px;
 }
+
+.info {
+  display: flex;
+  width: 882px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 8px;
+  background: #bbd567;
+  color: #000;
+
+  /* Body/Medium (Reg) */
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  margin-bottom: 45px;
+}
+
+.info .image {
+  padding: 0 20px;
+}
