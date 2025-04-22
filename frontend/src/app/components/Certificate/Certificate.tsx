@@ -36,6 +36,14 @@ export default function Certificate({ name }: CertificateNameProps) {
     nameRef.current.style.top = `${newTop}px`;
   };
 
+  function capitalizeWords(str: string): string {
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  }
+
   useEffect(() => {
     adjustFontSize();
 
@@ -87,7 +95,7 @@ export default function Certificate({ name }: CertificateNameProps) {
           />
 
           <p ref={nameRef} className={styles.name}>
-            {name}
+            {capitalizeWords("kevin wu")}
           </p>
 
           <Image

@@ -72,7 +72,7 @@ export default function SignInPanel() {
                     });
                 } else {
                   // TODO: replace with homepage
-                  window.location.href = "/certificate";
+                  window.location.href = "/";
                 }
               }
             })
