@@ -26,7 +26,6 @@ export default function Module1() {
         {/* title and intro */}
         <ModTitle module_num={1} module_name="WHAT IS AN E BIKE?" />
         <Mod1Intro />
-        <Mod1Classes />
         <Mod1ChooseBike />
         {/* factors */}
         <Mod1Factor1 />
@@ -34,6 +33,7 @@ export default function Module1() {
         <Mod1Factor3 />
         {/* NOTE: Factor4 was merged into 5 */}
         <Mod1Factor5 />
+        <Mod1Classes />
         <Mod1WhyRide />
         {/* TODO: Modify component below + change name */}
         <MiniQuiz />
