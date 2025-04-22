@@ -3,6 +3,7 @@ import React from "react";
 import Sidebar from "../components/HomePage/Sidebar/Sidebar";
 import MiniQuiz from "../components/module1/MiniQuiz";
 import Mod1ChooseBike from "../components/module1/Mod1ChooseBike";
+import Mod1Classes from "../components/module1/Mod1Classes";
 import Mod1Factor1 from "../components/module1/Mod1Factor1";
 import Mod1Factor2 from "../components/module1/Mod1Factor2";
 import Mod1Factor3 from "../components/module1/Mod1Factor3";
@@ -25,6 +26,7 @@ export default function Module1() {
         {/* title and intro */}
         <ModTitle module_num={1} module_name="WHAT IS AN E BIKE?" />
         <Mod1Intro />
+        <Mod1Classes />
         <Mod1ChooseBike />
         {/* factors */}
         <Mod1Factor1 />
