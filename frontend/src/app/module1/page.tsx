@@ -9,8 +9,10 @@ import Mod1Factor3 from "../components/module1/Mod1Factor3";
 import Mod1Factor5 from "../components/module1/Mod1Factor5";
 import Mod1Intro from "../components/module1/Mod1Intro";
 import Mod1LetsTalk from "../components/module1/Mod1LetsTalk";
+import Mod1Risks from "../components/module1/Mod1Risks";
 import Mod1WhyRide from "../components/module1/Mod1WhyRide";
 import ModTitle from "../components/module1/ModTitle";
+import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod1.module.css";
 
@@ -43,8 +45,11 @@ export default function Module1() {
         {/* frame 9 - let's talk */}
         <Mod1LetsTalk />
         {/* frame 10 - risks with illegal */}
-
+        <Mod1Risks />
         {/* frame 11 - quiz */}
+        <div className={styles.quiz}>
+          <TitleScreen />
+        </div>
       </div>
     </div>
   );
