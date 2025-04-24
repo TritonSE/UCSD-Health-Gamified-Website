@@ -6,7 +6,7 @@ import { connectMongo } from "./util/db.js";
 import userRoutes from "./routes/user.js";
 
 const app = express();
-const port = 5001;
+const port = process.env.PORT || 5001;
 
 connectMongo();
 
