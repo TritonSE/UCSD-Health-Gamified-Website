@@ -17,7 +17,7 @@ export default function BikeMechanic() {
   };
 
   return (
-    <section className={styles.bike_mechanic_container}>
+    <section id={styles.bike_mechanic_container}>
       <h2>WHEN TO TAKE BIKE TO A MECHANIC</h2>
       <div id={styles.svg_container}>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1413 1114">
