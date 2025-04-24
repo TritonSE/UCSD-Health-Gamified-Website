@@ -21,7 +21,6 @@ export default function Module2() {
         <BasicMaintenance />
         <AdditionalTips />
         <SimpleWay />
-        {/* <Helmet/>  */}
         <StuffHappens />
         <BikeMechanic />
       </ModuleSliderContainer>

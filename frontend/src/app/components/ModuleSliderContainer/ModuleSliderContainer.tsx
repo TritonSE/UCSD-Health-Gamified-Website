@@ -1,6 +1,6 @@
 "use client";
 
-import { Children, ReactNode, cloneElement, isValidElement, useRef, useState } from "react";
+import { Children, ReactNode, cloneElement, isValidElement, useState } from "react";
 
 import ModuleButtons from "../ModuleButtons/ModuleButtons";
 import ProgressBar from "../ProgressBar/ProgressBar";
@@ -18,7 +18,6 @@ export default function ModuleSliderContainer({
 }: ModuleSliderContainerProps) {
   const [currentSection, setCurrentSection] = useState(0);
   const childrenCount = Children.count(children);
-  const containerRef = useRef<HTMLDivElement>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const handlePrevButton = () => {
@@ -63,7 +62,7 @@ export default function ModuleSliderContainer({
   });
 
   return (
-    <div ref={containerRef} className={styles.scroll_snap_container}>
+    <div className={styles.scroll_snap_container}>
       <ProgressBar
         currentSection={currentSection}
         sectionCount={childrenCount}
