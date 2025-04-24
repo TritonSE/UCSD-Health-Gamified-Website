@@ -17,7 +17,6 @@
   color: var(--foreground);
   font-family: "Rammetto One";
   font-weight: 400;
-  max-width: 25ch;
   text-transform: uppercase;
 }
 

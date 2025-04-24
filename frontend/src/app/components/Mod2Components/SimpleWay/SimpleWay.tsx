@@ -1,6 +1,7 @@
 "use client";
 
 import Checkbox from "../../Checkbox/Checkbox";
+
 import styles from "./SimpleWay.module.css";
 
 export default function SimpleWay() {
@@ -13,8 +14,8 @@ export default function SimpleWay() {
           before they become more serious.
         </p>
       </div>
-        <Checkbox />
-        <p className={styles.headerSubtext}>Click checklist to see the tips on the right!</p>
+      <Checkbox />
+      <p className={styles.headerSubtext}>Click checklist to see the tips on the right!</p>
     </section>
   );
 }

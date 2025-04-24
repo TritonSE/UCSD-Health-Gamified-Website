@@ -57,41 +57,43 @@ export default function ProgressBar({
   const clipPathWidth = calculateClipPathWidth();
 
   return (
-    <div className={styles.progress_bar}>
-      {/* Gray unfilled version */}
-      <svg width="100%" fill="none" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} preserveAspectRatio="none">
-        {/* Horizontal line */}
-        <path fill={INCOMPLETE_COLOR} d={`M4 ${middleY - 2}h${WIDTH - 8}v4H4z`} />
-        {/* Circles */}
-        <g fill="#fff" stroke={INCOMPLETE_COLOR} strokeWidth={strokeWidth}>
-          {circlePositions.map((cx, index) => (
-            <circle key={`unfilled-${index}`} cx={cx} cy={middleY} r="12" />
-          ))}
-        </g>
-      </svg>
+    <div className={styles.progress_bar_container}>
+      <div className={styles.progress_bar}>
+        {/* Gray unfilled version */}
+        <svg width="100%" fill="none" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} preserveAspectRatio="none">
+          {/* Horizontal line */}
+          <path fill={INCOMPLETE_COLOR} d={`M4 ${middleY - 2}h${WIDTH - 8}v4H4z`} />
+          {/* Circles */}
+          <g fill="#fff" stroke={INCOMPLETE_COLOR} strokeWidth={strokeWidth}>
+            {circlePositions.map((cx, index) => (
+              <circle key={`unfilled-${index}`} cx={cx} cy={middleY} r="12" />
+            ))}
+          </g>
+        </svg>
 
-      {/* Filled version with clip path */}
-      <svg
-        className={styles.clipping_progress_bar}
-        width="100%"
-        fill="none"
-        viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-        preserveAspectRatio="none"
-        style={{ clipPath: `inset(0 ${100 - clipPathWidth}% 0 0)` }}
-      >
-        <path fill={COMPLETE_COLOR} d={`M4 ${middleY - 2}h${WIDTH - 8}v4H4z`} />
-        <g fill="#fff" stroke={COMPLETE_COLOR} strokeWidth={strokeWidth}>
-          {circlePositions.map((cx, index) => (
-            <circle key={`filled-${index}`} cx={cx} cy={middleY} r="12" fill={COMPLETE_COLOR} />
-          ))}
-        </g>
-      </svg>
+        {/* Filled version with clip path */}
+        <svg
+          className={styles.clipping_progress_bar}
+          width="100%"
+          fill="none"
+          viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
+          preserveAspectRatio="none"
+          style={{ clipPath: `inset(0 ${100 - clipPathWidth}% 0 0)` }}
+        >
+          <path fill={COMPLETE_COLOR} d={`M4 ${middleY - 2}h${WIDTH - 8}v4H4z`} />
+          <g fill="#fff" stroke={COMPLETE_COLOR} strokeWidth={strokeWidth}>
+            {circlePositions.map((cx, index) => (
+              <circle key={`filled-${index}`} cx={cx} cy={middleY} r="12" fill={COMPLETE_COLOR} />
+            ))}
+          </g>
+        </svg>
 
-      <div
-        className={styles.text_container}
-        style={{ visibility: currentSection === 0 ? "hidden" : "visible" }}
-      >
-        <h3>{moduleText}</h3>
+        <div
+          className={styles.text_container}
+          style={{ visibility: currentSection === 0 ? "hidden" : "visible" }}
+        >
+          <h3>{moduleText}</h3>
+        </div>
       </div>
     </div>
   );

@@ -46,40 +46,42 @@ const Checkbox = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.mainContainer}>
-        <div className={styles.outerRectangle}>
-          <div className={styles.innerRectangle}>
-            <div className={styles.textRectangle}>ABC Bike Check</div>
-            <div className={styles.checkboxGroup}>
-              {["A", "B", "C"].map((option) => (
-                <label className={styles.checkboxLabel} key={option}>
-                  <input
-                    type="checkbox"
-                    className={styles.checkboxInput}
-                    checked={selectedOptions.includes(option)}
-                    onChange={() => {
-                      handleCheckboxChange(option);
-                    }}
-                  />
-                  <span className={selectedOptions.includes(option) ? styles.checkedText : ""}>
-                    {option}
-                  </span>
-                </label>
-              ))}
+      <div className={styles.topContent}>
+        <div className={styles.mainContainer}>
+          <div className={styles.outerRectangle}>
+            <div className={styles.innerRectangle}>
+              <div className={styles.textRectangle}>ABC Bike Check</div>
+              <div className={styles.checkboxGroup}>
+                {["A", "B", "C"].map((option) => (
+                  <label className={styles.checkboxLabel} key={option}>
+                    <input
+                      type="checkbox"
+                      className={styles.checkboxInput}
+                      checked={selectedOptions.includes(option)}
+                      onChange={() => {
+                        handleCheckboxChange(option);
+                      }}
+                    />
+                    <span className={selectedOptions.includes(option) ? styles.checkedText : ""}>
+                      {option}
+                    </span>
+                  </label>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className={styles.rightContent}>
-        {["A", "B", "C"].map((option) => (
-          <SelectedRectangle
-            key={option}
-            header={optionTexts[option].header}
-            text={optionTexts[option].text}
-            isVisible={selectedOptions.includes(option)}
-          />
-        ))}
+        <div className={styles.rightContent}>
+          {["A", "B", "C"].map((option) => (
+            <SelectedRectangle
+              key={option}
+              header={optionTexts[option].header}
+              text={optionTexts[option].text}
+              isVisible={selectedOptions.includes(option)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

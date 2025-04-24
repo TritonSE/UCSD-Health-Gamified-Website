@@ -3,29 +3,62 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  overflow: hidden;
-  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.hide_scrollbar {
+  height: 100%;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  background-color: white;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .slider_container {
-  height: 100%;
-  overflow: hidden;
-}
-
-.slider_track {
-  height: 100%;
   display: flex;
   width: 100%;
   transition: transform 0.4s ease-in-out;
+  height: 100%;
+  align-items: center;
 }
 
-.slider_track > section {
+.section_wrapper {
+  overflow-x: auto;
   min-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 1000px;
+  padding-top: 9rem;
+  position: relative;
+}
+
+.section_wrapper::-webkit-scrollbar {
+  width: 12px;
+}
+
+.section_wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--Secondary-Neutral-Gray4, #909090);
+  border-radius: 25px;
+}
+.section_wrapper::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.section_wrapper > section {
+  min-width: 1150px;
   display: grid;
   grid-template-columns: 1fr min(var(--module-width), 100%) 1fr;
+  height: 100%;
 }
 
-.slider_track > section > * {
+.section_wrapper > section > * {
   grid-column: 2;
 }
 

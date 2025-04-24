@@ -14,7 +14,11 @@ type BikeMaintSVGProps = {
   clickedCircles: number[];
 };
 
-export default function BikeMaintSVG({ handleCircleClick, activeCircle, clickedCircles }: BikeMaintSVGProps) {
+export default function BikeMaintSVG({
+  handleCircleClick,
+  activeCircle,
+  clickedCircles,
+}: BikeMaintSVGProps) {
   return (
     <svg
       className={styles.svg}
@@ -72,7 +76,7 @@ export default function BikeMaintSVG({ handleCircleClick, activeCircle, clickedC
           fill="#9ab445"
         />
         <path
-          d="M859.5%AE0 14.001l-141 161.5 20.5 30L1018.5 330l-159-315.999z"
+          d="M859.5 14.001l-141 161.5 20.5 30L1018.5 330l-159-315.999z"
           fill="url(#A)"
           fillOpacity=".5"
         />

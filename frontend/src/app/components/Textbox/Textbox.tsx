@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
+import React from "react";
 
 type TextboxProps = {
   header: string;
@@ -31,7 +31,7 @@ const Textbox: React.FC<TextboxProps> = ({ header, text, width, height, onClose 
 
     sections.forEach((section, index) => {
       const isSubtitle = subtitles.some(
-        (subtitle) => subtitle.toLowerCase() === section.trim().toLowerCase()
+        (subtitle) => subtitle.toLowerCase() === section.trim().toLowerCase(),
       );
 
       if (isSubtitle) {
@@ -42,22 +42,19 @@ const Textbox: React.FC<TextboxProps> = ({ header, text, width, height, onClose 
               fontSize: "24px",
               fontWeight: "700",
               textAlign: "center",
-              fontFamily:"DM Sans",
+              fontFamily: "DM Sans",
             }}
           >
             {section.trim()}
-          </h3>
+          </h3>,
         );
         isSubheader = true;
       } else if (section.trim()) {
         const words = section.split(" ");
         const styledWords = words.map((word, wordIndex) => {
-  
-          const isDash = word === "–"; 
+          const isDash = word === "–";
           return (
-            <span
-              key={`word-${index}-${wordIndex}`}
-            >
+            <span key={`word-${index}-${wordIndex}`}>
               {word}
               {wordIndex < words.length - 1 && !isDash ? " " : ""}
             </span>
@@ -72,12 +69,12 @@ const Textbox: React.FC<TextboxProps> = ({ header, text, width, height, onClose 
               maxWidth: "90%",
               textAlign: "center",
               margin: isSubheader ? "0 0 15px 0" : "15px 0",
-              fontFamily:"DM Sans",
-              lineHeight:"24px"
+              fontFamily: "DM Sans",
+              lineHeight: "24px",
             }}
           >
             {styledWords}
-          </p>
+          </p>,
         );
         isSubheader = false;
       }
@@ -87,7 +84,12 @@ const Textbox: React.FC<TextboxProps> = ({ header, text, width, height, onClose 
   };
 
   return (
-    <Dialog.Root open={true} onOpenChange={(open) => !open && onClose()}>
+    <Dialog.Root
+      open={true}
+      onOpenChange={(open) => {
+        if (!open) onClose();
+      }}
+    >
       <Dialog.Portal>
         <Dialog.Overlay
           style={{
@@ -95,6 +97,7 @@ const Textbox: React.FC<TextboxProps> = ({ header, text, width, height, onClose 
             inset: 0,
             background: "rgba(0, 0, 0, 0.5)",
             animation: "overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+            zIndex: 99,
           }}
         />
         <Dialog.Content
@@ -116,7 +119,8 @@ const Textbox: React.FC<TextboxProps> = ({ header, text, width, height, onClose 
             overflow: "auto",
             boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
             animation: "contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)",
-            letterSpacing:0.02
+            letterSpacing: 0.02,
+            zIndex: 100,
           }}
           onInteractOutside={onClose}
           onEscapeKeyDown={onClose}

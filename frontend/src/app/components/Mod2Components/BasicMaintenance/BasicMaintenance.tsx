@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+
 import Textbox from "../../Textbox/Textbox";
-import BikeMaintSVG from "./BikeMaintSVG";
+
 import styles from "./BasicMaintenance.module.css";
+import BikeMaintSVG from "./BikeMaintSVG";
 
 type CircleData = { header: string; text: string; width: number; height: number };
 
@@ -44,9 +46,10 @@ export default function BasicMaintenance() {
   const [activeCircle, setActiveCircle] = useState<number | undefined>();
   const [clickedCircles, setClickedCircles] = useState<number[]>([]);
 
-  const activeCircleData = activeCircle && CIRCLE_DATA[activeCircle]
-    ? CIRCLE_DATA[activeCircle]
-    : { header: "", text: "", width: 0, height: 0 };
+  const activeCircleData =
+    activeCircle && CIRCLE_DATA[activeCircle]
+      ? CIRCLE_DATA[activeCircle]
+      : { header: "", text: "", width: 0, height: 0 };
 
   const handleCircleClick = (number: string) => {
     const parsedNumber = parseInt(number);
@@ -67,12 +70,15 @@ export default function BasicMaintenance() {
       <div className={styles.text_container}>
         <h2>BASIC MAINTENANCE TIPS:</h2>
         <p>
-          By following these tips, you can keep your bike or E Bike road ready and
-          enjoy a safe and enjoyable riding experience! Click on each number to view
-          tips for each part of the bike!
+          By following these tips, you can keep your bike or E Bike road ready and enjoy a safe and
+          enjoyable riding experience! Click on each number to view tips for each part of the bike!
         </p>
       </div>
-      <BikeMaintSVG handleCircleClick={handleCircleClick} activeCircle={activeCircle} clickedCircles={clickedCircles} />
+      <BikeMaintSVG
+        handleCircleClick={handleCircleClick}
+        activeCircle={activeCircle}
+        clickedCircles={clickedCircles}
+      />
 
       {activeCircle && activeCircleData.text && (
         <Textbox

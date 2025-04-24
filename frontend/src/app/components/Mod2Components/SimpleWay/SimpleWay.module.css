@@ -1,11 +1,5 @@
-#container {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  min-height: 100vh;
-  height: auto;
-  align-items: center;
-  gap: 1rem;
-  padding-inline: 1rem;
+.container > p {
+  margin-top: 1rem;
 }
 
 .header_container {
@@ -21,4 +15,3 @@
   align-items: center;
   text-align: center;
 }
-

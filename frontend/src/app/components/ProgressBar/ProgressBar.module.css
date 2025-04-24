@@ -1,9 +1,25 @@
-.progress_bar {
+.progress_bar_container {
+  /* Used so that the scrollbar isn't covered */
+  --scrollbar-width: 16px;
   padding-block: 2rem;
+  padding-bottom: 3.5rem;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  width: calc(100% - var(--scrollbar-width));
+  padding-left: var(--scrollbar-width);
+  left: 0;
+  top: 0;
+  /* background-color: white; */
+  background-clip: border-box;
+  background: linear-gradient(to bottom, #ffffff 65%, #ff000000 100%);
+}
+
+.progress_bar {
+  position: relative;
   max-width: var(--module-width);
   width: 100%;
   margin-inline: auto;
-  position: relative;
 }
 
 .clipping_progress_bar {
