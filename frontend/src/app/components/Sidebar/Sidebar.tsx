@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+import { useAuth } from "../../contexts/AuthContext";
+
 import { Account } from "./Account";
 import { MapButton } from "./MapButton";
 import { Modules } from "./Modules";
@@ -10,17 +12,19 @@ import { ProgressBar } from "./ProgressBar";
 import styles from "./Sidebar.module.css";
 
 export default function Sidebar() {
+  const { currentUser } = useAuth();
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [percent, setPercent] = useState<number>(0);
   const [mapKind, setMapKind] = useState<"primary" | "secondary">("primary");
-
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
   };
 
   useEffect(() => {
-    setPercent(50); // Change this to whatever initial value you want
-  }, []);
+    if (currentUser?.module !== null) {
+      setPercent(Math.round(Math.min((currentUser.module / 9) * 100, 100)));
+    }
+  }, [currentUser]);
 
   const handleMap = () => {
     setMapKind((prevKind) => (prevKind === "primary" ? "secondary" : "primary"));
@@ -51,7 +55,7 @@ export default function Sidebar() {
       <ProgressBar isCollapsed={isCollapsed} percentage={percent} />
       <MapButton isCollapsed={isCollapsed} kind={mapKind} handleClick={handleMap} />
       <Modules isCollapsed={isCollapsed} />
-      <Account isCollapsed={isCollapsed} />
+      {currentUser && <Account user={currentUser} isCollapsed={isCollapsed} />}
     </nav>
   );
 }

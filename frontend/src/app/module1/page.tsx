@@ -1,6 +1,6 @@
 import React from "react";
 
-import Sidebar from "../components/HomePage/Sidebar/Sidebar";
+import Sidebar from "../components/Sidebar/Sidebar";
 import MiniQuiz from "../components/module1/MiniQuiz";
 import Mod1ChooseBike from "../components/module1/Mod1ChooseBike";
 import Mod1Factor1 from "../components/module1/Mod1Factor1";
