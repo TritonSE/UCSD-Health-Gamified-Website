@@ -21,7 +21,7 @@ export default function Sidebar() {
   };
 
   useEffect(() => {
-    if (currentUser?.module !== null) {
+    if (currentUser && currentUser?.module !== null) {
       setPercent(Math.round(Math.min((currentUser.module / 9) * 100, 100)));
     }
   }, [currentUser]);
