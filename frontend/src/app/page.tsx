@@ -1,8 +1,15 @@
 import styles from "./page.module.css";
-import Module2 from "./module2/page";
+ 
+ export default function Home() {
+   return (
+     <div className={styles.page}>
+       <h1> TSE x UCSD Health </h1>
+       <p>
+         {" "}
+         Use this page for pages and testing components. REMOVE ALL CHANGES BEFORE SUBMITTING A PULL
+         REQUEST.
+       </p>
+     </div>
+   );
+ }
 
-export default function Home() {
-  return (
-    <Module2></Module2>
-  );
-}
