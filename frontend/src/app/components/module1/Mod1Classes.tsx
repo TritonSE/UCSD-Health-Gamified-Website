@@ -181,7 +181,7 @@ const Mod1Classes: React.FC = () => {
     },
     {
       headerIcon: "/module1/motorcycle.svg",
-      headerText: "E-motorcycle",
+      headerText: "E Motorcycle",
       headerIconAlt: "Motorcycle Icon",
 
       section1: [
@@ -250,7 +250,7 @@ const Mod1Classes: React.FC = () => {
         </div>
         <div>
           <ul>
-            <li>There are 3 different classes of E-Bikes (Class 1-3)</li>
+            <li>There are 3 different classes of E Bikes (Class 1-3)</li>
             <li>
               It is important to know class type as it can inform you of speed limit and age
               restrictions
