@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import { CSSProperties } from "react";
 
 import Flip from "../Flip";
 
@@ -12,21 +12,21 @@ export default function Mod1WhyRide() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-    },
+    } as CSSProperties,
     container_flipped: {
       borderRadius: "50%",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-    },
+    } as CSSProperties,
     front_text: {
       color: "#000",
       textAlign: "center",
-    },
+    } as CSSProperties,
     back_text: {
       color: "#000",
       textAlign: "center",
-    },
+    } as CSSProperties,
   };
 
   return (

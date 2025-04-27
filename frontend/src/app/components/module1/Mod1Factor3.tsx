@@ -1,4 +1,4 @@
-import React from "react";
+import { CSSProperties } from "react";
 
 import Flip from "../Flip";
 
@@ -15,7 +15,7 @@ export default function Mod1Factor3() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-    },
+    } as CSSProperties,
     container_flipped: {
       backgroundColor: "#f6ffd7",
       width: "20%",
@@ -24,15 +24,15 @@ export default function Mod1Factor3() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-    },
+    } as CSSProperties,
     front_text: {
       color: "#1C3A29",
       textAlign: "center",
-    },
+    } as CSSProperties,
     back_text: {
       color: "#1C3A29",
       textAlign: "center",
-    },
+    } as CSSProperties,
   };
   return (
     <div style={{ marginTop: "80px" }}>

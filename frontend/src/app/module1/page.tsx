@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 import Sidebar from "../components/HomePage/Sidebar/Sidebar";
@@ -48,7 +50,11 @@ export default function Module1() {
         <Mod1Risks />
         {/* frame 11 - quiz */}
         <div className={styles.quiz}>
-          <TitleScreen />
+          <TitleScreen
+            handleStart={() => {
+              console.log("Quiz started");
+            }}
+          />
         </div>
       </div>
     </div>

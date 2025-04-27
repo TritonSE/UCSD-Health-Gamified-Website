@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 import Flip from "../Flip";
 
 import styles from "./Mod1Risks.module.css";
@@ -12,7 +14,7 @@ export default function Mod1Risks() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-    },
+    } as CSSProperties,
     container_flipped: {
       width: "25%",
       borderRadius: "8px",
@@ -20,7 +22,7 @@ export default function Mod1Risks() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-    },
+    } as CSSProperties,
     front_text: {
       color: "#1C3A29",
     },
@@ -31,7 +33,7 @@ export default function Mod1Risks() {
       fontWeight: 700,
       lineHeight: "150%" /* 27px */,
       letterSpacing: "0.36px",
-    },
+    } as CSSProperties,
   };
 
   return (
