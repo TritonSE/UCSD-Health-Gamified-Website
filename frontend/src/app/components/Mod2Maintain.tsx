@@ -11,7 +11,7 @@ export default function Mod2Maintain() {
             <h2 className={styles.title}>WHY IS BIKE MAINTENANCE IMPORTANT?</h2>
             <p
               className={styles.description}
-            >{`A well-maintained bike or e-bike is safer, more efficient, and more enjoyable to ride. Regular maintenance can help prevent breakdowns, extend the life of your bike, and ensure that you're riding safely.`}</p>
+            >{`A well-maintained bike or E bike is safer, more efficient, and more enjoyable to ride. Regular maintenance can help prevent breakdowns, extend the life of your bike, and ensure that you're riding safely.`}</p>
           </div>
           <Image
             src="/TimmytheTire.svg"

@@ -114,6 +114,8 @@
 }
 
 .selectedRectangle {
+  height: 114px;
+  width:631px;
   padding: 1.875rem 1.25rem;
   background-color: #bbd567;
   border-radius: 16px;
