@@ -1,10 +1,13 @@
 // frontend/src/app/contexts/AuthContext.tsx
 "use client";
 
-import { User, onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
 
+import { getUser } from "../api/user";
 import { auth } from "../firebase-config.js";
+
+import type { User } from "../api/user";
 
 type AuthContextType = {
   currentUser: User | null;
@@ -22,8 +25,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
-      setLoading(false);
+      if (user?.email) {
+        getUser(user.email)
+          .then((result) => {
+            if (result.success) {
+              setCurrentUser({
+                ...result.data,
+                firstLogin: result.data.firstLogin,
+              });
+            }
+            setLoading(false);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
     });
 
     return unsubscribe;
