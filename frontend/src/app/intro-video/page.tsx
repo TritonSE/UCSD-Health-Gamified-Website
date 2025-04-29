@@ -23,6 +23,7 @@ export default function IntroVideo() {
       <div className={styles.container}>
         <p className={styles.title}>Welcome to the E-Bike Safety Course!</p>
         <svg
+          className={styles.svg}
           width="856"
           height="552"
           viewBox="0 125 856 552"
