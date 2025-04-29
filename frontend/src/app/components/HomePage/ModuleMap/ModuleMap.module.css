@@ -1,6 +1,7 @@
 .svg_container {
   width: 100%;
   overflow-y: auto;
+  position: relative;
 }
 
 .svg {

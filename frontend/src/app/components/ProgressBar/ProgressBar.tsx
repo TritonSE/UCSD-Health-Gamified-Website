@@ -1,4 +1,5 @@
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+
 import styles from "./ProgressBar.module.css";
 
 const COMPLETE_COLOR = "#BBD567";
@@ -21,7 +22,7 @@ export default function ProgressBar({
 }: ProgressBarProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(910); // default fallback width
-  
+
   useEffect(() => {
     const updateWidth = () => {
       if (containerRef.current) {
@@ -30,7 +31,9 @@ export default function ProgressBar({
     };
     updateWidth();
     window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
+    return () => {
+      window.removeEventListener("resize", updateWidth);
+    };
   }, []);
 
   // Calculate circle positions based on the dynamic containerWidth
@@ -73,7 +76,12 @@ export default function ProgressBar({
     <div ref={containerRef} className={styles.progress_bar_container}>
       <div className={styles.progress_bar}>
         {/* Gray unfilled version */}
-        <svg width="100%" fill="none" viewBox={`0 0 ${containerWidth} ${HEIGHT}`} preserveAspectRatio="none">
+        <svg
+          width="100%"
+          fill="none"
+          viewBox={`0 0 ${containerWidth} ${HEIGHT}`}
+          preserveAspectRatio="none"
+        >
           {/* Horizontal line */}
           <path fill={INCOMPLETE_COLOR} d={`M4 ${middleY - 2}h${containerWidth - 8}v4H4z`} />
           {/* Circles */}
