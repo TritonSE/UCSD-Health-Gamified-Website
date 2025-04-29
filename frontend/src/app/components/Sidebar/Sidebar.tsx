@@ -9,8 +9,9 @@ import { Account } from "./Account";
 import { MapButton } from "./MapButton";
 import { Modules } from "./Modules";
 import { ProgressBar } from "./ProgressBar";
-import type { User } from "../../api/user";
 import styles from "./Sidebar.module.css";
+
+import type { User } from "../../api/user";
 
 export default function Sidebar() {
   const { currentUser } = useAuth();
