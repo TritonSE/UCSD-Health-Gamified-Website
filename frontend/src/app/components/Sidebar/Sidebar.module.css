@@ -28,3 +28,16 @@
 .collapseButton.open {
   margin-right: 13px;
 }
+
+/* DELETE THIS AFTER THE BUTTON GOES AWAY */
+#temp_complete_module {
+  position: flex;
+  font-size: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+  background-color: #fb0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

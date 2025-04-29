@@ -37,7 +37,6 @@ export const Modules = ({ isCollapsed = false, currentModule = 1 }) => {
           } else if (module.number === currentModule) {
             kind = "primary";
           }
-
           return (
             <Module
               key={module.number}

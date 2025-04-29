@@ -153,6 +153,34 @@
   z-index: 0;
 }
 
+.lineBackground {
+  position: relative;
+}
+
+.lineBackground::before {
+  content: "";
+  position: absolute;
+  border-radius: 2px 0px 0px 2px;
+  top: -8px; /* Extend beyond the module's padding */
+  bottom: -12px; /* Extend beyond the module's padding */
+  left: -20px; /* Extend beyond the sidebar's padding */
+  right: -20px; /* Extend beyond the sidebar's padding */
+  background: rgba(187, 213, 103, 0.25); /* Opaque light green background */
+  z-index: -1; /* Place behind the module content */
+}
+
+.lineBackground::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  bottom: -12px;
+  left: -20px;
+  width: 4px;
+  background-color: #bbd567;
+  border-radius: 8px;
+  z-index: 0;
+}
+
 .hover {
   position: relative;
 }
@@ -168,7 +196,7 @@
   background: rgba(187, 213, 103, 0.25); /* Opaque light green background */
   z-index: -1; /* Place behind the module content */
   opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+  transition: opacity 0.225s ease-in-out; /* Smooth transition */
 }
 
 .hover:hover::before {

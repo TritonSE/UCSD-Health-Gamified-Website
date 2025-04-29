@@ -9,10 +9,12 @@ import { Account } from "./Account";
 import { MapButton } from "./MapButton";
 import { Modules } from "./Modules";
 import { ProgressBar } from "./ProgressBar";
+import type { User } from "../../api/user";
 import styles from "./Sidebar.module.css";
 
 export default function Sidebar() {
   const { currentUser } = useAuth();
+  const [user, setUser] = useState<User | null>(currentUser);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [percent, setPercent] = useState<number>(0);
   const [mapKind, setMapKind] = useState<"primary" | "secondary">("primary");
@@ -21,9 +23,13 @@ export default function Sidebar() {
   };
 
   useEffect(() => {
-    if (currentUser?.module) {
-      setPercent(Math.round(Math.min((currentUser.module / 9) * 100, 100)));
+    if (user?.module) {
+      setPercent(Math.round(Math.min(((user.module - 1) / 9) * 100, 100)));
     }
+  }, [user]);
+
+  useEffect(() => {
+    setUser(currentUser);
   }, [currentUser]);
 
   const handleMap = () => {
@@ -54,8 +60,21 @@ export default function Sidebar() {
       </button>
       <ProgressBar isCollapsed={isCollapsed} percentage={percent} />
       <MapButton isCollapsed={isCollapsed} kind={mapKind} handleClick={handleMap} />
-      <Modules currentModule={currentUser?.module} isCollapsed={isCollapsed} />
-      {currentUser && <Account user={currentUser} isCollapsed={isCollapsed} />}
+      <Modules currentModule={user?.module} isCollapsed={isCollapsed} />
+      {user && <Account user={user} isCollapsed={isCollapsed} />}
+      {/* TESTING BUTTON BELLOW TODO: DELETE AFTER DONE AND POTENTIALLY MAKE USER NO LONGER A USESTATE */}
+      <button
+        id={styles.temp_complete_module}
+        onClick={() => {
+          setUser((prev) => {
+            if (!prev) return prev;
+            const nextModule = Math.min(prev.module + 1, 10); // Assuming max 9 modules, module 10 is beyond scope
+            return { ...prev, module: nextModule };
+          });
+        }}
+      >
+        Complete Module {user?.module}
+      </button>
     </nav>
   );
 }

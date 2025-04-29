@@ -57,8 +57,12 @@ export const Module = ({
       break;
   }
 
-  if (highlighted) {
+  if (highlighted && addLine) {
     modules += ` ${styles.primaryBackground}`;
+  }
+
+  if (highlighted && !addLine) {
+    modules += ` ${styles.lineBackground}`;
   }
 
   if (isCollapsed) {
