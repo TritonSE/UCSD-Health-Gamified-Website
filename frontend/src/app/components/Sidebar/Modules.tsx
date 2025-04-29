@@ -12,8 +12,8 @@ export const Modules = ({ isCollapsed = false, currentModule = 1 }) => {
   };
 
   const moduleData = [
-    { name: "What is an E-bike?", time: 10, number: 1 },
-    { name: "Maintaining Your E-Bike", time: 10, number: 2 },
+    { name: "What is an E Bike?", time: 10, number: 1 },
+    { name: "Maintaining Your E Bike", time: 10, number: 2 },
     { name: "Safety Equipment", time: 10, number: 3 },
     { name: "5 Need to Know Principles", time: 10, number: 4 },
     { name: "Rules of the Road", time: 10, number: 5 },

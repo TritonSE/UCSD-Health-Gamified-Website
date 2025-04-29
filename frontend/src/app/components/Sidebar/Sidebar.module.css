@@ -1,5 +1,5 @@
 .nav {
-  width: 288px;
+  width: 298px;
   height: 100%;
   background: #1c3a29;
   position: relative;
@@ -7,8 +7,10 @@
   top: 0;
   z-index: 1;
   padding: 20px;
+  padding-right: 20px;
   color: white;
   overflow-y: auto;
+  overflow-x: none;
   transition: width 0.3s ease;
 }
 
@@ -26,7 +28,7 @@
 }
 
 .collapseButton.open {
-  margin-right: 13px;
+  margin-right: 21.5%;
 }
 
 /* DELETE THIS AFTER THE BUTTON GOES AWAY */
@@ -35,9 +37,12 @@
   font-size: 1.2rem;
   align-items: center;
   justify-content: center;
-  margin: 2rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
   background-color: #fb0000;
   color: white;
   border: none;
   cursor: pointer;
+  overflow: none;
+  white-space: nowrap;
 }

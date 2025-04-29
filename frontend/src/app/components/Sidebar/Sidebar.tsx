@@ -74,7 +74,7 @@ export default function Sidebar() {
           });
         }}
       >
-        Complete Module {user?.module}
+        {user?.module}
       </button>
     </nav>
   );

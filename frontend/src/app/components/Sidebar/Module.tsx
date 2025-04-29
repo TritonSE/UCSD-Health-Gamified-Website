@@ -78,7 +78,7 @@ export const Module = ({
         {addLine && (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="1"
+            width="2"
             height="28"
             viewBox="0 0 1 28"
             fill="none"
