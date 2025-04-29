@@ -14,7 +14,7 @@
 
 .text {
   font-size: 22px;
-  color: var(--foreground);
+  color: black;
   font-family: "DM Sans";
   margin-top: 2vh;
   margin-left: 6.5vw;

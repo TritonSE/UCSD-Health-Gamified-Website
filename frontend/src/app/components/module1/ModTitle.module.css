@@ -1,6 +1,6 @@
 /* background + layout */
 .container {
-  background-color: var(--background);
+  background-color: white;
   width: 100%;
   position: relative;
   height: 32vh;
@@ -12,7 +12,7 @@
 /* text */
 .subtitle {
   font-size: 22px;
-  color: var(--foreground);
+  color: black;
   font-family: "DM Sans";
   margin-top: 20vh;
   margin-left: 8vw;
@@ -21,7 +21,7 @@
 
 .title {
   font-size: 40px;
-  color: var(--foreground);
+  color: black;
   font-family: "Rammetto One";
   margin-left: 8vw;
   margin-bottom: 10vh;
