@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 import Flip from "../Flip";
 
 import styles from "./Mod1Risks.module.css";
@@ -6,36 +8,37 @@ export default function Mod1Risks() {
   // styling of cards
   const cardStyle = {
     container: {
-      backgroundColor: "#bbd567",
       width: "25%",
-      borderRadius: "20px",
-      aspectRatio: "1 / 1",
+      borderRadius: "8px",
+      aspectRatio: "6 / 5",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-    },
+    } as CSSProperties,
     container_flipped: {
-      backgroundColor: "#f6ffd7",
       width: "25%",
-      borderRadius: "20px",
-      aspectRatio: "1 / 1",
+      borderRadius: "8px",
+      aspectRatio: "6 / 5",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-    },
+    } as CSSProperties,
     front_text: {
       color: "#1C3A29",
-      textAlign: "center",
     },
     back_text: {
       color: "#1C3A29",
-      textAlign: "center",
-    },
+      fontSize: "18px",
+      fontStyle: "normal",
+      fontWeight: 700,
+      lineHeight: "150%" /* 27px */,
+      letterSpacing: "0.36px",
+    } as CSSProperties,
   };
 
   return (
     <div>
-      <h1 className={styles.title}>Risks associated with illegal or unclassified bicycles:</h1>
+      <h1 className={styles.title}>Risks associated with illegal or unclassified bicycles</h1>
       <div className={styles.row}>
         <Flip
           front_text="Safety Risks"
@@ -60,8 +63,8 @@ export default function Mod1Risks() {
         />
       </div>
       <p className={styles.text}>
-        By understanding the different e-bike classifications, the importance of riding a legal
-        e-bike, and the risks associated with illegal or unclassified bicycles, you can make an
+        By understanding the different E bike classifications, the importance of riding a legal E
+        bike, and the risks associated with illegal or unclassified bicycles, you can make an
         informed decision that ensures a safe and enjoyable riding experience.
       </p>
     </div>

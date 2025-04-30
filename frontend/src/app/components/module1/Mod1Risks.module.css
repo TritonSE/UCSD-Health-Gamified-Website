@@ -1,28 +1,33 @@
 .row {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 40px;
   margin: auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   flex-wrap: wrap;
 }
 
 .title {
-  font-size: 28px;
-  color: var(--foreground);
-  font-family: "DM Sans";
-  font-weight: 700;
-  margin-top: 128px;
+  color: #000;
+  text-align: center;
+  font-family: "Rammetto One";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 48px */
+  letter-spacing: 0.64px;
+  text-transform: uppercase;
   margin-left: 6.5vw;
+  margin-right: 6.5vw;
 }
 
 .text {
   font-size: 22px;
-  color: var(--foreground);
+  color: black;
   font-family: "DM Sans";
   font-weight: 400;
-  margin-top: 2vh;
   margin-left: 6.5vw;
   margin-right: 6.5vw;
   margin-bottom: 4vh;

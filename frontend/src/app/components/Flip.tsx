@@ -17,6 +17,8 @@ export type FlipProps = {
     container_flipped?: React.CSSProperties;
     icon?: React.CSSProperties;
     title?: React.CSSProperties;
+    back_text?: React.CSSProperties;
+    front_text?: React.CSSProperties;
   };
 };
 
@@ -57,7 +59,7 @@ export default function Flip({
           />
         )}
         <div style={customStyles?.title}>
-          <span>{front_text}</span>
+          <span style={{ ...(customStyles?.front_text ?? {}) }}>{front_text}</span>
         </div>
       </div>
       {/* Back */}
@@ -65,7 +67,7 @@ export default function Flip({
         className={styles.back}
         style={{ ...customStyles?.container_flipped, backgroundColor: backColor }}
       >
-        <p style={customStyles?.title}>{back_text}</p>
+        <p style={{ ...(customStyles?.back_text ?? {}) }}>{back_text}</p>
       </div>
     </div>
   );
