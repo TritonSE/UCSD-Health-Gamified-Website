@@ -15,6 +15,7 @@ const Textbox: React.FC<TextboxProps> = ({ header, text, width, height, onClose 
   const subtitles = [
     "PUMP IT UP!",
     "HOW TO CHECK",
+    "INSPECT YOUR TIRES",
     "LUBRICATE YOUR CHAIN",
     "PAY ATTENTION TO RATTLES, CREAKS AND SQUEAKS",
     "A CLEAN BIKE IS A SAFER BIKE",
