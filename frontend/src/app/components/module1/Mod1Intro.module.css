@@ -11,6 +11,10 @@
 }
 
 /* text */
+.top {
+  margin-left: 8vw;
+  margin-bottom: 6vh;
+}
 .title {
   font-size: 32px;
   color: black;

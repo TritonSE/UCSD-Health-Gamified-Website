@@ -3,6 +3,7 @@
 import React from "react";
 
 import Sidebar from "../components/HomePage/Sidebar/Sidebar";
+import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Mod1ChooseBike from "../components/module1/Mod1ChooseBike";
 import Mod1Classes from "../components/module1/Mod1Classes";
 import Mod1Factor1 from "../components/module1/Mod1Factor1";
@@ -13,7 +14,6 @@ import Mod1Intro from "../components/module1/Mod1Intro";
 import Mod1LetsTalk from "../components/module1/Mod1LetsTalk";
 import Mod1Risks from "../components/module1/Mod1Risks";
 import Mod1WhyRide from "../components/module1/Mod1WhyRide";
-import ModTitle from "../components/module1/ModTitle";
 import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod1.module.css";
@@ -22,13 +22,10 @@ export default function Module1() {
   return (
     <div className={styles.container}>
       {/* sidebar */}
-      <div className={styles.hideModile}>
-        <Sidebar />
-      </div>
+      <Sidebar />
       {/* content */}
-      <div className={styles.content}>
+      <ModuleSliderContainer moduleText="MODULE 1: WHAT IS AN E BIKE?">
         {/* frame 1 - intro */}
-        <ModTitle module_num={1} module_name="WHAT IS AN E BIKE?" />
         <Mod1Intro />
         {/* frame 2 - choose */}
         <Mod1ChooseBike />
@@ -56,7 +53,7 @@ export default function Module1() {
             }}
           />
         </div>
-      </div>
+      </ModuleSliderContainer>
     </div>
   );
 }
