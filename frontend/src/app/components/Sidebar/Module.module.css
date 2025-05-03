@@ -1,0 +1,204 @@
+.module {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  justify-content: center;
+  transition: gap 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: auto;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.module.collapsed {
+  gap: 0;
+}
+
+.moduleText {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  align-self: stretch;
+  opacity: 1; /* Ensure it starts visible */
+  transition:
+    width 0.3s ease-in-out,
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    max-height 0.3s ease-in-out;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.moduleText.collapsed {
+  opacity: 0;
+  max-height: 0;
+  width: 0;
+}
+
+.moduleTitleText {
+  /* Body/Small (Reg) */
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+}
+
+.moduleTimeText {
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 114.286% */
+}
+
+.moduleNumber {
+  display: flex;
+  height: 28px;
+  width: 29px; /* Same as height */
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px; /* Ensures a perfect circle */
+}
+
+.moduleNumberText {
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+}
+
+.boarderPrimary {
+  border: 2px solid #fff;
+}
+
+.boarderInactive {
+  border: 1px solid #909090;
+}
+
+.boarderComplete {
+  background: #bbd567;
+}
+
+.numberPrimary {
+  color: #fff;
+}
+
+.numberInactive {
+  color: #909090;
+}
+
+.numberComplete {
+  color: #1c3a29;
+}
+
+.titlePrimary {
+  color: #fff;
+}
+
+.titleInactive {
+  color: #909090;
+}
+
+.titleComplete {
+  color: #bbd567;
+}
+
+.timeInactive {
+  color: #909090;
+}
+
+.timePrimary {
+  color: #d9d9d9;
+}
+
+.primaryBackground {
+  position: relative;
+}
+
+.primaryBackground::before {
+  content: "";
+  position: absolute;
+  border-radius: 2px 0px 0px 2px;
+  top: -8px; /* Extend beyond the module's padding */
+  bottom: 13px; /* Extend beyond the module's padding */
+  left: -20px; /* Extend beyond the sidebar's padding */
+  right: -20px; /* Extend beyond the sidebar's padding */
+  background: rgba(187, 213, 103, 0.25); /* Opaque light green background */
+  z-index: -1; /* Place behind the module content */
+}
+
+.primaryBackground::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  bottom: 13px;
+  left: -20px;
+  width: 4px;
+  background-color: #bbd567;
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.lineBackground {
+  position: relative;
+}
+
+.lineBackground::before {
+  content: "";
+  position: absolute;
+  border-radius: 2px 0px 0px 2px;
+  top: -8px; /* Extend beyond the module's padding */
+  bottom: -12px; /* Extend beyond the module's padding */
+  left: -20px; /* Extend beyond the sidebar's padding */
+  right: -20px; /* Extend beyond the sidebar's padding */
+  background: rgba(187, 213, 103, 0.25); /* Opaque light green background */
+  z-index: -1; /* Place behind the module content */
+}
+
+.lineBackground::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  bottom: -12px;
+  left: -20px;
+  width: 4px;
+  background-color: #bbd567;
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.hover {
+  position: relative;
+}
+
+.hover::before {
+  content: "";
+  position: absolute;
+  border-radius: 2px 0px 0px 2px;
+  top: -8px; /* Extend beyond the module's padding */
+  bottom: 13px; /* Extend beyond the module's padding */
+  left: -20px; /* Extend beyond the sidebar's padding */
+  right: -20px; /* Extend beyond the sidebar's padding */
+  background: rgba(187, 213, 103, 0.25); /* Opaque light green background */
+  z-index: -1; /* Place behind the module content */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.225s ease-in-out; /* Smooth transition */
+}
+
+.hover:hover::before {
+  opacity: 1; /* Make it visible on hover */
+}
