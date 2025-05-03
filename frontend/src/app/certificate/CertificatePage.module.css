@@ -1,0 +1,126 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow-x: auto;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 900px;
+  min-height: 781px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.congrats {
+  color: black;
+  font-family: "Rammetto One";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 2%;
+  width: 800px;
+  text-transform: uppercase;
+}
+
+.star1 {
+  top: 15px;
+  left: -45px;
+  position: absolute;
+}
+
+.star2 {
+  top: -18px;
+  left: 780px;
+  position: absolute;
+}
+
+.star3 {
+  top: 25px;
+  left: 800px;
+  position: absolute;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 800px;
+}
+
+.printInstruction {
+  color: black;
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 2%;
+  width: 800px;
+}
+
+.icons {
+  display: flex;
+  margin-left: auto;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 155px;
+  height: 27px;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.certificateWrapper {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.certificate {
+  background-color: white;
+  width: 800px;
+  height: 564px;
+  box-shadow: 2px 6px 18px rgba(0, 0, 0, 0.3);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+@media print {
+  .container {
+    visibility: hidden;
+  }
+
+  .content {
+    visibility: hidden;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .icons {
+    display: none;
+  }
+
+  .certificate {
+    visibility: visible;
+    transform-origin: top left; /* Ensure it scales from top-left */
+    transform: translateX(-130px) translateY(-115px) scale(1.33);
+    box-shadow: none;
+  }
+
+  @page {
+    size: landscape;
+    margin: 0;
+  }
+}
