@@ -1,7 +1,7 @@
 import React from "react";
 
 import Sidebar from "../components/Sidebar/Sidebar";
-import Page4 from "../components/module3/Page4";
+import Helmet from "../components/module3/Helmet";
 
 import styles from "./mod3.module.css";
 
@@ -14,8 +14,7 @@ export default function Module1() {
       </div>
       {/* content */}
       <div className={styles.content}>
-        {/* title and intro */}
-        <Page4 />
+        <Helmet />
       </div>
     </div>
   );

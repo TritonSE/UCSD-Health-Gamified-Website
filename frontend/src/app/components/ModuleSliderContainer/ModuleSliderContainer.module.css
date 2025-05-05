@@ -1,0 +1,105 @@
+.scroll_snap_container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.hide_scrollbar {
+  height: 100%;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  background-color: white;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slider_container {
+  display: flex;
+  width: 100%;
+  transition: transform 0.4s ease-in-out;
+  height: 100%;
+  align-items: center;
+}
+
+.section_wrapper {
+  overflow-x: auto;
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* max-height: 1000px; */
+  padding-top: 9rem;
+  position: relative;
+}
+
+.section_wrapper::-webkit-scrollbar {
+  width: 12px;
+}
+
+.section_wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--Secondary-Neutral-Gray4, #909090);
+  border-radius: 25px;
+}
+.section_wrapper::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.section_wrapper > section {
+  min-width: 1150px;
+  display: grid;
+  grid-template-columns: 1fr min(var(--module-width), 100%) 1fr;
+  height: auto;
+}
+
+@media (min-height: 800px) {
+  .section_wrapper > section {
+    height: 100%;
+  }
+}
+
+.section_wrapper > section > * {
+  grid-column: 2;
+}
+
+.scroll_snap_container h2 {
+  font-family: "Rammetto One";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.64px;
+  text-transform: uppercase;
+}
+
+.scroll_snap_container p {
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.button_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--module-width);
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.button_container button {
+  cursor: pointer;
+  border-radius: 64px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: 1px solid black;
+  background: var(--Functional-Disabled, #d8d8d8);
+}

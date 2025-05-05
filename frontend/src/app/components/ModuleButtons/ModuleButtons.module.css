@@ -1,0 +1,61 @@
+.button_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--module-width);
+  margin-inline: auto;
+  padding-block: 2rem;
+  z-index: 5;
+  position: relative;
+}
+
+.button_container button {
+  cursor: pointer;
+  border-radius: 64px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: 1px solid black;
+  background-color: var(--Functional-Disabled, #d8d8d8);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  color: black;
+}
+
+.button_container button span {
+  display: inline-flex;
+  align-items: center;
+  line-height: 24px;
+  font-family: "DM Sans";
+}
+
+@keyframes RevealButton {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+#next_button {
+  border: 1px solid var(--Secondary-Accent1, #1c3a29);
+  background-color: var(--Primary, #bbd567);
+  /* animation: RevealButton 8s linear; */
+}
+
+#next_button:is(:hover, :focus-visible) {
+  background-color: #77ac1b;
+  color: white;
+}
+
+#back_button {
+  background-color: white;
+}
+
+#back_button:is(:hover, :focus-visible) {
+  background-color: #faffea;
+}

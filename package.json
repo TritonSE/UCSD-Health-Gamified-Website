@@ -7,6 +7,7 @@
   "description": "`cd frontend`  \r `npm install`  \r `npm run dev`",
   "main": "index.js",
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.12",
     "acorn": "^8.14.0",
     "acorn-jsx": "^5.3.2",
     "ajv": "^6.12.6",

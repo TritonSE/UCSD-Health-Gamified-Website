@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import styles from "./Page4.module.css";
+import styles from "./Helmet.module.css";
 
 const Page4: React.FC = () => {
   return (
