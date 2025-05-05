@@ -15,6 +15,10 @@ import { TitleScreen } from "./TitleScreen";
 
 export type Question = {
   question: string;
+  subQuestion?: string; // for "subcaptions" (particularly quiz 7)
+  image?: string;
+  imageW?: number;
+  imageH?: number;
   options: string[];
   correctAnswer: string | string[];
   type: "single" | "multiple";
@@ -101,7 +105,7 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
     setRandomizedQuestions(
       shuffleArray(
         originalQuestions.map((q: Question) => {
-          const letters = ["A.", "B.", "C.", "D.", "E."];
+          const letters = ["A.", "B.", "C.", "D.", "E.", "F.", "G.", "H."];
           const shuffledOptions = shuffleArray(q.options);
 
           if (q.type === "multiple") {
@@ -199,6 +203,10 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
                     <MultiSelectQuestion
                       key={index}
                       question={`${index + 1}. ${q.question}`}
+                      subQuestion={q.subQuestion}
+                      image={q.image}
+                      imageW={q.imageW}
+                      imageH={q.imageH}
                       options={q.options}
                       selected={selectedAnswers[index] || []}
                       onSelect={(answer) => {
@@ -211,9 +219,21 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
                     <Question
                       key={index}
                       question={`${index + 1}. ${q.question}`}
+                      subQuestion={q.subQuestion}
+                      image={q.image}
+                      imageW={q.imageW}
+                      imageH={q.imageH}
                       options={q.options}
                       selected={
-                        (selectedAnswers[index]?.[0] as "A." | "B." | "C." | "D." | "E.") ?? null
+                        (selectedAnswers[index]?.[0] as
+                          | "A."
+                          | "B."
+                          | "C."
+                          | "D."
+                          | "E."
+                          | "F."
+                          | "G."
+                          | "H.") ?? null
                       }
                       onSelect={(answer) => {
                         handleSelect(index, answer);
