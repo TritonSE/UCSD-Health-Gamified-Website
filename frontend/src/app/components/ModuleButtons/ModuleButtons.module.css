@@ -1,7 +1,11 @@
 .button_container {
+  width: 100%;
+  min-width: 1150px;
+}
+
+.button_container > div {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   max-width: var(--module-width);
   margin-inline: auto;
   padding-block: 2rem;

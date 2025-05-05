@@ -1,6 +1,5 @@
 "use client";
 
-import Sidebar from "../components/HomePage/Sidebar/Sidebar";
 import AdditionalTips from "../components/Mod2Components/AdditionalTip.tsx/AdditionalTips";
 import BasicMaintenance from "../components/Mod2Components/BasicMaintenance/BasicMaintenance";
 import BikeMechanic from "../components/Mod2Components/BikeMechanic.tsx/BikeMechanic";
@@ -9,6 +8,7 @@ import Section1 from "../components/Mod2Components/Section1/Section1";
 import SimpleWay from "../components/Mod2Components/SimpleWay/SimpleWay";
 import StuffHappens from "../components/Mod2Components/StuffHappens/StuffHappens";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 import styles from "./mod2.module.css";
 

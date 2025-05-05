@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { Toaster } from "react-hot-toast";
 
 import { AuthProvider } from "./contexts/AuthContext";
 
