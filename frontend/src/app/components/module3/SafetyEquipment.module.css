@@ -1,0 +1,22 @@
+.title {
+  font-size: 32px;
+  color: black;
+  font-family: "Rammetto One";
+  font-weight: 400;
+  padding-top: 8vh;
+  text-align: center;
+}
+
+.subtitle {
+  color: #000;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 177.778% */
+  text-align: center;
+}
+
+.container {
+  min-width: 1000px;
+}
