@@ -1,0 +1,51 @@
+.stuff_happens_container {
+  justify-items: center;
+  height: fit-content;
+  height: 100%;
+  grid-template-rows: auto 1fr;
+}
+
+.title {
+  /* Display/Small (Reg) */
+  font-family: "Rammetto One";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.64px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.content_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  height: 100%;
+}
+
+.content_container svg {
+  height: 100%;
+  max-height: 366.5px;
+  flex: 3;
+}
+
+.content_container p {
+  flex: 7;
+}
+
+.content_text {
+  background-color: #faffea;
+  border-radius: 16px;
+  color: black;
+  padding: 30px 20px;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  height: fit-content;
+  max-width: 45ch;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+}

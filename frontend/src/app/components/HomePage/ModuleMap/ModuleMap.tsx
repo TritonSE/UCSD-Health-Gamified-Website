@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 import AnimatedPath from "../AnimatedPath/AnimatedPath";
 import BackgroundPaths from "../BackgroundPaths/BackgroundPaths";
@@ -32,6 +33,25 @@ export default function ModuleMap() {
 
   return (
     <div className={styles.svg_container}>
+      <Toaster
+        position="bottom-center"
+        containerStyle={{
+          position: "absolute",
+          left: "0",
+          right: "0",
+          top: "0",
+          bottom: "50px",
+        }}
+        toastOptions={{
+          style: {
+            boxShadow: "none",
+            backgroundColor: "#FAFFEA",
+            borderRadius: "16",
+            maxWidth: "55ch",
+            border: "1px solid #1c3a29",
+          },
+        }}
+      />
       <svg
         className={styles.svg}
         width="1151"
