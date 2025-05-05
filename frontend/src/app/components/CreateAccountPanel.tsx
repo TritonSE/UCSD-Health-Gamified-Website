@@ -2,6 +2,7 @@
 import {
   UserCredential,
   createUserWithEmailAndPassword,
+  deleteUser,
   sendEmailVerification,
 } from "firebase/auth";
 import Image from "next/image";
@@ -15,10 +16,10 @@ import { LoginButton } from "./LoginButton";
 import { TextBox } from "./TextBox";
 
 export type CreateAccountPanelProps = {
-  setIsAccountCreated: React.Dispatch<React.SetStateAction<boolean>>;
+  setAccountCreated: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccountPanelProps) {
+export default function CreateAccountPanel({ setAccountCreated }: CreateAccountPanelProps) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -40,8 +41,6 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
     return new Promise((resolve, reject) => {
       createUserWithEmailAndPassword(auth, formData.email, formData.password)
         .then((userCredential) => {
-          const user = userCredential.user;
-
           setErrors({
             firstNameError: "",
             lastNameError: "",
@@ -50,17 +49,7 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
             otherError: "",
           });
 
-          sendEmailVerification(user)
-            .then(() => {
-              localStorage.setItem("emailForSignIn", formData.email);
-              localStorage.setItem("user", JSON.stringify(user));
-              resolve(userCredential);
-            })
-            .catch((error: Error) => {
-              setIsAccountCreated(false);
-              console.error("Error sending verification email: ", error);
-              reject(error);
-            });
+          resolve(userCredential);
         })
         .catch((error: unknown) => {
           const firebaseError = error as { code?: string; message: string };
@@ -69,7 +58,7 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
 
           console.log(errorCode, errorMessage);
 
-          setIsAccountCreated(false);
+          setAccountCreated("");
 
           if (errorCode === "auth/email-already-in-use") {
             setErrors((prev) => ({
@@ -86,37 +75,74 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
   const handleSubmit = () => {
     firebaseAuth()
       .then((userCredential) => {
-        console.log("Firebase authentication successful:", userCredential.user);
-
         // MongoDB creation
         createUser({
           name: formData.firstName + " " + formData.lastName,
           email: formData.email,
+          module: 1,
+          firstLogin: true,
         })
           .then((result) => {
             if (result.success) {
-              console.log("MongoDB user creation successful:", userCredential.user);
-              setIsAccountCreated(true);
+              sendEmailVerification(userCredential.user)
+                .then(() => {
+                  setAccountCreated(formData.email);
+                })
+                .catch((error: Error) => {
+                  setAccountCreated("");
+                  console.error("Error sending verification email: ", error);
+                });
             } else {
-              alert(result.error);
+              setAccountCreated("");
+
+              deleteUser(userCredential.user)
+                .then(() => {
+                  setAccountCreated("");
+                  setFormData({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    password: "",
+                  });
+                })
+                .catch((error: unknown) => {
+                  console.error(error);
+                });
+
+              setErrors((prev) => ({
+                ...prev,
+                ["otherError"]: "Error creating account!",
+              }));
             }
           })
           .catch((_) => {
-            setIsAccountCreated(false);
+            setAccountCreated("");
+
+            deleteUser(userCredential.user)
+              .then(() => {
+                setAccountCreated("");
+                setFormData({
+                  firstName: "",
+                  lastName: "",
+                  email: "",
+                  password: "",
+                });
+              })
+              .catch((error: unknown) => {
+                console.error(error);
+              });
+
+            setErrors((prev) => ({
+              ...prev,
+              ["otherError"]: "Error creating account!",
+            }));
           });
       })
-      .catch((error) => {
-        console.error("Error during signup process:", error);
-
-        setIsAccountCreated(false);
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          password: "",
-        });
-
-        alert("An error has occurred");
+      .catch((_) => {
+        // setErrors((prev) => ({
+        //   ...prev,
+        //   ["otherError"]: "Error creating account!",
+        // }));
       });
   };
 
@@ -257,7 +283,7 @@ export default function CreateAccountPanel({ setIsAccountCreated }: CreateAccoun
           <p>{errors.otherError}</p>
         </div>
       )}
-      <div className={styles.createAccount}>
+      <div>
         <LoginButton label="Sign Up" disabled={!isButtonEnabled} onClick={handleSubmit} />
         <p className={styles.signInLink}>
           Already have an account? <a href="/signin">Sign-in</a>

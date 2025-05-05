@@ -1,41 +1,44 @@
 "use client";
 import { sendEmailVerification } from "firebase/auth";
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useState } from "react";
 
 import { auth } from "../firebase-config.js";
 
 import BackToSignIn from "./BackToSignIn";
 import styles from "./VerifyEmail.module.css";
 
-export default function VerifyEmail() {
-  const [email, setEmail] = useState<string>("");
-  //const [user, setUser] = useState<any>(null);
+export type VerifyEmailProps = {
+  email: string;
+};
+
+export default function VerifyEmail({ email }: VerifyEmailProps) {
+  const [verificationError, setVerificationError] = useState("");
+  const [emailResent, setEmailResent] = useState("");
 
   const resendEmail = () => {
     const user = auth.currentUser;
     if (user) {
       sendEmailVerification(user)
         .then(() => {
-          console.log("Email sent.");
+          setVerificationError("");
+          setEmailResent("Email resent! Please wait 1 minute before trying again.");
         })
-        .catch((error) => {
+        .catch((error: unknown) => {
           console.error("Error sending verification email: ", error);
+
+          const firebaseError = error as { code?: string; message: string };
+          const errorCode = firebaseError.code ?? "unknown_error";
+
+          if (errorCode === "auth/too-many-requests") {
+            setEmailResent("");
+            setVerificationError("Too many requests. Please try again later.");
+          }
         });
     } else {
       console.error("No user found.");
     }
   };
-
-  useEffect(() => {
-    const emailForSignIn = localStorage.getItem("emailForSignIn");
-    //const user = localStorage.getItem("user");
-    if (emailForSignIn) {
-      setEmail(emailForSignIn);
-      localStorage.removeItem("emailForSignIn");
-      localStorage.setItem("emailForVerify", emailForSignIn);
-      console.log("Email for verify: ", localStorage.getItem("emailForVerify"));
-    }
-  });
 
   return (
     <div className={styles.verifyEmail}>
@@ -53,6 +56,17 @@ export default function VerifyEmail() {
           Click to resend
         </a>
       </p>
+      {verificationError && (
+        <div className={styles.error}>
+          <Image src="/red_exclamation.svg" alt="Warning!" width={18} height={18} />
+          <p>{verificationError}</p>
+        </div>
+      )}
+      {emailResent && (
+        <div className={styles.emailresent}>
+          <p>{emailResent}</p>
+        </div>
+      )}
     </div>
   );
 }

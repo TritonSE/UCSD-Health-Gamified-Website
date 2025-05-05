@@ -6,11 +6,18 @@
   --foreground: #171717;
   --sidebar-size: 200px;
   --module-width: min(80%, 950px);
+  --color-text-primary: #ffffff;
+  --color-action-border: #1c3a29;
+  --color-action-selected: #bbd567;
+  --color-action-correct: #3bb966;
+  --color-action-wrong: #b93b3b;
+  --color-action-submit: #1c3a29;
+  --Secondary-Neutral-Gray5: #6c6c6c;
 }
 
 /* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
 } */
