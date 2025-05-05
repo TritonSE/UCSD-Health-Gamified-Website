@@ -10,7 +10,7 @@ const Page4: React.FC = () => {
 
       <div className={styles.content}>
         <div className={styles.textSection}>
-          <h2 className={styles.subtitle}>Incorrect Ways</h2>
+          <h3 className={styles.subtitle}>Incorrect Ways</h3>
           <div className={`${styles.point} ${styles.point1}`}>
             <span className={styles.number}>1.</span>
             <p>
