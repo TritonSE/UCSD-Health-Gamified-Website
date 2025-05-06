@@ -16,7 +16,7 @@ export default function Module3() {
   return (
     <div className={styles.container}>
       {/* sidebar */}
-      <div className={styles.hideModile}>
+      <div className={styles.sidebar}>
         <Sidebar />
       </div>
       {/* content */}
