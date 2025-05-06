@@ -96,6 +96,7 @@ export default function Mod1WhyRide() {
           />
         </div>
       </div>
+      <div style={{ height: "200px" }}></div>
     </div>
   );
 }
