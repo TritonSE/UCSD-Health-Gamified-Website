@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import Mod2Title from "../Mod2Title";
 
 import styles from "./Section3.module.css";
