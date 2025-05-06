@@ -12,6 +12,7 @@ export type FlipProps = {
   back_text: string;
   frontColor?: string;
   backColor?: string;
+  hasBullets?: boolean;
   styles?: {
     container?: React.CSSProperties;
     container_flipped?: React.CSSProperties;
@@ -27,6 +28,7 @@ export default function Flip({
   back_text,
   frontColor,
   backColor,
+  hasBullets = false,
   styles: customStyles,
 }: FlipProps) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -65,7 +67,25 @@ export default function Flip({
         className={styles.back}
         style={{ ...customStyles?.container_flipped, backgroundColor: backColor }}
       >
-        <p style={customStyles?.title}>{back_text}</p>
+        {!hasBullets ? (
+          <p style={customStyles?.title}>{back_text}</p>
+        ) : (
+          <ul style={{ paddingLeft: "17px", ...customStyles?.title }}>
+            {back_text.split("\n").map((point, index) => (
+              <li
+                key={index}
+                style={{
+                  fontFamily: "DM Sans",
+                  fontSize: "17px",
+                  lineHeight: "25px",
+                  textAlign: "left",
+                }}
+              >
+                {point}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

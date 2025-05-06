@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  min-width: 1000px;
+}
+
+.title {
+  color: #000;
+  font-family: "Rammetto One";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 48px */
+  letter-spacing: 0.64px;
+}
+
+.cardContainer {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  margin-top: 215px;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  position: relative; /* Add relative positioning to the card container */
+  width: 100%;
+  width: 946px;
+  overflow: visible;
+}
+
+.card1,
+.card2,
+.card3,
+.card4,
+.card5 {
+  width: 292.405px;
+  height: 175.443px;
+  position: absolute; /* Use absolute positioning */
+  color: #000;
+  text-align: center;
+}
+
+/* Each card uses polar angle (in degrees), converted manually to translate */
+.card1 {
+  transform: translate(0%, -5%) translate(0, calc(-1 * 322px)) translateY(87.5px);
+}
+
+.card2 {
+  transform: translate(0%, -50%) translate(calc(322px * sin(72deg)), calc(-1 * 260px * cos(72deg)))
+    translateY(87.5px);
+}
+
+.card3 {
+  transform: translate(0%, -45%)
+    translate(calc(322px * sin(144deg)), calc(-1 * 260px * cos(144deg))) translateY(87.5px);
+}
+
+.card4 {
+  transform: translate(0%, -45%)
+    translate(calc(322px * sin(216deg)), calc(-1 * 260px * cos(216deg))) translateY(87.5px);
+}
+
+.card5 {
+  transform: translate(0%, -50%)
+    translate(calc(322px * sin(288deg)), calc(-1 * 260px * cos(288deg))) translateY(87.5px);
+}

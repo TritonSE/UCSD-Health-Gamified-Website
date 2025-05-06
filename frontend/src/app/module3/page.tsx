@@ -4,6 +4,7 @@ import React from "react";
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Sidebar from "../components/Sidebar/Sidebar";
+import Flips from "../components/module3/Flips";
 import Helmet from "../components/module3/Helmet";
 import HelmetCorrect from "../components/module3/HelmetCorrect";
 import Recommendation from "../components/module3/Recommendation";
@@ -40,6 +41,7 @@ export default function Module3() {
             />
           }
         />
+        <Flips />
         <HelmetCorrect />
         <Helmet />
         <Recommendation />
