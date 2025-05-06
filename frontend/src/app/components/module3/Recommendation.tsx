@@ -6,7 +6,7 @@ import styles from "./Recommendation.module.css";
 export default function Recommendation() {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Recommendation</h1>
+      <h1 className={styles.title}>RECOMMENDATION</h1>
       <div className={styles.svgs}>
         <Image
           width="301"
