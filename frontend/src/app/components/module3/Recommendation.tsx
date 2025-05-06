@@ -23,11 +23,11 @@ export default function Recommendation() {
           className={styles.icon}
         />
         <Image
-          width="240"
-          height="700"
+          width="269"
+          height="224"
           src="/module3/moped_rated.svg"
           alt="Moped rated or light motorcycle rated helmets will provide greater protection when compared to bicycle helmets."
-          className={styles.icon}
+          className={`${styles.icon} ${styles.mopedHelmet}`}
         />
       </div>
     </div>
