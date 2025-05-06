@@ -30,8 +30,8 @@ export default function QuizPage2() {
         <Sidebar />
       </div>
       <Quiz
-        title="Example Quiz"
-        description="No time limit! Make sure to answer all the questions."
+        title="Module 2 Quiz"
+        description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
         questions={sampleQuestions}
       />
     </div>
