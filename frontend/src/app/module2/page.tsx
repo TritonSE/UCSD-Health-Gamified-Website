@@ -1,10 +1,9 @@
-"use client";
+import Image from "next/image";
 
+import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
 import AdditionalTips from "../components/Mod2Components/AdditionalTip.tsx/AdditionalTips";
 import BasicMaintenance from "../components/Mod2Components/BasicMaintenance/BasicMaintenance";
 import BikeMechanic from "../components/Mod2Components/BikeMechanic.tsx/BikeMechanic";
-// import Helmet from "../components/Mod2Components/Helmet";
-import Section1 from "../components/Mod2Components/Section1/Section1";
 import SimpleWay from "../components/Mod2Components/SimpleWay/SimpleWay";
 import StuffHappens from "../components/Mod2Components/StuffHappens/StuffHappens";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
@@ -17,7 +16,23 @@ export default function Module2() {
     <div className={styles.container}>
       <Sidebar />
       <ModuleSliderContainer moduleText="MODULE 2: Maintaining Your Bike and Keeping it Road Ready">
-        <Section1 />
+        <ModuleIntro
+          subtitle="Why is bike maintenance important?"
+          title="Maintaining your bike and keeping it road ready"
+          moduleNumber={2}
+          description={
+            <p>{`A well-maintained bike or E Bike is safer, more efficient, and more enjoyable to ride. Regular maintenance can help prevent breakdowns, extend the life of your bike, and ensure that you're riding safely.`}</p>
+          }
+          Mascot={
+            <Image
+              src="/TimmytheTire.svg"
+              width={312}
+              height={320}
+              alt="Timmy, the tire mascot"
+              className={styles.mascot}
+            />
+          }
+        />
         <BasicMaintenance />
         <AdditionalTips />
         <SimpleWay />
