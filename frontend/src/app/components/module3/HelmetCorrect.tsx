@@ -23,7 +23,7 @@ const Page4: React.FC = () => {
           <div className={`${styles.point} ${styles.point1}`}>
             <span className={styles.number}>1.</span>
             <p>
-              <strong>Level & Low:</strong> Covers forehead (two fingers above eyebrows).
+              <strong>&nbsp; Level & Low:</strong> Covers forehead (two fingers above eyebrows).
             </p>
           </div>
           <div className={`${styles.point} ${styles.point2}`}>
