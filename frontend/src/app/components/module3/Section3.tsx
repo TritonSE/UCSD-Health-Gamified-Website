@@ -19,7 +19,7 @@ export default function Section3() {
               >{`A well-maintained bike or E bike is safer, more efficient, and more enjoyable to ride. Regular maintenance can help prevent breakdowns, extend the life of your bike, and ensure that you're riding safely.`}</p>
             </div>
             <Image
-              src="/TimmyHelmet.svg"
+              src="/module3/TimmyHelmet.svg"
               alt="Timmy, the tire mascot"
               width={305}
               height={295.58}

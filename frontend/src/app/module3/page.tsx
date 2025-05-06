@@ -7,6 +7,7 @@ import SafetyEquipment from "../components/module3/SafetyEquipment";
 
 import styles from "./mod3.module.css";
 import Section3 from "../components/module3/Section3";
+import HelmetCorrect from "../components/module3/HelmetCorrect";
 
 export default function Module3() {
   return (
@@ -18,6 +19,7 @@ export default function Module3() {
       {/* content */}
       <ModuleSliderContainer moduleText="MODULE 3: Helmet Choice and Safety Equipment">
         <Section3 />
+        <HelmetCorrect />
         <Helmet />
         <SafetyEquipment />
       </ModuleSliderContainer>
