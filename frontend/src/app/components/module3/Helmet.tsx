@@ -14,7 +14,8 @@ const Page4: React.FC = () => {
           <div className={`${styles.point} ${styles.point1}`}>
             <span className={styles.number}>1.</span>
             <p>
-              <strong>Too Far Back:</strong> Leaves your forehead exposed, reducing protection.
+              &nbsp;<strong>Too Far Back:</strong> Leaves your forehead exposed, reducing
+              &nbsp;protection.
             </p>
           </div>
           <div className={`${styles.point} ${styles.point2}`}>
