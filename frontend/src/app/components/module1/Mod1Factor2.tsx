@@ -1,12 +1,13 @@
 import React from "react";
 
+import ChatBubble from "./ChatBubble";
 import InfoItem from "./InfoItem";
-import Mod1FactorTitle from "./Mod1FactorTitle";
+import styles from "./Mod1ChooseBike.module.css";
 
 export default function Mod1Factor2() {
   return (
     <>
-      <Mod1FactorTitle number={2} step="Consider your physical abilities & experience" />
+      <h1 className={styles.title}>CONSIDER YOUR PHYSICAL ABILITIES & EXPERIENCE</h1>
       <InfoItem
         icon={"/module1/fitness_level_icon.svg"}
         title={"Fitness Level:"}
@@ -23,6 +24,11 @@ export default function Mod1Factor2() {
         }
         iconAlt={"Graph icon"}
       ></InfoItem>
+
+      <ChatBubble
+        icon="/Timmy.svg"
+        message="Set a budget! E Bikes vary in price based on features and components. Determine your budget to narrow down your options!"
+      />
     </>
   );
 }
