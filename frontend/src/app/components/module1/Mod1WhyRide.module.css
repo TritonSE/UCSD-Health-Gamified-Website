@@ -1,18 +1,22 @@
 .container {
-  background: #bbd567;
-  padding: 140px 100px;
-  margin-top: 140px;
+  padding: 60px 100px;
   position: relative; /* Add relative positioning to the container */
+  background: #bbd567;
+  margin-top: 36px;
 }
 
 .title {
   color: #000;
+  text-align: center;
   font-family: "Rammetto One";
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 48px */
   letter-spacing: 0.64px;
+  text-transform: uppercase;
+  margin-left: 6.5vw;
+  margin-right: 6.5vw;
 }
 
 .cardContainer {
@@ -48,7 +52,7 @@
 }
 
 .card2 span {
-  color: #fff;
+  color: #fff !important;
 }
 
 .card2 {

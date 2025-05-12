@@ -1,0 +1,36 @@
+.tableCard {
+  width: 185px;
+  color: #000;
+
+  /* Title/XSmall (Reg) */
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  letter-spacing: 0.36px;
+}
+
+.tableCard h3 {
+  color: #000;
+  text-align: center;
+  font-family: "Rammetto One";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 30px */
+  letter-spacing: 0.4px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 10px;
+}
+
+.section {
+  margin-bottom: -10px;
+}
