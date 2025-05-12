@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useCallback, useMemo, useState } from "react";
 
 import { ExitNotif } from "./ExitNotif";
 import { Grade } from "./Grade";
@@ -24,6 +25,7 @@ type QuizProps = {
   title: string;
   description: string;
   questions: Question[];
+  isFinalTest?: boolean;
 };
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -35,7 +37,12 @@ function shuffleArray<T>(array: T[]): T[] {
   return newArray;
 }
 
-export const Quiz = ({ title, description, questions: originalQuestions }: QuizProps) => {
+export const Quiz = ({
+  title,
+  description,
+  questions: originalQuestions,
+  isFinalTest = false,
+}: QuizProps) => {
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string[]>>({});
   const [cancel, setCancel] = useState<boolean>(false);
   const [checkSubmit, setCheckSubmit] = useState<boolean>(false);
@@ -45,6 +52,7 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
   const [quizTitle, setTitle] = useState<string>(title);
   const [score, setScore] = useState<number>(0);
   const [randomizedQuestions, setRandomizedQuestions] = useState(() => originalQuestions);
+  const router = useRouter();
 
   const handlePressCancel = () => {
     setCancel(!cancel);
@@ -56,6 +64,16 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
     setStarting(false);
     setCancel(false);
   };
+
+  const handleFinished = useCallback(() => {
+    if (isFinalTest) {
+      router.push("/certificate");
+    } else {
+      // Placeholder since handleLeave wasn't implemented
+      handleLeave();
+    }
+    // Technically should add handleLeave, but it's a placeholder
+  }, [isFinalTest, router]);
 
   const handlePressSubmit = () => {
     setCheckSubmit(!checkSubmit);
@@ -77,8 +95,9 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
     const calculatedScore = (correctCount / randomizedQuestions.length) * 100;
     if (calculatedScore < 75) {
       setLabel("Retake Quiz");
-    } else if (calculatedScore > 75) {
-      setLabel("Next Module");
+    } else if (calculatedScore >= 75) {
+      const newLabel = isFinalTest ? "Open Certificate" : "Next Module";
+      setLabel(newLabel);
     }
     if (calculatedScore < 75 && calculatedScore > 74) {
       setScore(Math.floor(calculatedScore));
@@ -93,6 +112,24 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
     setSubmitted(true);
     setCheckSubmit(false);
   };
+
+  const titleScreenText = useMemo(() => {
+    if (isFinalTest) {
+      return {
+        title: "READY TO TAKE THE FINAL TEST?",
+        description:
+          "To receive your certificate, you'll need to complete a cumulative test to check your understanding of the material covered in this course.",
+        passOrModule: "pass",
+      };
+    } else {
+      return {
+        title: "READY TO TAKE THE MODULE QUIZ?",
+        description:
+          "Before proceeding to the next module, you'll need to complete a short quiz to test your understanding of the material covered in this module. A score of 75% or higher is required to move on to the next module! Good luck!",
+        passOrModule: "move on to the next module!",
+      };
+    }
+  }, [isFinalTest]);
 
   const handleStart = () => {
     setSelectedAnswers({});
@@ -158,7 +195,7 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
 
   return (
     <div id="Quiz" className={styles.bigDiv}>
-      {!starting && <TitleScreen handleStart={handleStart} />}
+      {!starting && <TitleScreen handleStart={handleStart} text={titleScreenText} />}
       {starting && (
         <div className={styles.exitQuiz}>
           {!submitted && (
@@ -228,7 +265,7 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
               {!submitted && <Submit handleSubmit={handlePressSubmit} />}
               {submitted && (
                 <div className={styles.nextModule}>
-                  <NextButtons kind="primary" label={label} handleClick={handleLeave} />
+                  <NextButtons kind="primary" label={label} handleClick={handleFinished} />
                   <NextButtons kind="secondary" label="Go Back" handleClick={handleLeave} />
                 </div>
               )}
