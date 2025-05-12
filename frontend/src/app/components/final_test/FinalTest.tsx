@@ -128,7 +128,6 @@ export const FinalTest = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Final Test</h1>
       <Quiz
         title="Final Test"
         description="There is no time limit. You have unlimited attempts. However you will not be able to revisit previous attempts."

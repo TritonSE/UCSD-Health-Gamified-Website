@@ -69,7 +69,7 @@ export const Quiz = ({
     if (isFinalTest) {
       router.push("/certificate");
     } else {
-      // Placeholder since handleLeave wasn't implemented
+      // Placeholder since a handle finish function wasn't implemented
       handleLeave();
     }
     // Technically should add handleLeave, but it's a placeholder
