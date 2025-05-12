@@ -1,0 +1,47 @@
+.nav {
+  height: 100%;
+  background: #1c3a29;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  padding: 20px;
+  padding-right: 20px;
+  color: white;
+  overflow-y: auto;
+  overflow-x: none;
+  transition: width 0.3s ease;
+}
+
+.nav.collapsed {
+  width: 92px;
+}
+
+.collapseButton {
+  display: flex;
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: margin 0.3 ease;
+}
+
+.collapseButton.open {
+  margin-right: 21.5%;
+}
+
+/* DELETE THIS AFTER THE BUTTON GOES AWAY */
+#temp_complete_module {
+  position: flex;
+  font-size: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fb0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  overflow: none;
+  white-space: nowrap;
+}

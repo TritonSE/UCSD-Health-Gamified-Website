@@ -1,0 +1,52 @@
+#bike_mechanic_container {
+  gap: 2rem;
+  justify-items: center;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  height: 100%;
+}
+
+#bike_mechanic_container h2 {
+  text-align: center;
+}
+
+#svg_container svg {
+  height: 200%;
+}
+
+.mechanic_svg {
+  transition: transform 0.5s ease-in-out;
+  transform-origin: 49.68% 55.83%;
+  scale: 1;
+}
+
+@keyframes Spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#svg_container .svg_text p {
+  font-family: "DM Sans";
+  padding-inline: 2rem;
+  padding-top: 1.25rem;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 150%;
+  letter-spacing: 0.44px;
+  color: #1c3a29;
+}
+
+.arrow_button {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.arrow_button:hover {
+  transform: scale(1.1);
+}
