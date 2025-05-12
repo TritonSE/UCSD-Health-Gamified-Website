@@ -7,8 +7,12 @@ import styles from "./TitleScreen.module.css";
 
 export const TitleScreen = ({
   handleStart,
+  text,
   ...props
-}: { handleStart: () => void } & React.ComponentProps<"button">) => {
+}: {
+  handleStart: () => void;
+  text: { title: string; description: string; passOrModule: string };
+} & React.ComponentProps<"button">) => {
   return (
     <div className={styles.titleScreen}>
       <Image
@@ -19,13 +23,12 @@ export const TitleScreen = ({
         alt="Timmy the Tire Start picture"
       />
       <div className={styles.ready}>
-        <h1 className={styles.title}>READY TO TAKE THE MODULE QUIZ?</h1>
+        <h1 className={styles.title}>{text.title}</h1>
         <p className={styles.description}>
-          Before proceeding to the next module, you&#39;ll need to complete a short quiz to test
-          your understanding of the material covered in this module.
+          {text.description}
           <br />
           <br />A score of <span className={styles.descriptionBold}>75% or higher</span> is required
-          to move on to the next module! Good luck!
+          to {text.passOrModule}! Good luck!
         </p>
         <button className={styles.button} onClick={handleStart} {...props}>
           <p className={styles.buttonText}>Start Quiz</p>
