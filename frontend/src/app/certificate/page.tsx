@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { getUser } from "../api/user";
 import Certificate from "../components/Certificate/Certificate";
-import Sidebar from "../components/HomePage/Sidebar/Sidebar";
+import Sidebar from "../components/Sidebar/Sidebar";
 import { auth } from "../firebase-config.js";
 
 import styles from "./CertificatePage.module.css";
