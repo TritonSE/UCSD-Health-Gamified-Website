@@ -11,18 +11,20 @@ export default function QuizPage3() {
       image: "/quiz/module3_quiz.svg",
       imageW: 502,
       imageH: 200,
-      options: ["", "", ""], 
+      options: ["", "", ""],
       correctAnswer: "A.",
       type: "single",
     },
     {
-      question: "At what time of day is it especially important to wear high visible clothing and ensure you have reflective gear?",
+      question:
+        "At what time of day is it especially important to wear high visible clothing and ensure you have reflective gear?",
       options: ["Morning", "Mid Day", "Afternoon", "Dusk and Dark"],
       correctAnswer: "D.",
       type: "single",
     },
     {
-      question: "True or False: Helmets can prevent serious head injury and permanent brain damage in bike accidents?",
+      question:
+        "True or False: Helmets can prevent serious head injury and permanent brain damage in bike accidents?",
       options: ["True", "False"],
       correctAnswer: "A.",
       type: "single",

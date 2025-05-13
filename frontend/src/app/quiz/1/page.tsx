@@ -1,6 +1,5 @@
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { Question, Quiz } from "../../components/quiz_components/Quiz";
-
 import styles from "../QuizPage.module.css";
 
 export default function QuizPage1() {
@@ -18,7 +17,8 @@ export default function QuizPage1() {
       type: "single",
     },
     {
-      question: "True or False: Riding an unclassified or bike modified to surpass the speed of its intended class can result in a fine or other penalties?",
+      question:
+        "True or False: Riding an unclassified or bike modified to surpass the speed of its intended class can result in a fine or other penalties?",
       options: ["True", "False"],
       correctAnswer: "A.",
       type: "single",
