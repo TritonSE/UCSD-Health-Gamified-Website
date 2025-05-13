@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   height: 80vh;
+  min-height: 520px;
   min-width: 1000px;
 }
 
