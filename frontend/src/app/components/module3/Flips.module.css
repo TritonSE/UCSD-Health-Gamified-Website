@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 1000px;
   min-width: 1000px;
+  height: 80vh;
+  min-height: 740px;
 }
 
 .title {
@@ -25,7 +26,6 @@
   position: relative; /* Add relative positioning to the card container */
   width: 100%;
   width: 946px;
-  overflow: visible;
 }
 
 .card1,
