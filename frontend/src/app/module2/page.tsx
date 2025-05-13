@@ -15,7 +15,9 @@ import styles from "./mod2.module.css";
 export default function Module2() {
   return (
     <div className={styles.container}>
-      <Sidebar />
+      <div className={styles.sidebarWrapper}>
+        <Sidebar />
+      </div>
       <ModuleSliderContainer moduleText="MODULE 2: Maintaining Your Bike and Keeping it Road Ready">
         <Section1 />
         <BasicMaintenance />
