@@ -21,18 +21,23 @@
 .content {
   display: flex;
   justify-content: space-between;
+  justify-content: center;
   gap: 32px;
+  width: 100%;
+  padding: 0 32px; /* ADD horizontal padding */
 }
 
 .textSection {
   color: #000;
-
   /* Body/Large (Reg) */
   font-family: "DM Sans";
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
   line-height: 32px;
+  width: 100%;
+  max-width: 1000px; /* Optional, prevents too wide on large screens */
+  margin: 0 auto; /* Centers it on large screens */
 }
 
 .point {
