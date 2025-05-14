@@ -3,8 +3,8 @@
   flex-direction: column;
   align-items: center;
   height: 80vh;
-  min-height: 520px;
-  min-width: 1000px;
+  min-height: 560px;
+  min-width: 900px;
 }
 
 .title {
@@ -22,12 +22,14 @@
   display: flex;
   justify-content: space-between;
   justify-content: center;
-  gap: 32px;
   width: 100%;
   padding: 0 32px; /* ADD horizontal padding */
 }
 
 .textSection {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
   color: #000;
   /* Body/Large (Reg) */
   font-family: "DM Sans";
@@ -46,7 +48,6 @@
   padding: 10px 50px;
   align-items: center;
   gap: 45px;
-  margin-bottom: 50px;
 }
 
 .point1 {
