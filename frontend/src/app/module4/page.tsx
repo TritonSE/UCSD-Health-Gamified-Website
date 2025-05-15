@@ -6,6 +6,7 @@ import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSli
 import Sidebar from "../components/Sidebar/Sidebar";
 import FollowTheLaw from "../components/Mod4Components/FollowTheLaw/FollowTheLaw";
 import BePredictable from "../components/Mod4Components/BePredictable/BePredictable";
+import BeVisible from "../components/Mod4Components/BeVisible/BeVisible";
 
 import styles from "./mod4.module.css";
 
@@ -17,6 +18,7 @@ export default function Module4() {
         <SectionPage />
         <FollowTheLaw />
         <BePredictable />
+        <BeVisible/>
       </ModuleSliderContainer>
     </div>
   );
