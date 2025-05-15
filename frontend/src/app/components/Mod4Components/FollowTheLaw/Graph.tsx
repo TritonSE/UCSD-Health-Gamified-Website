@@ -538,15 +538,6 @@ export default function GraphSVG({
                 "#BBD567"
               }
             />
-            <text
-              className={styles.svg_text}
-              x={x}
-              y={y}
-              textAnchor="middle"
-              fill="#fff"
-              dominantBaseline="central"
-            >
-            </text>
           </g>
         ))}
       </g>
