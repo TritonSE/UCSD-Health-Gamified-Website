@@ -478,15 +478,6 @@ export default function GraphSVG({
           strokeWidth="2.54545"
           strokeLinecap="round"
         />
-        <g filter="url(#filter17_f_8223_36841)">
-          <circle cx="290" cy="281" r="28" fill="#BBD567" />
-        </g>
-        <g filter="url(#filter18_f_8223_36841)">
-          <circle cx="852" cy="102" r="28" fill="#BBD567" />
-        </g>
-        <g filter="url(#filter19_f_8223_36841)">
-          <circle cx="641" cy="417" r="28" fill="#BBD567" />
-        </g>
         <g filter="url(#filter20_d_8223_36841)">
           <circle
             cx="292"
