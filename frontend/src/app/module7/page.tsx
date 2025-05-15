@@ -5,6 +5,7 @@ import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Sidebar from "../components/Sidebar/Sidebar";
 import BikeInjuries from "../components/module7/BikeInjuries";
+import RoleModels from "../components/module7/RoleModels";
 
 import styles from "./mod7.module.css";
 
@@ -42,6 +43,7 @@ export default function Module7() {
           }
         />
         <BikeInjuries />
+        <RoleModels />
       </ModuleSliderContainer>
     </div>
   );

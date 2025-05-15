@@ -4,9 +4,8 @@ import styles from "./BikeInjuries.module.css";
 
 const Page2: React.FC = () => {
   return (
-    <section className={styles.container}>
+    <section id="container">
       <h1 className={styles.title}>BIKE RELATED INJURIES & FATALITIES</h1>
-
       <div className={styles.content}>
         <div className={styles.textSection}>
           <div className={`${styles.point} ${styles.point1}`}>
