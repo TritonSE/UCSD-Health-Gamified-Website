@@ -27,6 +27,7 @@ const CIRCLE_DATA: Record<number, CircleData> = {
 export default function FollowTheLaw() {
   const [activeCircles, setActiveCircles] = useState<number[]>([]);
   const [inactiveCircles, setInactiveCircles] = useState<number[]>([]);
+  const [hoveredCircle, setHoveredCircle] = useState<number | null>(null);
 
   const handleCircleClick = (number: string) => {
     const parsedNumber = parseInt(number);
@@ -48,11 +49,6 @@ export default function FollowTheLaw() {
     setActiveCircles([]);
   };
 
-  // Get the data for the first active circle (or default if none)
-  const activeCircleData = activeCircles.length > 0 && CIRCLE_DATA[activeCircles[0]]
-    ? CIRCLE_DATA[activeCircles[0]]
-    : { header: "", text: "", width: 0, height: 0 };
-
   return (
     <section className={styles.container}>
       <div className={styles.header_container}>
@@ -63,8 +59,9 @@ export default function FollowTheLaw() {
         handleCircleClick={handleCircleClick}
         activeCircles={activeCircles}
         inactiveCircles={inactiveCircles}
+        hoveredCircle={hoveredCircle}
+        setHoveredCircle={setHoveredCircle}
       />
-      
     </section>
   );
 }
