@@ -7,6 +7,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import FollowTheLaw from "../components/Mod4Components/FollowTheLaw/FollowTheLaw";
 import BePredictable from "../components/Mod4Components/BePredictable/BePredictable";
 import BeVisible from "../components/Mod4Components/BeVisible/BeVisible";
+import RideReady from "../components/Mod4Components/RideReady/RideReady";
 
 import styles from "./mod4.module.css";
 
@@ -19,6 +20,7 @@ export default function Module4() {
         <FollowTheLaw />
         <BePredictable />
         <BeVisible/>
+        <RideReady/>
       </ModuleSliderContainer>
     </div>
   );
