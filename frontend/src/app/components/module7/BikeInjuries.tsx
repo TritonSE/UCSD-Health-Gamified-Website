@@ -4,7 +4,7 @@ import styles from "./BikeInjuries.module.css";
 
 const Page2: React.FC = () => {
   return (
-    <section id="container">
+    <section id={styles.container}>
       <h1 className={styles.title}>BIKE RELATED INJURIES & FATALITIES</h1>
       <div className={styles.content}>
         <div className={styles.textSection}>
