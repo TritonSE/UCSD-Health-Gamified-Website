@@ -35,53 +35,59 @@ export default function Mod1Factor3() {
     } as CSSProperties,
   };
   return (
-    <div style={{ marginTop: "80px" }}>
+    <div>
       <h1 className={styles.title}>EVALUATE KEY FEATURES</h1>
-      <div className={styles.row}>
-        <Flip
-          front_text="Motor Power"
-          back_text="The motor's wattage determines the amount of assistance provided."
-          backColor="#f6ffd7"
-          frontColor="#bbd567"
-          styles={cardStyle}
-        />
-        <Flip
-          front_text="Battery Capacity"
-          back_text="A larger battery capacity offers longer range."
-          backColor="#f6ffd7"
-          frontColor="#bbd567"
-          styles={cardStyle}
-        />
-        <Flip
-          front_text="Range"
-          back_text="Consider your daily commute or recreational riding distance."
-          backColor="#f6ffd7"
-          frontColor="#bbd567"
-          styles={cardStyle}
-        />
-      </div>
-      <div className={styles.row}>
-        <Flip
-          front_text="Frame Type"
-          back_text="Choose a frame that fits your height and riding style."
-          backColor="#f6ffd7"
-          frontColor="#bbd567"
-          styles={cardStyle}
-        />
-        <Flip
-          front_text="Gears"
-          back_text="The number of gears affects the bike's versatility."
-          backColor="#f6ffd7"
-          frontColor="#bbd567"
-          styles={cardStyle}
-        />
-        <Flip
-          front_text="Suspension"
-          back_text="Suspension can improve comfort and handling on uneven terrain."
-          backColor="#f6ffd7"
-          frontColor="#bbd567"
-          styles={cardStyle}
-        />
+      <div className={styles.content}>
+        <div className={styles.rowContainer}>
+          <div className={styles.row}>
+            <Flip
+              front_text="Motor Power"
+              back_text="The motor's wattage determines the amount of assistance provided."
+              backColor="#f6ffd7"
+              frontColor="#bbd567"
+              styles={cardStyle}
+            />
+            <Flip
+              front_text="Battery Capacity"
+              back_text="A larger battery capacity offers longer range."
+              backColor="#f6ffd7"
+              frontColor="#bbd567"
+              styles={cardStyle}
+            />
+            <Flip
+              front_text="Range"
+              back_text="Consider your daily commute or recreational riding distance."
+              backColor="#f6ffd7"
+              frontColor="#bbd567"
+              styles={cardStyle}
+            />
+          </div>
+        </div>
+        <div className={styles.rowContainer}>
+          <div className={styles.row}>
+            <Flip
+              front_text="Frame Type"
+              back_text="Choose a frame that fits your height and riding style."
+              backColor="#f6ffd7"
+              frontColor="#bbd567"
+              styles={cardStyle}
+            />
+            <Flip
+              front_text="Gears"
+              back_text="The number of gears affects the bike's versatility."
+              backColor="#f6ffd7"
+              frontColor="#bbd567"
+              styles={cardStyle}
+            />
+            <Flip
+              front_text="Suspension"
+              back_text="Suspension can improve comfort and handling on uneven terrain."
+              backColor="#f6ffd7"
+              frontColor="#bbd567"
+              styles={cardStyle}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

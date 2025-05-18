@@ -3,6 +3,7 @@
   position: relative; /* Add relative positioning to the container */
   background: #bbd567;
   margin-top: 36px;
+  overflow-x: auto;
 }
 
 .title {

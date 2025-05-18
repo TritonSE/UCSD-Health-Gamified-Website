@@ -1,4 +1,5 @@
 .cardSlide {
+  min-width: 283px;
   width: 283px;
   height: 250px;
   background: #bbd567;

@@ -1,11 +1,20 @@
 /* text */
+.container {
+  /* background-color: red; */
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .title {
   font-size: 32px;
   color: black;
   font-family: "Rammetto One";
-  padding-top: 16vh;
+  padding-top: 4vh;
   font-weight: 400;
   text-align: center;
+  /* background-color: red; */
 }
 
 .description {
@@ -16,13 +25,27 @@
   margin-top: 2vh;
   font-weight: 400;
   margin-bottom: 4vh;
+  padding: 2vh;
 }
 
 /* cards */
-.cardContainer {
-  margin: auto;
-  width: 933px;
+.cardContainerWrapper {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 16vh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* background-color: red; */
+}
+
+.cardContainer {
+  margin: 42px 42px;
+  /* min-width: max-content;
+  max-width: 100%; */
+  gap: 42px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-bottom: 8vh;
+  overflow-x: auto;
 }

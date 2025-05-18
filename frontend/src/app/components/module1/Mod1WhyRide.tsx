@@ -30,7 +30,7 @@ export default function Mod1WhyRide() {
   };
 
   return (
-    <>
+    <div>
       <h1 className={styles.title}>WHY RIDE A LEGAL E BIKE?</h1>
       <div className={styles.container}>
         <div className={styles.cardContainer}>
@@ -97,6 +97,6 @@ export default function Mod1WhyRide() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
