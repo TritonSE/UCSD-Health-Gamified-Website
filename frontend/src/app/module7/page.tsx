@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 
@@ -5,7 +7,9 @@ import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Sidebar from "../components/Sidebar/Sidebar";
 import BikeInjuries from "../components/module7/BikeInjuries";
+import ParentalInvolvement from "../components/module7/ParentalInvolvement";
 import RoleModels from "../components/module7/RoleModels";
+import Suggestions from "../components/module7/Suggestions";
 
 import styles from "./mod7.module.css";
 
@@ -17,10 +21,10 @@ export default function Module7() {
         <Sidebar />
       </div>
       {/* content */}
-      <ModuleSliderContainer moduleText="MODULE 7: Teen & Parent education & Awareness">
+      <ModuleSliderContainer moduleText="MODULE 7: Teen & Parent Education & Awareness">
         <ModuleIntro
           moduleNumber={7}
-          title="Teen & Parent education & Awareness"
+          title="Teen & Parent Education & Awareness"
           subtitle="Guiding Safe Riding Together"
           description={
             <p>
@@ -44,6 +48,8 @@ export default function Module7() {
         />
         <BikeInjuries />
         <RoleModels />
+        <ParentalInvolvement />
+        <Suggestions />
       </ModuleSliderContainer>
     </div>
   );
