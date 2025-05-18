@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation"; // 🆕
 import { useEffect, useState } from "react";
 
 import { useAuth } from "../../contexts/AuthContext";
@@ -22,6 +23,7 @@ export default function Sidebar() {
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
   };
+  const Router = useRouter();
 
   useEffect(() => {
     if (user?.module) {
@@ -35,6 +37,7 @@ export default function Sidebar() {
 
   const handleMap = () => {
     setMapKind((prevKind) => (prevKind === "primary" ? "secondary" : "primary"));
+    Router.push("/");
   };
 
   return (
