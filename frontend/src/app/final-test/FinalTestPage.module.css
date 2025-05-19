@@ -1,7 +1,14 @@
 .pageContainer {
   display: flex;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebarContainer {
+  flex-shrink: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .contentContainer {
@@ -9,10 +16,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: auto;
+  height: 100vh;
 }
 
 @media (max-width: 768px) {
   .hideMobile {
+    display: none;
+  }
+  .sidebarContainer {
     display: none;
   }
 }

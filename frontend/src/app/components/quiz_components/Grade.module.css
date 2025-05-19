@@ -5,6 +5,11 @@
   gap: 40px;
   align-self: stretch;
   margin-top: 25px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  border: 2px solid #bbd567;
+  border-radius: 16px;
+  margin-bottom: 8px;
 }
 
 .score {

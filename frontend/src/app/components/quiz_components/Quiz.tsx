@@ -66,14 +66,14 @@ export const Quiz = ({
   };
 
   const handleFinished = useCallback(() => {
-    if (isFinalTest) {
+    if (isFinalTest && score >= 75) {
       router.push("/certificate");
     } else {
       // Placeholder since a handle finish function wasn't implemented
       handleLeave();
     }
     // Technically should add handleLeave, but it's a placeholder
-  }, [isFinalTest, router]);
+  }, [isFinalTest, router, score]);
 
   const handlePressSubmit = () => {
     setCheckSubmit(!checkSubmit);

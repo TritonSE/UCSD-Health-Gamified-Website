@@ -8,7 +8,7 @@ import styles from "./FinalTestPage.module.css"; // Styles for the page layout
 export default function FinalTestPage() {
   return (
     <div className={styles.pageContainer}>
-      <div className={styles.hideMobile}>
+      <div className={`${styles.hideMobile} ${styles.sidebarContainer}`}>
         {" "}
         <Sidebar />
       </div>
