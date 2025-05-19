@@ -14,6 +14,7 @@ export const Modules = ({ isCollapsed = false, currentModule = 1 }) => {
   }
 
   const handleClick = (moduleNumber: number) => {
+    //currently only 1 and 2 are available
     if (moduleNumber > 2) {
       console.log("Modules in progress");
     } else {
