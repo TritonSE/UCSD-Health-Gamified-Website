@@ -53,7 +53,9 @@ export function TextBox({
           <p>{label}</p>
         </label>
         <div
-          className={`${styles.inputContainer} ${error && type === "password" ? styles.errorBox : ""}`}
+          className={`${styles.inputContainer} ${
+            error && type === "password" ? styles.errorBox : ""
+          }`}
         >
           <input
             onChange={handleInputChange}
