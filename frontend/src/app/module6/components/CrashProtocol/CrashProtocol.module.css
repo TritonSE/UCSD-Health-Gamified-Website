@@ -67,37 +67,23 @@
   transform: translateX(50%);
 }
 
-#top_cloud,
-#dark_green_hill {
-  transition: transform 0.8s ease-in-out;
-}
-
-#bottom_cloud,
-#light_green_hill {
-  transition: transform 0.8s ease-in-out;
-}
-
-#shocked_timmy,
-#crying_timmy,
-#shocked_timmy_container,
-#main_bike,
-#broken_bike,
-#road_lines {
+.transition_element {
   transition: transform 0.8s ease-in-out;
   transform-origin: center;
   transform-box: fill-box;
 }
 
-#road_container,
-#dirt_road {
-  transition: transform 0.8s ease-in-out;
-  transform-origin: top;
+#crying_timmy_steam {
+  transition:
+    scale 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+  transform-origin: bottom left;
   transform-box: fill-box;
 }
 
-#grave,
-#polaroid {
-  transition: transform 0.8s;
+#road_container,
+#dirt_road {
+  transform-origin: top;
 }
 
 #dark_overlay,
