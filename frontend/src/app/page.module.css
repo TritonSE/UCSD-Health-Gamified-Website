@@ -33,8 +33,6 @@
   height: 100vh;
 }
 
-.nav {
-  width: 288px;
-  height: 100%;
-  background: var(--Secondary-Accent1, #1c3a29);
+.sidebarWrapper {
+  flex-shrink: 0;
 }

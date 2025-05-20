@@ -4,6 +4,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --sidebar-size: 200px;
+  --module-width: min(80%, 950px);
   --color-text-primary: #ffffff;
   --color-action-border: #1c3a29;
   --color-action-selected: #bbd567;
@@ -13,12 +15,12 @@
   --Secondary-Neutral-Gray5: #6c6c6c;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #ffffff;
     --foreground: #ededed;
   }
-}
+} */
 
 html,
 body {

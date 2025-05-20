@@ -14,7 +14,7 @@
 
 .text {
   font-size: 22px;
-  color: var(--foreground);
+  color: black;
   font-family: "DM Sans";
   margin-top: 2vh;
   margin-left: 6.5vw;
@@ -26,4 +26,13 @@
   .sidebar {
     display: none;
   }
+}
+
+.quiz {
+  width: 90%;
+  border: #bbd567 3px solid;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 128px;
+  margin-bottom: 128px;
 }
