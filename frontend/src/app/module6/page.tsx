@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
 
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Sidebar from "../components/Sidebar/Sidebar";
+import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./Module6.module.css";
 import BicycleSafetyFacts from "./components/BicycleSafetyFacts/BicycleSafetyFacts";
@@ -37,6 +40,11 @@ export default function Module2() {
         />
         <BicycleSafetyFacts />
         <CrashProtocol />
+        <TitleScreen
+          handleStart={() => {
+            console.log("Module 6 Quiz Started");
+          }}
+        />
       </ModuleSliderContainer>
     </div>
   );

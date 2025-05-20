@@ -20,7 +20,7 @@ export default function CrashProtocol() {
     setTimeout(() => {
       setTextIndex((prev) => prev + 1);
       setShowText(true);
-    }, 800);
+    }, 750);
   };
 
   const handlePreviousClick = () => {
@@ -30,7 +30,7 @@ export default function CrashProtocol() {
     setTimeout(() => {
       setTextIndex((prev) => prev - 1);
       setShowText(true);
-    }, 800);
+    }, 750);
   };
 
   const currentAnimation = ANIMATION_TIMELINE[animationIndex];
@@ -52,7 +52,6 @@ export default function CrashProtocol() {
             <path id={styles.road} fill="#909090" d="M-1 373h1834v117H-1z"></path>
             <path id={styles.road_lines} style={{ transform: `translateY(${animationIndex > 3 ? "300px" : 0})` }} stroke="#FCD579" strokeDasharray="30 30" strokeWidth="10" d="M-2 428h1904"></path>
           </g>
-          {/* <rect id="Rectangle 226" y="-1" width="924" height="491" fill="black" fillOpacity="0.3"/> */}
           <path id={styles.dirt_road} style={{ transform: `scaleY(${animationIndex > 3 ? 5 : 1})` }} fill="#FFE5C9" d="M-1 335h925v38H-1z"></path>
 
           <g id={styles.crying_timmy} style={{ transform: `translateX(${839 + currentAnimation.crying_timmy}px) translateY(${animationIndex > 3 ? "220px" : "240px"}) scale(${animationIndex > 3 ? 2 : 1})` }}>

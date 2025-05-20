@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
@@ -8,6 +10,7 @@ import SimpleWay from "../components/Mod2Components/SimpleWay/SimpleWay";
 import StuffHappens from "../components/Mod2Components/StuffHappens/StuffHappens";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Sidebar from "../components/Sidebar/Sidebar";
+import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod2.module.css";
 
@@ -38,6 +41,11 @@ export default function Module2() {
         <SimpleWay />
         <StuffHappens />
         <BikeMechanic />
+        <TitleScreen
+          handleStart={() => {
+            console.log("Module 2 Quiz Started");
+          }}
+        />
       </ModuleSliderContainer>
     </div>
   );

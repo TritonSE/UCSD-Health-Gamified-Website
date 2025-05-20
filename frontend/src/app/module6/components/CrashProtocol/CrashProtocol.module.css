@@ -69,22 +69,17 @@
 
 #top_cloud,
 #dark_green_hill {
-  transition: transform 1.4s ease-in-out;
+  transition: transform 0.8s ease-in-out;
 }
 
 #bottom_cloud,
 #light_green_hill {
-  transition: transform 1.1s ease-in-out;
+  transition: transform 0.8s ease-in-out;
 }
 
 #shocked_timmy,
 #crying_timmy,
-#shocked_timmy_container {
-  transition: transform 0.8s ease-in-out;
-  transform-origin: center;
-  transform-box: fill-box;
-}
-
+#shocked_timmy_container,
 #main_bike,
 #broken_bike,
 #road_lines {
@@ -104,7 +99,8 @@
 #polaroid {
   transition: transform 0.8s;
 }
-f #dark_overlay,
+
+#dark_overlay,
 .phone {
   transition: opacity 0.2s;
 }

@@ -5,9 +5,9 @@ import styles from "./Mod1ChooseBike.module.css";
 export default function Mod1ChooseBike() {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>CHOOSING THE RIGHT EBIKE</h1>
+      <h1 className={styles.title}>CHOOSING THE RIGHT E BIKE</h1>
       <p className={styles.description}>
-        Why choose an E-bike? E-bikes are a fun and eco-friendly way to get around. They can help
+        Why choose an E Bike? E Bikes are a fun and eco-friendly way to get around. They can help
         you:
       </p>
       <div className={styles.cardContainer}>

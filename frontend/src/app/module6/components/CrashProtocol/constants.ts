@@ -15,7 +15,7 @@ export const ANIMATION_TIMELINE = [
   {
     top_cloud: -127,
     bottom_cloud: -120,
-    dark_green_hill: -361,
+    dark_green_hill: -261,
     light_green_hill: -361,
     road_container: -362,
     main_bike: -362,
@@ -28,7 +28,7 @@ export const ANIMATION_TIMELINE = [
   {
     top_cloud: -127,
     bottom_cloud: -120,
-    dark_green_hill: -361,
+    dark_green_hill: -261,
     light_green_hill: -361,
     road_container: -362,
     main_bike: -362,
@@ -41,7 +41,7 @@ export const ANIMATION_TIMELINE = [
   {
     top_cloud: -127,
     bottom_cloud: -120,
-    dark_green_hill: -361,
+    dark_green_hill: -261,
     light_green_hill: -361,
     road_container: -362,
     main_bike: -362,
@@ -54,7 +54,7 @@ export const ANIMATION_TIMELINE = [
   {
     top_cloud: -127,
     bottom_cloud: -120,
-    dark_green_hill: -361,
+    dark_green_hill: -261,
     light_green_hill: -361,
     road_container: -362,
     main_bike: -402,
@@ -67,7 +67,7 @@ export const ANIMATION_TIMELINE = [
   {
     top_cloud: -127,
     bottom_cloud: -120,
-    dark_green_hill: -361,
+    dark_green_hill: -261,
     light_green_hill: -361,
     road_container: -362,
     main_bike: -402,
@@ -80,7 +80,7 @@ export const ANIMATION_TIMELINE = [
   {
     top_cloud: -127,
     bottom_cloud: -120,
-    dark_green_hill: -361,
+    dark_green_hill: -261,
     light_green_hill: -361,
     road_container: -362,
     main_bike: -402,

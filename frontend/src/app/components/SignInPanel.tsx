@@ -65,14 +65,14 @@ export default function SignInPanel() {
                   })
                     .then((_) => {
                       // TODO: replace with intro video page
-                      window.location.href = "/";
+                      window.location.href = "/intro-video";
                     })
                     .catch((error) => {
                       console.error("Error updating first login: ", error);
                     });
                 } else {
                   // TODO: replace with homepage
-                  window.location.href = "/signup";
+                  window.location.href = "/";
                 }
               }
             })
