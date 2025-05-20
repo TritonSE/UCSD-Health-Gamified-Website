@@ -9,7 +9,9 @@ type CarouselProps = {
   cards: {
     icon: string;
     title: string;
-    content: string;
+    content: React.ReactNode;
+    imgWidth?: number;
+    imgHeight?: number;
   }[];
 };
 
@@ -36,10 +38,10 @@ const Carousel: React.FC<CarouselProps> = ({ cards }) => {
             src={cards[currentIndex].icon}
             alt="card icon"
             className={styles.icon}
-            width={200}
-            height={200}
+            width={cards[currentIndex].imgWidth ?? 200}
+            height={cards[currentIndex].imgHeight ?? 200}
           />
-          <h2 className={styles.cardTitle}>{cards[currentIndex].title}</h2>
+          <h1 className={styles.cardTitle}>{cards[currentIndex].title}</h1>
           <p className={styles.cardContent}>{cards[currentIndex].content}</p>
         </div>
 

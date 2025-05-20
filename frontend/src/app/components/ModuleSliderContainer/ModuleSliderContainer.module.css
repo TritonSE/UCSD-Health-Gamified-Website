@@ -55,13 +55,7 @@
   min-width: 1150px;
   display: grid;
   grid-template-columns: 1fr min(var(--module-width), 100%) 1fr;
-  height: 100%;
-}
-
-@media (min-height: 800px) {
-  .section_wrapper > section {
-    height: 100%;
-  }
+  height: auto;
 }
 
 .section_wrapper > section > * {
