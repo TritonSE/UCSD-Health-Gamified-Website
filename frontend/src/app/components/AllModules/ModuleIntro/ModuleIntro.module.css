@@ -1,5 +1,6 @@
 .container {
   gap: 3rem;
+  height: auto !important;
 }
 
 .top {
@@ -47,9 +48,6 @@
 .bottom_text {
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  justify-content: center;
   gap: 1rem;
   max-width: 70ch;
 }

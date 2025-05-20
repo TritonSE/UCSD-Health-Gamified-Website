@@ -58,12 +58,6 @@
   height: auto;
 }
 
-@media (min-height: 800px) {
-  .section_wrapper > section {
-    height: 100%;
-  }
-}
-
 .section_wrapper > section > * {
   grid-column: 2;
 }
