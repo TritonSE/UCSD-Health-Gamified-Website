@@ -3,10 +3,10 @@
   --scrollbar-width: 16px;
   padding-block: 2rem;
   padding-bottom: 3.5rem;
-  width: 100%;
   z-index: 1;
   position: absolute;
   width: calc(100% - var(--scrollbar-width));
+  min-width: calc(100% - var(--scrollbar-width));
   padding-left: var(--scrollbar-width);
   left: 0;
   top: 0;

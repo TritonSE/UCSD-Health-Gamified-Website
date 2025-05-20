@@ -10,26 +10,31 @@ export default function CrashProtocol() {
   const [animationIndex, setAnimationIndex] = useState(0);
   const [textIndex, setTextIndex] = useState(0);
   const [showText, setShowText] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const ANIMATION_LENGTH = ANIMATION_TIMELINE.length - 1;
 
   const handleNextClick = () => {
-    if (animationIndex === ANIMATION_LENGTH) return;
+    if (isTransitioning || animationIndex === ANIMATION_LENGTH) return;
     setAnimationIndex((prev) => prev + 1);
     setShowText(false);
+    setIsTransitioning(true);
     setTimeout(() => {
       setTextIndex((prev) => prev + 1);
       setShowText(true);
+      setIsTransitioning(false);
     }, 750);
   };
 
   const handlePreviousClick = () => {
-    if (animationIndex === 0) return;
+    if (isTransitioning || animationIndex === 0) return;
     setAnimationIndex((prev) => prev - 1);
     setShowText(false);
+    setIsTransitioning(true);
     setTimeout(() => {
       setTextIndex((prev) => prev - 1);
       setShowText(true);
+      setIsTransitioning(false);
     }, 750);
   };
 

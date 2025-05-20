@@ -45,3 +45,9 @@
   overflow: none;
   white-space: nowrap;
 }
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
