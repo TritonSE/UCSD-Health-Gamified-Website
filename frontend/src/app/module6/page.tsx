@@ -6,12 +6,13 @@ import Sidebar from "../components/Sidebar/Sidebar";
 
 import styles from "./Module6.module.css";
 import BicycleSafetyFacts from "./components/BicycleSafetyFacts/BicycleSafetyFacts";
+import CrashProtocol from "./components/CrashProtocol/CrashProtocol";
 
 export default function Module2() {
   return (
     <div className={styles.container}>
       <Sidebar />
-      <ModuleSliderContainer moduleText="MODULE 2: Maintaining Your Bike and Keeping it Road Ready">
+      <ModuleSliderContainer moduleText="MODULE 6: In Case of a Collision">
         <ModuleIntro
           moduleNumber={6}
           title="In Case of a Collision"
@@ -35,6 +36,7 @@ export default function Module2() {
           }
         />
         <BicycleSafetyFacts />
+        <CrashProtocol />
       </ModuleSliderContainer>
     </div>
   );
