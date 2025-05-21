@@ -9,7 +9,7 @@
   padding-right: 20px;
   color: white;
   overflow-y: auto;
-  overflow-x: none;
+  flex-shrink: 0;
   transition: width 0.3s ease;
 }
 

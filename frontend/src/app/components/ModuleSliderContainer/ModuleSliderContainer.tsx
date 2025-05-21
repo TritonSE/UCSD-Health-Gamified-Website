@@ -3,7 +3,7 @@
 import { Children, ReactNode, cloneElement, isValidElement, useState } from "react";
 
 import ModuleButtons from "../ModuleButtons/ModuleButtons";
-import ProgressBar from "../ProgressBar/ProgressBar";
+import ProgressBar from "../ModuleProgressBar/ModuleProgressBar";
 
 import styles from "./ModuleSliderContainer.module.css";
 
