@@ -3,10 +3,11 @@
 import { useState } from "react";
 import styles from "./RideReady.module.css";
 import GraphSVG from "./Graph";
+// import { parse } from "path";
 
-type CircleData = { 
-  text: string; 
-  width: number; 
+type CircleData = {
+  text: string;
+  width: number;
   height: number;
   x: number;
   y: number;
@@ -17,36 +18,36 @@ const CIRCLE_DATA: Record<number, CircleData> = {
     text: "Check that your tires are inflated",
     width: 265,
     height: 56,
-    x: 550,
-    y: 195,
+    x: 430,
+    y: 356 - 56 / 2,
   },
   2: {
     text: "Check that chains are in place",
     width: 265,
     height: 56,
-    x: 340,
-    y: 75,
+    x: 585,
+    y: 432 - 56 / 2,
   },
   3: {
     text: "Check that brakes are working",
     width: 265,
     height: 56,
-    x: 1015,
-    y: 185,
+    x: 400,
+    y: 111 - 56 / 2,
   },
   4: {
     text: "Check that quick-release levers are closed",
     width: 265,
     height: 72,
-    x: 1015,
-    y: 185,
+    x: 985,
+    y: 379 - 56 / 2,
   },
   5: {
     text: "Check that helmet and tools are ready for ride",
     width: 265,
     height: 72,
-    x: 1015,
-    y: 185,
+    x: 960,
+    y: 120 - 56 / 2,
   },
 };
 
@@ -88,39 +89,45 @@ export default function RideReady() {
   const [inactiveCircles, setInactiveCircles] = useState<number[]>([]);
   const [hoveredCircle, setHoveredCircle] = useState<number | null>(null);
 
-        const handleCircleClick = (number: string) => {
-      const parsedNumber = parseInt(number);
-    
-      // If all circles are active and user clicks circle 1, reset to only circle 1
-      if (
-        activeCircles.length === 5 &&
-        parsedNumber === 1
-      ) {
-        setActiveCircles([1]);
-        setInactiveCircles([1]);
-        return;
-      }
-    
-      // Only allow clicking the next circle in sequence
-      if (
-        parsedNumber === activeCircles.length + 1 &&
-        CIRCLE_DATA[parsedNumber]
-      ) {
-        setActiveCircles((prev) => [...prev, parsedNumber]);
+  const handleCircleClick = (number: string) => {
+    const parsedNumber = parseInt(number);
+
+    // If all circles are active and user clicks circle 1, reset to only circle 1
+    // if (activeCircles.length === 5 && parsedNumber === 1) {
+    //   setActiveCircles([1]);
+    //   setInactiveCircles([1]);
+    //   return;
+    // }
+
+    // Only allow clicking the next circle in sequence
+    if (activeCircles.includes(parsedNumber)) {
+      setActiveCircles((prev) => prev.filter((num) => num !== parsedNumber));
+    } else if (
+      inactiveCircles.length > 0 &&
+      parsedNumber === Math.max(...inactiveCircles) + 1 &&
+      CIRCLE_DATA[parsedNumber]
+    ) {
+      setActiveCircles((prev) => [...prev, parsedNumber]);
+      setInactiveCircles((prev) => [...prev, parsedNumber]);
+    } else if (activeCircles.length === 0 && parsedNumber === 1) {
+      setActiveCircles((prev) => [...prev, parsedNumber]);
+      if (!inactiveCircles.includes(parsedNumber)) {
         setInactiveCircles((prev) => [...prev, parsedNumber]);
       }
-    };
-
-  const closeTextbox = (circleNumber: number) => {
-    setActiveCircles((prev) => prev.filter((num) => num !== circleNumber));
-    setInactiveCircles((prev) => [...prev, circleNumber]);
+    } else if (
+      inactiveCircles.length > 0 &&
+      parsedNumber <= Math.max(...inactiveCircles) &&
+      !activeCircles.includes(parsedNumber)
+    ) {
+      setActiveCircles((prev) => [...prev, parsedNumber]);
+    }
   };
 
   return (
     <section className={styles.container}>
       <div className={styles.header_container}>
         <h2>5. Ride Ready</h2>
-        <p>Click on the green circles to check your understanding!</p>
+        <p>Click on the green circles in order to check your understanding!</p>
       </div>
       <div className={styles.graphContainer}>
         <GraphSVG

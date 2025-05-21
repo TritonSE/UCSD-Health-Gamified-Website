@@ -4,9 +4,9 @@ import { useState } from "react";
 import styles from "./BeVisible.module.css";
 import GraphSVG from "./Graph";
 
-type CircleData = { 
-  text: string; 
-  width: number; 
+type CircleData = {
+  text: string;
+  width: number;
   height: number;
   x: number;
   y: number;
@@ -80,19 +80,14 @@ export default function BeVisible() {
       setActiveCircles((prev) =>
         prev.includes(parsedNumber)
           ? prev.filter((num) => num !== parsedNumber)
-          : [...prev, parsedNumber]
+          : [...prev, parsedNumber],
       );
       setInactiveCircles((prev) =>
         prev.includes(parsedNumber)
           ? prev.filter((num) => num !== parsedNumber)
-          : [...prev, parsedNumber]
+          : [...prev, parsedNumber],
       );
     }
-  };
-
-  const closeTextbox = (circleNumber: number) => {
-    setActiveCircles((prev) => prev.filter((num) => num !== circleNumber));
-    setInactiveCircles((prev) => [...prev, circleNumber]);
   };
 
   return (

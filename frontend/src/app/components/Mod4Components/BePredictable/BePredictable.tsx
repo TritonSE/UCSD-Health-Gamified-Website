@@ -4,9 +4,9 @@ import { useState } from "react";
 import styles from "./BePredictable.module.css";
 import GraphSVG from "./Graph";
 
-type CircleData = { 
-  text: string; 
-  width: number; 
+type CircleData = {
+  text: string;
+  width: number;
   height: number;
   x: number;
   y: number;
@@ -80,21 +80,15 @@ export default function BePredictable() {
       setActiveCircles((prev) =>
         prev.includes(parsedNumber)
           ? prev.filter((num) => num !== parsedNumber)
-          : [...prev, parsedNumber]
+          : [...prev, parsedNumber],
       );
       setInactiveCircles((prev) =>
         prev.includes(parsedNumber)
           ? prev.filter((num) => num !== parsedNumber)
-          : [...prev, parsedNumber]
+          : [...prev, parsedNumber],
       );
     }
   };
-
-  const closeTextbox = (circleNumber: number) => {
-    setActiveCircles((prev) => prev.filter((num) => num !== circleNumber));
-    setInactiveCircles((prev) => [...prev, circleNumber]);
-  };
-
   return (
     <section className={styles.container}>
       <div className={styles.header_container}>
