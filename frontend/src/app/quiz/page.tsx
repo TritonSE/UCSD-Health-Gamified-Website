@@ -56,9 +56,7 @@ export default function QuizPage() {
   ];
   return (
     <div className={styles.quizContainer}>
-      <div className={styles.hideMobile}>
-        <Sidebar />
-      </div>
+      <Sidebar />
       <Quiz
         title="Example Quiz"
         description="No time limit! Make sure to answer all the questions."
