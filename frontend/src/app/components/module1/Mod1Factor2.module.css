@@ -6,26 +6,18 @@
   background-color: red;
 }
 
-.row {
-  display: flex;
-  justify-content: flex-start;
-  gap: 40px;
-  margin: auto;
-  width: max-content;
-  background-color: aqua;
-}
-
 .title {
+  /* margin-top: 74px; */
   font-size: 32px;
   color: black;
   font-family: "Rammetto One";
-  padding-top: 4vh;
-  padding-bottom: 32px;
   font-weight: 400;
   text-align: center;
   background-color: blue;
+  padding: 0;
 }
 
-.content {
-  margin-bottom: 4vh;
+.chatBubble {
+  width: 100%;
+  max-width: 931px;
 }

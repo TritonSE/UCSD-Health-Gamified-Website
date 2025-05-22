@@ -1,9 +1,10 @@
 .container {
-  padding: 60px 100px;
+  /* padding: 60px 100px; */
+  margin: 0;
+  padding: 0;
   position: relative; /* Add relative positioning to the container */
-  background: #bbd567;
   margin-top: 36px;
-  overflow-x: auto;
+  /* overflow-x: auto; */
 }
 
 .title {
@@ -21,16 +22,16 @@
 }
 
 .cardContainer {
+  background: #bbd567;
   justify-content: center;
   align-items: center;
-  margin: auto;
   display: flex;
   margin-top: 20px;
   flex-wrap: nowrap; /* Prevent wrapping */
   position: relative; /* Add relative positioning to the card container */
-  width: 100%;
+  /* width: 100vw; */
   height: 500px; /* Adjust height as needed */
-  width: 946px;
+  /* width: 946px; */
 }
 
 .card1,

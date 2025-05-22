@@ -1,34 +1,43 @@
+#container {
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: red;
+}
+
 .row {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 40px;
   margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
+  /* width: max-content; */
+  background-color: aqua;
 }
 
 .title {
-  color: #000;
-  text-align: center;
-  font-family: "Rammetto One";
+  padding-top: 74px;
+  padding-bottom: 32px;
   font-size: 32px;
-  font-style: normal;
+  color: black;
+  font-family: "Rammetto One";
   font-weight: 400;
-  line-height: 150%; /* 48px */
-  letter-spacing: 0.64px;
-  text-transform: uppercase;
-  margin-left: 6.5vw;
-  margin-right: 6.5vw;
+  text-align: center;
+  background-color: blue;
+}
+
+.content {
+  margin-bottom: 4vh;
 }
 
 .text {
-  font-size: 22px;
-  color: black;
+  color: #000;
+  /* Body/Large (Reg) */
   font-family: "DM Sans";
+  font-size: 22px;
+  font-style: normal;
   font-weight: 400;
-  margin-left: 6.5vw;
-  margin-right: 6.5vw;
-  margin-bottom: 4vh;
+  line-height: 32px; /* 145.455% */
+  width: 961px;
+  margin-top: 30px;
 }

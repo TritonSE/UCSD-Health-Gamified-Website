@@ -48,13 +48,19 @@ export default function ModuleSliderContainer({
           ></div>
           <div className={styles.section_wrapper}>
             {cloneElement(child)}
-            <ModuleButtons
+            {/* <ModuleButtons
               currentSection={index}
               childrenCount={childrenCount}
               handlePrevButton={handlePrevButton}
               handleNextButton={handleNextButton}
-            />
+            /> */}
           </div>
+          <ModuleButtons
+            currentSection={index}
+            childrenCount={childrenCount}
+            handlePrevButton={handlePrevButton}
+            handleNextButton={handleNextButton}
+          />
         </div>
       );
     }
