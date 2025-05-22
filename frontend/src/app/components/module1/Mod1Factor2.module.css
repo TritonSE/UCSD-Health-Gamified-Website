@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: red;
 }
 
 .title {
@@ -13,7 +12,6 @@
   font-family: "Rammetto One";
   font-weight: 400;
   text-align: center;
-  background-color: blue;
   padding: 0;
 }
 

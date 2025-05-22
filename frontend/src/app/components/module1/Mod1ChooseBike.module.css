@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: red;
 }
 
 .title {
@@ -13,7 +12,6 @@
   font-family: "Rammetto One";
   font-weight: 400;
   text-align: center;
-  background-color: blue;
 }
 
 .description {
@@ -23,7 +21,6 @@
   color: black;
   font-family: "DM Sans";
   font-weight: 400;
-  background-color: green;
 }
 
 #cardContainer {
@@ -31,6 +28,5 @@
   gap: 42px;
   display: flex;
   flex-wrap: nowrap;
-  background-color: aqua;
   margin-bottom: 284px;
 }
