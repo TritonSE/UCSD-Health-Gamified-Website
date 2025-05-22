@@ -28,6 +28,7 @@ type QuizProps = {
   title: string;
   description: string;
   questions: Question[];
+  randomized?: boolean;
 };
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -39,7 +40,12 @@ function shuffleArray<T>(array: T[]): T[] {
   return newArray;
 }
 
-export const Quiz = ({ title, description, questions: originalQuestions }: QuizProps) => {
+export const Quiz = ({
+  title,
+  description,
+  questions: originalQuestions,
+  randomized = true,
+}: QuizProps) => {
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string[]>>({});
   const [cancel, setCancel] = useState<boolean>(false);
   const [checkSubmit, setCheckSubmit] = useState<boolean>(false);
@@ -48,7 +54,9 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
   const [label, setLabel] = useState<string>("Next Module");
   const [quizTitle, setTitle] = useState<string>(title);
   const [score, setScore] = useState<number>(0);
-  const [randomizedQuestions, setRandomizedQuestions] = useState(() => originalQuestions);
+  const [randomizedQuestions, setRandomizedQuestions] = useState(() =>
+    randomized ? shuffleArray(originalQuestions) : originalQuestions
+  );
 
   const handlePressCancel = () => {
     setCancel(!cancel);
@@ -103,42 +111,43 @@ export const Quiz = ({ title, description, questions: originalQuestions }: QuizP
     setSubmitted(false);
     setStarting(true);
     setRandomizedQuestions(
-      shuffleArray(
-        originalQuestions.map((q: Question) => {
-          const letters = ["A.", "B.", "C.", "D.", "E.", "F.", "G.", "H."];
-          const shuffledOptions = shuffleArray(q.options);
+      randomized
+        ? shuffleArray(
+            originalQuestions.map((q: Question) => {
+              const letters = ["A.", "B.", "C.", "D.", "E.", "F.", "G.", "H."];
+              const shuffledOptions = shuffleArray(q.options);
 
-          if (q.type === "multiple") {
-            const correctAnswerIndices = (q.correctAnswer as string[]).map((answer) =>
-              letters.indexOf(answer),
-            );
-            const correctOptionTexts = correctAnswerIndices.map((index) => q.options[index]);
+              if (q.type === "multiple") {
+                const correctAnswerIndices = (q.correctAnswer as string[]).map((answer) =>
+                  letters.indexOf(answer),
+                );
+                const correctOptionTexts = correctAnswerIndices.map((index) => q.options[index]);
 
-            const newCorrectAnswers = correctOptionTexts.map((text) => {
-              const newIndex = shuffledOptions.indexOf(text);
-              return letters[newIndex];
-            });
+                const newCorrectAnswers = correctOptionTexts.map((text) => {
+                  const newIndex = shuffledOptions.indexOf(text);
+                  return letters[newIndex];
+                });
 
-            return {
-              ...q,
-              options: shuffledOptions,
-              correctAnswer: newCorrectAnswers,
-            };
-          } else {
-            // Handle single-select questions (existing logic)
-            const correctOptionIndex = letters.indexOf(q.correctAnswer as string);
-            const correctOptionText = q.options[correctOptionIndex];
-            const newCorrectIndex = shuffledOptions.indexOf(correctOptionText);
-            const newCorrectAnswer = letters[newCorrectIndex];
+                return {
+                  ...q,
+                  options: shuffledOptions,
+                  correctAnswer: newCorrectAnswers,
+                };
+              } else {
+                const correctOptionIndex = letters.indexOf(q.correctAnswer as string);
+                const correctOptionText = q.options[correctOptionIndex];
+                const newCorrectIndex = shuffledOptions.indexOf(correctOptionText);
+                const newCorrectAnswer = letters[newCorrectIndex];
 
-            return {
-              ...q,
-              options: shuffledOptions,
-              correctAnswer: newCorrectAnswer,
-            };
-          }
-        }),
-      ),
+                return {
+                  ...q,
+                  options: shuffledOptions,
+                  correctAnswer: newCorrectAnswer,
+                };
+              }
+            }),
+          )
+        : originalQuestions
     );
   };
 

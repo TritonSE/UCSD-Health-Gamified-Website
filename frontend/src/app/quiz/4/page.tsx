@@ -53,6 +53,7 @@ export default function Quiz4() {
         title="Module 4 Quiz"
         description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
         questions={questions}
+        randomized={false}
       />
     </div>
   );
