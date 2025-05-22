@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 import { Incorrect } from "./Incorrect";
@@ -6,6 +7,10 @@ import { QuizButton } from "./QuizButton";
 
 type MultiSelectQuestionProps = {
   question: string;
+  subQuestion?: string;
+  image?: string;
+  imageW?: number;
+  imageH?: number;
   options: string[];
   selected: string[];
   onSelect: (answer: string) => void;
@@ -15,13 +20,17 @@ type MultiSelectQuestionProps = {
 
 export const MultiSelectQuestion = ({
   question,
+  subQuestion,
+  image,
+  imageW,
+  imageH,
   options,
   selected,
   onSelect,
   isSubmitted,
   correctAnswers,
 }: MultiSelectQuestionProps) => {
-  const letters = ["A.", "B.", "C.", "D.", "E."];
+  const letters = ["A.", "B.", "C.", "D.", "E.", "F.", "G.", "H."];
 
   const getButtonState = (buttonIndex: number) => {
     const currentLetter = letters[buttonIndex];
@@ -64,14 +73,24 @@ export const MultiSelectQuestion = ({
   return (
     <div className={styles.quizContainer}>
       <span className={styles.question}>{question}</span>
-      {!isSubmitted && <span className={styles.selectAll}>*Select all that apply.</span>}
+      {subQuestion && (
+        <div>
+          <br />
+          <span className={styles.question}>{subQuestion}</span>
+          <br />
+        </div>
+      )}
+      {image && imageW && imageH && (
+        <Image src={image} alt="Image for question" width={imageW} height={imageH} />
+      )}
+      {/* {!isSubmitted && <span className={styles.selectAll}>*Select all that apply.</span>} */}
       <div className={styles.buttonsContainer}>
         {options.map((option, index) => (
           <QuizButton
             key={index}
             label={option}
             kind={getButtonState(index)}
-            letter={letters[index] as "A." | "B." | "C." | "D." | "E."}
+            letter={letters[index] as "A." | "B." | "C." | "D." | "E." | "F." | "G." | "H."}
             submitted={isSubmitted}
             questionType="Multiple"
             onClick={() => {
@@ -80,7 +99,9 @@ export const MultiSelectQuestion = ({
           />
         ))}
       </div>
-      {isSubmitted && <Incorrect correct={isCorrect()} message={getIncorrectMessage()} />}
+      {isSubmitted && !subQuestion && (
+        <Incorrect correct={isCorrect()} message={getIncorrectMessage()} />
+      )}
     </div>
   );
 };

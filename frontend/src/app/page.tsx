@@ -1,16 +1,14 @@
-"use client";
-
-import ModuleMap from "./components/HomePage/ModuleMap/ModuleMap";
-import Sidebar from "./components/Sidebar/Sidebar";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.sidebarWrapper}>
-        <Sidebar />
-      </div>
-      <ModuleMap />
-    </main>
+    <div className={styles.page}>
+      <h1> TSE x UCSD Health </h1>
+      <p>
+        {" "}
+        Use this page for pages and testing components. REMOVE ALL CHANGES BEFORE SUBMITTING A PULL
+        REQUEST.
+      </p>
+    </div>
   );
 }
