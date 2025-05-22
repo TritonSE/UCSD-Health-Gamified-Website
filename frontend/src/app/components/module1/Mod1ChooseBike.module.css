@@ -47,5 +47,5 @@
   justify-content: flex-start;
   flex-wrap: nowrap;
   margin-bottom: 8vh;
-  overflow-x: auto;
+  /* overflow-x: auto; */
 }
