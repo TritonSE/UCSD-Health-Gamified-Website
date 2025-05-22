@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 
-import { Incorrect } from "./Incorrect";
 import styles from "./Question.module.css";
 import { QuizButton } from "./QuizButton";
 
@@ -45,9 +44,6 @@ export const Question = ({
     return selected === letters[buttonIndex] ? "selected" : "primary";
   };
 
-  const correctAnswerIndex = letters.indexOf(correctAnswer);
-  const correctAnswerText = correctAnswerIndex !== -1 ? options[correctAnswerIndex] : "";
-  const incorrectDesc = `The correct answer is: ${correctAnswer} ${correctAnswerText}`;
   return (
     <div className={styles.quizContainer}>
       <span className={styles.question}>{question}</span>
