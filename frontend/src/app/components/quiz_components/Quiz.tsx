@@ -55,7 +55,7 @@ export const Quiz = ({
   const [quizTitle, setTitle] = useState<string>(title);
   const [score, setScore] = useState<number>(0);
   const [randomizedQuestions, setRandomizedQuestions] = useState(() =>
-    randomized ? shuffleArray(originalQuestions) : originalQuestions
+    randomized ? shuffleArray(originalQuestions) : originalQuestions,
   );
 
   const handlePressCancel = () => {
@@ -147,7 +147,7 @@ export const Quiz = ({
               }
             }),
           )
-        : originalQuestions
+        : originalQuestions,
     );
   };
 
