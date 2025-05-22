@@ -1,20 +1,18 @@
-/* text */
-.container {
-  /* background-color: red; */
-  overflow: visible;
+#container {
+  height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: red;
 }
 
 .title {
   font-size: 32px;
   color: black;
   font-family: "Rammetto One";
-  padding-top: 4vh;
   font-weight: 400;
   text-align: center;
-  /* background-color: red; */
+  background-color: blue;
 }
 
 .description {
@@ -22,30 +20,13 @@
   font-size: 22px;
   color: black;
   font-family: "DM Sans";
-  margin-top: 2vh;
   font-weight: 400;
-  margin-bottom: 4vh;
-  padding: 2vh;
+  background-color: green;
 }
 
-/* cards */
-.cardContainerWrapper {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* overflow: hidden; */
-  /* background-color: red; */
-}
-
-.cardContainer {
-  margin: 42px 42px;
-  /* min-width: max-content;
-  max-width: 100%; */
+#cardContainer {
   gap: 42px;
   display: flex;
-  /* justify-content: flex-start; */
   flex-wrap: nowrap;
-  margin-bottom: 8vh;
-  /* overflow-x: auto; */
+  background-color: aqua;
 }
