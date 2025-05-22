@@ -15,8 +15,9 @@ export const Incorrect = ({ correct, message }: IncorrectProps) => {
     textBox += ` ${styles.correct}`;
   }
   return (
-    <div>
-     
+    <div className={textBox}>
+      <h1 className={styles.title}>{title}</h1>
+      <p className={styles.message}>{message}</p>
     </div>
   );
 };

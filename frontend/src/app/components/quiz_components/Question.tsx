@@ -68,7 +68,6 @@ export const Question = ({
           />
         ))}
       </div>
-      {isSubmitted && <Incorrect correct={isCorrect} message={incorrectDesc} />}
     </div>
   );
 };
