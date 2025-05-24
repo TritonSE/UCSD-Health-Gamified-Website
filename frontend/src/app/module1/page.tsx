@@ -4,8 +4,8 @@ import Image from "next/image";
 import React from "react";
 
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
-import Sidebar from "../components/HomePage/Sidebar/Sidebar";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
+import Sidebar from "../components/Sidebar/Sidebar";
 import Mod1ChooseBike from "../components/module1/Mod1ChooseBike";
 import Mod1Classes from "../components/module1/Mod1Classes";
 import Mod1Factor1 from "../components/module1/Mod1Factor1";
@@ -23,7 +23,10 @@ export default function Module1() {
   return (
     <div className={styles.container}>
       {/* sidebar */}
-      <Sidebar />
+      <div className={styles.sidebar}>
+        <Sidebar />
+      </div>
+
       {/* content */}
       <ModuleSliderContainer moduleText="MODULE 1: WHAT IS AN E BIKE?">
         {/* frame 1 - intro */}
