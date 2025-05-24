@@ -33,11 +33,11 @@ export default function MiniQuiz() {
     },
   ];
   return (
-    <>
+    <section id={styles.container}>
       <h1 className={styles.title}>
         LET&apos;S TALK ABOUT “BICYCLE SHAPED OBJECTS” AND ELECTRIC MOTORCYCLES
       </h1>
       <Carousel cards={cards} />
-    </>
+    </section>
   );
 }

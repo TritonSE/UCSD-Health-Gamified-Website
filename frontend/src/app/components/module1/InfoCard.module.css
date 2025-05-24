@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 .infoCard {
-  width: 85%;
+  width: 940px;
   border-radius: 20px;
   background: #ffe5c9;
   position: absolute;
@@ -97,21 +97,6 @@
   justify-content: center;
   align-items: center;
   margin-left: 40px;
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .content {
-    max-width: 100%;
-  }
-
-  .image {
-    width: 100%;
-  }
 }
 
 .number {

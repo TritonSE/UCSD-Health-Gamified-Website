@@ -55,6 +55,12 @@ export default function ModuleSliderContainer({
               handleNextButton={handleNextButton}
             />
           </div>
+          {/* <ModuleButtons
+            currentSection={index}
+            childrenCount={childrenCount}
+            handlePrevButton={handlePrevButton}
+            handleNextButton={handleNextButton} 
+          />*/}
         </div>
       );
     }

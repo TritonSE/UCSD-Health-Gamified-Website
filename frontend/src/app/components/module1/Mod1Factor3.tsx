@@ -35,30 +35,32 @@ export default function Mod1Factor3() {
     } as CSSProperties,
   };
   return (
-    <div style={{ marginTop: "80px" }}>
+    <section id={styles.container}>
       <h1 className={styles.title}>EVALUATE KEY FEATURES</h1>
-      <div className={styles.row}>
-        <Flip
-          front_text="Motor Power"
-          back_text="The motor's wattage determines the amount of assistance provided."
-          backColor="#f6ffd7"
-          frontColor="#bbd567"
-          styles={cardStyle}
-        />
-        <Flip
-          front_text="Battery Capacity"
-          back_text="A larger battery capacity offers longer range."
-          backColor="#f6ffd7"
-          frontColor="#bbd567"
-          styles={cardStyle}
-        />
-        <Flip
-          front_text="Range"
-          back_text="Consider your daily commute or recreational riding distance."
-          backColor="#f6ffd7"
-          frontColor="#bbd567"
-          styles={cardStyle}
-        />
+      <div className={styles.content}>
+        <div className={styles.row}>
+          <Flip
+            front_text="Motor Power"
+            back_text="The motor's wattage determines the amount of assistance provided."
+            backColor="#f6ffd7"
+            frontColor="#bbd567"
+            styles={cardStyle}
+          />
+          <Flip
+            front_text="Battery Capacity"
+            back_text="A larger battery capacity offers longer range."
+            backColor="#f6ffd7"
+            frontColor="#bbd567"
+            styles={cardStyle}
+          />
+          <Flip
+            front_text="Range"
+            back_text="Consider your daily commute or recreational riding distance."
+            backColor="#f6ffd7"
+            frontColor="#bbd567"
+            styles={cardStyle}
+          />
+        </div>
       </div>
       <div className={styles.row}>
         <Flip
@@ -83,6 +85,6 @@ export default function Mod1Factor3() {
           styles={cardStyle}
         />
       </div>
-    </div>
+    </section>
   );
 }

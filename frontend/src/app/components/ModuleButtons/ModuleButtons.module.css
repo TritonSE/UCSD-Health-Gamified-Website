@@ -1,6 +1,7 @@
 .button_container {
   width: 100%;
-  min-width: 1150px;
+  position: sticky;
+  left: 0;
 }
 
 .button_container > div {
