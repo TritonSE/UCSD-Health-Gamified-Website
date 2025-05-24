@@ -1,5 +1,4 @@
 #container {
-  height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -16,6 +15,5 @@
 }
 
 .chatBubble {
-  width: 100%;
-  max-width: 931px;
+  width: 1000px;
 }

@@ -16,9 +16,7 @@ export default function Mod1Factor2() {
             "Assess your physical capabilities to determine the appropriate motor assistance level."
           }
           iconAlt={"Muscle icon"}
-        ></InfoItem>
-      </div>
-      <div>
+        />
         <InfoItem
           icon={"/module1/riding_experience_icon.svg"}
           title={"Riding Experience:"}
@@ -26,7 +24,7 @@ export default function Mod1Factor2() {
             "If you're new to cycling, a step-through frame or pedal assist might be beneficial."
           }
           iconAlt={"Graph icon"}
-        ></InfoItem>
+        />
       </div>
       <div className={styles.chatBubble}>
         <ChatBubble
