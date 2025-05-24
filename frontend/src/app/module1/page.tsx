@@ -15,7 +15,7 @@ import Mod1Factor5 from "../components/module1/Mod1Factor5";
 import Mod1LetsTalk from "../components/module1/Mod1LetsTalk";
 import Mod1Risks from "../components/module1/Mod1Risks";
 import Mod1WhyRide from "../components/module1/Mod1WhyRide";
-import { TitleScreen } from "../components/quiz_components/TitleScreen";
+// import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod1.module.css";
 
@@ -67,13 +67,13 @@ export default function Module1() {
         {/* frame 10 - risks with illegal */}
         <Mod1Risks />
         {/* frame 11 - quiz */}
-        <div className={styles.quiz}>
+        {/* <div className={styles.quiz}>
           <TitleScreen
             handleStart={() => {
               console.log("Quiz started");
             }}
           />
-        </div>
+        </div> */}
       </ModuleSliderContainer>
     </div>
   );
