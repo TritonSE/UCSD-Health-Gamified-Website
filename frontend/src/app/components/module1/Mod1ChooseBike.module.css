@@ -6,7 +6,7 @@
 }
 
 .title {
-  margin-top: 74px;
+  /* margin-top: 74px; */
   font-size: 32px;
   color: black;
   font-family: "Rammetto One";
@@ -28,5 +28,5 @@
   gap: 42px;
   display: flex;
   flex-wrap: nowrap;
-  margin-bottom: 284px;
+  margin-bottom: 120px;
 }
