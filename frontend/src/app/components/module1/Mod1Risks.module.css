@@ -1,9 +1,9 @@
 #container {
-  height: auto;
+  /* height: auto; */
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .row {
@@ -12,18 +12,18 @@
   gap: 40px;
   margin: auto;
   /* width: max-content; */
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 .title {
-  padding-top: 74px;
+  /* padding-top: 74px; */
   padding-bottom: 32px;
   font-size: 32px;
   color: black;
   font-family: "Rammetto One";
   font-weight: 400;
   text-align: center;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 .content {
