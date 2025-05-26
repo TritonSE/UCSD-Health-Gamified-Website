@@ -19,7 +19,7 @@ const InfoCard5: React.FC<InfoCardProps5> = ({ title, content, image, active }) 
           <p>{content}</p>
         </div>
         <div className={styles.content2}>
-          <Image className={styles.image} src={image} width={564} height={468} alt="" />
+          <Image className={styles.image} src={image} width={664} height={468} alt="" />
         </div>
       </div>
     </div>

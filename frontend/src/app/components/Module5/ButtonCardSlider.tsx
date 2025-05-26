@@ -24,7 +24,9 @@ const ButtonCardSlider: React.FC<ButtonCardSliderProps> = ({ titles, cards }) =>
   };
 
   return (
-    <div>
+    <div
+      style={{ position: "relative", height: "548px", display: "flex", justifyContent: "center" }}
+    >
       {/* Ensure the container is relatively positioned */}
       <ButtonSlide5 titles={titles} onClick={handleButtonClick} activeIndex={selectedCardIndex} />
       {cards.map((card, index) => (

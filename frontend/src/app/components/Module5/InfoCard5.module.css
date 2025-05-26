@@ -1,12 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 .infoCard {
-  /* width: 85%; */
-  position: relative;
+  /* background-color: antiquewhite;
+  border-radius: 20px; */
+
+  display: flex;
   align-items: center;
+
+  position: absolute;
+
   margin: auto;
+  width: 912px;
   opacity: 0;
-  background-color: antiquewhite;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 88px;
+  /* padding-right: 135px;
+  padding-top: 88px; */
 }
 
 .infoCard.active {
@@ -18,12 +28,8 @@
   flex-direction: row;
   opacity: 0;
   transition: opacity 0.4s ease;
-  gap: 48px;
-}
-
-.container div {
-  min-width: 50%;
-  flex: 1;
+  gap: 58px;
+  align-items: flex-start;
 }
 
 .container.active {
@@ -31,49 +37,32 @@
 }
 
 .content {
+  flex: 1;
   color: #000;
-  /* Body/Large (Reg) */
+  display: flex;
+  width: 200px;
+  padding: 30px 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.content p {
   font-family: "DM Sans";
-  font-size: 22px;
+  font-size: 26px;
   font-style: normal;
   font-weight: 400;
-  line-height: 32px; /* 145.455% */
-  /* width: 100% !important; */
+  line-height: 150%;
 }
 
-.p {
-}
-
-.h1 {
+.content h1 {
   font-family: "DM Sans";
   font-weight: 700;
   line-height: 150%;
-  font-size: 28px;
+  font-size: 30px;
   letter-spacing: 2%;
-}
-
-.content2 {
-  display: flex;
-  flex-direction: column;
-  /* height: 548px; */
-  /* margin: 48px;
-  margin-top: -52px; */
-  /* transform: translateX(-24px); */
-  /* overflow-y: auto; */
-}
-
-.content2 h1 {
-  font-size: 24px;
-  font-weight: 700;
-  margin: 32px;
-  margin-top: auto;
-  margin-bottom: 12px;
-}
-
-.content2 p {
-  margin-bottom: 32px;
-  margin-left: 32px;
-  margin-right: 32px;
+  padding-bottom: 8px;
 }
 
 .image {
@@ -82,13 +71,6 @@
   align-items: center;
   /* width: 381px !important; */
   -webkit-user-drag: none;
-}
-
-.imageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 40px;
 }
 
 @media (max-width: 768px) {

@@ -1,12 +1,12 @@
 .buttonSlide {
   display: flex;
   align-items: center;
-  position: relative; /* Allows absolute positioning of the moving blob */
+  position: absolute; /* Allows absolute positioning of the moving blob */
   /* width: 85%; */
   margin: auto;
   border: 2px solid #bbd567;
   border-radius: 64px;
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
   /* margin-top: 40px; */
   overflow: hidden; /* Prevents overflow from transition */
 }
@@ -22,7 +22,7 @@
   padding: 8px 40px 8px 40px;
   color: #b4b4b4;
   font-family: "DM Sans";
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   line-height: 150%;
   letter-spacing: 2%;
