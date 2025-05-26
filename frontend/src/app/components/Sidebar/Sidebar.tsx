@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation"; // 🆕
 import { useEffect, useState } from "react";
 
+import { put } from "../../api/requests";
 import { useAuth } from "../../contexts/AuthContext";
 
 import { Account } from "./Account";
@@ -71,10 +72,22 @@ export default function Sidebar() {
         id={styles.temp_complete_module}
         onClick={() => {
           setUser((prev) => {
+            console.log("prev", prev);
             if (!prev) return prev;
             const nextModule = Math.min(prev.module + 1, 10); // Assuming max 9 modules, module 10 is beyond scope
+            if (user) {
+              void (async () => {
+                try {
+                  await put(`/api/user/update/${user.email}`, { module: nextModule });
+                } catch (error) {
+                  console.error("Failed to update module:", error);
+                }
+              })();
+            }
             return { ...prev, module: nextModule };
           });
+
+          //make a request to the backend to update the user module
         }}
       >
         {user?.module}
