@@ -1,7 +1,12 @@
 .button_container {
+  width: 100%;
+  position: sticky;
+  left: 0;
+}
+
+.button_container > div {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   max-width: var(--module-width);
   margin-inline: auto;
   padding-block: 2rem;
