@@ -42,7 +42,7 @@ const Checkbox = () => {
 
   const handleCheckboxChange = (option: string) => {
     setSelectedOptions((prev) =>
-      prev.includes(option) ? prev.filter((o) => o !== option) : [...prev, option]
+      prev.includes(option) ? prev.filter((o) => o !== option) : [...prev, option],
     );
   };
 
@@ -60,11 +60,13 @@ const Checkbox = () => {
                       type="checkbox"
                       className={styles.checkboxInput}
                       checked={selectedOptions.includes(option)}
-                      onChange={() => { handleCheckboxChange(option); }}
+                      onChange={() => {
+                        handleCheckboxChange(option);
+                      }}
                     />
                     <Image
-                        width={50}
-                        height={50}
+                      width={50}
+                      height={50}
                       src={optionTexts[option].icon}
                       alt={optionTexts[option].header}
                       className={styles.checkboxIcon}

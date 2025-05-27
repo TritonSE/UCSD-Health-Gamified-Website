@@ -88,7 +88,7 @@
 
 .checkboxInput:checked::after {
   content: "";
-  width: 23px;  
+  width: 23px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23' fill='none' xmlns:v='https://vecta.io/nano'%3E%3Cpath fill-rule='evenodd' d='M21.887.172a1.25 1.25 0 0 1 .442 1.712l-11.812 20a1.25 1.25 0 0 1-.906.602 1.25 1.25 0 0 1-1.034-.335L.386 14.312a1.25 1.25 0 0 1-.038-1.768 1.25 1.25 0 0 1 1.768-.038l7.05 6.752L20.174.615a1.25 1.25 0 0 1 .764-.575 1.25 1.25 0 0 1 .947.134' fill='%231c3a29'/%3E%3C/svg%3E");
   height: 23px;
   font-size: 30px;
