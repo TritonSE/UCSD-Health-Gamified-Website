@@ -31,7 +31,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
       <div className={`${styles.container} ${active ? styles.active : ""}`}>
         <div>
           {/* number */}
-          {number && <p className={styles.number}>{number}</p>}
+          {number && <span className={styles.number}>{number}</span>}
           {/* icon */}
           {icon && (
             <Image
