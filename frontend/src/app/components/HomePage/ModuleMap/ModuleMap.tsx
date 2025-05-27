@@ -1,8 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Toaster } from "react-hot-toast";
 
+import { get } from "../../../api/requests";
+import { useAuth } from "../../../contexts/AuthContext";
 import AnimatedPath from "../AnimatedPath/AnimatedPath";
 import BackgroundPaths from "../BackgroundPaths/BackgroundPaths";
 import Bike from "../Bike/Bike";
@@ -20,16 +22,33 @@ export type UserData = {
   lastCompletedModule: ModuleNumbers;
 };
 
-// Temporary user data with starting point
+// // Temporary user data with starting point
 const initialUserData: UserData = {
-  currentModule: 2,
-  lastCompletedModule: 2,
+  currentModule: 1,
+  lastCompletedModule: 1,
 };
 
 export default function ModuleMap() {
-  const [userData, setUserData] = useState(initialUserData);
-
+  const { currentUser } = useAuth();
+  const [userData, setUserData] = useState<UserData>(initialUserData);
   const bikeIsAnimating = useRef(false);
+
+  useEffect(() => {
+    if (!currentUser) return;
+    const load = async () => {
+      try {
+        const res = await get(`/api/user/get/${encodeURIComponent(currentUser.email)}`);
+        if (!res.ok) console.log(res);
+        const user = (await res.json()) as { module?: number };
+        const curMod = Math.max(0, Math.min(9, user.module ?? 0)) as ModuleNumbers;
+        const lastMod = Math.max(0, Math.min(9, (user.module ?? 0) - 1)) as ModuleNumbers;
+        setUserData({ currentModule: curMod, lastCompletedModule: lastMod });
+      } catch (err) {
+        console.log((err as Error).message);
+      }
+    };
+    void load();
+  }, [currentUser]);
 
   return (
     <div className={styles.svg_container}>
@@ -62,7 +81,7 @@ export default function ModuleMap() {
       >
         <MaskDefinitions
           modulePreview={userData.currentModule}
-          initialModule={initialUserData.currentModule}
+          initialModule={userData.lastCompletedModule}
         />
         <BackgroundPaths />
         {moduleMarkerData.map((moduleMarker, index) => (
@@ -87,33 +106,10 @@ export default function ModuleMap() {
         <Bike
           bikeIsAnimating={bikeIsAnimating}
           modulePreview={userData.currentModule}
-          initialModule={initialUserData.currentModule}
+          initialModule={userData.lastCompletedModule}
         />
         <ForegroundPaths />
       </svg>
-      {/* Temporary button to simulate module completion */}
-      <button
-        id={styles.temp_complete_module}
-        onClick={() => {
-          setUserData((prev) => {
-            if (prev.lastCompletedModule >= prev.currentModule) return prev;
-            return { ...prev, lastCompletedModule: prev.currentModule };
-          });
-        }}
-      >
-        Complete Module {userData.currentModule}
-      </button>
-      {/* Temporary text to show sidebar with overflow container */}
-      {/* <p className={styles.temporary_text}>
-        Doggo ipsum shibe very hand that feed shibe doggo shoob heck sub woofer doing me a frighten,
-        most angery pupper I have ever seen such treat boofers length boy. Long woofer puggo floofs,
-        you are doin me a concern. You are doing me a frighten wow very biscit doge such treat doing
-        me a frighten puggo corgo, super chub wow very biscit super chub dat tungg tho blep. Ruff
-        smol pats, blep. Maximum borkdrive such treat boof, ur givin me a spook. Woofer super chub
-        long water shoob heckin good boys and girls snoot puggo puggorino, wow such tempt very hand
-        that feed shibe doing me a frighten snoot. most angery pupper I have ever seen very hand
-        that feed shibe stop it fren.
-      </p> */}
     </div>
   );
 }
