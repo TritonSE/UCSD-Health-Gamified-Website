@@ -1,6 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import Section1 from "../components/Mod2Components/Section1/Section1";
+import Section6 from "../components/Module5/Section6";
+import Section7 from "../components/Module5/Section7";
+import Section8 from "../components/Module5/Section8";
+import Section9 from "../components/Module5/Section9";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Sidebar from "../components/Sidebar/Sidebar";
 
@@ -11,28 +15,12 @@ export default function Module5() {
     <div className={styles.container}>
       <Sidebar />
       <ModuleSliderContainer moduleText="MODULE 5: Rules of the Road">
-        {/* content */}
-      <ModuleSliderContainer moduleText="MODULE 3: Helmet Choice and Safety Equipment">
-        <ModuleIntro
-          moduleNumber={3}
-          title="Helmet choice and safety equipment"
-          subtitle="Choosing the right helmet and safety gear"
-          description={
-            <p>
-              Wearing the right helmet and gear keeps you safe, visible, and in control while
-              riding. Smart choices help prevent injuries so you can keep riding with confidence.
-            </p>
-          }
-          Mascot={
-            <Image
-              src="/module3/TimmyHelmet.svg"
-              alt="Timmy the tire"
-              width={320}
-              height={329}
-              className={styles.mascot}
-            />
-          }
-        />
+        {/* Temporary slides (Section1 borrowed from Module 2) - remove when actual page created*/}
+        <Section1 />
+        <Section6 />
+        <Section7 />
+        <Section8 />
+        <Section9 />
       </ModuleSliderContainer>
     </div>
   );
