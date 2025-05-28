@@ -52,23 +52,6 @@ export const MultiSelectQuestion = ({
     onSelect(letter);
   };
 
-  const isCorrect = () => {
-    return (
-      selected.length === correctAnswers.length && selected.every((s) => correctAnswers.includes(s))
-    );
-  };
-
-  const getIncorrectMessage = () => {
-    const correctAnswerTexts = correctAnswers
-      .sort()
-      .map((letter) => {
-        const index = letters.indexOf(letter);
-        return `${letter} ${options[index]}`;
-      })
-      .join(", ");
-    return `The correct answers are: ${correctAnswerTexts}`;
-  };
-
   return (
     <div className={styles.quizContainer}>
       <span className={styles.question}>{question}</span>
