@@ -21,10 +21,10 @@ const Page3: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.info}>
         <h1 className={styles.title}>ROLE MODELING BEHAVIORS</h1>
-        <p className={styles.subtitle}>
+        <span className={styles.subtitle}>
           Teens often follow their friends&apos; behaviors, but parental influence is crucial, so
           adults should lead by example by wearing helmets and practicing safe riding.
-        </p>
+        </span>
       </div>
       <div className={styles.svgWrapper}>
         <div className={styles.svgInner}>
