@@ -12,7 +12,7 @@ const Page2: React.FC = () => {
             <span className={styles.number}>1.</span>
             <p>
               &nbsp;&nbsp;E Bike-related injuries have surged at Rady Children’s Hospital, San
-              Diego, from fewer than 10 cases in &nbsp;&nbsp;2021 to{" "}
+              Diego, from fewer than 10 &nbsp;&nbsp;cases in 2021 to{" "}
               <strong>nearly 300 in 2024.</strong>
             </p>
           </div>
