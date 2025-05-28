@@ -169,24 +169,6 @@ export default function CrashProtocol() {
               </g>
 
               <rect id={styles.dark_overlay} style={{ transform: `translateX(-${currentAnimation.shocked_timmy}px) scaleX(2)`, opacity: animationIndex === 2 || animationIndex === 5 ? 1 : 0 }} y="-1" width="924" height="491" fill="black" fillOpacity="0.3" />
-              {/* <g id={styles.text_box_button_container} style={{ opacity: showText ? 1 : 0 }}>
-                <g transform={`translate(${45 + currentTextbox.x} ${144 + currentTextbox.y})`}>
-                  <foreignObject width={currentTextbox.width + 24} height={currentTextbox.height}>
-                  <div id={styles.text_box_wrapper}>
-                    <div>
-                      <p>{currentTextbox.text}</p>
-                      <button id={styles.left_button} onClick={handlePreviousClick} disabled={textIndex === 0}>
-                        <Image src="/module6/caret_left.svg" width="16" height="16" alt="Left Arrow" />
-                      </button>
-                      <button id={styles.right_button} onClick={handleNextClick} disabled={textIndex === ANIMATION_LENGTH}>
-                        <Image src="/module6/caret_left.svg" width="16" height="16" alt="Left Arrow" style={{ rotate: "180deg" }} />
-                      </button>
-                    </div>
-                  </div>
-                  </foreignObject>
-                </g>
-                <path fill="#fff" d="m201.5 269 13.423-45.75h-26.846z" transform={`translate(${currentTextbox.x + 12} ${-80 + (currentTextbox.height + currentTextbox.y)})`}></path>
-              </g> */}
             </g>
 
             <g className={styles.phone} style={{ transform: `translate(140px,320px)`, opacity: animationIndex === 6 ? 1 : 0 }}>
