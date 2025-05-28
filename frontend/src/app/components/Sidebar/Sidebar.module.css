@@ -4,17 +4,18 @@
   position: relative;
   left: 0;
   top: 0;
+  max-width: 300px;
   z-index: 1;
   padding: 20px;
   padding-right: 20px;
   color: white;
   overflow-y: auto;
   overflow-x: none;
-  transition: width 0.3s ease;
+  transition: max-width 0.3s ease;
 }
 
 .nav.collapsed {
-  width: 92px;
+  max-width: 92px;
 }
 
 .collapseButton {
@@ -23,7 +24,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  transition: margin 0.3 ease;
+  transition: margin 0.3s ease;
 }
 
 .collapseButton.open {
