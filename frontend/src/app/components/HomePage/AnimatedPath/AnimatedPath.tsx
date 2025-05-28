@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import { Dispatch, MutableRefObject, SetStateAction } from "react";
 
 import { ModuleNumbers, UserData } from "../ModuleMap/ModuleMap";
@@ -16,7 +17,7 @@ export default function AnimatedPath({
   bikeIsAnimating,
 }: AnimatedPathProps) {
   const isModuleAccessible = modulePreview + 1 >= 9;
-
+  const router = useRouter();
   const getStarColor = () => {
     if (modulePreview < 8) return "#B4B4B4";
     return modulePreview === 8 ? "#FFBC00" : "#3BB966";
@@ -30,11 +31,12 @@ export default function AnimatedPath({
         className={isModuleAccessible ? styles.active : styles.inactive}
         onClick={() => {
           if (
-            modulePreview >= 9 ||
-            modulePreview + 1 < 9 ||
+            modulePreview > 9 ||
+            modulePreview < 9 ||
             bikeIsAnimating.current
           )
             return;
+          router.push(`/module9`);
           setUserData((prev) => ({...prev, currentModule: 9}));
         }}
       >
