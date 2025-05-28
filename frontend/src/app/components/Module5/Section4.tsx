@@ -63,8 +63,12 @@ export default function SimpleWay() {
                 zIndex: 2,
                 position: "relative",
               }}
-              onMouseEnter={() => { setHovered(idx); }}
-              onMouseLeave={() => { setHovered(null); }}
+              onMouseEnter={() => {
+                setHovered(idx);
+              }}
+              onMouseLeave={() => {
+                setHovered(null);
+              }}
               onClick={(e) => {
                 // Prevent click on text from toggling
                 if (
