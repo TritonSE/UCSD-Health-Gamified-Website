@@ -90,9 +90,10 @@
 }
 
 .signalTextBoxHidden {
+  margin-top: 4rem;
   opacity: 0;
   pointer-events: none;
-  height: 215px;
+  min-height: 215px;
   padding: 0;
   border: none;
   background: transparent;

@@ -142,3 +142,13 @@
   text-align: left;
   width: 100%;
 }
+
+.rightContent > .selectedRectangle:nth-child(1) {
+  background: #d6e6a4;
+}
+.rightContent > .selectedRectangle:nth-child(2) {
+  background: #bbd567;
+}
+.rightContent > .selectedRectangle:nth-child(3) {
+  background: #a4ce6e;
+}
