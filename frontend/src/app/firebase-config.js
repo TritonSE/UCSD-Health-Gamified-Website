@@ -9,13 +9,13 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
+  apiKey: "AIzaSyDeZLSITKgWEsfr_H_UcBvaUd6amWgKyfQ",
+  authDomain: "ucsd-health-2670f.firebaseapp.com",
+  projectId: "ucsd-health-2670f",
+  storageBucket: "ucsd-health-2670f.firebasestorage.app",
+  messagingSenderId: "536664906057",
+  appId: "1:536664906057:web:4d5f4960a1f4645bd62298",
+  measurementId: "G-ZQ963WJQES"
 };
 
 // Initialize Firebase

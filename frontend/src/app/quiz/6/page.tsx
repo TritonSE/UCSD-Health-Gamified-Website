@@ -23,7 +23,7 @@ export default function Quiz6() {
         "Move off the road to get to a safe location",
         "Make sure everyone involved and around you is safe",
         "Take a photo of the collision",
-        "Stand in the middle of the road trying to divert traffice",
+        "Stand in the middle of the road trying to divert traffic",
         "Exchange contact information",
         "Move everyone off the road/sidewalk if they are injured",
       ],

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 
-import { Incorrect } from "./Incorrect";
 import styles from "./Question.module.css";
 import { QuizButton } from "./QuizButton";
 
@@ -99,9 +98,6 @@ export const MultiSelectQuestion = ({
           />
         ))}
       </div>
-      {isSubmitted && !subQuestion && (
-        <Incorrect correct={isCorrect()} message={getIncorrectMessage()} />
-      )}
     </div>
   );
 };

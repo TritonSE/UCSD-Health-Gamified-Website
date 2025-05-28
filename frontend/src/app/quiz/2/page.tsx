@@ -6,7 +6,7 @@ export default function QuizPage2() {
   const sampleQuestions: Question[] = [
     {
       question:
-        "ABC Bike Check is a simple way to quickly asses that the condition of your bike is “riding ready.” ABC in this acronym stands for:",
+        "ABC Bike Check is a simple way to quickly assess that the condition of your bike is “riding ready.” ABC in this acronym stands for:",
       options: [
         "A (Airbag), B (Brakes), C (Cushioned Seat)",
         "A (Air), B (Brakes), C (Chain)",
@@ -28,7 +28,7 @@ export default function QuizPage2() {
       type: "single",
     },
     {
-      question: "The best way to prolong your E Bike’s battery life is to :",
+      question: "the best way to prolong your E Bike's battery life is to:",
       options: [
         "Follow the manufacturer’s recommendations for battery charging",
         "Always keep your battery plugged in when not using your bike",
@@ -46,8 +46,8 @@ export default function QuizPage2() {
         <Sidebar />
       </div>
       <Quiz
-        title="Example Quiz"
-        description="No time limit! Make sure to answer all the questions."
+        title="Module 2 Quiz"
+        description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
         questions={sampleQuestions}
       />
     </div>
