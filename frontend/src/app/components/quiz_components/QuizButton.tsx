@@ -18,7 +18,7 @@ import styles from "./QuizButton.module.css";
 export type ButtonProps = {
   label: string;
   kind?: "primary" | "selected" | "correct" | "wrong";
-  letter?: "A." | "B." | "C." | "D." | "E.";
+  letter?: "A." | "B." | "C." | "D." | "E." | "F." | "G." | "H.";
   submitted?: boolean;
   questionType?: "Single" | "Multiple";
 } & React.ComponentProps<"button">;
@@ -85,10 +85,24 @@ export const QuizButton = React.forwardRef<HTMLButtonElement, ButtonProps>(funct
 
   return (
     <button ref={ref} className={buttonClass} {...props}>
-      <span className={styles.spacing}>
+      {questionType === "Single" ? (
         <span className={styles.letter}>{letter}</span>
-        {label}
-      </span>
+      ) : (
+        <Image
+          src={
+            kind === "primary"
+              ? "/quiz/unchecked.svg"
+              : kind === "selected"
+                ? "/quiz/checked.svg"
+                : "/quiz/checked_submit.svg"
+          }
+          alt="Unchecked"
+          width={35}
+          height={35}
+          className={styles.checkbox}
+        />
+      )}
+      <span className={styles.spacing}>{label}</span>
       <span className={styles.icon}>{icon}</span>
     </button>
   );
