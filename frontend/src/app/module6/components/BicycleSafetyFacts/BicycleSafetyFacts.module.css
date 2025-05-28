@@ -59,6 +59,7 @@
 #resource_text_container a {
   text-decoration: underline;
   text-underline-offset: 3px;
+  color: #428bcd;
 }
 
 #resource_text_container p {
