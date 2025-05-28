@@ -1,7 +1,7 @@
 import React from "react";
 
 import ButtonCardSlider from "./ButtonCardSlider";
-import styles from "./Mod1ChooseBike.module.css";
+import styles from "./Mod1Factor1.module.css";
 
 export default function Mod1Factor5() {
   const titles = ["CLASS 1", "CLASS 2", "CLASS 3"];
@@ -29,9 +29,11 @@ export default function Mod1Factor5() {
   ];
 
   return (
-    <div style={{ marginTop: "80px" }}>
+    <section id={styles.container}>
       <h1 className={styles.title}>CONSIDER E BIKE CLASSIFICATION</h1>
-      <ButtonCardSlider titles={titles} cards={cards} show_numbers={true} />
-    </div>
+      <div className={styles.buttonContainer}>
+        <ButtonCardSlider titles={titles} cards={cards} show_numbers={true} />
+      </div>
+    </section>
   );
 }
