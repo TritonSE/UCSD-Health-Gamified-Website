@@ -3,7 +3,7 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   overflow-x: hidden;
 }
 
@@ -30,11 +30,13 @@
 
 .section_wrapper {
   overflow-x: auto;
+  overflow-y: auto;
   min-width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   max-height: 1000px;
+  /* background-color: rebeccapurple; */
   padding-top: 9rem;
   position: relative;
 }
