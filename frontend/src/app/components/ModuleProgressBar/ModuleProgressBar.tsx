@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import styles from "./ProgressBar.module.css";
+import styles from "./ModuleProgressBar.module.css";
 
 const COMPLETE_COLOR = "#BBD567";
 const INCOMPLETE_COLOR = "#d9d9d9";
