@@ -10,32 +10,32 @@ const Page2: React.FC = () => {
         <div className={styles.textSection}>
           <div className={`${styles.point} ${styles.point1}`}>
             <span className={styles.number}>1.</span>
-            <p>
+            <span>
               &nbsp;&nbsp;E Bike-related injuries have surged at Rady Children’s Hospital, San
-              Diego, from fewer than 10 &nbsp;&nbsp;cases in 2021 to{" "}
+              Diego, &nbsp;&nbsp;from fewer than 10cases in 2021 to{" "}
               <strong>nearly 300 in 2024.</strong>
-            </p>
+            </span>
           </div>
           <div className={`${styles.point} ${styles.point2}`}>
             <span className={styles.number}>2.</span>
-            <p>
+            <span>
               As E Bikes continue to gain popularity we expect this number to continue to grow
               significantly.
-            </p>
+            </span>
           </div>
           <div className={`${styles.point} ${styles.point3}`}>
             <span className={styles.number}>3.</span>
-            <p>
+            <span>
               Injuries include road rash, cuts requiring suture repair, broken bones, serious head
               and brain injuries, and other life altering injuries including paralysis.
-            </p>
+            </span>
           </div>
           <div className={`${styles.point} ${styles.point4}`}>
             <span className={styles.number}>4.</span>
-            <p>
+            <span>
               There have been several cases of E Bike related accidents resulting in death
               throughout San Diego County in the past several years.
-            </p>
+            </span>
           </div>
         </div>
       </div>
