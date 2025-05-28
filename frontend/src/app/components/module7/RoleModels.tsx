@@ -18,7 +18,7 @@ const Page3: React.FC = () => {
   const buttonClassName = isClicked ? `${styles.button} ${styles.buttonVisible}` : styles.button;
 
   return (
-    <div className={styles.container}>
+    <section id={styles.container}>
       <div className={styles.info}>
         <h1 className={styles.title}>ROLE MODELING BEHAVIORS</h1>
         <span className={styles.subtitle}>
@@ -45,7 +45,7 @@ const Page3: React.FC = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

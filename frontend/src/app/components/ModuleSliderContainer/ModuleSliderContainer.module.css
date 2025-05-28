@@ -55,7 +55,7 @@
   min-width: 1150px;
   display: grid;
   grid-template-columns: 1fr min(var(--module-width), 100%) 1fr;
-  height: auto;
+  height: 100%;
 }
 
 .section_wrapper > section > * {
