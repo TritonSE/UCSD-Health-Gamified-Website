@@ -10,18 +10,36 @@
   margin-inline: auto;
 }
 
+#svg_container {
+  position: relative;
+}
+
 #text_box_button_container {
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: opacity 0.2s ease-in-out;
 }
 
-#text_box_button_container foreignObject {
-  padding-inline: 12px;
+#text_box_button_container svg {
+  bottom: 0;
+  transform: translateY(calc(100% - 1px));
+  margin-inline: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
-#text_box_button_container div {
-  background-color: white;
+#text_box_wrapper {
+  padding-inline: 12px;
   width: 100%;
   height: 100%;
+}
+
+#text_box_wrapper > div {
+  width: 100%;
+  height: 100%;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
