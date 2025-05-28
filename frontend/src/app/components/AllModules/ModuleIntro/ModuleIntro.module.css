@@ -1,5 +1,6 @@
 .container {
   gap: 3rem;
+  height: auto !important;
 }
 
 .top {
