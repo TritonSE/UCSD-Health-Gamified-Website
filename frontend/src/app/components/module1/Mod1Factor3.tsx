@@ -1,9 +1,8 @@
-import React from "react";
+import { CSSProperties } from "react";
 
 import Flip from "../Flip";
 
 import styles from "./Mod1Factor3.module.css";
-import Mod1FactorTitle from "./Mod1FactorTitle";
 
 export default function Mod1Factor3() {
   // NOTE: we could probably move cardStyle into a separate CSS file?
@@ -16,7 +15,7 @@ export default function Mod1Factor3() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-    },
+    } as CSSProperties,
     container_flipped: {
       backgroundColor: "#f6ffd7",
       width: "20%",
@@ -25,41 +24,43 @@ export default function Mod1Factor3() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-    },
+    } as CSSProperties,
     front_text: {
       color: "#1C3A29",
       textAlign: "center",
-    },
+    } as CSSProperties,
     back_text: {
       color: "#1C3A29",
       textAlign: "center",
-    },
+    } as CSSProperties,
   };
   return (
-    <div style={{ marginTop: "80px" }}>
-      <Mod1FactorTitle number={3} step="Evaluate key features" />
-      <div className={styles.row}>
-        <Flip
-          front_text="Motor Power"
-          back_text="The motor's wattage determines the amount of assistance provided."
-          backColor="#f6ffd7"
-          frontColor="#bbd567"
-          styles={cardStyle}
-        />
-        <Flip
-          front_text="Battery Capacity"
-          back_text="A larger battery capacity offers longer range."
-          backColor="#f6ffd7"
-          frontColor="#bbd567"
-          styles={cardStyle}
-        />
-        <Flip
-          front_text="Range"
-          back_text="Consider your daily commute or recreational riding distance."
-          backColor="#f6ffd7"
-          frontColor="#bbd567"
-          styles={cardStyle}
-        />
+    <section id={styles.container}>
+      <h1 className={styles.title}>EVALUATE KEY FEATURES</h1>
+      <div className={styles.content}>
+        <div className={styles.row}>
+          <Flip
+            front_text="Motor Power"
+            back_text="The motor's wattage determines the amount of assistance provided."
+            backColor="#f6ffd7"
+            frontColor="#bbd567"
+            styles={cardStyle}
+          />
+          <Flip
+            front_text="Battery Capacity"
+            back_text="A larger battery capacity offers longer range."
+            backColor="#f6ffd7"
+            frontColor="#bbd567"
+            styles={cardStyle}
+          />
+          <Flip
+            front_text="Range"
+            back_text="Consider your daily commute or recreational riding distance."
+            backColor="#f6ffd7"
+            frontColor="#bbd567"
+            styles={cardStyle}
+          />
+        </div>
       </div>
       <div className={styles.row}>
         <Flip
@@ -84,6 +85,6 @@ export default function Mod1Factor3() {
           styles={cardStyle}
         />
       </div>
-    </div>
+    </section>
   );
 }

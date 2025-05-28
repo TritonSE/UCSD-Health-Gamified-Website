@@ -8,7 +8,7 @@ export default function Mod1WhyNotBike() {
         content="Electric motorcycles are not bicycles and require a motorcycle license, registration and insurance, and additional modifications to be street legal to operate."
       />
       <Accordion
-        title="Recognizing Legal E-Bikes"
+        title="Recognizing Legal E Bikes"
         content="Legal, classified ebikes are clearly sold and marked as such.  Unclassified “bicycle shaped objects” often sold through online retailers, slip through the cracks and are sold as toys and are often illegal to operate on roadways.  Read the fine print and check with a reputable shop, or with law enforcement to be sure what you’re buying is legal to operate."
       />
       <Accordion

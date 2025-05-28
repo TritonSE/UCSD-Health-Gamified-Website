@@ -1,31 +1,47 @@
-.container {
-  background: #bbd567;
-  padding: 140px 100px;
-  margin-top: 140px;
+#container {
+  /* padding: 60px 100px; */
+  margin: 0;
+  padding: 0;
   position: relative; /* Add relative positioning to the container */
+  margin-top: 36px;
+  /* overflow-x: auto; */
 }
 
 .title {
   color: #000;
+  text-align: center;
   font-family: "Rammetto One";
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 48px */
   letter-spacing: 0.64px;
+  text-transform: uppercase;
+  margin-left: 6.5vw;
+  margin-right: 6.5vw;
 }
 
-.cardContainer {
+#container .cardContainer {
+  background: #bbd567;
+  grid-column: -1/1;
   justify-content: center;
   align-items: center;
-  margin: auto;
   display: flex;
-  margin-top: 20px;
+  margin-top: 36px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   flex-wrap: nowrap; /* Prevent wrapping */
   position: relative; /* Add relative positioning to the card container */
-  width: 100%;
-  height: 500px; /* Adjust height as needed */
-  width: 946px;
+  /* width: 100vw; */
+  height: 650px;
+  /* width: 946px; */
+}
+
+.cardSubContainer {
+  width: 965px;
+  height: 100%;
+  position: relative;
+  /* background-color: red; */
 }
 
 .card1,
@@ -48,7 +64,7 @@
 }
 
 .card2 span {
-  color: #fff;
+  color: #fff !important;
 }
 
 .card2 {
