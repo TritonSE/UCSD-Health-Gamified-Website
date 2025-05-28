@@ -68,7 +68,7 @@ export default function Flip({
         style={{ ...customStyles?.container_flipped, backgroundColor: backColor }}
       >
         {!hasBullets ? (
-          <p style={customStyles?.title}>{back_text}</p>
+          <span style={customStyles?.title}>{back_text}</span>
         ) : (
           <ul style={{ paddingLeft: "17px", ...customStyles?.title }}>
             {back_text.split("\n").map((point, index) => (

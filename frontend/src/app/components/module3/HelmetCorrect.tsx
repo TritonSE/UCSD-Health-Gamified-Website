@@ -22,21 +22,22 @@ const Page4: React.FC = () => {
           <h3 className={styles.subtitle}>Correct Ways</h3>
           <div className={`${styles.point} ${styles.point1}`}>
             <span className={styles.number}>1.</span>
-            <p>
-              <strong>&nbsp; Level & Low:</strong> Covers forehead (two fingers above eyebrows).
-            </p>
+            <span>
+              <strong>&nbsp; Level & Low:</strong> Covers forehead (two fingers above
+              &nbsp;&nbsp;eyebrows).
+            </span>
           </div>
           <div className={`${styles.point} ${styles.point2}`}>
             <span className={styles.number}>2.</span>
-            <p>
+            <span>
               <strong>Snug Straps:</strong> “V” shape under ears, tight chin strap.
-            </p>
+            </span>
           </div>
           <div className={`${styles.point} ${styles.point3}`}>
             <span className={styles.number}>3.</span>
-            <p>
+            <span>
               <strong>Secure Fit:</strong> No wobbling or shifting.
-            </p>
+            </span>
           </div>
         </div>
       </div>

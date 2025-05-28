@@ -18,6 +18,11 @@ export default function Mod1WhyRide() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      fontFamily: "DM Sans",
+      fontSize: "18px",
+      fontStyle: "normal",
+      fontWeight: "400",
+      lineHeight: "24px",
     },
     front_text: {
       color: "#000",

@@ -13,29 +13,29 @@ const Page4: React.FC = () => {
           <h3 className={styles.subtitle}>Incorrect Ways</h3>
           <div className={`${styles.point} ${styles.point1}`}>
             <span className={styles.number}>1.</span>
-            <p>
-              &nbsp;<strong>Too Far Back:</strong> Leaves your forehead exposed, reducing
-              &nbsp;protection.
-            </p>
+            <span>
+              &nbsp;&nbsp;<strong>Too Far Back:</strong> Leaves your forehead exposed,
+              &nbsp;&nbsp;reducing protection.
+            </span>
           </div>
           <div className={`${styles.point} ${styles.point2}`}>
             <span className={styles.number}>2.</span>
-            <p>
+            <span>
               <strong>Too Far Forward:</strong> Obstructs vision and feels uncomfortable.
-            </p>
+            </span>
           </div>
           <div className={`${styles.point} ${styles.point3}`}>
             <span className={styles.number}>3.</span>
-            <p>
+            <span>
               <strong>Loose Straps:</strong> Won’t keep the helmet secure in a crash.
-            </p>
+            </span>
           </div>
           <div className={`${styles.point} ${styles.point4}`}>
             <span className={styles.number}>4.</span>
-            <p>
+            <span>
               <strong>Unbuckled Chin Strap:</strong> Helmet can fall off during impact, making it
               useless.
-            </p>
+            </span>
           </div>
         </div>
 
