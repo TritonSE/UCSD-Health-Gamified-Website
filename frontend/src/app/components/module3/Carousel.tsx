@@ -9,9 +9,7 @@ type CarouselProps = {
   cards: {
     icon: string;
     title: string;
-    content: React.ReactNode;
-    imgWidth?: number;
-    imgHeight?: number;
+    content: string | React.ReactNode;
   }[];
 };
 
@@ -30,7 +28,7 @@ const Carousel: React.FC<CarouselProps> = ({ cards }) => {
     <>
       <div className={styles.carousel}>
         <button className={styles.navBtn} onClick={prevSlide}>
-          <Image src="/module1/carousel_left_arrow.svg" width={7} height={12} alt="Previous" />
+          <Image src="/module3/carousel_left_arrow.svg" width={7} height={12} alt="Previous" />
         </button>
 
         <div className={styles.card}>
@@ -38,15 +36,15 @@ const Carousel: React.FC<CarouselProps> = ({ cards }) => {
             src={cards[currentIndex].icon}
             alt="card icon"
             className={styles.icon}
-            width={cards[currentIndex].imgWidth ?? 200}
-            height={cards[currentIndex].imgHeight ?? 200}
+            width={200}
+            height={200}
           />
-          <h1 className={styles.cardTitle}>{cards[currentIndex].title}</h1>
+          <h3 className={styles.cardTitle}>{cards[currentIndex].title}</h3>
           <p className={styles.cardContent}>{cards[currentIndex].content}</p>
         </div>
 
         <button className={styles.navBtn} onClick={nextSlide}>
-          <Image src="/module1/carousel_right_arrow.svg" width={7} height={12} alt="Next" />
+          <Image src="/module3/carousel_right_arrow.svg" width={7} height={12} alt="Next" />
         </button>
       </div>
 

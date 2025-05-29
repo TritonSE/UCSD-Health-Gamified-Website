@@ -7,6 +7,7 @@
   border: 1px solid #1c3a29;
   margin: auto;
   position: relative;
+  width: 825px;
   margin-top: 36px;
 }
 
@@ -24,14 +25,15 @@
 }
 
 .cardTitle {
+  color: var(--Secondary-Accent1, #1c3a29);
+  text-align: center;
   font-family: "DM Sans";
-  font-weight: 700;
   font-size: 24px;
-  color: #1f352b;
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 36px */
+  letter-spacing: 0.48px;
+  margin-bottom: 20px;
 }
 
 .cardContent {
@@ -41,11 +43,18 @@
   line-height: 24px;
   max-width: 75%;
   min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* icon */
 .icon {
+  width: 200px;
+  height: 200px;
   object-fit: contain;
+  margin-bottom: 30px;
 }
 
 /* left/right arrows */
@@ -84,6 +93,7 @@
   justify-content: center;
   gap: 10px;
   margin-top: 32px;
+  margin-bottom: 64px;
 }
 
 .dot {
