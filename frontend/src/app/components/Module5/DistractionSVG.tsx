@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 
 import styles from "./DistractionSVG.module.css";
@@ -14,20 +15,20 @@ export default function MySVGComponent() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_5885_39465)">
+        <g clipPath="url(#clip0_5885_39465)">
           <rect width="924" height="490" rx="8" fill="#A9CAF5" />
           <path
             d="M-4.48029 22.1744C42.1864 50.6744 177.12 95.8744 343.52 48.6744C551.52 -10.3256 530.52 -34.324 671.02 -31.824C811.52 -29.324 967.02 156.675 1253.02 121.675C1399.76 103.717 1458.91 83.977 1477.02 68.7857V48.6744C1484.43 53.2174 1487.14 60.2903 1477.02 68.7857V189.175C1412.35 164.008 1371.22 100.776 1140.02 161.176C851.02 236.676 617.886 117.994 521.52 100.176C389.02 75.6758 -7.48047 140.676 -104.48 218.676C-182.08 281.076 -36.8136 96.6745 -4.48029 22.1744Z"
             fill="white"
-            fill-opacity="0.5"
+            fillOpacity="0.5"
           />
           <path
             d="M951.115 6.17441C904.448 34.6744 769.515 79.8744 603.115 32.6744C395.115 -26.3256 416.115 -50.324 275.615 -47.824C135.115 -45.324 -17.5 91 -303.5 56C-499.141 32.0579 -541.205 -28.6856 -536.367 -53.7083L-530.385 -63C-533.38 -61.1643 -535.547 -57.9493 -536.367 -53.7083L-607 56C-542.333 30.8333 -424.585 84.7758 -193.385 145.176C95.6152 220.676 75.73 84.4599 275.615 47.5C475.5 10.5401 954.115 124.676 1051.12 202.676C1128.72 265.076 983.448 80.6745 951.115 6.17441Z"
             fill="#FCFCFF"
-            fill-opacity="0.5"
+            fillOpacity="0.5"
           />
           <path d="M-1 373H1833V490H-1V373Z" fill="#909090" />
-          <path d="M-2 428H1902" stroke="#FCD579" stroke-width="10" stroke-dasharray="30 30" />
+          <path d="M-2 428H1902" stroke="#FCD579" strokeWidth="10" strokeDasharray="30 30" />
           <rect x="-1" y="335" width="925" height="38" fill="#BBD567" />
           <circle
             cx="401"
@@ -35,7 +36,7 @@ export default function MySVGComponent() {
             r="17.7"
             fill="#BBD567"
             stroke="#FAFFEA"
-            stroke-width="4.6"
+            strokeWidth="4.6"
             onMouseEnter={() => {
               setHovered("circle1");
             }}
@@ -49,7 +50,7 @@ export default function MySVGComponent() {
             r="17.7"
             fill="#BBD567"
             stroke="#FAFFEA"
-            stroke-width="4.6"
+            strokeWidth="4.6"
             onMouseEnter={() => {
               setHovered("circle2");
             }}
@@ -73,50 +74,50 @@ export default function MySVGComponent() {
             <path
               d="M641.627 277.667L611.766 358.211L597.418 349.09L529.946 272.915M381.056 236.8L345.774 231.637L341.116 247.907L365.931 266.56"
               stroke="#484848"
-              stroke-width="3.88762"
+              strokeWidth="3.88762"
             />
             <path
               d="M390.371 220.939L404.331 193.561H390.371V139.601L423.712 147.133"
               stroke="#484848"
-              stroke-width="3.88762"
+              strokeWidth="3.88762"
             />
             <path
               d="M610.99 449.069C567.731 449.069 532.663 413.186 532.663 368.922C532.663 324.658 567.731 288.775 610.99 288.775C654.249 288.775 689.317 324.658 689.317 368.922C689.317 413.186 654.249 449.069 610.99 449.069Z"
               stroke="#62657A"
-              stroke-width="15.5375"
+              strokeWidth="15.5375"
             />
             <path
               d="M691.063 347.117C680.985 318.389 658.498 294.44 632.131 288.787"
               stroke="#4E4E68"
-              stroke-width="2.33257"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="2.33257"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M684.464 344.935C677.879 323.17 658.485 304.014 639.88 297.487"
               stroke="#4E4E68"
-              stroke-width="2.33257"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="2.33257"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M314.76 449.069C271.501 449.069 236.433 413.186 236.433 368.922C236.433 324.658 271.501 288.775 314.76 288.775C358.019 288.775 393.087 324.658 393.087 368.922C393.087 413.186 358.019 449.069 314.76 449.069Z"
               stroke="#62657A"
-              stroke-width="15.5375"
+              strokeWidth="15.5375"
             />
             <path
               d="M394.045 347.117C383.966 318.389 361.48 294.44 335.112 288.787"
               stroke="#4E4E68"
-              stroke-width="2.33257"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="2.33257"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M387.46 344.935C380.862 323.17 361.48 304.014 342.876 297.487"
               stroke="#4E4E68"
-              stroke-width="2.33257"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="2.33257"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M488.375 401.9L620.11 383.869C629.542 382.571 636.581 374.35 636.581 364.607C636.581 354.161 628.52 345.583 618.312 345.185L485.503 339.996C468.27 339.321 453.947 353.433 453.947 371.067C453.947 389.879 470.146 404.389 488.363 401.887L488.375 401.9Z"
@@ -125,22 +126,22 @@ export default function MySVGComponent() {
             <path
               d="M521.42 343.132C539.261 256.247 681.554 237.991 704.04 357.02"
               stroke="#BBD567"
-              stroke-width="10.0948"
+              strokeWidth="10.0948"
             />
             <path
               d="M239.836 313.453C288.004 237.992 423.711 273.697 406.646 387.96"
               stroke="#BBD567"
-              stroke-width="10.0948"
+              strokeWidth="10.0948"
             />
             <path
               d="M515.999 291.158C487.044 304.648 416.04 320.998 382.233 243.552M463.652 356.226L364.779 276.873"
               stroke="#BBD567"
-              stroke-width="11.6499"
+              strokeWidth="11.6499"
             />
             <path
               d="M531.498 261.003L471.4 377.251M391.909 224.106L316.299 364.952"
               stroke="#9AB445"
-              stroke-width="10.0948"
+              strokeWidth="10.0948"
             />
             <path
               d="M534.438 251.653L534.45 251.658C539.028 253.511 541.271 258.81 539.461 263.495L536.891 270.143C535.08 274.827 529.901 277.123 525.323 275.27L525.311 275.265C520.733 273.412 518.489 268.112 520.3 263.428L522.87 256.78C524.68 252.096 529.86 249.8 534.438 251.653Z"
@@ -161,7 +162,7 @@ export default function MySVGComponent() {
             <path
               d="M151.522 148.327L260.861 276.477L244.96 300.28L28.2097 399.067L151.509 148.327H151.522Z"
               fill="url(#paint0_linear_5885_39465)"
-              fill-opacity="0.5"
+              fillOpacity="0.5"
             />
             <path
               d="M260.085 275.284L272.881 277.667C260.473 283.227 244.572 298.69 242.632 301.073L243.796 288.774L260.085 275.284Z"
@@ -171,7 +172,7 @@ export default function MySVGComponent() {
               d="M485.75 386.384C476.968 386.384 469.849 379.1 469.849 370.114C469.849 361.128 476.968 353.844 485.75 353.844C494.531 353.844 501.65 361.128 501.65 370.114C501.65 379.1 494.531 386.384 485.75 386.384Z"
               fill="#62657A"
             />
-            <path d="M486.137 370.511V416.131" stroke="#484848" stroke-width="3.88762" />
+            <path d="M486.137 370.511V416.131" stroke="#484848" strokeWidth="3.88762" />
             <path d="M468.309 413.35H503.979V427.634H468.309V413.35Z" fill="#FCD579" />
             <path
               d="M488.027 229.267H571.413C575.993 229.267 579.68 233.384 578.348 237.872C568.308 271.644 521.407 259.584 509.867 250.118C503.618 244.981 494.794 240.361 488.506 238.865C486.048 238.283 483.822 236.151 483.822 233.57C483.822 231.187 485.711 229.254 488.04 229.254L488.027 229.267Z"
@@ -210,8 +211,8 @@ export default function MySVGComponent() {
               <path
                 d="M538.45 199.924C563.313 199.924 583.469 179.768 583.469 154.905C583.469 130.041 563.313 109.886 538.45 109.886C513.586 109.886 493.431 130.041 493.431 154.905C493.431 179.768 513.586 199.924 538.45 199.924Z"
                 stroke="#D3D3DD"
-                stroke-width="15.4365"
-                stroke-miterlimit="10"
+                strokeWidth="15.4365"
+                strokeMiterlimit="10"
               />
               <path
                 d="M538.45 189.276C557.433 189.276 572.821 173.888 572.821 154.906C572.821 135.923 557.433 120.535 538.45 120.535C519.468 120.535 504.08 135.923 504.08 154.906C504.08 173.888 519.468 189.276 538.45 189.276Z"
@@ -225,30 +226,30 @@ export default function MySVGComponent() {
               <path
                 d="M619.156 157.374C617.909 195.025 588.874 225.653 551.894 229.418"
                 stroke="#4E4E68"
-                stroke-width="7"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
+                strokeWidth="7"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
               />
               <path
                 d="M607.791 162.295C604.765 188.258 586.217 209.485 561.664 216.415"
                 stroke="#4E4E68"
-                stroke-width="7"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
+                strokeWidth="7"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
               />
               <path
                 d="M469.247 152.431C470.494 114.78 499.529 84.1518 536.51 80.3867"
                 stroke="#4E4E68"
-                stroke-width="7"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
+                strokeWidth="7"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
               />
               <path
                 d="M480.633 147.511C483.659 121.549 502.208 100.321 526.761 93.3916"
                 stroke="#4E4E68"
-                stroke-width="7"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
+                strokeWidth="7"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
               />
               <path
                 d="M518.817 154.028V150.679C518.817 147.451 516.2 144.835 512.973 144.835C509.745 144.835 507.129 147.451 507.129 150.679V154.028C507.129 157.256 509.745 159.872 512.973 159.872C516.2 159.872 518.817 157.256 518.817 154.028Z"
@@ -267,9 +268,9 @@ export default function MySVGComponent() {
               d="M542.213 159.999C542.213 164.577 538.582 168.302 534.106 168.302C529.631 168.302 526 164.577 526 159.999H542.223H542.213Z"
               fill="white"
               stroke="#171759"
-              stroke-width="3.9486"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="3.9486"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </g>
         </g>
@@ -291,7 +292,7 @@ export default function MySVGComponent() {
             d="M429.137 111.778C430.341 111.399 431.647 111.513 432.766 112.097L432.974 112.211C433.99 112.807 434.752 113.76 435.107 114.889L441.833 136.259C442.212 137.463 442.097 138.768 441.513 139.887C440.93 141.007 439.925 141.849 438.721 142.228L428.903 145.318C427.774 145.674 426.556 145.595 425.486 145.103L425.273 144.999C424.154 144.415 423.313 143.411 422.934 142.207L416.208 120.837C415.829 119.633 415.943 118.327 416.526 117.208L416.642 117.002C417.237 115.985 418.19 115.223 419.319 114.868L429.137 111.778Z"
             fill="#171759"
             stroke="white"
-            stroke-width="2.85966"
+            strokeWidth="2.85966"
           />
         </g>
         <path
@@ -304,11 +305,11 @@ export default function MySVGComponent() {
           id="headphones"
           d="M608.998 138.088L612.984 139.089C616.54 139.984 619.634 141.7 621.774 143.966C623.914 146.231 624.978 148.916 624.796 151.593L624.028 162.861C623.845 165.538 622.427 168.054 619.999 170.008C617.572 171.963 614.274 173.244 610.629 173.647L595.974 175.278C595.228 175.361 594.458 175.317 593.723 175.152C592.988 174.987 592.307 174.705 591.732 174.326C591.158 173.947 590.704 173.482 590.406 172.967C590.109 172.451 589.974 171.898 590.014 171.35L592.248 138.557C592.286 138.009 592.495 137.48 592.862 137.011C593.228 136.542 593.742 136.144 594.363 135.848C594.985 135.552 595.698 135.365 596.448 135.302C597.198 135.24 597.966 135.302 598.693 135.486L608.998 138.088ZM608.998 138.088L609.203 135.086C611.235 105.252 583.08 79.0299 546.321 76.5253C509.562 74.0207 478.11 96.1815 476.077 126.016L475.873 129.017M475.873 129.017L471.788 129.469C468.144 129.873 464.846 131.154 462.418 133.108C459.99 135.062 458.572 137.578 458.389 140.255L457.622 151.523C457.44 154.2 458.503 156.885 460.644 159.15C462.784 161.416 465.878 163.133 469.433 164.027L483.732 167.631C484.46 167.813 485.229 167.875 485.98 167.811C486.73 167.747 487.443 167.56 488.064 167.262C488.685 166.965 489.197 166.566 489.562 166.095C489.927 165.625 490.135 165.096 490.17 164.547L492.404 131.754C492.441 131.207 492.305 130.655 492.006 130.141C491.707 129.627 491.253 129.163 490.679 128.786C490.104 128.409 489.424 128.127 488.691 127.963C487.957 127.798 487.188 127.756 486.444 127.838L475.873 129.017Z"
           stroke="#171759"
-          stroke-width="11.0442"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="11.0442"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
-        {/* <g clip-path="url(#clip1_5885_39465)"> */}
+        {/* <g clipPath="url(#clip1_5885_39465)"> */}
         <path
           style={{
             transition: "transform 0.5s ease, opacity 0.5s ease",
@@ -340,9 +341,9 @@ export default function MySVGComponent() {
             width="196.571"
             height="217.436"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -373,8 +374,8 @@ export default function MySVGComponent() {
             y2="276.126"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#FCD579" />
-            <stop offset="1" stop-color="white" stop-opacity="0" />
+            <stop stopColor="#FCD579" />
+            <stop offset="1" stopColor="white" stopOpacity="0" />
           </linearGradient>
           <clipPath id="clip0_5885_39465">
             <rect width="924" height="490" rx="8" fill="white" />

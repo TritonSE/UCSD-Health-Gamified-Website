@@ -125,8 +125,8 @@
 
   flex-direction: column;
   padding: 12px;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
 
   width: 260px;
 }

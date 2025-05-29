@@ -1,10 +1,18 @@
+"use client";
+
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import styles from "./Section8.module.css";
 
 export default function Section8() {
   const [clicked, setClicked] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      setClicked(false); // reset on unmount
+    };
+  }, []);
 
   return (
     <section className={styles.container}>

@@ -9,6 +9,7 @@
 .container {
   justify-items: center;
   gap: 1rem;
+  position: relative;
 }
 
 .description {
@@ -17,4 +18,90 @@
   color: black;
   font-family: "DM Sans";
   font-weight: 400;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.box1 {
+  width: 722px;
+  align-self: flex-start;
+  margin-right: auto;
+  background: #faffea;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+  margin-bottom: 50px;
+  z-index: 1;
+}
+
+.box1 p {
+  color: #000;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+  padding: 32px;
+}
+
+.box2 {
+  width: 722px;
+  align-self: flex-end;
+  margin-left: auto;
+  background: #d6e6a4;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+.box2 p {
+  color: #000;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+  padding: 32px;
+}
+
+.image {
+  align-self: flex-end;
+  margin-left: auto;
+  z-index: 0;
+  pointer-events: none;
+  margin-top: -95px;
+  margin-right: -20px;
+}
+
+.box3 {
+  align-self: center;
+  /* margin-left: auto; */
+  width: 883px;
+  background: #ffb9b9;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.box3 p {
+  color: #000;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  line-height: 32px !important;
+  padding: 32px;
+}
+
+.content h1 {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  line-height: 150% !important;
+  padding-bottom: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column2 {
+  display: flex;
+  flex-direction: column;
 }
