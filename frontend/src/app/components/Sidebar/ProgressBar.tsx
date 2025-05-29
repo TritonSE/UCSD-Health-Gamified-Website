@@ -43,7 +43,9 @@ export const ProgressBar = ({ percentage, isCollapsed = false }: Props) => {
         >
           {/* Background half-circle */}
           <path
-            d={`M ${size - strokeWidth / 2},${size / 2} A ${radius} ${radius} 0 0 0 ${strokeWidth / 2},${size / 2}`}
+            d={`M ${size - strokeWidth / 2},${size / 2} A ${radius} ${radius} 0 0 0 ${
+              strokeWidth / 2
+            },${size / 2}`}
             stroke="#FFF"
             strokeWidth={strokeWidth}
             fill="transparent"
@@ -52,7 +54,9 @@ export const ProgressBar = ({ percentage, isCollapsed = false }: Props) => {
 
           {/* Progress half-circle */}
           <animated.path
-            d={`M ${strokeWidth / 2},${size / 2} A ${radius} ${radius} 0 0 1 ${size - strokeWidth / 2},${size / 2}`}
+            d={`M ${strokeWidth / 2},${size / 2} A ${radius} ${radius} 0 0 1 ${
+              size - strokeWidth / 2
+            },${size / 2}`}
             stroke="#BBD567"
             strokeWidth={strokeWidth}
             fill="transparent"
