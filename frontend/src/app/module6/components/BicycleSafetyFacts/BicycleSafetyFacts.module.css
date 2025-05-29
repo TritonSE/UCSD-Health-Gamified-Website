@@ -1,0 +1,83 @@
+#container {
+  height: auto;
+}
+
+#container h2 {
+  margin-inline: auto;
+}
+
+#container ol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-block: 2.25rem;
+}
+
+#container ol li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 45px;
+  border-radius: 8px;
+  height: 100px;
+  padding: 35px 50px;
+
+  align-items: center;
+}
+
+#container ol li span {
+  font-family: "Rammetto One";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 60px */
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+#container ol li p {
+  font-size: 22px;
+  line-height: 32px;
+}
+
+#bottom_container {
+  display: flex;
+}
+
+#bottom_container {
+  font-family: "DM Sans";
+  font-size: 22px;
+  font-style: normal;
+  line-height: 32px;
+}
+
+#resource_text_container {
+  padding-left: calc(25px + 2rem);
+}
+
+#resource_text_container a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#resource_text_container p {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#bottom_container foreignObject {
+  padding: 2rem;
+}
+
+#bottom_container foreignObject div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bottom_container foreignObject div p {
+  font-size: 22px;
+  line-height: 32px;
+}
