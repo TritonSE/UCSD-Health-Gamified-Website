@@ -30,10 +30,10 @@ export default function Mod1WhyRide() {
   };
 
   return (
-    <>
+    <section id={styles.container}>
       <h1 className={styles.title}>WHY RIDE A LEGAL E BIKE?</h1>
-      <div className={styles.container}>
-        <div className={styles.cardContainer}>
+      <div className={styles.cardContainer}>
+        <div className={styles.cardSubContainer}>
           <div className={styles.card1}>
             <Flip
               front_icon="/module1/safety.svg"
@@ -97,6 +97,6 @@ export default function Mod1WhyRide() {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }
