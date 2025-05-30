@@ -104,6 +104,14 @@
   transform-origin: top;
 }
 
+.timmy_mouth_path {
+  transform-origin: 212px 337px;
+}
+
+.crying_timmy_mouth_path {
+  transform-origin: 57px 125px;
+}
+
 #dark_overlay,
 .phone {
   transition: opacity 0.2s;
