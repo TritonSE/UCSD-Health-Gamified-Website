@@ -26,11 +26,11 @@ export default function Mod1WhyRide() {
     },
     front_text: {
       color: "#000",
-      textAlign: "center",
+      textAlign: "center" as const,
     },
     back_text: {
       color: "#000",
-      textAlign: "center",
+      textAlign: "center" as const,
     },
   };
 
