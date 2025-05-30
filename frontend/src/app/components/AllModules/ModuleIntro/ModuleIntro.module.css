@@ -1,6 +1,6 @@
-.container {
+#container {
   gap: 3rem;
-  height: auto !important;
+  height: auto;
 }
 
 .top {
@@ -14,8 +14,8 @@
   font-weight: 400;
 }
 
-.container h1,
-.container h2 {
+#container h1,
+#container h2 {
   font-size: 40px;
   color: var(--foreground);
   font-family: "Rammetto One";

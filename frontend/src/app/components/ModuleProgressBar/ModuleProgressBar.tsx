@@ -10,7 +10,7 @@ type ProgressBarProps = {
   moduleText: string;
 };
 
-export default function ProgressBar({
+export default function ModuleProgressBar({
   currentSection,
   sectionCount,
   moduleText,

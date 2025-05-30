@@ -23,6 +23,10 @@ export default function MaskDefinitions({ modulePreview, initialModule }: MaskDe
       svgPath.style.strokeDasharray = length;
       svgPath.style.strokeDashoffset = length;
     });
+
+    return () => {
+      maskPathRefs.current = [];
+    };
   }, []);
 
   useEffect(() => {
@@ -36,10 +40,10 @@ export default function MaskDefinitions({ modulePreview, initialModule }: MaskDe
     <defs>
       <linearGradient
         id="bike_headlight_gradient"
-        x1="437.371"
-        y1="153.907"
-        x2="470.953"
-        y2="146.266"
+        x1="125.371"
+        y1="38.9073"
+        x2="158.953"
+        y2="31.2657"
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FCD579" />
