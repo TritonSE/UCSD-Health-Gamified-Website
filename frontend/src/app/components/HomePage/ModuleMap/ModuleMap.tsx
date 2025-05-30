@@ -24,8 +24,8 @@ export type UserData = {
 
 // // Temporary user data with starting point
 const initialUserData: UserData = {
-  currentModule: 1,
-  lastCompletedModule: 1,
+  currentModule: 0,
+  lastCompletedModule: 0,
 };
 
 export default function ModuleMap() {
@@ -79,10 +79,20 @@ export default function ModuleMap() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <MaskDefinitions
-          modulePreview={userData.currentModule}
-          initialModule={userData.lastCompletedModule}
-        />
+        {userData.currentModule && (
+          <MaskDefinitions
+            modulePreview={userData.currentModule}
+            initialModule={userData.lastCompletedModule}
+          />
+        )}
+
+        {!userData.currentModule && (
+          <MaskDefinitions
+            modulePreview={userData.currentModule}
+            initialModule={userData.lastCompletedModule}
+          />
+        )}
+
         <BackgroundPaths />
         {moduleMarkerData.map((moduleMarker, index) => (
           <ModuleMarker
