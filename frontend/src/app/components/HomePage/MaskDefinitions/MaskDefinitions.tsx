@@ -23,6 +23,10 @@ export default function MaskDefinitions({ modulePreview, initialModule }: MaskDe
       svgPath.style.strokeDasharray = length;
       svgPath.style.strokeDashoffset = length;
     });
+
+    return () => {
+      maskPathRefs.current = [];
+    };
   }, []);
 
   useEffect(() => {
