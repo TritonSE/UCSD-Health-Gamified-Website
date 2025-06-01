@@ -28,7 +28,8 @@ export default function ModuleGate({
     void (async () => {
       try {
         const res = await get(`/api/user/get/${encodeURIComponent(currentUser.email)}`);
-        if (!res.ok) console.log(res);
+        // if (!res.ok) console.log(res);
+
         const user = (await res.json()) as { module?: number };
 
         if (user.module === undefined || user.module < module) {
