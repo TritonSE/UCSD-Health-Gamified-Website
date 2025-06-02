@@ -37,7 +37,7 @@ export default function Mod1Risks() {
   };
 
   return (
-    <div>
+    <section id={styles.container}>
       <h1 className={styles.title}>Risks associated with illegal or unclassified bicycles</h1>
       <div className={styles.row}>
         <Flip
@@ -67,6 +67,6 @@ export default function Mod1Risks() {
         bike, and the risks associated with illegal or unclassified bicycles, you can make an
         informed decision that ensures a safe and enjoyable riding experience.
       </p>
-    </div>
+    </section>
   );
 }

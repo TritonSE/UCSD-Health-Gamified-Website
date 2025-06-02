@@ -18,3 +18,7 @@
   font-weight: 400;
   margin-bottom: 4vh;
 }
+
+.sidebarWrapper {
+  flex-shrink: 0;
+}
