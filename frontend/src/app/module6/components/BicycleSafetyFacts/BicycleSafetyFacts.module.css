@@ -52,6 +52,31 @@
   line-height: 32px;
 }
 
+.textbox_svg_container {
+  position: relative;
+}
+
+.textbox_svg_container div {
+  --offset-x: 25px;
+  --offset-y: 25px;
+  padding: 2rem;
+  position: absolute;
+  width: calc(100% - var(--offset-x));
+  height: calc(100% - var(--offset-y));
+  bottom: var(--offset-y);
+  left: var(--offset-x);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textbox_svg_container div p {
+  font-family: "DM Sans";
+  font-size: 22px;
+  font-style: normal;
+  line-height: 32px;
+}
+
 #resource_text_container {
   padding-left: calc(25px + 2rem);
 }
@@ -65,16 +90,4 @@
 #resource_text_container p {
   font-size: 22px;
   font-weight: bold;
-}
-
-#bottom_container foreignObject div {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  padding: 2rem;
-}
-
-#bottom_container foreignObject div p {
-  font-size: 22px;
-  line-height: 32px;
 }
