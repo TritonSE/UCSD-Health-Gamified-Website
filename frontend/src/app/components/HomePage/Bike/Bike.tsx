@@ -105,52 +105,50 @@ export default function Bike({ modulePreview, initialModule, bikeIsAnimating }: 
     <g
       className={styles.bike_container}
       style={{
-        offsetPath: `path('${BIKE_PATHS[modulePreview]}')`,
+        offsetPath: `path("${BIKE_PATHS[modulePreview]}")`,
         transform: handleBikeFlip(),
+        transformBox: "fill-box",
+        transformOrigin: "center",
       }}
       ref={bikeContainerRef}
-      // Necessary to properly reset animation state for Firefox 
+      // Necessary to properly reset animation state for Firefox
       key={"bike-" + modulePreview}
     >
       <g id="BIKE">
-        <g>
-          <path d="M330.188 151.595L337.93 172.006L341.65 169.694L359.145 150.389M397.755 141.239L406.905 139.932L408.112 144.054L401.677 148.78" stroke="#484848" strokeWidth="1.00547" />
-          <path d="M395.343 137.217L391.723 130.279H395.343V116.604L386.696 118.515" stroke="#484848" strokeWidth="1.00547" />
-          <g id="bike-back-wheel">
-            <circle cx="338.131" cy="174.72" r="20.3105" stroke="#62657A" strokeWidth="4.02188" />
-            <path d="M318.324 167.48C320.938 160.844 326.77 155.314 333.607 154.007" stroke="#4E4E68" strokeWidth="0.603281" strokeMiterlimit="10" strokeLinecap="round" />
-            <path d="M320.033 166.977C321.743 161.95 326.77 157.526 331.596 156.018" stroke="#4E4E68" strokeWidth="0.603281" strokeMiterlimit="10" strokeLinecap="round" />
-          </g>
-          <g id="bike-front-wheel">
-            <circle cx="414.949" cy="174.72" r="20.3105" stroke="#62657A" strokeWidth="4.02188" />
-            <path d="M395.142 167.48C397.756 160.844 403.588 155.314 410.425 154.007" stroke="#4E4E68" strokeWidth="0.603281" strokeMiterlimit="10" strokeLinecap="round" />
-            <path d="M396.851 166.977C398.56 161.95 403.588 157.526 408.414 156.018" stroke="#4E4E68" strokeWidth="0.603281" strokeMiterlimit="10" strokeLinecap="round" />
-          </g>
-          <g id="Group 172">
-            <path d="M369.928 183.079L335.768 178.51C333.322 178.182 331.496 176.096 331.496 173.629C331.496 170.982 333.588 168.809 336.232 168.708L370.672 167.392C375.139 167.221 378.854 170.797 378.854 175.267C378.854 180.035 374.653 183.711 369.928 183.079Z" fill="#FFE5C9" />
-            <path d="M361.358 168.185C356.733 146.166 319.832 141.541 314 171.705" stroke="#FFE5C9" strokeWidth="2.61422" />
-            <path d="M434.377 160.665C421.887 141.541 386.696 150.59 391.12 179.548" stroke="#FFE5C9" strokeWidth="2.61422" />
-            <path d="M362.766 155.014C370.273 158.432 388.687 162.575 397.454 142.948M376.339 171.504L401.979 151.394" stroke="#FFE5C9" strokeWidth="3.01641" />
-            <path d="M358.744 147.372L374.328 176.833M394.941 138.021L414.547 173.716" stroke="#FFCE99" strokeWidth="2.61422" />
-            <rect x="355.828" y="145.855" width="4.62516" height="6.435" rx="2.01094" transform="rotate(-21.5779 355.828 145.855)" fill="#FFE5C9" />
-            <rect x="392.628" y="137.209" width="4.62516" height="6.435" rx="2.01094" transform="rotate(-21.5779 392.628 137.209)" fill="#FFE5C9" />
-          </g>
-          <circle cx="415.05" cy="174.619" r="4.12242" fill="#4E4E68" />
-          <path d="M331.496 173.916C331.797 176.731 333.808 178.139 335.517 178.441L370.206 183.066C375.736 183.569 378.753 178.943 378.853 175.726C358.844 175.223 347.583 174.921 331.496 173.916Z" fill="#FFCE99" />
-          <path d="M457.28 118.816L428.925 151.293L433.048 157.326L489.253 182.362L457.28 118.816Z" fill="url(#bike_headlight_gradient)" fillOpacity="0.5" />
-          <path d="M429.127 150.991L425.809 151.594C429.026 153.002 433.149 156.923 433.651 157.527L433.35 154.41L429.127 150.991Z" fill="#FCD579" />
-          <circle cx="370.608" cy="175.022" r="4.12242" fill="#62657A" />
-          <g ref={bikePedalRef} className={styles.bike_pedal} id="bike_pedal_container">
-            <path d="M370.508 175.123V186.686" stroke="#484848" strokeWidth="1.00547" />
-            <g ref={bikePedalRectRef} className={styles.bike_pedal_rect} id="bike_pedal_rect">
-              <rect x="365.882" y="185.981" width="9.25031" height="3.61969" fill="#FF8500" />
-            </g>
-          </g>
-          <path d="M370.018 139.328H348.394C347.206 139.328 346.251 140.372 346.597 141.509C349.201 150.068 361.363 147.013 364.355 144.612C365.976 143.312 368.263 142.141 369.895 141.762C370.532 141.614 371.111 141.074 371.111 140.421C371.111 139.817 370.622 139.328 370.018 139.328Z" fill="#FF8500" />
-          <path d="M409.561 147.609L405.66 133.871C405.478 133.229 405.96 132.591 406.628 132.591H414.97C415.475 132.591 415.902 132.967 415.967 133.468L417.279 143.707C417.33 144.101 417.144 144.488 416.805 144.694L411.051 148.193C410.483 148.538 409.743 148.248 409.561 147.609Z" fill="#DD7300" />
-          <rect x="404.09" y="131.888" width="13.6744" height="2.61422" rx="1.30711" fill="#FF8500" />
-          <rect x="378.753" y="118.952" width="13.6744" height="2.61422" rx="1.30711" transform="rotate(-12.4615 378.753 118.952)" fill="#FF8500" />
+        <path d="M18.1875 36.5941L25.9296 57.0051L29.6498 54.6925L47.145 35.3875M85.755 26.2378L94.9048 24.9307L96.1113 29.0531L89.6763 33.7788" stroke="#484848" strokeWidth="1.00547" />
+        <path d="M83.3423 22.2156L79.7227 15.2779H83.3423V1.60352L74.6953 3.51391" stroke="#484848" strokeWidth="1.00547" />
+        <g id="bike-front-wheel">
+          <circle cx="26.131" cy="59.7198" r="20.3105" stroke="#62657A" strokeWidth="4.02188" />
+          <path d="M6.32324 52.4805C8.93746 45.844 14.7692 40.3139 21.6064 39.0068" stroke="#4E4E68" strokeWidth="0.603281" strokeMiterlimit="10" strokeLinecap="round" />
+          <path d="M8.03223 51.9772C9.74152 46.9498 14.7689 42.5258 19.5951 41.0176" stroke="#4E4E68" strokeWidth="0.603281" strokeMiterlimit="10" strokeLinecap="round" />
         </g>
+        <g id="bike-back-wheel">
+          <circle cx="102.949" cy="59.7198" r="20.3105" stroke="#62657A" strokeWidth="4.02188" />
+          <path d="M83.1416 52.4805C85.7558 45.844 91.5875 40.3139 98.4247 39.0068" stroke="#4E4E68" strokeWidth="0.603281" strokeMiterlimit="10" strokeLinecap="round" />
+          <path d="M84.8506 51.9772C86.5599 46.9498 91.5872 42.5258 96.4135 41.0176" stroke="#4E4E68" strokeWidth="0.603281" strokeMiterlimit="10" strokeLinecap="round" />
+        </g>
+        <path d="M57.9267 68.0777L23.7666 63.5085C21.3211 63.1814 19.4951 61.095 19.4951 58.6277C19.4951 55.9812 21.5869 53.808 24.2314 53.707L58.6706 52.3908C63.138 52.2201 66.8527 55.7955 66.8527 60.2662C66.8527 65.0339 62.6524 68.7098 57.9267 68.0777Z" fill="#FFE5C9" />
+        <path d="M49.3576 53.1844C44.7324 31.1648 7.83172 26.5398 2 56.7038" stroke="#FFE5C9" strokeWidth="2.61422" />
+        <path d="M122.377 45.6639C109.887 26.5401 74.6958 35.5891 79.1198 64.5466" stroke="#FFE5C9" strokeWidth="2.61422" />
+        <path d="M50.7656 40.0129C58.2731 43.4315 76.6866 47.574 85.4543 27.9473M64.3395 56.5026L89.9789 36.3932" stroke="#FFE5C9" strokeWidth="3.01641" />
+        <path d="M46.7432 32.3714L62.3279 61.8316M82.94 23.0205L102.547 58.7146" stroke="#FFCE99" strokeWidth="2.61422" />
+        <rect x="43.8271" y="30.8545" width="4.62516" height="6.435" rx="2.01094" transform="rotate(-21.5779 43.8271 30.8545)" fill="#FFE5C9" />
+        <rect x="80.6279" y="22.208" width="4.62516" height="6.435" rx="2.01094" transform="rotate(-21.5779 80.6279 22.208)" fill="#FFE5C9" />
+        <circle cx="103.05" cy="59.6195" r="4.12242" fill="#4E4E68" />
+        <path d="M19.4951 58.916C19.7968 61.7313 21.8077 63.139 23.517 63.4406L58.2057 68.0658C63.7357 68.5685 66.7521 63.9434 66.8527 60.7259C46.8439 60.2231 35.5826 59.9215 19.4951 58.916Z" fill="#FFCE99" />
+        <path d="M145.279 3.81641L116.925 36.293L121.047 42.3259L177.253 67.362L145.279 3.81641Z" fill="url(#bike_headlight_gradient)" fillOpacity="0.5" />
+        <path d="M117.126 35.9912L113.808 36.5945C117.025 38.0021 121.148 41.9235 121.65 42.5268L121.349 39.4098L117.126 35.9912Z" fill="#FCD579" />
+        <circle cx="58.6078" cy="60.0218" r="4.12242" fill="#62657A" />
+        <g ref={bikePedalRef} className={styles.bike_pedal} id="bike_pedal_container">
+          <path d="M58.5068 60.1221V71.685" stroke="#484848" strokeWidth="1.00547" />
+          <g ref={bikePedalRectRef} className={styles.bike_pedal_rect} id="bike_pedal_rect">
+            <rect x="53.8818" y="70.9814" width="9.25031" height="3.61969" fill="#FF8500" />
+          </g>
+        </g>
+        <path d="M58.0178 24.3271H36.3938C35.2052 24.3271 34.251 25.3712 34.5969 26.5083C37.2008 35.0674 49.3626 32.0121 52.3545 29.6115C53.9755 28.3108 56.2627 27.1396 57.8945 26.761C58.5311 26.6133 59.1104 26.0733 59.1104 25.4197C59.1104 24.8163 58.6213 24.3271 58.0178 24.3271Z" fill="#FF8500" />
+        <path d="M97.5602 32.6085L93.6594 18.8709C93.4771 18.229 93.9593 17.5908 94.6266 17.5908H102.969C103.474 17.5908 103.902 17.9667 103.966 18.4684L105.278 28.7071C105.329 29.101 105.143 29.4877 104.804 29.6941L99.0498 33.193C98.4822 33.5382 97.7417 33.2477 97.5602 32.6085Z" fill="#DD7300" />
+        <rect x="92.0898" y="16.8867" width="13.6744" height="2.61422" rx="1.30711" fill="#FF8500" />
+        <rect x="66.752" y="3.95117" width="13.6744" height="2.61422" rx="1.30711" transform="rotate(-12.4615 66.752 3.95117)" fill="#FF8500" />
       </g>
     </g>
   );
