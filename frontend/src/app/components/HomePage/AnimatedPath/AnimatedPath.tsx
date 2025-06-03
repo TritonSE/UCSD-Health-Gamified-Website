@@ -36,7 +36,7 @@ export default function AnimatedPath({
             bikeIsAnimating.current
           )
             return;
-          router.push(`/module9`);
+          router.push(`/final-test`);
           setUserData((prev) => ({...prev, currentModule: 9}));
         }}
       >

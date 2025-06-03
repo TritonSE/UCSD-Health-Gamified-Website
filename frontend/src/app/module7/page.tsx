@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
+import ModuleGate from "../components/ModuleGate/ModuleGate";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Sidebar from "../components/Sidebar/Sidebar";
 import BikeInjuries from "../components/module7/BikeInjuries";
@@ -12,7 +13,6 @@ import RoleModels from "../components/module7/RoleModels";
 import Suggestions from "../components/module7/Suggestions";
 
 import styles from "./mod7.module.css";
-import ModuleGate from "../components/ModuleGate/ModuleGate";
 
 export default function Module7() {
   return (

@@ -13,20 +13,25 @@ export default function ModuleGate({
   children: React.ReactNode;
   module: number;
 }) {
-  const { currentUser, loading } = useAuth();
+  const { currentUser, firebaseUser, loading } = useAuth();
   const [authenticated, setAuthenticated] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     if (loading) return;
 
-    if (!currentUser) {
-      router.push("/signin"); // not logged in, redirect to signin
+    if (!firebaseUser) {
+      router.push("/signin");
       return;
     }
 
-    if (currentUser.firstLogin){
-      router.push("/intro-video")
+    if (!firebaseUser.emailVerified) {
+      router.push("/signin");
+      return;
+    }
+
+    if (!currentUser) {
+      router.push("/signin"); // not logged in, redirect to signin
       return;
     }
 
@@ -35,19 +40,24 @@ export default function ModuleGate({
         const res = await get(`/api/user/get/${encodeURIComponent(currentUser.email)}`);
         // if (!res.ok) console.log(res);
 
-        const user = (await res.json()) as { module?: number };
+        const user = (await res.json()) as { module?: number; firstLogin?: boolean };
 
-        if (user.module === undefined || user.module < module) {
+        if (user.firstLogin) {
+          router.push("/intro-video");
+        }
+
+        if ((user.module === undefined || user.module < module) && !user.firstLogin) {
           router.push("/"); // unauthorized access, redirect to home
           return;
         }
+
         setAuthenticated(true);
       } catch (err) {
         console.error("ModuleGate fetch error:", err);
       }
     })();
   }, [currentUser, loading, module, router]);
-
+  console.log(authenticated);
   if (!authenticated) return;
   return <>{children}</>;
 }
