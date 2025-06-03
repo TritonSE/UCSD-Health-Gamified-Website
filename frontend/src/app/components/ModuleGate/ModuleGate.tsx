@@ -25,6 +25,11 @@ export default function ModuleGate({
       return;
     }
 
+    if (currentUser.firstLogin){
+      router.push("/intro-video")
+      return;
+    }
+
     void (async () => {
       try {
         const res = await get(`/api/user/get/${encodeURIComponent(currentUser.email)}`);
