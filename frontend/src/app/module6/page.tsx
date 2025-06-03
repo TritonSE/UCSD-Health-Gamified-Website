@@ -12,7 +12,7 @@ import styles from "./Module6.module.css";
 import BicycleSafetyFacts from "./components/BicycleSafetyFacts/BicycleSafetyFacts";
 import CrashProtocol from "./components/CrashProtocol/CrashProtocol";
 
-export default function Module2() {
+export default function Module6() {
   return (
     <ModuleGate module={6}>
       <div className={styles.container}>

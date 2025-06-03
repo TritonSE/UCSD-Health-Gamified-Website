@@ -46,26 +46,26 @@ export default function BicycleSafetyFacts() {
       <div id={styles.bottom_container}>
         <InjuredMascot />
         <div>
-          <svg
-            width="786"
-            height="176"
-            viewBox="0 0 786 176"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 176L23.635 139.876V8C23.635 3.58172 27.2167 0 31.6349 0H778C782.418 0 786 3.58173 786 8.00001V152.458C786 156.877 782.418 160.458 778 160.458H61.0112L0 176Z"
-              fill="#FFE5C9"
-            />
-            <foreignObject x="25" y="0" width="96.75%" height="90%">
-              <div>
-                <p>
-                  <b>Ride responsibly</b>, and remember: All states require bicyclists on the
-                  roadway to follow the same rules and responsibilities as motorists.
-                </p>
-              </div>
-            </foreignObject>
-          </svg>
+          <div className={styles.textbox_svg_container}>
+            <svg
+              width="786"
+              height="176"
+              viewBox="0 0 786 176"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 176L23.635 139.876V8C23.635 3.58172 27.2167 0 31.6349 0H778C782.418 0 786 3.58173 786 8.00001V152.458C786 156.877 782.418 160.458 778 160.458H61.0112L0 176Z"
+                fill="#FFE5C9"
+              />
+            </svg>
+            <div>
+              <p>
+                <b>Ride responsibly</b>, and remember: All states require bicyclists on the roadway
+                to follow the same rules and responsibilities as motorists.
+              </p>
+            </div>
+          </div>
           <div id={styles.resource_text_container}>
             <p>Resource for futher information</p>
             <a

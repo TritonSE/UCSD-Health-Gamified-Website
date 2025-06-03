@@ -9,9 +9,7 @@ export default function Home() {
   return (
     <ModuleGate module={0}>
       <main className={styles.main}>
-        <div className={styles.sidebarWrapper}>
-          <Sidebar />
-        </div>
+        <Sidebar />
         <ModuleMap />
       </main>
     </ModuleGate>
