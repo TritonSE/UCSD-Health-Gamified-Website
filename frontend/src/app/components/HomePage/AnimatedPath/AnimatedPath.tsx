@@ -16,11 +16,11 @@ export default function AnimatedPath({
   setUserData,
   bikeIsAnimating,
 }: AnimatedPathProps) {
-  const isModuleAccessible = modulePreview + 1 >= 9;
+  const isModuleAccessible = modulePreview >= 9;
   const router = useRouter();
   const getStarColor = () => {
-    if (modulePreview < 8) return "#B4B4B4";
-    return modulePreview === 8 ? "#FFBC00" : "#3BB966";
+    if (modulePreview < 9) return "#B4B4B4";
+    return modulePreview === 9 ? "#FFBC00" : "#3BB966";
   };
 
   return (
