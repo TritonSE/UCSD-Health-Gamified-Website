@@ -15,7 +15,7 @@ import ModuleMarker from "../ModuleMarker/ModuleMarker";
 import styles from "./ModuleMap.module.css";
 import { moduleMarkerData } from "./moduleMarkerData";
 
-export type ModuleNumbers = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+export type ModuleNumbers = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
 export type UserData = {
   currentModule: ModuleNumbers;
@@ -41,7 +41,7 @@ export default function ModuleMap() {
         if (!res.ok) console.log(res);
         const user = (await res.json()) as { module?: number };
         const curMod = Math.max(0, Math.min(10, user.module ?? 0)) as ModuleNumbers;
-        const lastMod = Math.max(0, Math.min(10, (user.module ?? 0) - 1)) as ModuleNumbers;
+        const lastMod = Math.max(0, Math.min(9, (user.module ?? 0) - 1)) as ModuleNumbers;
         setUserData({ currentModule: curMod, lastCompletedModule: lastMod });
       } catch (err) {
         console.log((err as Error).message);
