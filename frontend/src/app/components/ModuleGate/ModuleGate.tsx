@@ -57,7 +57,6 @@ export default function ModuleGate({
       }
     })();
   }, [currentUser, loading, module, router]);
-  console.log(authenticated);
   if (!authenticated) return;
   return <>{children}</>;
 }
