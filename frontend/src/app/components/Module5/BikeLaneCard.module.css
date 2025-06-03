@@ -10,13 +10,11 @@
   position: absolute;
 
   margin: auto;
-  width: 912px;
+  width: 962px;
   opacity: 0;
   padding-left: 45px;
   padding-right: 45px;
   padding-top: 88px;
-  /* padding-right: 135px;
-  padding-top: 88px; */
 }
 
 .infoCard.active {

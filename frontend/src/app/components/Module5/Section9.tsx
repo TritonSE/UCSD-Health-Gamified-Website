@@ -31,9 +31,7 @@ export default function Section9() {
           </div>
         </div>
         <div className={styles.column}>
-          <h1>
-            <b>REMEMBER:</b>
-          </h1>
+          <h1>REMEMBER:</h1>
           <div className={styles.box3}>
             <p>
               Riding an e-bike is a{" "}

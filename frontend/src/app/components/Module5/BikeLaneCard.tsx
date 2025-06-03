@@ -29,36 +29,4 @@ const BikeLaneCard: React.FC<InfoCardProps5> = ({ active }) => {
   );
 };
 
-// const InfoCard5_3: React.FC<InfoCardProps5> = ({ title, content, image, active }) => {
-//   return (
-//     <div className={`${styles.infoCard} ${active ? styles.active : ""}`}>
-//       <div className={`${styles.container} ${active ? styles.active : ""}`}>
-//         <div className={styles.content}>
-//           <h1>{title}</h1>
-//           <p>{content}</p>
-//         </div>
-//         <div className={styles.content2}>
-//           <Image className={styles.image} src={image} width={664} height={468} alt="" />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// const InfoCard5_4: React.FC<InfoCardProps5> = ({ title, content, image, active }) => {
-//   return (
-//     <div className={`${styles.infoCard} ${active ? styles.active : ""}`}>
-//       <div className={`${styles.container} ${active ? styles.active : ""}`}>
-//         <div className={styles.content}>
-//           <h1>{title}</h1>
-//           <p>{content}</p>
-//         </div>
-//         <div className={styles.content2}>
-//           <Image className={styles.image} src={image} width={664} height={468} alt="" />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
 export default BikeLaneCard;

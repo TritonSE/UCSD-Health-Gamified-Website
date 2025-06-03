@@ -7,7 +7,7 @@ export default function MySVGComponent() {
   const [hovered, setHovered] = useState<null | "circle1" | "circle2">(null);
 
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       <svg
         width="924"
         height="490"
@@ -277,8 +277,9 @@ export default function MySVGComponent() {
         <g
           style={{
             transition: "transform 0.5s ease, opacity 0.5s ease",
-            transformOrigin: "429.912px 145.592px",
-            transform: hovered === "circle1" ? "scale(1.3)" : "scale(1)",
+            transformBox: "fill-box",
+            transformOrigin: "0px 0px",
+            transform: hovered === "circle1" ? "scale(1.2)" : "scale(1)",
             opacity: hovered === "circle2" ? 0.3 : 1,
           }}
         >
@@ -298,7 +299,8 @@ export default function MySVGComponent() {
         <path
           style={{
             transition: "transform 0.5s ease, opacity 0.5s ease",
-            transformOrigin: "608.998px 138.088px",
+            transformBox: "fill-box",
+            transformOrigin: "0px 0px",
             transform: hovered === "circle2" ? "scale(1.05)" : "scale(1)",
             opacity: hovered === "circle1" ? 0.3 : 1,
           }}
@@ -313,9 +315,11 @@ export default function MySVGComponent() {
         <path
           style={{
             transition: "transform 0.5s ease, opacity 0.5s ease",
-            transformOrigin: "629.594px 70.170px",
+            transformBox: "fill-box",
+            transformOrigin: "0px 0px",
             transform: hovered === "circle2" ? "scale(1.2) rotate(-15deg)" : "scale(1)",
             opacity: hovered === "circle1" ? 0.3 : 1,
+            position: "absolute",
           }}
           id="music1"
           d="M618.863 77.7673C622.308 78.3743 625.603 76.0667 626.21 72.6221L629.002 56.7808L642.155 64.3667L640.11 75.9686C639.264 75.2389 638.239 74.7485 637.14 74.5484C633.696 73.9414 630.401 76.249 629.794 79.6936C629.186 83.1383 631.494 86.4333 634.939 87.0403C638.383 87.6474 641.678 85.3398 642.285 81.8952L645.47 63.8241C645.526 63.5038 645.483 63.1739 645.345 62.8792C645.208 62.5846 644.983 62.3393 644.701 62.1768L628.626 52.9037C628.405 52.7763 628.157 52.704 627.902 52.6929C627.648 52.6817 627.394 52.7321 627.163 52.8397C626.932 52.9474 626.731 53.1091 626.575 53.3111C626.42 53.5132 626.316 53.7497 626.272 54.0006L624.034 66.6955C623.189 65.9658 622.163 65.4755 621.065 65.2754C617.62 64.6683 614.325 66.9759 613.718 70.4205C613.111 73.8652 615.418 77.1602 618.863 77.7673Z"
@@ -325,7 +329,8 @@ export default function MySVGComponent() {
         <path
           style={{
             transition: "transform 0.5s ease, opacity 0.5s ease",
-            transformOrigin: "660.260px 108.818px",
+            transformBox: "fill-box",
+            transformOrigin: "0px 0px",
             transform: hovered === "circle2" ? "scale(1.2) rotate(10deg)" : "scale(1)",
             opacity: hovered === "circle1" ? 0.3 : 1,
           }}
