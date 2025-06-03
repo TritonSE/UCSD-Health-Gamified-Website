@@ -33,7 +33,7 @@
   align-self: stretch;
   opacity: 1; /* Ensure it starts visible */
   transition:
-    width 0.3s ease-in-out,
+    width 0.225s ease,
     opacity 0.3s ease-in-out,
     transform 0.3s ease-in-out,
     max-height 0.3s ease-in-out;
@@ -200,5 +200,27 @@
 }
 
 .hover:hover::before {
+  opacity: 1; /* Make it visible on hover */
+}
+
+.linehover {
+  position: relative;
+}
+
+.linehover::before {
+  content: "";
+  position: absolute;
+  border-radius: 2px 0px 0px 2px;
+  top: -8px; /* Extend beyond the module's padding */
+  bottom: -12px; /* Extend beyond the module's padding */
+  left: -20px; /* Extend beyond the sidebar's padding */
+  right: -20px; /* Extend beyond the sidebar's padding */
+  background: rgba(187, 213, 103, 0.25); /* Opaque light green background */
+  z-index: -1; /* Place behind the module content */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.225s ease-in-out; /* Smooth transition */
+}
+
+.linehover:hover::before {
   opacity: 1; /* Make it visible on hover */
 }
