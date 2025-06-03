@@ -1,9 +1,9 @@
 .container {
   position: relative;
   width: 100%;
-  min-width: 800px;
+  min-width: 680px;
   height: auto;
-  min-height: 564px;
+  min-height: 480px;
 }
 
 .leftGraphic {
@@ -30,8 +30,8 @@
 }
 
 .rightArm {
-  top: 405px;
-  left: 270px;
+  top: 340px;
+  left: 230px;
   z-index: 0;
   position: absolute;
   -webkit-user-drag: none;
@@ -40,8 +40,8 @@
 }
 
 .certifComplete {
-  top: 56px;
-  left: 341px;
+  top: 45px;
+  left: 295px;
   z-index: 0;
   position: absolute;
   -webkit-user-drag: none;
@@ -50,8 +50,8 @@
 }
 
 .awardTo {
-  top: 205px;
-  left: 341px;
+  top: 155px;
+  left: 295px;
   z-index: 0;
   position: absolute;
   -webkit-user-drag: none;
@@ -61,8 +61,8 @@
 
 .name {
   position: absolute;
-  top: 235px;
-  left: 341px;
+  top: 195px;
+  left: 295px;
   z-index: 0;
   width: 440px;
   max-height: 47px;
@@ -74,9 +74,8 @@
 }
 
 .line {
-  top: 290px;
-  left: 341px;
-  width: 403px;
+  top: 225px;
+  left: 295px;
   height: auto;
   z-index: 0;
   position: absolute;
@@ -86,8 +85,8 @@
 }
 
 .recognition {
-  top: 300px;
-  left: 341px;
+  top: 230px;
+  left: 295px;
   z-index: 0;
   position: absolute;
   -webkit-user-drag: none;
@@ -96,8 +95,8 @@
 }
 
 .success {
-  top: 330px;
-  left: 341px;
+  top: 260px;
+  left: 295px;
   z-index: 0;
   position: absolute;
   -webkit-user-drag: none;
@@ -106,8 +105,8 @@
 }
 
 .date {
-  top: 417px;
-  left: 341px;
+  top: 345px;
+  left: 295px;
   z-index: 0;
   position: absolute;
   -webkit-user-drag: none;
@@ -116,8 +115,8 @@
 }
 
 .dateText {
-  top: 395px;
-  left: 341px;
+  top: 325px;
+  left: 295px;
   z-index: 0;
   position: absolute;
   font-family: "DM Sans";
@@ -127,8 +126,8 @@
 }
 
 .signature {
-  top: 417px;
-  left: 660px;
+  top: 345px;
+  left: 535px;
   z-index: 0;
   position: absolute;
   -webkit-user-drag: none;
@@ -137,8 +136,8 @@
 }
 
 .signaturePic {
-  top: 365px;
-  left: 650px;
+  top: 295px;
+  left: 515px;
   z-index: 0;
   position: absolute;
   font-family: "DM Sans";
@@ -155,11 +154,11 @@
 .logos {
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  top: 475px;
-  left: 321px;
+  gap: 15px;
+  top: 395px;
+  left: 270px;
   z-index: 0;
-  width: 454px;
+  width: 380px;
   height: 54px;
   align-items: center;
   justify-content: center;

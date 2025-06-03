@@ -55,66 +55,68 @@ export default function CertificatePage() {
   }, []);
 
   return (
-    <main>
-      <div className={styles.container}>
-        <div className={styles.sidebar}>
-          <Sidebar />
-        </div>
-        <div className={styles.content}>
-          <div className={styles.row}>
-            <Image
-              src="/certificate/star1.svg"
-              alt="Star"
-              width={35}
-              height={35}
-              className={styles.star1}
-            />
+    <main className={styles.main}>
+      <div className={styles.sidebar}>
+        <Sidebar />
+      </div>
+      <div className={styles.content}>
+        <div className={styles.congratsStarsWrapper}>
+          <div className={styles.congratsWrapper}>
+            <div className={styles.row}>
+              <Image
+                src="/certificate/star1.svg"
+                alt="Star"
+                width={35}
+                height={35}
+                className={styles.star1}
+              />
 
-            <p className={styles.congrats}>
-              Congratulations! You’ve officially completed the E-Bike safety course!
+              <p className={styles.congrats}>
+                Congratulations! You’ve officially completed the E-Bike safety course!
+              </p>
+
+              <Image
+                src="/certificate/star2.svg"
+                alt="Star"
+                width={32}
+                height={32}
+                className={styles.star2}
+              />
+
+              <Image
+                src="/certificate/star3.svg"
+                alt="Star"
+                width={50}
+                height={50}
+                className={styles.star3}
+              />
+            </div>
+
+            <div className={styles.certificateWrapper}>
+              <div ref={certificateRef} className={styles.certificate}>
+                <Certificate name={name} />
+              </div>
+
+              <div className={styles.icons}>
+                <button
+                  className={styles.button}
+                  onClick={() => {
+                    window.print();
+                  }}
+                >
+                  <Image src="/certificate/print.svg" alt="Print" width={24} height={24} />
+                </button>
+
+                <button className={styles.button} onClick={handleDownloadPDF}>
+                  <Image src="/certificate/download.svg" alt="Save" width={24} height={24} />
+                </button>
+              </div>
+            </div>
+
+            <p className={styles.printInstruction}>
+              Save this certificate and show it to the school for an E bike parking permit.
             </p>
-
-            <Image
-              src="/certificate/star2.svg"
-              alt="Star"
-              width={32}
-              height={32}
-              className={styles.star2}
-            />
-
-            <Image
-              src="/certificate/star3.svg"
-              alt="Star"
-              width={50}
-              height={50}
-              className={styles.star3}
-            />
           </div>
-
-          <div className={styles.certificateWrapper}>
-            <div ref={certificateRef} className={styles.certificate}>
-              <Certificate name={name} />
-            </div>
-
-            <div className={styles.icons}>
-              <button
-                className={styles.button}
-                onClick={() => {
-                  window.print();
-                }}
-              >
-                <Image src="/certificate/print.svg" alt="Print" width={24} height={24} />
-              </button>
-
-              <button className={styles.button} onClick={handleDownloadPDF}>
-                <Image src="/certificate/download.svg" alt="Save" width={24} height={24} />
-              </button>
-            </div>
-          </div>
-
-          <p className={styles.printInstruction}>
-            Be sure to print this certificate out and show it to the school for a parking permit.
-          </p>
         </div>
       </div>
     </main>

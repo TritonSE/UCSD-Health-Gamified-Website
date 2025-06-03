@@ -15,12 +15,6 @@
   justify-content: right;
 }
 
-.wrapper {
-  width: 856px;
-  overflow-x: auto;
-  /* background-color: red; */
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -28,6 +22,9 @@
   align-items: center;
   overflow-x: auto;
   width: 856px;
+  margin-inline: auto;
+  position: relative;
+  margin-top: 2rem;
 }
 
 .svg {
@@ -36,8 +33,12 @@
 }
 
 .descriptionContainer {
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 502px;
+  height: 311px;
+  padding: 2.5rem 3rem;
 }
 
 .description {
@@ -59,51 +60,8 @@
   letter-spacing: 0.8px;
 }
 
-.buttonInitial {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 100px;
-  background: var(--Functional-Disabled, #d8d8d8);
-  display: flex;
-  padding: 12px 24px;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  flex: 1 0 0;
-  align-self: stretch;
-  border-width: 0px;
-}
-
-.buttonFinal {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 100px;
-  background: var(--Secondary-Accent1, #1c3a29);
-  display: flex;
-  padding: 12px 24px;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  flex: 1 0 0;
-  align-self: stretch;
-  border-width: 0px;
-  cursor: pointer;
-}
-
-.buttonText {
-  color: var(--Neutral-White, #fff);
-  text-align: center;
-
-  /* Body/Medium (Reg) */
-  font-family: "DM Sans";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 150% */
+#video_intro_button {
+  position: absolute;
+  bottom: 0;
+  right: 354px;
 }

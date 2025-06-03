@@ -1,12 +1,29 @@
 .svg_container {
   width: 100%;
-  overflow-y: hidden;
+  overflow-x: auto;
+  overflow-y: auto;
   position: relative;
+  display: flex;
+}
+
+.svg_container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.svg_container::-webkit-scrollbar-thumb {
+  background-color: var(--Secondary-Neutral-Gray4, #909090);
+  border-radius: 25px;
+}
+.svg_container::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
 .svg {
-  height: 100%;
-  width: 100%;
+  min-width: 1000px;
+  width: 1000px;
+  min-height: 900px;
+  height: 900px;
+  margin-inline: auto;
 }
 
 #path_star {

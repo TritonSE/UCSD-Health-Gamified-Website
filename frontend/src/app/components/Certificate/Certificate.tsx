@@ -18,8 +18,8 @@ export default function Certificate({ name }: CertificateNameProps) {
   const adjustFontSize = () => {
     if (!nameRef.current) return;
 
-    let fontSize = 36;
-    const baseTop = 235;
+    let fontSize = 30.6;
+    const baseTop = 175;
 
     const maxHeight = 47;
     const nameHeight = nameRef.current.scrollHeight;
@@ -60,8 +60,8 @@ export default function Certificate({ name }: CertificateNameProps) {
           <Image
             src="/certificate/left-frame.svg"
             alt="Timmy"
-            width={291}
-            height={564}
+            width={245}
+            height={480}
             className={styles.leftFrame}
             aria-hidden
           />
@@ -78,8 +78,8 @@ export default function Certificate({ name }: CertificateNameProps) {
           <Image
             src="/certificate/certif-complete-text.svg"
             alt="Certificate of Completion"
-            width={365}
-            height={122}
+            width={302}
+            height={90}
             style={{ objectFit: "contain" }}
             className={styles.certifComplete}
             aria-hidden
@@ -88,7 +88,7 @@ export default function Certificate({ name }: CertificateNameProps) {
           <Image
             src="/certificate/award-to.svg"
             alt="Certificate is awarded to"
-            width={317}
+            width={265}
             height={21}
             className={styles.awardTo}
             aria-hidden
@@ -101,7 +101,7 @@ export default function Certificate({ name }: CertificateNameProps) {
           <Image
             src="/certificate/line.svg"
             alt="Line"
-            width={370}
+            width={328}
             height={1}
             className={styles.line}
             aria-hidden
@@ -110,7 +110,7 @@ export default function Certificate({ name }: CertificateNameProps) {
           <Image
             src="/certificate/recognition.svg"
             alt="In recognition of..."
-            width={327}
+            width={266}
             height={14}
             className={styles.recognition}
             aria-hidden
@@ -119,7 +119,7 @@ export default function Certificate({ name }: CertificateNameProps) {
           <Image
             src="/certificate/success.svg"
             alt="Successful completion"
-            width={390}
+            width={328}
             height={28}
             className={styles.success}
             aria-hidden
@@ -142,7 +142,7 @@ export default function Certificate({ name }: CertificateNameProps) {
             <Image
               src="/certificate/date.svg"
               alt="Date"
-              width={100}
+              width={85}
               height={26}
               className={styles.date}
               aria-hidden
@@ -151,7 +151,7 @@ export default function Certificate({ name }: CertificateNameProps) {
             <Image
               src="/certificate/signature.svg"
               alt="Signature"
-              width={100}
+              width={85}
               height={26}
               className={styles.signature}
               aria-hidden
@@ -162,23 +162,23 @@ export default function Certificate({ name }: CertificateNameProps) {
             <Image
               src="/certificate/UCSDHealth.svg"
               alt="Logos"
-              width={180}
-              height={29}
+              width={153}
+              height={25}
               aria-hidden
             />
-            <Image src="/certificate/SKlogo.png" alt="Logos" width={49} height={46} aria-hidden />
+            <Image src="/certificate/SKlogo.png" alt="Logos" width={42} height={40} aria-hidden />
             <Image
               src="/certificate/Rady'sChildrenHealth.svg"
               alt="Logos"
-              width={100}
-              height={51}
+              width={71}
+              height={29}
               aria-hidden
             />
             <Image
               src="/certificate/Primary-Logo-TealGreen.png"
               alt="Logos"
-              width={74}
-              height={54}
+              width={63}
+              height={45}
               aria-hidden
             />
           </div>
