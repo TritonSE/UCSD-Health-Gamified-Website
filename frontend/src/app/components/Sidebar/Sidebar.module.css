@@ -10,8 +10,7 @@
   padding-right: 20px;
   color: white;
   overflow-y: auto;
-  flex-shrink: 0;
-  transition: width 0.3s ease;
+  transition: max-width 0.3s ease;
 }
 
 .nav.collapsed {
