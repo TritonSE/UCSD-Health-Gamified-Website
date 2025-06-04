@@ -132,7 +132,7 @@ export const FinalTest = () => {
         title="Final Test"
         description="There is no time limit. You have unlimited attempts. However you will not be able to revisit previous attempts."
         questions={finalTestQuestions}
-        isFinalTest
+        isFinalTest={true}
       />
     </div>
   );

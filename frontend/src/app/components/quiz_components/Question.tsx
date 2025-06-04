@@ -12,6 +12,7 @@ type QuestionProps = {
   isSubmitted: boolean;
   isCorrect: boolean;
   correctAnswer: string;
+  isFinalTest: boolean;
 };
 
 export const Question = ({
@@ -22,6 +23,7 @@ export const Question = ({
   isSubmitted,
   isCorrect,
   correctAnswer,
+  isFinalTest,
 }: QuestionProps) => {
   const letters = ["A.", "B.", "C.", "D.", "E."];
 
@@ -36,6 +38,8 @@ export const Question = ({
 
     return selected === letters[buttonIndex] ? "selected" : "primary";
   };
+
+  const showIncorrect = isSubmitted && !isFinalTest;
 
   const correctAnswerIndex = letters.indexOf(correctAnswer);
   const correctAnswerText = correctAnswerIndex !== -1 ? options[correctAnswerIndex] : "";
@@ -57,7 +61,7 @@ export const Question = ({
           />
         ))}
       </div>
-      {isSubmitted && <Incorrect correct={isCorrect} message={incorrectDesc} />}
+      {showIncorrect && <Incorrect correct={isCorrect} message={incorrectDesc} />}
     </div>
   );
 };

@@ -256,6 +256,7 @@ export const Quiz = ({
                       isSubmitted={submitted}
                       isCorrect={selectedAnswers[index]?.[0] === q.correctAnswer}
                       correctAnswer={q.correctAnswer as string}
+                      isFinalTest={isFinalTest}
                     />
                   ),
                 )}

@@ -6,7 +6,7 @@
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  border: 1px solid #bbd567;
+  border: 3px solid #bbd567;
   box-sizing: border-box;
   border-radius: 16px;
 }
