@@ -93,8 +93,8 @@ export default function CertificatePage() {
             </div>
 
             <div className={styles.certificateWrapper}>
-              <div ref={certificateRef} className={styles.certificate}>
-                <Certificate name={name} />
+              <div className={styles.certificate}>
+                <Certificate name={name} certificateRef={certificateRef} />
               </div>
 
               <div className={styles.icons}>

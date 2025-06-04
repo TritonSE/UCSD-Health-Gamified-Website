@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef } from "react";
 
 import styles from "./Certificate.module.css";
 
 export type CertificateNameProps = {
   name: string;
+  certificateRef: RefObject<HTMLDivElement>;
 };
 
-export default function Certificate({ name }: CertificateNameProps) {
+export default function Certificate({ name, certificateRef }: CertificateNameProps) {
   const nameRef = useRef<HTMLDivElement>(null);
 
   const today = new Date();
@@ -55,7 +56,7 @@ export default function Certificate({ name }: CertificateNameProps) {
 
   return (
     <main>
-      <div className={styles.container}>
+      <div ref={certificateRef} className={styles.container}>
         <div className={styles.leftGraphic}>
           <Image
             src="/certificate/left-frame.svg"
