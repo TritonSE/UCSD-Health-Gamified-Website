@@ -198,21 +198,19 @@ export const Quiz = ({
       {!starting && <TitleScreen handleStart={handleStart} text={titleScreenText} />}
       {starting && (
         <div className={styles.exitQuiz}>
-          {!submitted && (
-            <div className={styles.exit}>
-              <Image
-                src={"/close.svg"}
-                width={24}
-                height={24}
-                alt="Exit Image"
-                style={{ cursor: "pointer" }}
-                onClick={handlePressCancel}
-              />
-              <span className={styles.exitText} onClick={handlePressCancel}>
-                Exit Quiz
-              </span>
-            </div>
-          )}
+          <div className={styles.exit}>
+            <Image
+              src={"/close.svg"}
+              width={24}
+              height={24}
+              alt="Exit Image"
+              style={{ cursor: "pointer" }}
+              onClick={handlePressCancel}
+            />
+            <span className={styles.exitText} onClick={handlePressCancel}>
+              Exit Quiz
+            </span>
+          </div>
           <div className={styles.entireQuiz}>
             {submitted && <Grade score={score} />}
             <div className={styles.quizBox}>
