@@ -190,72 +190,7 @@ export default function GraphSVG({
         <rect x="411.5" y="90.5" width="41" height="41" rx="20.5" stroke="white" stroke-width="5" />
         <rect x="607.5" y="99.5" width="41" height="41" rx="17.5" fill="#BBD567" />
         <rect x="607.5" y="99.5" width="41" height="41" rx="20.5" stroke="white" stroke-width="5" />
-        {CIRCLE_DATA.map(({ x, y, number }) => {
-          const num = parseInt(number);
-          const lastEverActivated = inactiveCircles.length > 0 ? Math.max(...inactiveCircles) : 0;
-          const clickable =
-            num <= lastEverActivated + 1 || (inactiveCircles.length === 0 && num === 1);
-          console.log("Inactive circles", inactiveCircles);
-          console.log("Active circles", activeCircles);
-          return (
-            <g
-              className={styles.svg_circle}
-              key={number}
-              onClick={
-                clickable
-                  ? () => {
-                      handleCircleClick(number);
-                    }
-                  : undefined
-              }
-              onMouseEnter={
-                clickable
-                  ? () => {
-                      setHoveredCircle(num);
-                    }
-                  : undefined
-              }
-              onMouseLeave={
-                clickable
-                  ? () => {
-                      setHoveredCircle(null);
-                    }
-                  : undefined
-              }
-              aria-selected={inactiveCircles.includes(num)}
-              style={{
-                cursor: clickable ? "pointer" : "not-allowed",
-                opacity: clickable ? 1 : 0.5,
-              }}
-            >
-              <circle
-                cx={x}
-                cy={y}
-                r="17.5"
-                fill={
-                  activeCircles.includes(parseInt(number))
-                    ? "#1C3A29"
-                    : hoveredCircle === parseInt(number)
-                      ? "#77AC1B"
-                      : "#BBD567"
-                }
-              />
-              <text
-                x={x}
-                y={y}
-                textAnchor="middle"
-                dominantBaseline="middle"
-                fontSize="14"
-                fill="#fff"
-                fontWeight="bold"
-                pointerEvents="none"
-              >
-                {num}
-              </text>
-            </g>
-          );
-        })}
-        {/* {CIRCLE_DATA.map(({ x, y, number }) => (
+        {CIRCLE_DATA.map(({ x, y, number }) => (
           <g
             className={styles.svg_circle}
             key={number}
@@ -270,9 +205,20 @@ export default function GraphSVG({
             }}
             aria-selected={inactiveCircles.includes(parseInt(number))}
           >
-            <circle cx={x} cy={y} r="15" fill={"#BBD567"} />
+            <circle
+              cx={x}
+              cy={y}
+              r="16.25"
+              fill={
+                activeCircles.includes(parseInt(number))
+                  ? "#1C3A29"
+                  : hoveredCircle === parseInt(number)
+                    ? "#77AC1B"
+                    : "#BBD567"
+              }
+            />
           </g>
-        ))} */}
+        ))}
       </g>
       <defs>
         <clipPath id="clip0_7640_36368">

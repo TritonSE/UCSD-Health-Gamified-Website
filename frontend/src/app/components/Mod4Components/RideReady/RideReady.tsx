@@ -3,7 +3,6 @@
 import { useState } from "react";
 import styles from "./RideReady.module.css";
 import GraphSVG from "./Graph";
-// import { parse } from "path";
 
 type CircleData = {
   text: string;
@@ -91,35 +90,17 @@ export default function RideReady() {
 
   const handleCircleClick = (number: string) => {
     const parsedNumber = parseInt(number);
-
-    // If all circles are active and user clicks circle 1, reset to only circle 1
-    // if (activeCircles.length === 5 && parsedNumber === 1) {
-    //   setActiveCircles([1]);
-    //   setInactiveCircles([1]);
-    //   return;
-    // }
-
-    // Only allow clicking the next circle in sequence
-    if (activeCircles.includes(parsedNumber)) {
-      setActiveCircles((prev) => prev.filter((num) => num !== parsedNumber));
-    } else if (
-      inactiveCircles.length > 0 &&
-      parsedNumber === Math.max(...inactiveCircles) + 1 &&
-      CIRCLE_DATA[parsedNumber]
-    ) {
-      setActiveCircles((prev) => [...prev, parsedNumber]);
-      setInactiveCircles((prev) => [...prev, parsedNumber]);
-    } else if (activeCircles.length === 0 && parsedNumber === 1) {
-      setActiveCircles((prev) => [...prev, parsedNumber]);
-      if (!inactiveCircles.includes(parsedNumber)) {
-        setInactiveCircles((prev) => [...prev, parsedNumber]);
-      }
-    } else if (
-      inactiveCircles.length > 0 &&
-      parsedNumber <= Math.max(...inactiveCircles) &&
-      !activeCircles.includes(parsedNumber)
-    ) {
-      setActiveCircles((prev) => [...prev, parsedNumber]);
+    if (CIRCLE_DATA[parsedNumber]) {
+      setActiveCircles((prev) =>
+        prev.includes(parsedNumber)
+          ? prev.filter((num) => num !== parsedNumber)
+          : [...prev, parsedNumber],
+      );
+      setInactiveCircles((prev) =>
+        prev.includes(parsedNumber)
+          ? prev.filter((num) => num !== parsedNumber)
+          : [...prev, parsedNumber],
+      );
     }
   };
 
@@ -127,7 +108,7 @@ export default function RideReady() {
     <section className={styles.container}>
       <div className={styles.header_container}>
         <h2>5. Ride Ready</h2>
-        <p>Click on the green circles in order to check your understanding!</p>
+        <p>Click on the green circles to check your understanding!</p>
       </div>
       <div className={styles.graphContainer}>
         <GraphSVG

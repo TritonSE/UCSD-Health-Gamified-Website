@@ -10,6 +10,7 @@
 }
 
 .svg_circle[aria-selected="true"] {
+  scale: 1.1;
   fill: #1c3a29;
 }
 
