@@ -1,0 +1,113 @@
+.container {
+  position: relative;
+  padding: 20px;
+}
+
+.header_container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header_container h2 {
+  margin-top: 20px;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.header_container p {
+  font-size: 18px;
+  color: #000000;
+}
+
+.graphContainer {
+  position: relative;
+}
+
+.textbox {
+  height: 80px;
+  position: relative;
+  background: transparent;
+  /* background-color: red; */
+  border-radius: 8px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin: 0 auto;
+}
+
+.textboxContent {
+  color: #000;
+  font-family: "DM Sans";
+  font-size: 14.609px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.478px; /* 133.333% */
+}
+
+#left_button {
+  position: absolute;
+  left: -11px;
+  display: flex;
+  width: 22px;
+  height: 22px;
+  padding: 5px;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  background: var(--Secondary-Accent1, #1c3a29);
+}
+
+#right_button {
+  position: absolute;
+  right: -11px;
+  display: flex;
+  width: 22px;
+  height: 22px;
+  padding: 5px;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  background: var(--Secondary-Accent1, #1c3a29);
+}
+
+#main_bike {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}
+
+#pothole {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}
+
+#puddle {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}
+
+#road_container {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}
+
+#road_lines {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}
+
+#sand {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}

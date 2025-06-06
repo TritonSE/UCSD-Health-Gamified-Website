@@ -8,6 +8,7 @@ import FollowTheLaw from "../components/Mod4Components/FollowTheLaw/FollowTheLaw
 import BePredictable from "../components/Mod4Components/BePredictable/BePredictable";
 import BeVisible from "../components/Mod4Components/BeVisible/BeVisible";
 import RideReady from "../components/Mod4Components/RideReady/RideReady";
+import ThinkAhead from "../components/Mod4Components/ThinkAhead/ThinkAhead";
 
 import styles from "./mod4.module.css";
 
@@ -19,8 +20,9 @@ export default function Module4() {
         <SectionPage />
         <FollowTheLaw />
         <BePredictable />
-        <BeVisible/>
-        <RideReady/>
+        <BeVisible />
+        <ThinkAhead />
+        <RideReady />
       </ModuleSliderContainer>
     </div>
   );
