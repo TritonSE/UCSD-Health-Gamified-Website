@@ -31,4 +31,5 @@
   display: flex;
   background-color: #bbd567;
   height: 100vh;
+  overflow: hidden;
 }

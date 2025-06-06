@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import ForgotPasswordEmailSent from "../components/ForgotPasswordEmailSent";
 import ForgotPasswordForm from "../components/ForgotPasswordForm";
-import WelcomePanel from "../components/WelcomePanel";
+import WelcomePanel from "../components/WelcomePanel/WelcomePanel";
 
 import styles from "./ForgotPassword.module.css";
 

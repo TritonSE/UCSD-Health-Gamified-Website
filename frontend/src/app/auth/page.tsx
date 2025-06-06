@@ -4,7 +4,7 @@ import { applyActionCode } from "firebase/auth";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-import WelcomePanel from "../components/WelcomePanel";
+import WelcomePanel from "../components/WelcomePanel/WelcomePanel";
 // import { useAuth } from "../contexts/AuthContext";
 import { auth } from "../firebase-config.js";
 

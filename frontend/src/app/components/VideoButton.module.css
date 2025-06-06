@@ -1,0 +1,71 @@
+.start_button {
+  border: none;
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  display: flex;
+  padding: 12px 24px;
+  gap: 6px;
+  position: relative;
+  width: fit-content;
+  margin-left: auto;
+}
+
+.start_button p,
+.start_button svg {
+  z-index: 1;
+}
+
+.start_button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1c3a29;
+  transform: scaleX(0);
+  z-index: 0;
+  transform-origin: left;
+  animation: fill var(--disabled-duration, 5s) linear forwards;
+  animation-play-state: var(--animation-play-state);
+}
+
+@keyframes fill {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.buttonInitial {
+  background: var(--Functional-Disabled, #d8d8d8);
+}
+
+.buttonInitial:hover {
+  cursor: not-allowed;
+}
+
+.buttonFinal {
+  background: var(--Secondary-Accent1, #1c3a29);
+}
+
+.buttonFinal:hover {
+  cursor: pointer;
+}
+
+.buttonText {
+  color: var(--Neutral-White, #fff);
+  text-align: center;
+
+  /* Body/Medium (Reg) */
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}

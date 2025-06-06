@@ -24,7 +24,7 @@
 .titleContainer {
   display: flex;
   width: 100%;
-  justify-content: left;
+  justify-content: center;
 }
 
 .ytContainer {
@@ -35,6 +35,7 @@
   overflow-x: auto;
   align-items: center;
   white-space: nowrap;
+  margin-bottom: 1.5rem;
 }
 
 .wrapper {
@@ -58,53 +59,4 @@
   /* width: 100%; */
   margin-left: auto;
   margin-right: 0;
-}
-
-.buttonInitial {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 100px;
-  background: var(--Functional-Disabled, #d8d8d8);
-  display: flex;
-  padding: 12px 24px;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  flex: 1 0 0;
-  align-self: stretch;
-  border-width: 0px;
-}
-
-.buttonFinal {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 100px;
-  background: var(--Secondary-Accent1, #1c3a29);
-  display: flex;
-  padding: 12px 24px;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  flex: 1 0 0;
-  align-self: stretch;
-  border-width: 0px;
-  cursor: pointer;
-}
-
-.buttonText {
-  color: var(--Neutral-White, #fff);
-  text-align: center;
-
-  /* Body/Medium (Reg) */
-  font-family: "DM Sans";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 150% */
 }

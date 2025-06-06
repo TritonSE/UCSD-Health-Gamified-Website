@@ -1,7 +1,7 @@
 "use client";
 
 import EmailVerifiedPanel from "../components/EmailVerifiedPanel";
-import WelcomePanel from "../components/WelcomePanel";
+import WelcomePanel from "../components/WelcomePanel/WelcomePanel";
 
 import styles from "./EmailVerified.module.css";
 

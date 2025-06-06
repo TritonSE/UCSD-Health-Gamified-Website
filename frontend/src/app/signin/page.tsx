@@ -1,5 +1,5 @@
 import SignInPanel from "../components/SignInPanel";
-import WelcomePanel from "../components/WelcomePanel";
+import WelcomePanel from "../components/WelcomePanel/WelcomePanel";
 
 import styles from "./SignIn.module.css";
 
