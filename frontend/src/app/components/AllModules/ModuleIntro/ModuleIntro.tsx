@@ -16,7 +16,7 @@ export default function ModuleIntro({
   Mascot,
 }: ModuleIntroProps) {
   return (
-    <section className={styles.container}>
+    <section id={styles.container}>
       <div className={styles.top}>
         <h3>Module {moduleNumber}:</h3>
         <h1>{title}</h1>
