@@ -1,4 +1,6 @@
+import { useRouter } from "next/navigation";
 import { Dispatch, MutableRefObject, SetStateAction } from "react";
+import toast from "react-hot-toast";
 
 import { ModuleNumbers, UserData } from "../ModuleMap/ModuleMap";
 
@@ -10,16 +12,18 @@ type AnimatedPathProps = {
   bikeIsAnimating: MutableRefObject<boolean>;
 };
 
+const TOAST_DURATION = 2500;
+
 export default function AnimatedPath({
   modulePreview,
   setUserData,
   bikeIsAnimating,
 }: AnimatedPathProps) {
-  const isModuleAccessible = modulePreview + 1 >= 9;
-
+  const isModuleAccessible = modulePreview >= 9;
+  const router = useRouter();
   const getStarColor = () => {
-    if (modulePreview < 8) return "#B4B4B4";
-    return modulePreview === 8 ? "#FFBC00" : "#3BB966";
+    if (modulePreview < 9) return "#B4B4B4";
+    return modulePreview === 9 ? "#FFBC00" : "#3BB966";
   };
 
   return (
@@ -29,12 +33,25 @@ export default function AnimatedPath({
         id={styles.path_star}
         className={isModuleAccessible ? styles.active : styles.inactive}
         onClick={() => {
+          if (!isModuleAccessible) {
+          toast(
+            <div className={`${styles.module_error_toast} toast`}>
+              <p>
+                <span>Error: </span>This module is locked!
+              </p>
+              <p>{`Make sure you've submitted your answers and passed the previous module quiz.`}</p>
+            </div>,
+            { id: "module_error_toast", duration: TOAST_DURATION },
+          );
+          return;
+        }
           if (
-            modulePreview >= 9 ||
-            modulePreview + 1 < 9 ||
+            modulePreview > 9 ||
+            modulePreview < 9 ||
             bikeIsAnimating.current
           )
             return;
+          router.push(`/final-test`);
           setUserData((prev) => ({...prev, currentModule: 9}));
         }}
       >
