@@ -32,7 +32,9 @@ export default function SimpleWay() {
     setIsFading(false);
   };
 
-  const containerClass = `${styles.text_container} ${checked1 && checked2 ? styles.bothChecked : ""}`;
+  const containerClass = `${styles.text_container} ${
+    checked1 && checked2 ? styles.bothChecked : ""
+  }`;
 
   return (
     <section className={styles.container}>
