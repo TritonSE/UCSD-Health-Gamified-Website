@@ -19,8 +19,6 @@
   margin-bottom: 4vh;
 }
 
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
+.sidebarWrapper {
+  flex-shrink: 0;
 }

@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  min-height: 520px;
+  min-width: 1000px;
+}
+
+.title {
+  color: var(--Secondary-Neutral-Black, #000);
+  font-family: "Rammetto One";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 48px */
+  letter-spacing: 0.64px;
+  margin-bottom: 40px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.textSection {
+  color: #000;
+
+  /* Body/Large (Reg) */
+  font-family: "DM Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.subtitle {
+  color: #000;
+
+  /* Body/Large (Reg) */
+  font-family: "DM Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 145.455% */
+  margin-bottom: 20px;
+}
+
+.point {
+  display: flex;
+  width: 670px;
+  padding: 10px 30px;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.point1 {
+  border-radius: 8px;
+  background: rgba(255, 202, 190, 0.4);
+}
+
+.point2 {
+  border-radius: 8px;
+  background: rgba(255, 202, 190, 0.6);
+}
+
+.point3 {
+  border-radius: 8px;
+  background: rgba(255, 202, 190, 0.8);
+}
+
+.point4 {
+  border-radius: 8px;
+  background: #ffcabe;
+}
+
+.number {
+  color: #000;
+  font-family: "Rammetto One";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 60px */
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.imageSection {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+}

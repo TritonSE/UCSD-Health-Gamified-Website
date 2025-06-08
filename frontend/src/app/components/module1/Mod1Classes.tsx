@@ -229,40 +229,42 @@ const Mod1Classes: React.FC = () => {
   ];
 
   return (
-    <div className={styles.content}>
+    <section className={styles.content}>
       <h1>CLASSES OF E BIKES</h1>
-      <div style={{ display: "flex", gap: "24px", marginBottom: "24px" }}>
-        {data.map((item) => (
-          <TableCard
-            key={item.headerText}
-            headerIcon={item.headerIcon}
-            headerText={item.headerText}
-            headerIconAlt={item.headerIconAlt}
-            section1={item.section1}
-            section2={item.section2}
-            section3={item.section3}
-          />
-        ))}
-      </div>
-      <div className={styles.info}>
-        <div className={styles.image}>
-          <Image src="/TimmyStart.svg" alt="Timmy Start" width={100} height={100} />
+      <div className={styles.dataContainer}>
+        <div style={{ display: "flex", gap: "24px", marginBottom: "24px" }}>
+          {data.map((item) => (
+            <TableCard
+              key={item.headerText}
+              headerIcon={item.headerIcon}
+              headerText={item.headerText}
+              headerIconAlt={item.headerIconAlt}
+              section1={item.section1}
+              section2={item.section2}
+              section3={item.section3}
+            />
+          ))}
         </div>
-        <div>
-          <ul>
-            <li>There are 3 different classes of E Bikes (Class 1-3)</li>
-            <li>
-              It is important to know class type as it can inform you of speed limit and age
-              restrictions
-            </li>
-            <li>
-              Helmets are recommended for all classes and types as accidents at these speeds can
-              cause life threatening injuries
-            </li>
-          </ul>
+        <div className={styles.info}>
+          <div className={styles.image}>
+            <Image src="/TimmyStart.svg" alt="Timmy Start" width={100} height={100} />
+          </div>
+          <div>
+            <ul>
+              <li>There are 3 different classes of E Bikes (Class 1-3)</li>
+              <li>
+                It is important to know class type as it can inform you of speed limit and age
+                restrictions
+              </li>
+              <li>
+                Helmets are recommended for all classes and types as accidents at these speeds can
+                cause life threatening injuries
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -3,7 +3,7 @@
 import { Children, ReactNode, cloneElement, isValidElement, useState } from "react";
 
 import ModuleButtons from "../ModuleButtons/ModuleButtons";
-import ProgressBar from "../ProgressBar/ProgressBar";
+import ProgressBar from "../ModuleProgressBar/ModuleProgressBar";
 
 import styles from "./ModuleSliderContainer.module.css";
 
@@ -47,7 +47,8 @@ export default function ModuleSliderContainer({
             style={{ opacity: currentSection === index && !isTransitioning ? 0 : 1 }}
           ></div>
           <div className={styles.section_wrapper}>
-            {cloneElement(child)}
+            {/* {cloneElement(child)} */}
+            {cloneElement(child, { key: currentSection })}
             <ModuleButtons
               currentSection={index}
               childrenCount={childrenCount}
@@ -55,6 +56,12 @@ export default function ModuleSliderContainer({
               handleNextButton={handleNextButton}
             />
           </div>
+          {/* <ModuleButtons
+            currentSection={index}
+            childrenCount={childrenCount}
+            handlePrevButton={handlePrevButton}
+            handleNextButton={handleNextButton} 
+          />*/}
         </div>
       );
     }
