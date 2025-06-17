@@ -15,7 +15,7 @@ export default function Quiz7() {
     {
       question: "Check with a parent/guardian:",
       subQuestion:
-        "I recognize that my actions and chioces impact the youth around me. I strive to always wear my helmet and practice safe cycling habits when riding with my kids, their friends, or any young riders who may look to me as a role model.",
+        "I recognize that my actions and choices impact the youth around me. I strive to always wear my helmet and practice safe cycling habits when riding with my kids, their friends, or any young riders who may look to me as a role model.",
       options: ["I am a parent/guardian and have read and understood the statement above"],
       correctAnswer: ["A."],
       type: "multiple",

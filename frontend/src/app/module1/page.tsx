@@ -15,11 +15,32 @@ import Mod1Factor5 from "../components/module1/Mod1Factor5";
 import Mod1LetsTalk from "../components/module1/Mod1LetsTalk";
 import Mod1Risks from "../components/module1/Mod1Risks";
 import Mod1WhyRide from "../components/module1/Mod1WhyRide";
-// import { TitleScreen } from "../components/quiz_components/TitleScreen";
+import { Question, Quiz } from "../components/quiz_components/Quiz";
 
 import styles from "./mod1.module.css";
 
 export default function Module1() {
+  const sampleQuestions: Question[] = [
+    {
+      question: "Which class of E Bike reaches a max speed of 28 mph?",
+      options: ["Class 1", "Class 2", "Class 3", "Zero Emission Motorcycles"],
+      correctAnswer: "C.",
+      type: "single",
+    },
+    {
+      question: "Which of the following requires a driver’s license?",
+      options: ["Pedal Bicycle", "Class 1", "Class 2", "Class 3", "Zero Emission Motorcycles"],
+      correctAnswer: "E.",
+      type: "single",
+    },
+    {
+      question:
+        "True or False: Riding an unclassified or bike modified to surpass the speed of its intended class can result in a fine or other penalties?",
+      options: ["True", "False"],
+      correctAnswer: "A.",
+      type: "single",
+    },
+  ];
   return (
     <div className={styles.container}>
       {/* sidebar */}
@@ -70,13 +91,11 @@ export default function Module1() {
         {/* frame 10 - risks with illegal */}
         <Mod1Risks />
         {/* frame 11 - quiz */}
-        {/* <div className={styles.quiz}>
-          <TitleScreen
-            handleStart={() => {
-              console.log("Quiz started");
-            }}
-          />
-        </div> */}
+        <Quiz
+          title="Module 1 Quiz"
+          description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
+          questions={sampleQuestions}
+        />
       </ModuleSliderContainer>
     </div>
   );
