@@ -60,6 +60,8 @@
   flex-shrink: 0;
   border-radius: 32px;
   background: var(--Secondary-Accent1, #1c3a29);
+  border-color: transparent;
+  outline: none;
 }
 
 #right_button {
@@ -74,6 +76,8 @@
   flex-shrink: 0;
   border-radius: 32px;
   background: var(--Secondary-Accent1, #1c3a29);
+  border-color: transparent;
+  outline: none;
 }
 
 #main_bike {
