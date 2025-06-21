@@ -4,6 +4,8 @@
   overflow-y: auto;
   position: relative;
   display: flex;
+  --toast-enter-animation: customEnter 1s ease;
+  --toast-exit-animation: customExit 1s ease forwards;
 }
 
 .svg_container::-webkit-scrollbar {
@@ -37,23 +39,25 @@
   cursor: pointer;
 }
 
-/* Temporary button to simulate module completion */
-#temp_complete_module {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 1.2rem;
-  padding: 1rem 2rem;
-  margin: 2rem;
-  background-color: #1c3a29;
-  border: none;
-  cursor: pointer;
+/* Custom toast animations */
+@keyframes customEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* Temporary text to showcase sidebar with overflow container */
-.temporary_text {
-  padding: 10rem;
-  color: black;
-  font-size: 1.5rem;
-  font-family: "DM Sans";
+@keyframes customExit {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
 }

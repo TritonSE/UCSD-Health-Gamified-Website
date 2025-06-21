@@ -190,6 +190,15 @@ export default function SignInPanel() {
           </a>
         </p>
       </div>
+      <div className={styles.built_by_tse}>
+        <Image src="/tse_logo.svg" alt="Triton Software Engineering Logo" width={32} height={32} />
+        <p>
+          Built for free by{" "}
+          <a href="https://tritonse.github.io/" target="_blank">
+            Triton Software Engineering
+          </a>
+        </p>
+      </div>
     </div>
   );
 }
