@@ -1,15 +1,22 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
 import ClosingVideo from "../components/Module8Components/ClosingVideo/ClosingVideo";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Sidebar from "../components/Sidebar/Sidebar";
+import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod8.module.css";
 
 export default function Module8() {
+  const router = useRouter();
+
+  const handleStart = () => {
+    router.push("/final-test");
+  };
   return (
     <div className={styles.container}>
       <Sidebar />
@@ -36,6 +43,7 @@ export default function Module8() {
           }
         />
         <ClosingVideo />
+        <TitleScreen handleStart={handleStart} />
       </ModuleSliderContainer>
     </div>
   );
