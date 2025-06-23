@@ -72,7 +72,6 @@ export default function Sidebar() {
         id={styles.temp_complete_module}
         onClick={() => {
           setUser((prev) => {
-            console.log("prev", prev);
             if (!prev) return prev;
             const nextModule = Math.min(prev.module + 1, 10); // Assuming max 9 modules, module 10 is beyond scope
             if (user) {
