@@ -1,6 +1,5 @@
 // frontend/src/app/contexts/AuthContext.tsx
 "use client";
-
 import { onAuthStateChanged } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
 
@@ -12,16 +11,34 @@ import type { User } from "../api/user";
 type AuthContextType = {
   currentUser: User | null;
   loading: boolean;
+  refreshUser: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextType>({
   currentUser: null,
   loading: true,
+  refreshUser: () => Promise.resolve(),
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+
+  const refreshUser = async () => {
+    if (auth.currentUser?.email) {
+      try {
+        const result = await getUser(auth.currentUser.email);
+        if (result.success) {
+          setCurrentUser({
+            ...result.data,
+            firstLogin: result.data.firstLogin,
+          });
+        }
+      } catch (error) {
+        console.error("Failed to refresh user:", error);
+      }
+    }
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -41,11 +58,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           });
       }
     });
-
     return unsubscribe;
   }, []);
 
-  return <AuthContext.Provider value={{ currentUser, loading }}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={{ currentUser, loading, refreshUser }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 export function useAuth() {

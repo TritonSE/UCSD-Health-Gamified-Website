@@ -52,7 +52,7 @@ export const Quiz = ({
   randomized = true,
 }: QuizProps) => {
   const router = useRouter();
-  const { currentUser } = useAuth();
+  const { currentUser, refreshUser } = useAuth();
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string[]>>({});
   const [cancel, setCancel] = useState<boolean>(false);
   const [checkSubmit, setCheckSubmit] = useState<boolean>(false);
@@ -111,7 +111,7 @@ export const Quiz = ({
     setCancel(!cancel);
   };
 
-  const handleNextModule = async () => {
+  const handleNextModule = () => {
     setCancel(false);
 
     if (score < 75) {
@@ -174,27 +174,8 @@ export const Quiz = ({
         quizElement.scrollTo({ top: 0, behavior: "smooth" });
       }
     } else {
-      // Score >= 75, check module progression logic
-      if (currentUser) {
-        try {
-          if (module < currentUser.module) {
-            console.log("Quiz module is behind user's current progress - no update needed");
-            router.push("/");
-          } else if (module === currentUser.module) {
-            const nextModule = Math.min(currentUser.module + 1, 10);
-            await put(`/api/user/update/${currentUser.email}`, { module: nextModule });
-            window.location.href = "/";
-          } else {
-            console.error("Error: User is attempting a quiz ahead of their current progress");
-            throw new Error("Cannot access quiz ahead of current progress");
-          }
-        } catch (error) {
-          console.error("Failed to update module:", error);
-          router.push("/");
-        }
-      } else {
-        router.push("/");
-      }
+      // Score >= 75, navigate to home (module already updated in handleSubmit)
+      router.push("/");
     }
   };
 
@@ -207,7 +188,7 @@ export const Quiz = ({
     setCheckSubmit(!checkSubmit);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     let correctCount = 0;
     for (const [index, answers] of Object.entries(selectedAnswers)) {
       const question = randomizedQuestions[Number(index)];
@@ -220,21 +201,47 @@ export const Quiz = ({
         if (answers[0] === question.correctAnswer) correctCount++;
       }
     }
+
     const calculatedScore = (correctCount / randomizedQuestions.length) * 100;
+
+    // Update module immediately if score is >= 75
+    if (calculatedScore >= 75 && currentUser) {
+      try {
+        if (module < currentUser.module) {
+          console.log("Quiz module is behind user's current progress - no update needed");
+        } else if (module === currentUser.module) {
+          const nextModule = Math.min(currentUser.module + 1, 10);
+          await put(`/api/user/update/${currentUser.email}`, { module: nextModule });
+          console.log(`Module updated to ${nextModule}`);
+
+          // Refresh the user data in the context
+          await refreshUser();
+        } else {
+          console.error("Error: User is attempting a quiz ahead of their current progress");
+        }
+      } catch (error) {
+        console.error("Failed to update module:", error);
+      }
+    }
+
+    // Set UI state based on score
     if (calculatedScore < 75) {
       setLabel("Retake Quiz");
-    } else if (calculatedScore > 75) {
+    } else {
       setLabel("Next Module");
     }
+
     if (calculatedScore < 75 && calculatedScore > 74) {
       setScore(Math.floor(calculatedScore));
     } else {
       setScore(Math.round(calculatedScore));
     }
+
     const quizElement = document.getElementById("Quiz");
     if (quizElement) {
       quizElement.scrollTo({ top: 0, behavior: "smooth" });
     }
+
     setTitle(quizTitle + " Results");
     setSubmitted(true);
     setCheckSubmit(false);
