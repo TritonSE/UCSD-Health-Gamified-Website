@@ -107,3 +107,20 @@ a.secondary {
   line-height: 150%; /* 15px */
   letter-spacing: 0.2px;
 }
+
+.built_by_tse {
+  position: absolute;
+  bottom: 3rem;
+  display: flex;
+  align-items: center;
+  font-family: "DM Sans";
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.built_by_tse a {
+  text-decoration: underline;
+}

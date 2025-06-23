@@ -21,4 +21,5 @@
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center; /* Centers vertically */
+  position: relative;
 }
