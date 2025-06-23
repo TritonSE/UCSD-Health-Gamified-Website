@@ -40,6 +40,7 @@ export default function QuizPage3() {
         title="Module 3 Quiz"
         description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
         questions={sampleQuestions}
+        module={3}
       />
     </div>
   );

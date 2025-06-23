@@ -1,44 +1,23 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Sidebar from "../components/Sidebar/Sidebar";
-import { Question, Quiz } from "../components/quiz_components/Quiz";
+import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./Module6.module.css";
 import BicycleSafetyFacts from "./components/BicycleSafetyFacts/BicycleSafetyFacts";
 import CrashProtocol from "./components/CrashProtocol/CrashProtocol";
 
 export default function Module6() {
-  const questions: Question[] = [
-    {
-      question: "What is the highest factor leading to fatal bike crashes?",
-      options: [
-        "Riding in a bike lane",
-        "Wearing bright visible clothing",
-        "Failing to yield the right of way",
-        "Stopping at all stop signs and traffic lights",
-      ],
-      correctAnswer: "C.",
-      type: "single",
-    },
-    {
-      question:
-        "What cues help you anticipate how drivers and pedestrians interact with you and other bicyclists?",
-      options: [
-        "Move off the road to get to a safe location",
-        "Make sure everyone involved and around you is safe",
-        "Take a photo of the collision",
-        "Stand in the middle of the road trying to divert traffic",
-        "Exchange contact information",
-        "Move everyone off the road/sidewalk if they are injured",
-      ],
-      correctAnswer: ["A.", "B.", "C.", "E.", "F."],
-      type: "multiple",
-    },
-  ];
+  const router = useRouter();
+
+  const handleStart = () => {
+    router.push("/quiz/6");
+  };
   return (
     <div className={styles.container}>
       <Sidebar />
@@ -67,11 +46,7 @@ export default function Module6() {
         />
         <BicycleSafetyFacts />
         <CrashProtocol />
-        <Quiz
-          title="Module 6 Quiz"
-          description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
-          questions={questions}
-        />
+        <TitleScreen handleStart={handleStart} />
       </ModuleSliderContainer>
     </div>
   );

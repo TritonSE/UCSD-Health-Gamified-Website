@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
@@ -15,32 +16,16 @@ import Mod1Factor5 from "../components/module1/Mod1Factor5";
 import Mod1LetsTalk from "../components/module1/Mod1LetsTalk";
 import Mod1Risks from "../components/module1/Mod1Risks";
 import Mod1WhyRide from "../components/module1/Mod1WhyRide";
-import { Question, Quiz } from "../components/quiz_components/Quiz";
+import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod1.module.css";
 
 export default function Module1() {
-  const sampleQuestions: Question[] = [
-    {
-      question: "Which class of E Bike reaches a max speed of 28 mph?",
-      options: ["Class 1", "Class 2", "Class 3", "Zero Emission Motorcycles"],
-      correctAnswer: "C.",
-      type: "single",
-    },
-    {
-      question: "Which of the following requires a driver’s license?",
-      options: ["Pedal Bicycle", "Class 1", "Class 2", "Class 3", "Zero Emission Motorcycles"],
-      correctAnswer: "E.",
-      type: "single",
-    },
-    {
-      question:
-        "True or False: Riding an unclassified or bike modified to surpass the speed of its intended class can result in a fine or other penalties?",
-      options: ["True", "False"],
-      correctAnswer: "A.",
-      type: "single",
-    },
-  ];
+  const router = useRouter();
+
+  const handleStart = () => {
+    router.push("/quiz/1``");
+  };
   return (
     <div className={styles.container}>
       {/* sidebar */}
@@ -91,11 +76,7 @@ export default function Module1() {
         {/* frame 10 - risks with illegal */}
         <Mod1Risks />
         {/* frame 11 - quiz */}
-        <Quiz
-          title="Module 1 Quiz"
-          description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
-          questions={sampleQuestions}
-        />
+        <TitleScreen handleStart={handleStart} />
       </ModuleSliderContainer>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
@@ -10,28 +11,16 @@ import BikeInjuries from "../components/module7/BikeInjuries";
 import ParentalInvolvement from "../components/module7/ParentalInvolvement";
 import RoleModels from "../components/module7/RoleModels";
 import Suggestions from "../components/module7/Suggestions";
-import { Question, Quiz } from "../components/quiz_components/Quiz";
+import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod7.module.css";
 
 export default function Module7() {
-  const questions: Question[] = [
-    {
-      question:
-        "True or False: Parental or guardian models influence child and teen behavior patterns",
-      options: ["True", "False"],
-      correctAnswer: "A.",
-      type: "single",
-    },
-    {
-      question: "Check with a parent/guardian:",
-      subQuestion:
-        "I recognize that my actions and choices impact the youth around me. I strive to always wear my helmet and practice safe cycling habits when riding with my kids, their friends, or any young riders who may look to me as a role model.",
-      options: ["I am a parent/guardian and have read and understood the statement above"],
-      correctAnswer: ["A."],
-      type: "multiple",
-    },
-  ];
+  const router = useRouter();
+
+  const handleStart = () => {
+    router.push("/quiz/7");
+  };
   return (
     <div className={styles.container}>
       {/* sidebar */}
@@ -68,11 +57,7 @@ export default function Module7() {
         <RoleModels />
         <ParentalInvolvement />
         <Suggestions />
-        <Quiz
-          title="Module 7 Quiz"
-          description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
-          questions={questions}
-        />
+        <TitleScreen handleStart={handleStart} />
       </ModuleSliderContainer>
     </div>
   );

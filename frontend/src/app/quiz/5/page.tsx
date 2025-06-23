@@ -43,6 +43,7 @@ export default function Quiz5() {
         title="Module 5 Quiz"
         description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
         questions={questions}
+        module={5}
       />
     </div>
   );
