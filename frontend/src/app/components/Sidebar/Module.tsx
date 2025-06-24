@@ -29,8 +29,11 @@ export const Module = ({
   let color = "#BBD567";
   switch (kind) {
     case "primary":
-      if (!highlighted) {
+      if (!highlighted && addLine) {
         modules += ` ${styles.hover}`;
+      }
+      if (!highlighted && !addLine) {
+        modules += ` ${styles.linehover}`;
       }
       moduleTitleText += ` ${styles.titlePrimary}`;
       moduleTimeText += ` ${styles.timePrimary}`;
@@ -47,8 +50,11 @@ export const Module = ({
       color = "#909090";
       break;
     case "complete":
-      if (!highlighted) {
+      if (!highlighted && addLine) {
         modules += ` ${styles.hover}`;
+      }
+      if (!highlighted && !addLine) {
+        modules += ` ${styles.linehover}`;
       }
       moduleTitleText += ` ${styles.titleComplete}`;
       moduleTimeText += ` ${styles.timePrimary}`;

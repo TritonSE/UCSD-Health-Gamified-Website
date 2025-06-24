@@ -1,8 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ToastBar, Toaster } from "react-hot-toast";
 
+import { get } from "../../../api/requests";
+import { useAuth } from "../../../contexts/AuthContext";
 import AnimatedPath from "../AnimatedPath/AnimatedPath";
 import BackgroundPaths from "../BackgroundPaths/BackgroundPaths";
 import Bike from "../Bike/Bike";
@@ -13,23 +15,40 @@ import ModuleMarker from "../ModuleMarker/ModuleMarker";
 import styles from "./ModuleMap.module.css";
 import { moduleMarkerData } from "./moduleMarkerData";
 
-export type ModuleNumbers = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+export type ModuleNumbers = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
 export type UserData = {
   currentModule: ModuleNumbers;
   lastCompletedModule: ModuleNumbers;
 };
 
-// Temporary user data with starting point
+// // Temporary user data with starting point
 const initialUserData: UserData = {
-  currentModule: 2,
-  lastCompletedModule: 2,
+  currentModule: 0,
+  lastCompletedModule: 0,
 };
 
 export default function ModuleMap() {
-  const [userData, setUserData] = useState(initialUserData);
-
+  const { currentUser } = useAuth();
+  const [userData, setUserData] = useState<UserData>(initialUserData);
   const bikeIsAnimating = useRef(false);
+
+  useEffect(() => {
+    if (!currentUser) return;
+    const load = async () => {
+      try {
+        const res = await get(`/api/user/get/${encodeURIComponent(currentUser.email)}`);
+        if (!res.ok) console.log(res);
+        const user = (await res.json()) as { module?: number };
+        const curMod = Math.max(0, Math.min(10, user.module ?? 0)) as ModuleNumbers;
+        const lastMod = Math.max(0, Math.min(9, (user.module ?? 0) - 1)) as ModuleNumbers;
+        setUserData({ currentModule: curMod, lastCompletedModule: lastMod });
+      } catch (err) {
+        console.log((err as Error).message);
+      }
+    };
+    void load();
+  }, [currentUser]);
 
   return (
     <div className={styles.svg_container}>
@@ -92,10 +111,20 @@ export default function ModuleMap() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <MaskDefinitions
-          modulePreview={userData.currentModule}
-          initialModule={initialUserData.currentModule}
-        />
+        {userData.currentModule && (
+          <MaskDefinitions
+            modulePreview={userData.currentModule}
+            initialModule={userData.lastCompletedModule}
+          />
+        )}
+
+        {!userData.currentModule && (
+          <MaskDefinitions
+            modulePreview={userData.currentModule}
+            initialModule={userData.lastCompletedModule}
+          />
+        )}
+
         <BackgroundPaths />
         {moduleMarkerData.map((moduleMarker, index) => (
           <ModuleMarker
@@ -119,7 +148,7 @@ export default function ModuleMap() {
         <Bike
           bikeIsAnimating={bikeIsAnimating}
           modulePreview={userData.currentModule}
-          initialModule={initialUserData.currentModule}
+          initialModule={userData.lastCompletedModule}
         />
         <ForegroundPaths />
       </svg>
