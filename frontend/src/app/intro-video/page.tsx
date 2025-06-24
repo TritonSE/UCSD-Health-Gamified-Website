@@ -6,6 +6,8 @@ import React, { CSSProperties, useEffect, useRef, useState } from "react";
 import TypingAnimation from "../components/TypingAnimation/TypingAnimation";
 import buttonStyles from "../components/VideoButton.module.css";
 
+import ModuleGate from "../components/ModuleGate/ModuleGate";
+
 import styles from "./IntroVideo.module.css";
 
 export default function IntroVideo() {
@@ -29,12 +31,13 @@ export default function IntroVideo() {
   }, []);
 
   return (
-    <main className={styles.main}>
-      <div className={styles.wrapper}>
-        <h1 className={styles.title}>Welcome to the E-Bike Safety Course!</h1>
-        <div className={styles.container}>
-          {/* prettier-ignore */}
-          <svg width="856" height="384" viewBox="0 0 856 384" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ModuleGate module={0}>
+      <main className={styles.main}>
+        <div className={styles.wrapper}>
+          <h1 className={styles.title}>Welcome to the E-Bike Safety Course!</h1>
+          <div className={styles.container}>
+            {/* prettier-ignore */}
+            <svg width="856" height="384" viewBox="0 0 856 384" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.2" d="M692.092 383.11C746.909 383.11 791.348 373.997 791.348 362.755C791.348 351.513 746.909 342.4 692.092 342.4C637.274 342.4 592.836 351.513 592.836 362.755C592.836 373.997 637.274 383.11 692.092 383.11Z" fill="#3D3D60" />
             <path d="M678.764 354.98V301.691C678.764 294.33 672.797 288.363 665.436 288.363H665.417C658.056 288.363 652.089 294.33 652.089 301.691V354.98C652.089 362.341 658.056 368.307 665.417 368.307H665.436C672.797 368.307 678.764 362.341 678.764 354.98Z" fill="#171759" />
             <path d="M646.006 368.308H665.436C672.797 368.308 678.764 362.341 678.764 354.981V354.961C678.764 347.601 672.797 341.634 665.436 341.634H646.006C638.646 341.634 632.679 347.601 632.679 354.961V354.981C632.679 362.341 638.646 368.308 646.006 368.308Z" fill="#171759" />
@@ -70,40 +73,41 @@ export default function IntroVideo() {
             <rect width="502" height="311" rx="20" fill="#BBD567" />
             <path d="M605 215.554C544.616 215.554 504.502 180.277 493.214 168H453C480.43 202.687 565.069 218.973 605 215.554Z" fill="#BBD567" />
           </svg>
-          <div className={styles.descriptionContainer}>
-            <div className={styles.description}>
-              <span ref={typeAnimationRef}></span>
+            <div className={styles.descriptionContainer}>
+              <div className={styles.description}>
+                <span ref={typeAnimationRef}></span>
+              </div>
+              <div className={styles.description}>
+                <TypingAnimation
+                  text="Over the past three years, we've seen a <b>rise in serious e-bike injuries</b> in San Diego County, including areas like North County and UCSD. These injuries can be <b>serious and life-changing</b>, so it's important to know how to stay safe while riding."
+                  onFinishTyping={() => {
+                    isTextLoaded(true);
+                  }}
+                  showCursor={false}
+                  shouldStart={startTyping}
+                />
+              </div>
             </div>
-            <div className={styles.description}>
-              <TypingAnimation
-                text="Over the past three years, we've seen a <b>rise in serious e-bike injuries</b> in San Diego County, including areas like North County and UCSD. These injuries can be <b>serious and life-changing</b>, so it's important to know how to stay safe while riding."
-                onFinishTyping={() => {
-                  isTextLoaded(true);
-                }}
-                showCursor={false}
-                shouldStart={startTyping}
-              />
-            </div>
-          </div>
-          <button
-            style={
-              {
-                "--animation-play-state": startTyping ? "running" : "paused",
-                "--disabled-duration": "5s",
-              } as CSSProperties
-            }
-            id={styles.video_intro_button}
-            className={`${buttonStyles.start_button}  ${textLoaded ? buttonStyles.buttonFinal : buttonStyles.buttonInitial}`}
-            onClick={handleSubmit}
-          >
-            <p className={buttonStyles.buttonText}>Let&apos;s get started!</p>
-            {/* prettier-ignore */}
-            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button
+              style={
+                {
+                  "--animation-play-state": startTyping ? "running" : "paused",
+                  "--disabled-duration": "5s",
+                } as CSSProperties
+              }
+              id={styles.video_intro_button}
+              className={`${buttonStyles.start_button}  ${textLoaded ? buttonStyles.buttonFinal : buttonStyles.buttonInitial}`}
+              onClick={handleSubmit}
+            >
+              <p className={buttonStyles.buttonText}>Let&apos;s get started!</p>
+              {/* prettier-ignore */}
+              <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L13.7071 6.29289C13.3166 5.90237 12.6834 5.90237 12.2929 6.29289C11.9024 6.68342 11.9024 7.31658 12.2929 7.70711L15.5858 11L6 11C5.44771 11 5 11.4477 5 12C5 12.5523 5.44771 13 6 13L15.5858 13L12.2929 16.2929C11.9024 16.6834 11.9024 17.3166 12.2929 17.7071C12.6834 18.0976 13.3166 18.0976 13.7071 17.7071L18.7071 12.7071Z" fill="white" />
             </svg>
-          </button>
+            </button>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </ModuleGate>
   );
 }

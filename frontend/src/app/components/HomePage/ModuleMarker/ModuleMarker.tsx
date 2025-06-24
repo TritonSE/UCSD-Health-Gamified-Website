@@ -1,12 +1,12 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Dispatch, MutableRefObject, ReactNode, SetStateAction } from "react";
 import toast from "react-hot-toast";
 
 import { ModuleNumbers, UserData } from "../ModuleMap/ModuleMap";
 
 import styles from "./ModuleMarker.module.css";
-// import { useRouter } from "next/navigation";
 
 type ModuleMarkerProps = {
   bikeIsAnimating: MutableRefObject<boolean>;
@@ -33,7 +33,7 @@ export default function ModuleMarker({
   const isModuleAccessible = modulePreview >= moduleNumber;
   const isModuleCompleted = userData.lastCompletedModule >= moduleNumber;
   const isModuleNavigatable = userData.lastCompletedModule >= moduleNumber - 1;
-  // const router = useRouter();
+  const router = useRouter();
 
   return (
     <g
@@ -60,7 +60,7 @@ export default function ModuleMarker({
         }
         if (bikeIsAnimating.current) return;
         if (modulePreview >= moduleNumber) {
-          // router.push(`/module/${modulePreview}`);
+          router.push(`/module${moduleNumber}`);
           return;
         }
 
