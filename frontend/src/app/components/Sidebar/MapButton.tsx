@@ -7,7 +7,6 @@ import styles from "./MapButton.module.css";
 
 type Props = {
   isCollapsed?: boolean;
-  kind?: "primary" | "secondary";
   handleClick: () => void;
   isSelected?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
@@ -50,7 +49,7 @@ export const MapButton: React.FC<Props> = ({ isCollapsed = false, handleClick, .
 
   return (
     <button
-      className={`${styles.button} ${styles.primary} ${isCollapsed ? styles.collapsed : ""}`}
+      className={`${styles.button} ${isCollapsed ? styles.collapsed : ""}`}
       onClick={handleClick}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
