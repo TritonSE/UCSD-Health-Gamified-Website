@@ -33,16 +33,12 @@
   line-height: 27px;
 }
 
-.secondary {
+.primary:active {
+  border: 1px solid #bbd567;
   background: #bbd567;
   color: #1c3a29;
   font-weight: 700;
   line-height: 27px;
-}
-
-.secondary:hover {
-  background: #edf9c4;
-  color: #1c3a29;
 }
 
 .text {
