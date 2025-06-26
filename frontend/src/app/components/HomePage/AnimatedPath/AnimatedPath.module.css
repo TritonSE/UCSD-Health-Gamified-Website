@@ -16,3 +16,17 @@
 .inactive {
   cursor: not-allowed;
 }
+
+.module_error_toast {
+  font-family: "DM Sans";
+  text-align: center;
+}
+
+.module_error_toast p:first-child {
+  font-weight: bold;
+}
+
+.module_error_toast span {
+  font-weight: bold;
+  color: #b93b3b;
+}

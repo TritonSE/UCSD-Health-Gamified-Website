@@ -29,6 +29,10 @@ type BikeProps = {
 const BIKE_ANIMATION_DURATION = 2;
 
 export default function Bike({ modulePreview, initialModule, bikeIsAnimating }: BikeProps) {
+  if (modulePreview === 10) {
+    modulePreview--;
+  }
+
   const bikeContainerRef = useRef<SVGGElement>(null);
   const bikePedalRef = useRef<SVGGElement>(null);
   const bikePedalRectRef = useRef<SVGRectElement>(null);
