@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import React, { CSSProperties, useEffect, useRef, useState } from "react";
+
 import ModuleGate from "../components/ModuleGate/ModuleGate";
 import TypingAnimation from "../components/TypingAnimation/TypingAnimation";
 import buttonStyles from "../components/VideoButton.module.css";
