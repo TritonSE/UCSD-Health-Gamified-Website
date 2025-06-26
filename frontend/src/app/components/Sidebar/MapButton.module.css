@@ -38,6 +38,14 @@
   line-height: 27px;
 }
 
+.homePage {
+  border: 1px solid #bbd567;
+  background: #bbd567;
+  color: #1c3a29;
+  font-weight: 700;
+  line-height: 27px;
+}
+
 .text {
   text-align: center;
   /* Title/XSmall */

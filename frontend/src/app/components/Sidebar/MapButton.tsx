@@ -6,11 +6,17 @@ import React, { useState } from "react";
 import styles from "./MapButton.module.css";
 
 type Props = {
+  isHomePage?: boolean;
   isCollapsed?: boolean;
   handleClick: () => void;
   isSelected?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
-export const MapButton: React.FC<Props> = ({ isCollapsed = false, handleClick, ...props }) => {
+export const MapButton: React.FC<Props> = ({
+  isHomePage = false,
+  isCollapsed = false,
+  handleClick,
+  ...props
+}) => {
   const [isHovering, setIsHovered] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
 
@@ -42,14 +48,16 @@ export const MapButton: React.FC<Props> = ({ isCollapsed = false, handleClick, .
   }, [isPressed]);
 
   const getImageSrc = () => {
+    // note: order matters here
     if (isPressed) return "/Map_Selected.svg";
     if (isHovering) return "/Map_Hover.svg";
+    if (isHomePage) return "/Map_Selected.svg";
     return "/Map.svg";
   };
 
   return (
     <button
-      className={`${styles.button} ${isCollapsed ? styles.collapsed : ""}`}
+      className={`${styles.button} ${isCollapsed ? styles.collapsed : ""} ${isHomePage ? styles.homePage : ""}`}
       onClick={handleClick}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
