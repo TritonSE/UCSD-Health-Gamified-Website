@@ -1,7 +1,7 @@
 "use client";
 
 import ResetPasswordPanel from "../components/ResetPasswordPanel";
-import WelcomePanel from "../components/WelcomePanel";
+import WelcomePanel from "../components/WelcomePanel/WelcomePanel";
 
 import styles from "./ResetPassword.module.css";
 

@@ -7,21 +7,25 @@ import { getUser } from "../api/user";
 import { auth } from "../firebase-config.js";
 
 import type { User } from "../api/user";
+import type { User as FirebaseUser } from "firebase/auth";
 
 type AuthContextType = {
-  currentUser: User | null;
+  currentUser: User | null; // from your backend
+  firebaseUser: FirebaseUser | null; // raw Firebase user
   loading: boolean;
   refreshUser: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextType>({
   currentUser: null,
+  firebaseUser: null,
   loading: true,
   refreshUser: () => Promise.resolve(),
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [firebaseUser, setFirebaseUser] = useState<FirebaseUser | null>(null);
   const [loading, setLoading] = useState(true);
 
   const refreshUser = async () => {
@@ -42,6 +46,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setFirebaseUser(user); // Save Firebase user separately
+
       if (user?.email) {
         getUser(user.email)
           .then((result) => {
@@ -55,14 +61,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           })
           .catch((error) => {
             console.error(error);
+            setLoading(false);
           });
+      } else {
+        setLoading(false);
       }
     });
     return unsubscribe;
   }, []);
 
   return (
-    <AuthContext.Provider value={{ currentUser, loading, refreshUser }}>
+    <AuthContext.Provider value={{ currentUser, firebaseUser, loading, refreshUser }}>
       {children}
     </AuthContext.Provider>
   );

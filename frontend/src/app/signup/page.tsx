@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import CreateAccountPanel from "../components/CreateAccountPanel";
 import VerifyEmail from "../components/VerifyEmail";
-import WelcomePanel from "../components/WelcomePanel";
+import WelcomePanel from "../components/WelcomePanel/WelcomePanel";
 
 import styles from "./SignUp.module.css";
 
