@@ -25,7 +25,7 @@ export default function Module1() {
   const router = useRouter();
 
   const handleStart = () => {
-    router.push("/quiz/1``");
+    router.push("/quiz/1");
   };
   return (
     <ModuleGate module={1}>
