@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
@@ -11,10 +12,16 @@ import BikeInjuries from "../components/module7/BikeInjuries";
 import ParentalInvolvement from "../components/module7/ParentalInvolvement";
 import RoleModels from "../components/module7/RoleModels";
 import Suggestions from "../components/module7/Suggestions";
+import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod7.module.css";
 
 export default function Module7() {
+  const router = useRouter();
+
+  const handleStart = () => {
+    router.push("/quiz/7");
+  };
   return (
     <ModuleGate module={7}>
       <div className={styles.container}>
@@ -52,6 +59,7 @@ export default function Module7() {
           <RoleModels />
           <ParentalInvolvement />
           <Suggestions />
+          <TitleScreen handleStart={handleStart} />
         </ModuleSliderContainer>
       </div>
     </ModuleGate>

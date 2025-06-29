@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import Section1 from "../components/Module5/Section1";
 import Section2 from "../components/Module5/Section2";
 import Section3 from "../components/Module5/Section3";
@@ -11,10 +13,16 @@ import Section8 from "../components/Module5/Section8";
 import Section9 from "../components/Module5/Section9";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Sidebar from "../components/Sidebar/Sidebar";
+import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod5.module.css";
 
 export default function Module5() {
+  const router = useRouter();
+
+  const handleStart = () => {
+    router.push("/quiz/5");
+  };
   return (
     <div className={styles.container}>
       <Sidebar />
@@ -29,6 +37,7 @@ export default function Module5() {
         <Section7 />
         <Section8 />
         <Section9 />
+        <TitleScreen handleStart={handleStart} />
       </ModuleSliderContainer>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
 import ModuleGate from "../components/ModuleGate/ModuleGate";
@@ -13,6 +14,11 @@ import BicycleSafetyFacts from "./components/BicycleSafetyFacts/BicycleSafetyFac
 import CrashProtocol from "./components/CrashProtocol/CrashProtocol";
 
 export default function Module6() {
+  const router = useRouter();
+
+  const handleStart = () => {
+    router.push("/quiz/6");
+  };
   return (
     <ModuleGate module={6}>
       <div className={styles.container}>
@@ -42,11 +48,7 @@ export default function Module6() {
           />
           <BicycleSafetyFacts />
           <CrashProtocol />
-          <TitleScreen
-            handleStart={() => {
-              console.log("Module 6 Quiz Started");
-            }}
-          />
+          <TitleScreen handleStart={handleStart} />
         </ModuleSliderContainer>
       </div>
     </ModuleGate>

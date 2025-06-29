@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
@@ -10,10 +13,16 @@ import Helmet from "../components/module3/Helmet";
 import HelmetCorrect from "../components/module3/HelmetCorrect";
 import Recommendation from "../components/module3/Recommendation";
 import SafetyEquipment from "../components/module3/SafetyEquipment";
+import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod3.module.css";
 
 export default function Module3() {
+  const router = useRouter();
+
+  const handleStart = () => {
+    router.push("/quiz/3");
+  };
   return (
     <ModuleGate module={3}>
       <div className={styles.container}>
@@ -48,6 +57,7 @@ export default function Module3() {
           <Helmet />
           <Recommendation />
           <SafetyEquipment />
+          <TitleScreen handleStart={handleStart} />
         </ModuleSliderContainer>
       </div>
     </ModuleGate>
