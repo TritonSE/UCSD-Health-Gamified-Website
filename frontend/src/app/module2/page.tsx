@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
 import AdditionalTips from "../components/Mod2Components/AdditionalTip.tsx/AdditionalTips";
@@ -16,6 +17,11 @@ import { TitleScreen } from "../components/quiz_components/TitleScreen";
 import styles from "./mod2.module.css";
 
 export default function Module2() {
+  const router = useRouter();
+
+  const handleStart = () => {
+    router.push("/quiz/2");
+  };
   return (
     <ModuleGate module={2}>
       <div className={styles.container}>
@@ -45,11 +51,7 @@ export default function Module2() {
           <SimpleWay />
           <StuffHappens />
           <BikeMechanic />
-          <TitleScreen
-            handleStart={() => {
-              console.log("Module 2 Quiz Started");
-            }}
-          />
+          <TitleScreen handleStart={handleStart} />
         </ModuleSliderContainer>
       </div>
     </ModuleGate>
