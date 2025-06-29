@@ -64,6 +64,27 @@ export const Quiz = ({
     randomized ? shuffleArray(originalQuestions) : originalQuestions,
   );
 
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      // Only warn if quiz is in progress (not submitted and has answers)
+      const hasAnswers = Object.keys(selectedAnswers).length > 0;
+      const shouldWarn = !submitted && hasAnswers;
+
+      if (shouldWarn) {
+        e.preventDefault();
+        e.returnValue = ""; // Required for Chrome
+        return ""; // Required for other browsers
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [submitted, selectedAnswers]);
+
   // Auto-initialize quiz on component mount
   useEffect(() => {
     setRandomizedQuestions(
