@@ -3,8 +3,8 @@
 import { useRouter } from "next/navigation";
 import React, { CSSProperties, MouseEvent, useEffect, useState } from "react";
 
-import buttonStyles from "../components/VideoButton.module.css";
 import ModuleGate from "../components/ModuleGate/ModuleGate";
+import buttonStyles from "../components/VideoButton.module.css";
 
 import styles from "./Video.module.css";
 
