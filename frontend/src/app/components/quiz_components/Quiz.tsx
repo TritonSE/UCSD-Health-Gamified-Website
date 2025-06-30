@@ -140,7 +140,11 @@ export const Quiz = ({
       setSubmitted(false);
       setScore(0);
       setTitle(title);
-      setLabel("Next Module");
+      if (module === 9) {
+        setLabel("Open Certificate");
+      } else {
+        setLabel("Next Module");
+      }
 
       if (randomized) {
         setRandomizedQuestions(
@@ -257,7 +261,11 @@ export const Quiz = ({
     if (calculatedScore < 75) {
       setLabel("Retake Quiz");
     } else {
-      setLabel("Next Module");
+      if (module === 9) {
+        setLabel("Open Certificate");
+      } else {
+        setLabel("Next Module");
+      }
     }
 
     if (calculatedScore < 75 && calculatedScore > 74) {
