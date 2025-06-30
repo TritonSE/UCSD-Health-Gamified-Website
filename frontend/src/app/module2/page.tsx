@@ -51,7 +51,7 @@ export default function Module2() {
           <SimpleWay />
           <StuffHappens />
           <BikeMechanic />
-          <TitleScreen handleStart={handleStart} />
+          <TitleScreen finalModule={false} handleStart={handleStart} />
         </ModuleSliderContainer>
       </div>
     </ModuleGate>

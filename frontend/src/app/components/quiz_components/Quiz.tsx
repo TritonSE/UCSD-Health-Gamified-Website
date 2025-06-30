@@ -140,7 +140,11 @@ export const Quiz = ({
       setSubmitted(false);
       setScore(0);
       setTitle(title);
-      setLabel("Next Module");
+      if (module === 9) {
+        setLabel("Open Certificate");
+      } else {
+        setLabel("Next Module");
+      }
 
       if (randomized) {
         setRandomizedQuestions(
@@ -196,13 +200,21 @@ export const Quiz = ({
       }
     } else {
       // Score >= 75, navigate to home (module already updated in handleSubmit)
-      router.push("/");
+      if (module === 9) {
+        router.push("/certificate");
+      } else {
+        router.push("/");
+      }
     }
   };
 
   const handleLeave = () => {
     setCancel(false);
-    router.push(`/module${module}`);
+    if (module === 9) {
+      router.push("/");
+    } else {
+      router.push(`/module${module}`);
+    }
   };
 
   const handlePressSubmit = () => {
@@ -249,7 +261,11 @@ export const Quiz = ({
     if (calculatedScore < 75) {
       setLabel("Retake Quiz");
     } else {
-      setLabel("Next Module");
+      if (module === 9) {
+        setLabel("Open Certificate");
+      } else {
+        setLabel("Next Module");
+      }
     }
 
     if (calculatedScore < 75 && calculatedScore > 74) {

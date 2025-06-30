@@ -1,14 +1,25 @@
 "use client";
-
 import Image from "next/image";
 import React from "react";
 
 import styles from "./TitleScreen.module.css";
 
 export const TitleScreen = ({
+  finalModule,
   handleStart,
   ...props
-}: { handleStart: () => void } & React.ComponentProps<"button">) => {
+}: {
+  finalModule: boolean;
+  handleStart: () => void | Promise<void>;
+} & React.ComponentProps<"button">) => {
+  const handleClick = () => {
+    const result = handleStart(); // Should be handleStart, not handleClick
+    // Handle the promise if it exists, but don't return it
+    if (result instanceof Promise) {
+      result.catch(console.error); // Optional: handle errors
+    }
+  };
+
   return (
     <section id={styles.container}>
       <div className={styles.titleScreen}>
@@ -20,15 +31,29 @@ export const TitleScreen = ({
           alt="Timmy the Tire Start picture"
         />
         <div className={styles.ready}>
-          <h1 className={styles.title}>READY TO TAKE THE MODULE QUIZ?</h1>
-          <p className={styles.description}>
-            Before proceeding to the next module, you&#39;ll need to complete a short quiz to test
-            your understanding of the material covered in this module.
-            <br />
-            <br />A score of <span className={styles.descriptionBold}>75% or higher</span> is
-            required to move on to the next module! Good luck!
+          <h1 className={styles.title}>
+            {finalModule ? "READY TO TAKE THE FINAL TEST?" : "READY TO TAKE THE MODULE QUIZ?"}
+          </h1>
+          <p id={styles.description}>
+            {finalModule ? (
+              <>
+                To receive your certificate, you&#39;ll need to complete a cumulative test to check
+                your understanding of the material covered in this course.
+                <br />
+                <br />A score of <span id={styles.descriptionBold}>75% or higher</span> is required
+                to pass! Good luck!
+              </>
+            ) : (
+              <>
+                Before proceeding to the next module, you&#39;ll need to complete a short quiz to
+                test your understanding of the material covered in this module.
+                <br />
+                <br />A score of <span id={styles.descriptionBold}>75% or higher</span> is required
+                to move on to the next module! Good luck!
+              </>
+            )}
           </p>
-          <button className={styles.button} onClick={handleStart} {...props}>
+          <button className={styles.button} onClick={handleClick} {...props}>
             <p id={styles.buttonText}>Start Quiz</p>
           </button>
         </div>
