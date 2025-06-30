@@ -37,7 +37,7 @@ export default function Module5() {
         <Section7 />
         <Section8 />
         <Section9 />
-        <TitleScreen handleStart={handleStart} />
+        <TitleScreen finalModule={false} handleStart={handleStart} />
       </ModuleSliderContainer>
     </div>
   );

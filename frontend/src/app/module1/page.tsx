@@ -78,7 +78,7 @@ export default function Module1() {
           {/* frame 10 - risks with illegal */}
           <Mod1Risks />
           {/* frame 11 - quiz */}
-          <TitleScreen handleStart={handleStart} />
+          <TitleScreen finalModule={false} handleStart={handleStart} />
         </ModuleSliderContainer>
       </div>
     </ModuleGate>

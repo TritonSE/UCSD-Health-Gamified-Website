@@ -196,13 +196,21 @@ export const Quiz = ({
       }
     } else {
       // Score >= 75, navigate to home (module already updated in handleSubmit)
-      router.push("/");
+      if (module === 9) {
+        router.push("/certificate");
+      } else {
+        router.push("/");
+      }
     }
   };
 
   const handleLeave = () => {
     setCancel(false);
-    router.push(`/module${module}`);
+    if (module === 9) {
+      router.push("/");
+    } else {
+      router.push(`/module${module}`);
+    }
   };
 
   const handlePressSubmit = () => {
