@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import { get } from "../../api/requests";
 import { useAuth } from "../../contexts/AuthContext";
+import Sidebar from "../Sidebar/Sidebar";
 
 export default function ModuleGate({
   children,
@@ -57,6 +58,11 @@ export default function ModuleGate({
       }
     })();
   }, [currentUser, loading, module, router]);
-  if (!authenticated) return;
-  return <>{children}</>;
+  if (!authenticated)
+    return (
+      <>
+        <Sidebar />
+      </>
+    );
+  return <> {authenticated && children} </>;
 }
