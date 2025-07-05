@@ -7,7 +7,7 @@ import { ANIMATION_TIMELINE, TEXT_BOX } from "./constants";
 export default function ThinkAhead() {
   const [animationIndex, setAnimationIndex] = useState(0);
   const [textIndex, setTextIndex] = useState(0);
-  const [_showText, setShowText] = useState(true);
+  const [showText, setShowText] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const ANIMATION_LENGTH = ANIMATION_TIMELINE.length - 1;
@@ -47,7 +47,9 @@ export default function ThinkAhead() {
           Click through the slides to see how Timmy avoids obstacles!
         </p>
       </div>
-      <div className={styles.graphContainer}>
+      <div
+        className={styles.graphContainer}
+      >
         <svg
           width="950"
           height="498"
@@ -358,87 +360,6 @@ export default function ThinkAhead() {
                 fill="#FFCD40"
               />
             </g>
-
-            <rect
-              x={(924 - currentTextbox.width) / 2}
-              y="39"
-              width={currentTextbox.width}
-              height={currentTextbox.height}
-              fill="white"
-            />
-
-            <foreignObject
-              x={(924 - currentTextbox.width) / 2}
-              y="39"
-              width={currentTextbox.width}
-              height={currentTextbox.height}
-              fill="white"
-              overflow="visible"
-            >
-              <div className={styles.textbox} style={{ width: currentTextbox.width }}>
-                {textIndex !== 0 && (
-                  <button id={styles.left_button} onClick={handlePreviousClick}>
-                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
-                      <path
-                        d="M6 2L2 6L6 10"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                )}
-                <p className={styles.textboxContent}>{currentTextbox.text}</p>
-                {textIndex !== ANIMATION_LENGTH && (
-                  <button
-                    id={styles.right_button}
-                    onClick={handleNextClick}
-                    disabled={isTransitioning}
-                  >
-                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
-                      <path
-                        d="M2 2L6 6L2 10"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                )}
-              </div>
-            </foreignObject>
-            <g
-              filter="url(#filter2_i_6576_23660)"
-              id={styles.pothole}
-              className={styles.transition_element}
-              style={{
-                transform: `translateX(${currentAnimation.pothole_x}px)`,
-              }}
-            >
-              <ellipse cx="681" cy="427.5" rx="48" ry="28.5" fill="#808080" />
-            </g>
-
-            <g
-              id={styles.puddle}
-              className={styles.transition_element}
-              style={{
-                transform: `translateX(${currentAnimation.puddle_x}px)`,
-              }}
-            >
-              <image href="/module4/puddle.svg" x="633" y="386" />
-            </g>
-
-            <g
-              id={styles.sand}
-              className={styles.transition_element}
-              style={{
-                transform: `translateX(${currentAnimation.sand_x}px)`,
-              }}
-            >
-              <image href="/module4/sand.svg" x="633" y="350" />
-            </g>
           </g>
           <defs>
             <filter
@@ -557,6 +478,62 @@ export default function ThinkAhead() {
             </clipPath>
           </defs>
         </svg>
+        {/* Absolutely positioned textbox and navigation arrows */}
+        <div
+          className={styles.text_box_button_container}
+          style={{
+            opacity: showText ? 1 : 0,
+            transition: "opacity 0.2s ease-in-out",
+            position: "absolute",
+            left: `${(924 - currentTextbox.width) / 2}px`,
+            top: "39px",
+            width: `${currentTextbox.width}px`,
+            height: `${currentTextbox.height}px`,
+            pointerEvents: isTransitioning ? "none" : "auto",
+          }}
+        >
+          <div className={styles.text_box_wrapper}>
+            <div>
+              {textIndex !== 0 && (
+                <button
+                  id={styles.left_button}
+                  onClick={handlePreviousClick}
+                  disabled={isTransitioning || textIndex === 0}
+                  aria-label="Previous"
+                >
+                  <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
+                    <path
+                      d="M6 2L2 6L6 10"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              )}
+              <p className={styles.textboxContent}>{currentTextbox.text}</p>
+              {textIndex !== ANIMATION_LENGTH && (
+                <button
+                  id={styles.right_button}
+                  onClick={handleNextClick}
+                  disabled={isTransitioning || textIndex === ANIMATION_LENGTH}
+                  aria-label="Next"
+                >
+                  <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
+                    <path
+                      d="M2 2L6 6L2 10"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
