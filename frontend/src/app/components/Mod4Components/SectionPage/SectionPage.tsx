@@ -1,6 +1,5 @@
 import Mod4 from "./Mod4";
 import Mod4Title from "./Mod4Title";
-
 import styles from "./SectionPage.module.css";
 
 export default function SectionPage() {

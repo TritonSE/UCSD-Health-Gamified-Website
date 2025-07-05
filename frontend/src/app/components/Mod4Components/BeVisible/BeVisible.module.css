@@ -23,7 +23,7 @@
 }
 
 .textbox {
-  background-color: #FAFFEA;
+  background-color: #faffea;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 10;
@@ -40,7 +40,7 @@
   justify-content: flex-start;
   align-items: center;
   font-family: "DM Sans";
-  color: #1C3A29;
+  color: #1c3a29;
   padding: 1.5rem;
   box-sizing: border-box;
 }
@@ -48,7 +48,7 @@
 .textboxContent p {
   margin: 0;
   font-size: 14px;
-  color: #1C3A29;
+  color: #1c3a29;
   text-align: left;
   line-height: 1.2;
 }

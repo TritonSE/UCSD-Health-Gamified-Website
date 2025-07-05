@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import styles from "./BeVisible.module.css";
 import GraphSVG from "./Graph";
 

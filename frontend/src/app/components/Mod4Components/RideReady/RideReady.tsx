@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./RideReady.module.css";
+
 import GraphSVG from "./Graph";
+import styles from "./RideReady.module.css";
 
 type CircleData = {
   text: string;

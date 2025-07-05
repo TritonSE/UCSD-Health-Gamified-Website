@@ -167,25 +167,9 @@ export default function GraphSVG({
           strokeWidth="5"
         />
         <rect x="232.5" y="411.5" width="41" height="41" rx="17.5" fill="#BBD567" />
-        <rect
-          x="232.5"
-          y="411.5"
-          width="41"
-          height="41"
-          rx="20.5"
-          stroke="white"
-          strokeWidth="5"
-        />
+        <rect x="232.5" y="411.5" width="41" height="41" rx="20.5" stroke="white" strokeWidth="5" />
         <rect x="630.5" y="358.5" width="41" height="41" rx="20.5" fill="#BBD567" />
-        <rect
-          x="630.5"
-          y="358.5"
-          width="41"
-          height="41"
-          rx="20.5"
-          stroke="white"
-          strokeWidth="5"
-        />
+        <rect x="630.5" y="358.5" width="41" height="41" rx="20.5" stroke="white" strokeWidth="5" />
         <rect x="411.5" y="90.5" width="41" height="41" rx="17.5" fill="#BBD567" />
         <rect x="411.5" y="90.5" width="41" height="41" rx="20.5" stroke="white" strokeWidth="5" />
         <rect x="607.5" y="99.5" width="41" height="41" rx="17.5" fill="#BBD567" />

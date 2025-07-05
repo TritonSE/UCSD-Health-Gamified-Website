@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+
 import styles from "./ThinkAhead.module.css";
 import { ANIMATION_TIMELINE, TEXT_BOX } from "./constants";
 
