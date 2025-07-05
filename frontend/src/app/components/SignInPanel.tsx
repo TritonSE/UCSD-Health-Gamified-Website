@@ -1,6 +1,7 @@
 "use client";
 import { UserCredential, sendEmailVerification, signInWithEmailAndPassword } from "firebase/auth";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { getUser, updateUser } from "../api/user";
@@ -18,6 +19,7 @@ export default function SignInPanel() {
   const [emailError, setEmailError] = useState("");
   const [signInError, setSignInError] = useState("");
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+  const router = useRouter();
 
   const firebaseAuth = (): Promise<UserCredential> => {
     return new Promise((resolve, reject) => {
@@ -65,14 +67,14 @@ export default function SignInPanel() {
                   })
                     .then((_) => {
                       // TODO: replace with intro video page
-                      window.location.href = "/intro-video";
+                      router.push("/intro-video");
                     })
                     .catch((error) => {
                       console.error("Error updating first login: ", error);
                     });
                 } else {
                   // TODO: replace with homepage
-                  window.location.href = "/";
+                  router.push("/");
                 }
               }
             })
@@ -187,6 +189,15 @@ export default function SignInPanel() {
           Don&apos;t have an account?{" "}
           <a className={styles.underlined} href="/signup">
             Sign-up
+          </a>
+        </p>
+      </div>
+      <div className={styles.built_by_tse}>
+        <Image src="/tse_logo.svg" alt="Triton Software Engineering Logo" width={32} height={32} />
+        <p>
+          Built for free by{" "}
+          <a href="https://tritonse.github.io/" target="_blank">
+            Triton Software Engineering
           </a>
         </p>
       </div>

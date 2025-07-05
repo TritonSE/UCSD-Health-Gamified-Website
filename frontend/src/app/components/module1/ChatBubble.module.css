@@ -1,8 +1,12 @@
 .container {
   display: flex;
   align-items: center;
+  min-width: 600px;
   gap: 1rem;
   padding: 1rem;
+  overflow-x: auto;
+  box-sizing: border-box;
+  /* background-color: red; */
 }
 
 .icon {

@@ -1,0 +1,118 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#container h2,
+#container p {
+  margin-inline: auto;
+}
+
+#svg_container {
+  position: relative;
+}
+
+#text_box_button_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#text_box_button_container svg {
+  bottom: 0;
+  transform: translateY(calc(100% - 1px));
+  margin-inline: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+#text_box_wrapper {
+  padding-inline: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+#text_box_wrapper > div {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 60px;
+  position: relative;
+}
+
+#text_box_button_container p {
+  color: #000;
+  font-family: "DM Sans";
+  font-size: 14.6px;
+  text-align: center;
+  line-height: 19.5px;
+}
+
+#text_box_button_container button {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #1c3a29;
+  cursor: pointer;
+  filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.15));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#text_box_button_container button:disabled {
+  background-color: #d8d8d8;
+  cursor: not-allowed;
+}
+
+#left_button {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+#right_button {
+  right: 0;
+  transform: translateX(50%);
+}
+
+.transition_element {
+  transition: transform 0.8s ease-in-out;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#crying_timmy_steam {
+  transition:
+    scale 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}
+
+#road_container,
+#dirt_road {
+  transform-origin: top;
+}
+
+.timmy_mouth_path {
+  transform-origin: 212px 337px;
+}
+
+.crying_timmy_mouth_path {
+  transform-origin: 57px 125px;
+}
+
+#dark_overlay,
+.phone {
+  transition: opacity 0.2s;
+}

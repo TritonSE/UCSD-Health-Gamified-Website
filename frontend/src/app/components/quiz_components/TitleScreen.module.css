@@ -1,21 +1,28 @@
-.titleScreen {
+#container {
+  padding-top: 1rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+}
+
+.titleScreen {
+  height: fit-content;
+  display: flex;
   padding: 60px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 1rem;
+  border: #bbd567 3px solid;
+  border-radius: 20px;
+  max-width: 960px;
 }
 
 .ready {
   display: flex;
-  max-width: 700px;
-  width: 80%;
   flex-direction: column;
   align-items: flex-start;
   gap: 40px;
-  flex-shrink: 0;
 }
 
 .title {
@@ -31,19 +38,18 @@
 
 .description {
   color: #000;
-
   /* Body/Large (Reg) */
   font-family: "DM Sans";
-  font-size: 24px;
   font-style: normal;
   font-weight: 400;
+  font-size: 22px;
   line-height: 32px; /* 133.333% */
 }
 
 .button {
   display: flex;
-  width: 400px;
-  height: 48px;
+  width: 100%;
+  padding-block: 0.75rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -54,17 +60,11 @@
   cursor: pointer;
 }
 
-.buttonText {
-  color: #000;
-  text-align: center;
-
-  /* Title/XSmall */
-  font-family: "DM Sans";
-  font-size: 18px;
-  font-style: normal;
+#buttonText {
   font-weight: 700;
   line-height: 150%; /* 27px */
-  letter-spacing: 0.36px;
+  font-size: 18px;
+  color: #000;
 }
 
 .descriptionBold {
@@ -72,7 +72,7 @@
 
   /* Body/Large (Reg) */
   font-family: "DM Sans";
-  font-size: 24px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 700;
   line-height: 32px;

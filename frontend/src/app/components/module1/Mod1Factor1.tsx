@@ -1,7 +1,7 @@
 import React from "react";
 
 import ButtonCardSlider from "./ButtonCardSlider";
-import styles from "./Mod1ChooseBike.module.css";
+import styles from "./Mod1Factor1.module.css";
 
 export default function Mod1Factor1() {
   const titles_part1 = ["COMMUTING", "RECREATIONAL RIDING", "MOUNTAIN BIKING"];
@@ -33,12 +33,14 @@ export default function Mod1Factor1() {
   ];
 
   return (
-    <div>
+    <section id={styles.container}>
       <h1 className={styles.title}>WHAT TYPES OF RIDING DO YOU WANT TO DO?</h1>
       <p className={styles.description}>
         When choosing your E bike, consider the following factors:
       </p>
-      <ButtonCardSlider titles={titles_part1} cards={cards_part1} show_numbers={false} />
-    </div>
+      <div className={styles.buttonContainer}>
+        <ButtonCardSlider titles={titles_part1} cards={cards_part1} show_numbers={false} />
+      </div>
+    </section>
   );
 }

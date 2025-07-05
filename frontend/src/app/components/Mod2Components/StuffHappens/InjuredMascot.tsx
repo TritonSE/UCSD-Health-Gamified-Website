@@ -1,10 +1,13 @@
-export default function InjuredMascot() {
+export default function InjuredMascot({ props }: { props?: React.SVGProps<SVGSVGElement> }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 330 366"
+      width="100%"
+      height="100%"
       fill="none"
+      {...props}
     >
       <path
         opacity=".2"
