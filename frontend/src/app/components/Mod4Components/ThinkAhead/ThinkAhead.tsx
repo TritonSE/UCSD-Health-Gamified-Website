@@ -54,7 +54,7 @@ export default function ThinkAhead() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_6576_23660)">
+          <g clipPath="url(#clip0_6576_23660)">
             <rect width="924" height="490" rx="8" fill="#B6E3FF" />
             <g
               id={styles.road_container}
@@ -66,12 +66,12 @@ export default function ThinkAhead() {
               <path
                 d="M-4.48029 22.1744C42.1864 50.6744 177.12 95.8744 343.52 48.6744C551.52 -10.3256 530.52 -34.324 671.02 -31.824C811.52 -29.324 967.02 156.675 1253.02 121.675C1399.76 103.717 1458.91 83.977 1477.02 68.7857V48.6744C1484.43 53.2174 1487.14 60.2903 1477.02 68.7857V189.175C1412.35 164.008 1371.22 100.776 1140.02 161.176C851.02 236.676 617.886 117.994 521.52 100.176C389.02 75.6758 -7.48047 140.676 -104.48 218.676C-182.08 281.076 -36.8136 96.6745 -4.48029 22.1744Z"
                 fill="#CFEDFF"
-                fill-opacity="0.58"
+                fillOpacity="0.58"
               />
               <path
                 d="M1447.12 74.1744C1400.45 102.674 1265.52 147.874 1099.12 100.674C891.115 41.6744 912.115 17.676 771.615 20.176C631.115 22.676 478.5 159 192.5 124C-3.14124 100.058 -45.2047 39.3144 -40.3671 14.2917L-34.3849 5C-37.38 6.83572 -39.5471 10.0507 -40.3671 14.2917L-111 124C-46.3334 98.8333 71.4153 152.776 302.615 213.176C591.615 288.676 571.73 152.46 771.615 115.5C971.5 78.5401 1450.12 192.676 1547.12 270.676C1624.72 333.076 1479.45 148.674 1447.12 74.1744Z"
                 fill="#CFEDFF"
-                fill-opacity="0.55"
+                fillOpacity="0.55"
               />
               <path
                 d="M1414 273.025V336.525L-11 363.024V336.525C79 336.525 177.833 299.201 294 273.025C409.346 247.033 472.977 301.165 595.5 310.524C714.508 319.615 771.416 273.184 865.5 298.024C957.352 322.276 1024 345.525 1153 273.025C1256.2 215.025 1370 248.858 1414 273.025Z"
@@ -102,7 +102,7 @@ export default function ThinkAhead() {
             </g>
             <rect x="-1" y="335" width="925" height="38" fill="#FFE5C9" />
             <g
-              clip-path="url(#clip1_6576_23660)"
+              clipPath="url(#clip1_6576_23660)"
               id={styles.main_bike}
               className={styles.transition_element}
               style={{
@@ -120,36 +120,36 @@ export default function ThinkAhead() {
               <path
                 d="M138.899 323.899L159.099 378.29L168.806 372.13L214.448 320.69M315.169 296.302L339.036 292.815L342.187 303.802L325.4 316.399"
                 stroke="#484848"
-                stroke-width="2.68932"
+                strokeWidth="2.68932"
               />
               <path
                 d="M308.867 285.591L299.423 267.103H308.867V230.664L286.312 235.75"
                 stroke="#484848"
-                stroke-width="2.68932"
+                strokeWidth="2.68932"
               />
               <path
                 d="M159.625 439.645C188.888 439.645 212.611 415.414 212.611 385.523C212.611 355.631 188.888 331.4 159.625 331.4C130.361 331.4 106.639 355.631 106.639 385.523C106.639 415.414 130.361 439.645 159.625 439.645Z"
                 stroke="#62657A"
-                stroke-width="10.7483"
+                strokeWidth="10.7483"
               />
               <path
                 d="M105.457 370.798C112.275 351.398 127.486 335.226 145.323 331.408"
                 stroke="#4E4E68"
-                stroke-width="1.61359"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
+                strokeWidth="1.61359"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
               />
               <path
                 d="M109.921 369.325C114.376 354.627 127.496 341.691 140.081 337.284"
                 stroke="#4E4E68"
-                stroke-width="1.61359"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
+                strokeWidth="1.61359"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
               />
               <path
                 d="M360.015 439.645C389.279 439.645 413.001 415.414 413.001 385.523C413.001 355.631 389.279 331.4 360.015 331.4C330.752 331.4 307.03 355.631 307.03 385.523C307.03 415.414 330.752 439.645 360.015 439.645Z"
                 stroke="#62657A"
-                stroke-width="10.7483"
+                strokeWidth="10.7483"
               />
               <path
                 d="M101.894 341.819L110.506 339.994C104.194 346.673 98.2655 360.434 97.6704 362.423L95.2111 354.45L101.894 341.819Z"
@@ -162,16 +162,16 @@ export default function ThinkAhead() {
               <path
                 d="M306.382 370.798C313.199 351.398 328.411 335.226 346.248 331.408"
                 stroke="#4E4E68"
-                stroke-width="1.61359"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
+                strokeWidth="1.61359"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
               />
               <path
                 d="M310.836 369.325C315.3 354.627 328.411 341.691 340.996 337.284"
                 stroke="#4E4E68"
-                stroke-width="1.61359"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
+                strokeWidth="1.61359"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
               />
               <path
                 d="M242.569 407.793L153.454 395.616C147.074 394.74 142.313 389.189 142.313 382.609C142.313 375.555 147.765 369.762 154.671 369.494L244.512 365.989C256.17 365.533 265.859 375.063 265.859 386.971C265.859 399.675 254.901 409.473 242.578 407.784L242.569 407.793Z"
@@ -180,22 +180,22 @@ export default function ThinkAhead() {
               <path
                 d="M220.216 368.107C208.147 309.434 111.89 297.106 96.679 377.485"
                 stroke="#BBD567"
-                stroke-width="6.98326"
+                strokeWidth="6.98326"
               />
               <path
                 d="M410.699 348.065C378.114 297.107 286.313 321.218 297.857 398.379"
                 stroke="#BBD567"
-                stroke-width="6.98326"
+                strokeWidth="6.98326"
               />
               <path
                 d="M223.883 333.009C243.471 342.119 291.503 353.16 314.372 300.861M259.295 376.949L326.179 323.363"
                 stroke="#BBD567"
-                stroke-width="8.05899"
+                strokeWidth="8.05899"
               />
               <path
                 d="M213.398 312.645L254.052 391.147M307.826 287.729L358.974 382.842"
                 stroke="#9AB445"
-                stroke-width="6.98326"
+                strokeWidth="6.98326"
               />
               <path
                 d="M211.41 306.331L211.402 306.335C208.305 307.586 206.787 311.165 208.012 314.328L209.751 318.817C210.975 321.981 214.479 323.531 217.576 322.28L217.584 322.276C220.681 321.025 222.199 317.446 220.974 314.283L219.236 309.794C218.011 306.63 214.507 305.08 211.41 306.331Z"
@@ -216,12 +216,12 @@ export default function ThinkAhead() {
               <path
                 d="M470.442 236.557L396.477 323.096L407.233 339.17L553.859 405.88L470.45 236.557H470.442Z"
                 fill="url(#paint0_linear_6576_23660)"
-                fill-opacity="0.5"
+                fillOpacity="0.5"
               />
               <path
                 d="M75.1252 296.123L109.58 340.003L98.5945 361.445L56.1501 377.9L65.1384 337.011L75.1252 296.123Z"
                 fill="url(#paint1_linear_6576_23660)"
-                fill-opacity="0.5"
+                fillOpacity="0.5"
               />
               <path
                 d="M397.002 322.29L388.346 323.899C396.739 327.654 407.496 338.096 408.809 339.705L408.021 331.4L397.002 322.29Z"
@@ -231,7 +231,7 @@ export default function ThinkAhead() {
                 d="M244.346 397.315C250.287 397.315 255.102 392.396 255.102 386.328C255.102 380.26 250.287 375.341 244.346 375.341C238.405 375.341 233.589 380.26 233.589 386.328C233.589 392.396 238.405 397.315 244.346 397.315Z"
                 fill="#62657A"
               />
-              <path d="M244.084 386.596V417.403" stroke="#484848" stroke-width="2.68932" />
+              <path d="M244.084 386.596V417.403" stroke="#484848" strokeWidth="2.68932" />
               <path d="M256.144 415.525H232.014V425.171H256.144V415.525Z" fill="#FCD579" />
               <path
                 d="M242.806 291.215H186.398C183.299 291.215 180.805 293.996 181.707 297.026C188.498 319.832 220.225 311.688 228.032 305.296C232.259 301.827 238.228 298.707 242.482 297.697C244.145 297.304 245.65 295.864 245.65 294.121C245.65 292.512 244.372 291.207 242.797 291.207L242.806 291.215Z"
@@ -265,8 +265,8 @@ export default function ThinkAhead() {
                 <path
                   d="M225.353 266.746C241.986 266.746 255.47 252.973 255.47 235.984C255.47 218.994 241.986 205.221 225.353 205.221C208.72 205.221 195.237 218.994 195.237 235.984C195.237 252.973 208.72 266.746 225.353 266.746Z"
                   stroke="#D3D3DD"
-                  stroke-width="4.4822"
-                  stroke-miterlimit="10"
+                  strokeWidth="4.4822"
+                  strokeMiterlimit="10"
                 />
                 <path
                   d="M226.255 259.478C238.953 259.478 249.247 248.963 249.247 235.993C249.247 223.022 238.953 212.507 226.255 212.507C213.557 212.507 203.263 223.022 203.263 235.993C203.263 248.963 213.557 259.478 226.255 259.478Z"
@@ -280,30 +280,30 @@ export default function ThinkAhead() {
                 <path
                   d="M270.357 236.786C269.516 262.524 250.095 283.452 225.353 286.018"
                   stroke="#4E4E68"
-                  stroke-width="4.4822"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
+                  strokeWidth="4.4822"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
                 />
                 <path
                   d="M262.751 240.148C260.729 257.894 248.31 272.394 231.882 277.133"
                   stroke="#4E4E68"
-                  stroke-width="4.4822"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
+                  strokeWidth="4.4822"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
                 />
                 <path
                   d="M170.065 233.406C170.906 207.668 190.327 186.74 215.069 184.174"
                   stroke="#4E4E68"
-                  stroke-width="4.4822"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
+                  strokeWidth="4.4822"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
                 />
                 <path
                   d="M177.671 230.034C179.693 212.289 192.112 197.788 208.54 193.05"
                   stroke="#4E4E68"
-                  stroke-width="4.4822"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
+                  strokeWidth="4.4822"
+                  strokeMiterlimit="10"
+                  strokeLinecap="round"
                 />
                 <path
                   d="M218.623 235.545V233.256C218.623 231.049 216.871 229.26 214.71 229.26C212.55 229.26 210.798 231.049 210.798 233.256V235.545C210.798 237.752 212.55 239.541 214.71 239.541C216.871 239.541 218.623 237.752 218.623 235.545Z"
@@ -317,15 +317,15 @@ export default function ThinkAhead() {
                   d="M236.004 239.542C236.004 243.377 232.959 246.497 229.204 246.497C225.449 246.497 222.403 243.377 222.403 239.542H236.013H236.004Z"
                   fill="white"
                   stroke="#171759"
-                  stroke-width="3.31682"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="3.31682"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M273.972 217.683C273.815 221.143 272.064 250.225 250.569 262.973C243.313 267.282 236.443 268.158 233.528 268.498C219.411 270.152 202.091 265.503 190.52 251.646C178.451 237.19 178.941 220.267 179.16 216.28"
                   stroke="#201C3A"
-                  stroke-width="7.17151"
-                  stroke-miterlimit="10"
+                  strokeWidth="7.17151"
+                  strokeMiterlimit="10"
                 />
                 <path
                   d="M273.675 227.796C265.36 225.713 255.89 223.942 245.405 222.986C222.317 220.876 202.476 223.451 187.615 226.75C187.615 226.75 181.059 228.958 166.767 227.796C165.9 227.724 164.465 227.509 163.345 226.428C162.469 225.578 161.918 224.416 161.918 223.129V215.619C161.918 213.054 164.097 210.953 166.767 210.953H273.684C276.344 210.953 278.532 213.054 278.532 215.619V223.129C278.532 225.695 276.353 227.796 273.684 227.796H273.675Z"
@@ -447,9 +447,9 @@ export default function ThinkAhead() {
               width="124.492"
               height="160.822"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -479,9 +479,9 @@ export default function ThinkAhead() {
               width="42"
               height="42"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
@@ -510,9 +510,9 @@ export default function ThinkAhead() {
               width="96"
               height="63"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
               <feColorMatrix
                 in="SourceAlpha"
@@ -534,8 +534,8 @@ export default function ThinkAhead() {
               y2="313.277"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FCD579" />
-              <stop offset="1" stop-color="white" stop-opacity="0" />
+              <stop stopColor="#FCD579" />
+              <stop offset="1" stopColor="white" stopOpacity="0" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_6576_23660"
@@ -545,8 +545,8 @@ export default function ThinkAhead() {
               y2="338.198"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FF525F" />
-              <stop offset="1" stop-color="#FF525F" stop-opacity="0" />
+              <stop stopColor="#FF525F" />
+              <stop offset="1" stopColor="#FF525F" stopOpacity="0" />
             </linearGradient>
             <clipPath id="clip0_6576_23660">
               <rect width="924" height="490" rx="8" fill="white" />

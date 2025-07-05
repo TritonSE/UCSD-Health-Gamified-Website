@@ -29,17 +29,17 @@ export default function GraphSVG({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_5173_42370)">
+      <g clipPath="url(#clip0_5173_42370)">
         <rect width="924" height="490" rx="8" fill="#3D3D60" />
         <path
           d="M-4.48029 22.1744C42.1864 50.6744 177.12 95.8744 343.52 48.6744C551.52 -10.3256 530.52 -34.324 671.02 -31.824C811.52 -29.324 967.02 156.675 1253.02 121.675C1399.76 103.717 1458.91 83.977 1477.02 68.7857V48.6744C1484.43 53.2174 1487.14 60.2903 1477.02 68.7857V189.175C1412.35 164.008 1371.22 100.776 1140.02 161.176C851.02 236.676 617.886 117.994 521.52 100.176C389.02 75.6758 -7.48047 140.676 -104.48 218.676C-182.08 281.076 -36.8136 96.6745 -4.48029 22.1744Z"
           fill="#7D7DB1"
-          fill-opacity="0.5"
+          fillOpacity="0.5"
         />
         <path
           d="M1447.12 74.1744C1400.45 102.674 1265.52 147.874 1099.12 100.674C891.115 41.6744 912.115 17.676 771.615 20.176C631.115 22.676 478.5 159 192.5 124C-3.14124 100.058 -45.2047 39.3144 -40.3671 14.2917L-34.3849 5C-37.38 6.83572 -39.5471 10.0507 -40.3671 14.2917L-111 124C-46.3334 98.8333 71.4153 152.776 302.615 213.176C591.615 288.676 571.73 152.46 771.615 115.5C971.5 78.5401 1450.12 192.676 1547.12 270.676C1624.72 333.076 1479.45 148.674 1447.12 74.1744Z"
           fill="#50507D"
-          fill-opacity="0.5"
+          fillOpacity="0.5"
         />
         <path
           d="M1425 273.025V336.525L0 363.024V336.525C90 336.525 188.833 299.201 305 273.025C420.346 247.033 483.977 301.165 606.5 310.524C725.508 319.615 782.416 273.184 876.5 298.024C968.352 322.276 1035 345.525 1164 273.025C1267.2 215.025 1381 248.858 1425 273.025Z"
@@ -50,15 +50,15 @@ export default function GraphSVG({
           fill="#1C3A29"
         />
         <path d="M-1 373H1833V490H-1V373Z" fill="#909090" />
-        <path d="M-2 428H1902" stroke="#FCD579" stroke-width="10" stroke-dasharray="30 30" />
+        <path d="M-2 428H1902" stroke="#FCD579" strokeWidth="10" strokeDasharray="30 30" />
         <rect x="-1" y="335" width="925" height="38" fill="#FFE5C9" />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M885.926 83.6603C883.934 84.8033 881.78 85.7378 879.485 86.4263C863.347 91.2674 846.34 82.1096 841.499 65.9718C839.148 58.1328 840.099 50.0887 843.549 43.3336C831.531 50.2283 825.384 64.7105 829.536 78.5533C834.377 94.6911 851.384 103.849 867.522 99.0078C875.821 96.5183 882.274 90.8116 885.926 83.6603Z"
           fill="#FFE5C9"
         />
-        <g clip-path="url(#clip1_5173_42370)">
+        <g clipPath="url(#clip1_5173_42370)">
           <path
             d="M460.442 245.2L474.121 225.371C476.01 222.632 479.713 221.978 482.391 223.91L482.398 223.915C485.077 225.847 485.716 229.634 483.827 232.373L470.148 252.202C468.259 254.941 464.556 255.595 461.878 253.663L461.871 253.658C459.193 251.726 458.553 247.939 460.442 245.2Z"
             fill="#171759"
@@ -70,36 +70,36 @@ export default function GraphSVG({
           <path
             d="M569.643 273.352L549.416 327.892L539.697 321.715L493.995 270.134M393.143 245.679L369.245 242.183L366.09 253.2L382.898 265.831"
             stroke="#484848"
-            stroke-width="2.68932"
+            strokeWidth="2.68932"
           />
           <path
             d="M399.453 234.939L408.909 216.401H399.453V179.862L422.037 184.963"
             stroke="#484848"
-            stroke-width="2.68932"
+            strokeWidth="2.68932"
           />
           <path
             d="M548.89 389.414C519.589 389.414 495.835 365.117 495.835 335.144C495.835 305.171 519.589 280.874 548.89 280.874C578.192 280.874 601.945 305.171 601.945 335.144C601.945 365.117 578.192 389.414 548.89 389.414Z"
             stroke="#62657A"
-            stroke-width="10.7483"
+            strokeWidth="10.7483"
           />
           <path
             d="M603.129 320.379C596.302 300.926 581.071 284.71 563.21 280.882"
             stroke="#4E4E68"
-            stroke-width="1.61359"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
+            strokeWidth="1.61359"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
           />
           <path
             d="M598.658 318.902C594.198 304.164 581.061 291.193 568.459 286.773"
             stroke="#4E4E68"
-            stroke-width="1.61359"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
+            strokeWidth="1.61359"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
           />
           <path
             d="M348.238 389.414C318.936 389.414 295.183 365.117 295.183 335.144C295.183 305.171 318.936 280.874 348.238 280.874C377.539 280.874 401.293 305.171 401.293 335.144C401.293 365.117 377.539 389.414 348.238 389.414Z"
             stroke="#62657A"
-            stroke-width="10.7483"
+            strokeWidth="10.7483"
           />
           <path
             d="M606.697 291.321L598.073 289.49C604.393 296.188 610.33 309.987 610.926 311.981L613.388 303.986L606.697 291.321Z"
@@ -112,16 +112,16 @@ export default function GraphSVG({
           <path
             d="M401.942 320.379C395.115 300.926 379.884 284.71 362.023 280.882"
             stroke="#4E4E68"
-            stroke-width="1.61359"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
+            strokeWidth="1.61359"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
           />
           <path
             d="M397.481 318.902C393.012 304.164 379.884 291.193 367.282 286.773"
             stroke="#4E4E68"
-            stroke-width="1.61359"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
+            strokeWidth="1.61359"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
           />
           <path
             d="M465.837 357.475L555.069 345.265C561.457 344.387 566.225 338.82 566.225 332.222C566.225 325.149 560.765 319.34 553.851 319.071L463.892 315.557C452.219 315.1 442.517 324.656 442.517 336.597C442.517 349.335 453.49 359.16 465.829 357.466L465.837 357.475Z"
@@ -130,22 +130,22 @@ export default function GraphSVG({
           <path
             d="M488.22 317.681C500.305 258.848 596.687 246.486 611.918 327.085"
             stroke="#BBD567"
-            stroke-width="6.98326"
+            strokeWidth="6.98326"
           />
           <path
             d="M297.488 297.584C330.115 246.487 422.037 270.664 410.478 348.035"
             stroke="#BBD567"
-            stroke-width="6.98326"
+            strokeWidth="6.98326"
           />
           <path
             d="M484.548 282.487C464.935 291.622 416.84 302.693 393.94 250.251M449.09 326.547L382.118 272.815"
             stroke="#BBD567"
-            stroke-width="8.05899"
+            strokeWidth="8.05899"
           />
           <path
             d="M495.046 262.068L454.339 340.784M400.496 237.084L349.281 332.456"
             stroke="#9AB445"
-            stroke-width="6.98326"
+            strokeWidth="6.98326"
           />
           <path
             d="M497.037 255.736L497.045 255.74C500.146 256.994 501.666 260.583 500.439 263.755L498.699 268.256C497.472 271.428 493.964 272.983 490.863 271.728L490.855 271.725C487.754 270.47 486.234 266.882 487.461 263.71L489.202 259.208C490.428 256.036 493.936 254.482 497.037 255.736Z"
@@ -166,12 +166,12 @@ export default function GraphSVG({
           <path
             d="M237.668 185.771L311.729 272.547L300.958 288.665L154.141 355.557L237.659 185.771H237.668Z"
             fill="url(#paint0_linear_5173_42370)"
-            fill-opacity="0.5"
+            fillOpacity="0.5"
           />
           <path
             d="M633.5 245.5L599 289.5L610 311L652.5 327.5L643.5 286.5L633.5 245.5Z"
             fill="url(#paint1_linear_5173_42370)"
-            fill-opacity="0.5"
+            fillOpacity="0.5"
           />
           <path
             d="M311.203 271.738L319.87 273.352C311.466 277.117 300.695 287.587 299.381 289.201L300.17 280.873L311.203 271.738Z"
@@ -181,7 +181,7 @@ export default function GraphSVG({
             d="M464.058 346.969C458.11 346.969 453.288 342.036 453.288 335.951C453.288 329.867 458.11 324.934 464.058 324.934C470.007 324.934 474.829 329.867 474.829 335.951C474.829 342.036 470.007 346.969 464.058 346.969Z"
             fill="#62657A"
           />
-          <path d="M464.321 336.22V367.112" stroke="#484848" stroke-width="2.68932" />
+          <path d="M464.321 336.22V367.112" stroke="#484848" strokeWidth="2.68932" />
           <path d="M452.245 365.228H476.406V374.901H452.245V365.228Z" fill="#FCD579" />
           <path
             d="M465.601 240.579H522.082C525.185 240.579 527.682 243.367 526.78 246.406C519.979 269.274 488.211 261.108 480.394 254.698C476.161 251.22 470.184 248.091 465.925 247.078C464.26 246.684 462.753 245.241 462.753 243.493C462.753 241.879 464.032 240.57 465.609 240.57L465.601 240.579Z"
@@ -215,8 +215,8 @@ export default function GraphSVG({
             <path
               d="M483.076 216.043C466.421 216.043 452.92 202.233 452.92 185.197C452.92 168.161 466.421 154.35 483.076 154.35C499.73 154.35 513.232 168.161 513.232 185.197C513.232 202.233 499.73 216.043 483.076 216.043Z"
               stroke="#D3D3DD"
-              stroke-width="4.4822"
-              stroke-miterlimit="10"
+              strokeWidth="4.4822"
+              strokeMiterlimit="10"
             />
             <path
               d="M482.173 208.755C469.458 208.755 459.151 198.211 459.151 185.205C459.151 172.199 469.458 161.656 482.173 161.656C494.888 161.656 505.195 172.199 505.195 185.205C505.195 198.211 494.888 208.755 482.173 208.755Z"
@@ -230,30 +230,30 @@ export default function GraphSVG({
             <path
               d="M438.014 186.001C438.855 211.809 458.302 232.795 483.076 235.368"
               stroke="#4E4E68"
-              stroke-width="4.4822"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="4.4822"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M445.629 189.372C447.654 207.166 460.089 221.707 476.539 226.458"
               stroke="#4E4E68"
-              stroke-width="4.4822"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="4.4822"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M538.436 182.612C537.595 156.804 518.148 135.818 493.373 133.245"
               stroke="#4E4E68"
-              stroke-width="4.4822"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="4.4822"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M530.82 179.231C528.796 161.437 516.36 146.897 499.911 142.146"
               stroke="#4E4E68"
-              stroke-width="4.4822"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="4.4822"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M489.815 184.756V182.461C489.815 180.248 491.569 178.454 493.733 178.454C495.896 178.454 497.65 180.248 497.65 182.461V184.756C497.65 186.969 495.896 188.763 493.733 188.763C491.569 188.763 489.815 186.969 489.815 184.756Z"
@@ -267,15 +267,15 @@ export default function GraphSVG({
               d="M472.411 188.764C472.411 192.61 475.461 195.738 479.22 195.738C482.98 195.738 486.03 192.61 486.03 188.764H472.402H472.411Z"
               fill="white"
               stroke="#171759"
-              stroke-width="3.31682"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="3.31682"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M434.393 166.846C434.551 170.316 436.304 199.477 457.827 212.26C465.092 216.581 471.972 217.459 474.89 217.8C489.026 219.458 506.369 214.797 517.955 200.902C530.04 186.407 529.549 169.437 529.33 165.439"
               stroke="#201C3A"
-              stroke-width="7.17151"
-              stroke-miterlimit="10"
+              strokeWidth="7.17151"
+              strokeMiterlimit="10"
             />
             <path
               d="M434.691 176.986C443.017 174.897 452.499 173.122 462.998 172.163C486.116 170.048 505.983 172.629 520.864 175.937C520.864 175.937 527.428 178.151 541.739 176.986C542.606 176.914 544.044 176.699 545.165 175.615C546.042 174.763 546.594 173.598 546.594 172.307V164.777C546.594 162.204 544.412 160.097 541.739 160.097H434.682C432.018 160.097 429.827 162.204 429.827 164.777V172.307C429.827 174.879 432.009 176.986 434.682 176.986H434.691Z"
@@ -313,10 +313,10 @@ export default function GraphSVG({
           r="18.9412"
           fill="#BBD567"
           stroke="white"
-          stroke-width="5"
+          strokeWidth="5"
         />
-        <circle cx="259.559" cy="268" r="18.9412" fill="#BBD567" stroke="white" stroke-width="5" />
-        <circle cx="658.441" cy="335" r="18.9412" fill="#BBD567" stroke="white" stroke-width="5" />
+        <circle cx="259.559" cy="268" r="18.9412" fill="#BBD567" stroke="white" strokeWidth="5" />
+        <circle cx="658.441" cy="335" r="18.9412" fill="#BBD567" stroke="white" strokeWidth="5" />
         {CIRCLE_DATA.map(({ x, y, number }) => (
           <g
             className={styles.svg_circle}
@@ -355,9 +355,9 @@ export default function GraphSVG({
           width="124.65"
           height="161.25"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -384,8 +384,8 @@ export default function GraphSVG({
           y2="262.807"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FCD579" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="#FCD579" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_5173_42370"
@@ -395,8 +395,8 @@ export default function GraphSVG({
           y2="287.772"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FF525F" />
-          <stop offset="1" stop-color="#FF525F" stop-opacity="0" />
+          <stop stopColor="#FF525F" />
+          <stop offset="1" stopColor="#FF525F" stopOpacity="0" />
         </linearGradient>
         <clipPath id="clip0_5173_42370">
           <rect width="924" height="490" rx="8" fill="white" />

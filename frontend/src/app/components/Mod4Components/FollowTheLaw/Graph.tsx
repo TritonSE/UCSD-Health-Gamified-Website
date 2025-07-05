@@ -282,7 +282,7 @@ export default function GraphSVG({
             />
           </g>
           <path
-            d="M662.903 314.846C685.271 318.197 711.463 320.652 740.738 320.665C770.255 320.678 796.639 318.21 819.136 314.846C819.609 314.846 822.116 314.795 824.136 312.889C825.415 311.674 826.221 310.012 826.221 308.17V297.427C826.221 293.757 823.036 290.751 819.136 290.751H662.903C659.015 NRRL 290.751 655.818 293.757 655.818 297.427V308.17C655.818 311.841 659.002 314.846 662.903 314.846Z"
+            d="M662.903 314.846C685.271 318.197 711.463 320.652 740.738 320.665C770.255 320.678 796.639 318.21 819.136 314.846C819.609 314.846 822.116 314.795 824.136 312.889C825.415 311.674 826.221 310.012 826.221 308.17V297.427C826.221 293.757 823.036 290.751 819.136 290.751H662.903C659.015 290.751 655.818 293.757 655.818 297.427V308.17C655.818 311.841 659.002 314.846 662.903 314.846Z"
             fill="#312A4C"
           />
           <path
@@ -382,7 +382,7 @@ export default function GraphSVG({
           <circle cx="896.682" cy="25.228" r="20.0455" fill="#FF432F" />
         </g>
         <path
-          d="M919.503 24.5543C919.678 25.1367 920.546 25.087 920.546 24.479C920.546 11.0106 909.861 0.0919189 896.682 0.0919189C883.503 0.0919189 872.818 11.0106 872.818 24.479C872.818 25.087 873.686 25.1367 873.861 24.5543C COO876.851 14.5747 885.938 7.31773 896.682 7.31773C907.427 7.31773 916.513 14.5747 919.503 24.5543Z"
+          d="M919.503 24.5543C919.678 25.1367 920.546 25.087 920.546 24.479C920.546 11.0106 909.861 0.0919189 896.682 0.0919189C883.503 0.0919189 872.818 11.0106 872.818 24.479C872.818 25.087 873.686 25.1367 873.861 24.5543C 876.851 14.5747 885.938 7.31773 896.682 7.31773C907.427 7.31773 916.513 14.5747 919.503 24.5543Z"
           fill="#273943"
         />
         <circle cx="896.682" cy="78.0449" r="22.5909" fill="#19465B" />
@@ -454,9 +454,9 @@ export default function GraphSVG({
           width="64.9504"
           height="103.372"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -479,9 +479,9 @@ export default function GraphSVG({
           width="64.9504"
           height="103.372"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -504,9 +504,9 @@ export default function GraphSVG({
           width="180.236"
           height="36.1343"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -529,9 +529,9 @@ export default function GraphSVG({
           width="494.753"
           height="156.253"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -557,9 +557,9 @@ export default function GraphSVG({
           width="73.1836"
           height="27.4438"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -579,9 +579,9 @@ export default function GraphSVG({
           width="220.159"
           height="365.546"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -607,9 +607,9 @@ export default function GraphSVG({
           width="169.562"
           height="202.723"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -635,9 +635,9 @@ export default function GraphSVG({
           width="38.4639"
           height="81.0647"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -663,9 +663,9 @@ export default function GraphSVG({
           width="71.2727"
           height="180.727"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -685,9 +685,9 @@ export default function GraphSVG({
           width="40.0908"
           height="40.0909"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -721,9 +721,9 @@ export default function GraphSVG({
           width="71.2727"
           height="180.727"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -743,9 +743,9 @@ export default function GraphSVG({
           width="40.0908"
           height="40.0909"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -779,9 +779,9 @@ export default function GraphSVG({
           width="12"
           height="227"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -815,9 +815,9 @@ export default function GraphSVG({
           width="71.2727"
           height="180.727"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -837,9 +837,9 @@ export default function GraphSVG({
           width="40.0909"
           height="40.0909"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -873,9 +873,9 @@ export default function GraphSVG({
           width="40.0909"
           height="40.0909"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -909,9 +909,9 @@ export default function GraphSVG({
           width="40.0909"
           height="40.0908"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feColorMatrix
             in="SourceAlpha"
@@ -945,9 +945,9 @@ export default function GraphSVG({
           width="116.2"
           height="116.2"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feGaussianBlur stdDeviation="15.05" result="effect1_foregroundBlur_8223_36841" />
         </filter>
@@ -958,9 +958,9 @@ export default function GraphSVG({
           width="116.2"
           height="116.2"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feGaussianBlur stdDeviation="15.05" result="effect1_foregroundBlur_8223_36841" />
         </filter>
@@ -971,9 +971,9 @@ export default function GraphSVG({
           width="116.2"
           height="116.2"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
           <feGaussianBlur stdDeviation="15.05" result="effect1_foregroundBlur_8223_36841" />
         </filter>
@@ -984,9 +984,9 @@ export default function GraphSVG({
           width="40"
           height="44"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -1011,9 +1011,9 @@ export default function GraphSVG({
           width="40"
           height="44"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -1038,9 +1038,9 @@ export default function GraphSVG({
           width="40"
           height="44"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"

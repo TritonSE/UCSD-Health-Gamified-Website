@@ -29,7 +29,7 @@ export default function GraphSVG({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_7077_63936)">
+      <g clipPath="url(#clip0_7077_63936)">
         <rect width="924" height="490" rx="8" fill="#909090" />
         <rect x="486" y="-77" width="20" height="619" fill="white" />
         <g filter="url(#filter0_d_7077_63936)">
@@ -73,7 +73,7 @@ export default function GraphSVG({
             fill="white"
           />
         </g>
-        <path d="M248 -123V2236" stroke="white" stroke-width="10" stroke-dasharray="30 30" />
+        <path d="M248 -123V2236" stroke="white" strokeWidth="10" strokeDasharray="30 30" />
         <rect x="641" y="-81" width="12" height="619" fill="white" />
         <g filter="url(#filter2_d_7077_63936)">
           <path
@@ -259,8 +259,8 @@ export default function GraphSVG({
           d="M370.266 167.161C369.251 166.226 367.669 166.29 366.733 167.305L351.485 183.851C350.55 184.866 350.614 186.448 351.63 187.384C352.645 188.319 354.227 188.255 355.162 187.239L368.716 172.532L383.423 186.086C384.438 187.022 386.02 186.957 386.956 185.942C387.891 184.926 387.827 183.345 386.811 182.409L370.266 167.161ZM539.473 320.278C539.473 308.752 536.822 299.482 532.058 291.917C527.304 284.369 520.551 278.684 512.603 274.149C496.852 265.163 475.826 260.421 455.309 254.791C434.565 249.098 414.14 242.466 398.567 229.858C383.148 217.375 372.293 198.864 371.07 168.898L366.074 169.102C367.351 200.386 378.796 220.284 395.421 233.744C411.891 247.079 433.255 253.923 453.986 259.612C474.945 265.364 495.082 269.91 510.125 278.492C517.574 282.742 523.626 287.91 527.827 294.582C532.019 301.238 534.473 309.554 534.473 320.278L539.473 320.278Z"
           fill="#43DE35"
         />
-        <g clip-path="url(#clip1_7077_63936)" filter="url(#filter6_d_7077_63936)">
-          <path d="M576.115 373.065V397.302" stroke="#9AB445" stroke-width="4.07498" />
+        <g clipPath="url(#clip1_7077_63936)" filter="url(#filter6_d_7077_63936)">
+          <path d="M576.115 373.065V397.302" stroke="#9AB445" strokeWidth="4.07498" />
           <path
             d="M577.385 416.648H574.851C571.982 416.648 569.656 418.97 569.656 421.834V459.814C569.656 462.678 571.982 465 574.851 465H577.385C580.255 465 582.581 462.678 582.581 459.814V421.834C582.581 418.97 580.255 416.648 577.385 416.648Z"
             fill="#62657A"
@@ -289,8 +289,8 @@ export default function GraphSVG({
             opacity="0.43"
             d="M575.5 352.753C588.341 352.753 598.75 342.364 598.75 329.548C598.75 316.733 588.341 306.344 575.5 306.344C562.66 306.344 552.25 316.733 552.25 329.548C552.25 342.364 562.66 352.753 575.5 352.753Z"
             stroke="#D3D3DD"
-            stroke-width="2.61552"
-            stroke-miterlimit="10"
+            strokeWidth="2.61552"
+            strokeMiterlimit="10"
           />
           <path
             opacity="0.43"
@@ -305,30 +305,30 @@ export default function GraphSVG({
           <path
             d="M614.216 330.823C613.568 350.238 598.574 366.025 579.473 367.96"
             stroke="#4E4E68"
-            stroke-width="2.61552"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
+            strokeWidth="2.61552"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
           />
           <path
             d="M608.345 333.359C606.784 346.745 597.196 357.683 584.514 361.258"
             stroke="#4E4E68"
-            stroke-width="2.61552"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
+            strokeWidth="2.61552"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
           />
           <path
             d="M536.79 328.275C537.439 308.86 552.432 293.073 571.534 291.138"
             stroke="#4E4E68"
-            stroke-width="2.61552"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
+            strokeWidth="2.61552"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
           />
           <path
             d="M542.662 325.739C544.223 312.353 553.811 301.415 566.493 297.841"
             stroke="#4E4E68"
-            stroke-width="2.61552"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
+            strokeWidth="2.61552"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
           />
           <path
             d="M584.453 368.305H567.784C564.545 368.305 561.919 370.925 561.919 374.158V374.165C561.919 377.398 564.545 380.018 567.784 380.018H584.453C587.692 380.018 590.318 377.398 590.318 374.165V374.158C590.318 370.925 587.692 368.305 584.453 368.305Z"
@@ -355,9 +355,9 @@ export default function GraphSVG({
             fill="#FF525F"
           />
         </g>
-        <circle cx="576" cy="248" r="17.5" fill="#BBD567" stroke="white" stroke-width="5" />
-        <circle cx="369" cy="125" r="17.5" fill="#BBD567" stroke="white" stroke-width="5" />
-        <circle cx="765" cy="220" r="17.5" fill="#BBD567" stroke="white" stroke-width="5" />
+        <circle cx="576" cy="248" r="17.5" fill="#BBD567" stroke="white" strokeWidth="5" />
+        <circle cx="369" cy="125" r="17.5" fill="#BBD567" stroke="white" strokeWidth="5" />
+        <circle cx="765" cy="220" r="17.5" fill="#BBD567" stroke="white" strokeWidth="5" />
         {CIRCLE_DATA.map(({ x, y, number }) => (
           <g
             className={styles.svg_circle}
@@ -396,9 +396,9 @@ export default function GraphSVG({
           width="203.244"
           height="291.327"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -423,9 +423,9 @@ export default function GraphSVG({
           width="203.244"
           height="291.327"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -450,9 +450,9 @@ export default function GraphSVG({
           width="203.243"
           height="291.327"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -477,9 +477,9 @@ export default function GraphSVG({
           width="203.243"
           height="291.327"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -504,9 +504,9 @@ export default function GraphSVG({
           width="203.243"
           height="291.327"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -531,9 +531,9 @@ export default function GraphSVG({
           width="203.244"
           height="291.327"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -558,9 +558,9 @@ export default function GraphSVG({
           width="113"
           height="210"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
