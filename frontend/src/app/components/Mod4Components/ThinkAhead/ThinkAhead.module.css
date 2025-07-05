@@ -25,18 +25,23 @@
 
 .textbox {
   height: 80px;
-  position: relative;
   background: transparent;
   /* background-color: red; */
   border-radius: 8px;
   z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   overflow: visible;
-  padding-left: 60px;
-  padding-right: 60px;
   margin: 0 auto;
+}
+
+.textbox::before,
+.textbox::after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
 }
 
 .textboxContent {
@@ -49,8 +54,7 @@
 }
 
 #left_button {
-  position: absolute;
-  left: -11px;
+  margin-left: -80px;
   display: flex;
   width: 22px;
   height: 22px;
@@ -62,11 +66,12 @@
   background: var(--Secondary-Accent1, #1c3a29);
   border-color: transparent;
   outline: none;
+  cursor: pointer;
+  z-index: 10;
 }
 
 #right_button {
-  position: absolute;
-  right: -11px;
+  margin-right: -80px;
   display: flex;
   width: 22px;
   height: 22px;
@@ -78,6 +83,8 @@
   background: var(--Secondary-Accent1, #1c3a29);
   border-color: transparent;
   outline: none;
+  cursor: pointer;
+  z-index: 10;
 }
 
 #main_bike {
