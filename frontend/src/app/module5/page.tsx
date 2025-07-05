@@ -16,6 +16,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod5.module.css";
+import ModuleGate from "../components/ModuleGate/ModuleGate";
 
 export default function Module5() {
   const router = useRouter();
@@ -24,21 +25,23 @@ export default function Module5() {
     router.push("/quiz/5");
   };
   return (
-    <div className={styles.container}>
-      <Sidebar />
-      <ModuleSliderContainer moduleText="MODULE 5: Rules of the Road">
-        {/* Temporary slides (Section1 borrowed from Module 2) - remove when actual page created*/}
-        <Section1 />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
-        <Section7 />
-        <Section8 />
-        <Section9 />
-        <TitleScreen handleStart={handleStart} />
-      </ModuleSliderContainer>
-    </div>
+    <ModuleGate module={5}>
+      <div className={styles.container}>
+        <Sidebar />
+        <ModuleSliderContainer moduleText="MODULE 5: Rules of the Road">
+          {/* Temporary slides (Section1 borrowed from Module 2) - remove when actual page created*/}
+          <Section1 />
+          <Section2 />
+          <Section3 />
+          <Section4 />
+          <Section5 />
+          <Section6 />
+          <Section7 />
+          <Section8 />
+          <Section9 />
+          <TitleScreen handleStart={handleStart} />
+        </ModuleSliderContainer>
+      </div>
+    </ModuleGate>
   );
 }
