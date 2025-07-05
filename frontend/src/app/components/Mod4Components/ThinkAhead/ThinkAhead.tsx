@@ -47,9 +47,7 @@ export default function ThinkAhead() {
           Click through the slides to see how Timmy avoids obstacles!
         </p>
       </div>
-      <div
-        className={styles.graphContainer}
-      >
+      <div className={styles.graphContainer}>
         <svg
           width="950"
           height="498"
