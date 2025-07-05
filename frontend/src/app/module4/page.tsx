@@ -12,9 +12,9 @@ import ThinkAhead from "../components/Mod4Components/ThinkAhead/ThinkAhead";
 import ModuleGate from "../components/ModuleGate/ModuleGate";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Sidebar from "../components/Sidebar/Sidebar";
+import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod4.module.css";
-import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 export default function Module4() {
   const router = useRouter();

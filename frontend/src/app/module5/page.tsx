@@ -11,12 +11,12 @@ import Section6 from "../components/Module5/Section6";
 import Section7 from "../components/Module5/Section7";
 import Section8 from "../components/Module5/Section8";
 import Section9 from "../components/Module5/Section9";
+import ModuleGate from "../components/ModuleGate/ModuleGate";
 import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSliderContainer";
 import Sidebar from "../components/Sidebar/Sidebar";
 import { TitleScreen } from "../components/quiz_components/TitleScreen";
 
 import styles from "./mod5.module.css";
-import ModuleGate from "../components/ModuleGate/ModuleGate";
 
 export default function Module5() {
   const router = useRouter();
