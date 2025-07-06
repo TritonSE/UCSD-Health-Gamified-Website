@@ -61,6 +61,7 @@ export default function QuizPage() {
         title="Example Quiz"
         description="No time limit! Make sure to answer all the questions."
         questions={sampleQuestions}
+        module={0}
       />
     </div>
   );
