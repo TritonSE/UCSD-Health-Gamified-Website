@@ -4,7 +4,6 @@
   position: relative;
   left: 0;
   top: 0;
-  width: 300px; /* Add explicit width */
   max-width: 300px;
   z-index: 1;
   padding: 20px;
@@ -16,7 +15,6 @@
 }
 
 .nav.collapsed {
-  width: 92px; /* Also set width here */
   max-width: 92px;
 }
 
