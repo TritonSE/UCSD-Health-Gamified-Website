@@ -49,7 +49,7 @@ export default function ThinkAhead() {
       </div>
       <div className={styles.graphContainer}>
         <svg
-          width="950"
+          width="924"
           height="498"
           viewBox="0 0 924 498"
           fill="none"
@@ -358,6 +358,37 @@ export default function ThinkAhead() {
                 fill="#FFCD40"
               />
             </g>
+          </g>
+          {/* Pothole */}
+          <g
+            filter="url(#filter2_i_6576_23660)"
+            id={styles.pothole}
+            className={styles.transition_element}
+            style={{
+              transform: `translateX(${currentAnimation.pothole_x}px)`,
+            }}
+          >
+            <ellipse cx="681" cy="427.5" rx="48" ry="28.5" fill="#808080" />
+          </g>
+          {/* Puddle */}
+          <g
+            id={styles.puddle}
+            className={styles.transition_element}
+            style={{
+              transform: `translateX(${currentAnimation.puddle_x}px)`,
+            }}
+          >
+            <image href="/module4/puddle.svg" x="633" y="386" />
+          </g>
+          {/* Sand */}
+          <g
+            id={styles.sand}
+            className={styles.transition_element}
+            style={{
+              transform: `translateX(${currentAnimation.sand_x}px)`,
+            }}
+          >
+            <image href="/module4/sand.svg" x="633" y="350" />
           </g>
           <defs>
             <filter

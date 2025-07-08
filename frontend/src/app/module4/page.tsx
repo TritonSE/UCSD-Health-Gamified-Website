@@ -20,7 +20,7 @@ export default function Module4() {
   const router = useRouter();
 
   const handleStart = () => {
-    router.push("/quiz/5");
+    router.push("/quiz/4");
   };
 
   return (
