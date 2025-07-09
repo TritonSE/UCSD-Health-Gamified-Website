@@ -57,7 +57,7 @@ export default function Module3() {
           <Helmet />
           <Recommendation />
           <SafetyEquipment />
-          <TitleScreen handleStart={handleStart} />
+          <TitleScreen finalModule={false} handleStart={handleStart} />
         </ModuleSliderContainer>
       </div>
     </ModuleGate>
