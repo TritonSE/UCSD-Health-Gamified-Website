@@ -59,7 +59,7 @@ export default function Module7() {
           <RoleModels />
           <ParentalInvolvement />
           <Suggestions />
-          <TitleScreen handleStart={handleStart} />
+          <TitleScreen finalModule={false} handleStart={handleStart} />
         </ModuleSliderContainer>
       </div>
     </ModuleGate>
