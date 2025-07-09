@@ -34,7 +34,7 @@ export default function Module4() {
           <BeVisible />
           <ThinkAhead />
           <RideReady />
-          <TitleScreen handleStart={handleStart} />
+          <TitleScreen finalModule={false} handleStart={handleStart} />
         </ModuleSliderContainer>
       </div>
     </ModuleGate>

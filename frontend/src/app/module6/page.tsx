@@ -39,7 +39,7 @@ export default function Module6() {
             Mascot={
               <Image
                 src="/module6/Module6Mascot.svg"
-                alt="Timmy, the tire mascot smilling with a lightbulb above their head"
+                alt="Timmy, the tire mascot smiling with a lightbulb above their head"
                 width={320}
                 height={329}
                 className={styles.mascot}
@@ -48,7 +48,7 @@ export default function Module6() {
           />
           <BicycleSafetyFacts />
           <CrashProtocol />
-          <TitleScreen handleStart={handleStart} />
+          <TitleScreen finalModule={false} handleStart={handleStart} />
         </ModuleSliderContainer>
       </div>
     </ModuleGate>
