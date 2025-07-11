@@ -11,6 +11,7 @@ import ModuleSliderContainer from "../components/ModuleSliderContainer/ModuleSli
 import Sidebar from "../components/Sidebar/Sidebar";
 import { TitleScreen } from "../components/quiz_components/TitleScreen";
 import { useAuth } from "../contexts/AuthContext";
+import { auth } from "../firebase-config";
 
 import styles from "./mod8.module.css";
 
@@ -28,7 +29,9 @@ export default function Module8() {
           console.log("Module 8 is behind user's current progress - no update needed");
         } else if (currentModule === currentUser.module) {
           const nextModule = Math.min(currentUser.module + 1, 10);
-          await put(`/api/user/update/${currentUser.email}`, { module: nextModule });
+          const token = await auth.currentUser?.getIdToken();
+          const headers = token ? { Authorization: `Bearer ${token}` } : {};
+          await put(`/api/user/update/${currentUser.email}`, { module: nextModule }, headers);
           console.log(`Module updated to ${nextModule}`);
 
           // Refresh the user data in the context

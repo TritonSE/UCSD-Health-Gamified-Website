@@ -1,3 +1,4 @@
+import { auth } from "../firebase-config.js";
 import { get, handleAPIError, post, put } from "./requests";
 
 import type { APIResult } from "./requests";
@@ -28,8 +29,10 @@ export async function createUser(user: User): Promise<APIResult<UserJSON>> {
 }
 
 export async function updateUser(user: User): Promise<APIResult<UserJSON>> {
+  const token = await auth.currentUser?.getIdToken();
+  const headers: Record<string, string> = token ? { Authorization: `Bearer ${token}` } : {};
   try {
-    const response = await put(`/api/user/update/${user.email}`, user);
+    const response = await put(`/api/user/update/${user.email}`, user, headers);
     const json = (await response.json()) as UserJSON;
     return { success: true, data: json };
   } catch (error) {

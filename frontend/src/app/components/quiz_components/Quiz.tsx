@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 
 import { put } from "../../api/requests";
 import { useAuth } from "../../contexts/AuthContext";
+import { auth } from "../../firebase-config.js";
 
 import { ExitNotif } from "./ExitNotif";
 import { Grade } from "./Grade";
@@ -244,7 +245,9 @@ export const Quiz = ({
           console.log("Quiz module is behind user's current progress - no update needed");
         } else if (module === currentUser.module) {
           const nextModule = Math.min(currentUser.module + 1, 10);
-          await put(`/api/user/update/${currentUser.email}`, { module: nextModule });
+          const token = await auth.currentUser?.getIdToken();
+          const headers = token ? { Authorization: `Bearer ${token}` } : {};
+          await put(`/api/user/update/${currentUser.email}`, { module: nextModule }, headers);
           console.log(`Module updated to ${nextModule}`);
 
           // Refresh the user data in the context
