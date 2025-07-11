@@ -1,0 +1,136 @@
+.container {
+  position: relative;
+  padding: 20px;
+}
+
+.header_container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header_container h2 {
+  margin-top: 20px;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.header_container p {
+  font-size: 18px;
+  color: #000000;
+}
+
+.graphContainer {
+  position: relative;
+}
+
+.textbox {
+  height: 80px;
+  position: relative;
+  background: transparent;
+  border-radius: 8px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.text_box_button_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.text_box_wrapper {
+  padding-inline: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+.text_box_wrapper > div {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.textboxContent {
+  color: #000;
+  font-family: "DM Sans";
+  font-size: 14.609px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.478px; /* 133.333% */
+  text-align: center;
+}
+
+.text_box_button_container button {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #1c3a29;
+  filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.15));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text_box_button_container button:disabled {
+  background-color: #d8d8d8;
+  cursor: not-allowed;
+}
+
+#left_button {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+#right_button {
+  right: 0;
+  transform: translateX(50%);
+}
+
+#main_bike {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}
+
+#pothole {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}
+
+#puddle {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}
+
+#road_container {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}
+
+#road_lines {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}
+
+#sand {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom left;
+  transform-box: fill-box;
+}
