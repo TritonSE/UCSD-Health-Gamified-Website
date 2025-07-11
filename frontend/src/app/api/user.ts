@@ -1,4 +1,5 @@
 import { auth } from "../firebase-config.js";
+
 import { get, handleAPIError, post, put } from "./requests";
 
 import type { APIResult } from "./requests";
