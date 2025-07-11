@@ -116,7 +116,7 @@ export default function CertificatePage() {
               </div>
 
               <p className={styles.printInstruction}>
-                Save this certificate and show it to the school for an E bike parking permit.
+                Be sure to print and save this certificate for school purposes.
               </p>
             </div>
           </div>
