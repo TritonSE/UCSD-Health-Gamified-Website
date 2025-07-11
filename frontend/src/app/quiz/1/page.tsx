@@ -1,7 +1,8 @@
 import ModuleGate from "../../components/ModuleGate/ModuleGate";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { Question, Quiz } from "../../components/quiz_components/Quiz";
-import styles from "../QuizPage.module.css";
+
+import styles from "./Quiz1.module.css";
 
 export default function QuizPage1() {
   const sampleQuestions: Question[] = [

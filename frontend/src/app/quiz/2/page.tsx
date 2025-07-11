@@ -1,7 +1,8 @@
 import ModuleGate from "../../components/ModuleGate/ModuleGate";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { Question, Quiz } from "../../components/quiz_components/Quiz";
-import styles from "../QuizPage.module.css";
+
+import styles from "./Quiz2.module.css";
 
 export default function QuizPage2() {
   const sampleQuestions: Question[] = [
@@ -29,7 +30,7 @@ export default function QuizPage2() {
       type: "single",
     },
     {
-      question: "the best way to prolong your E Bike's battery life is to:",
+      question: "The best way to prolong your E Bike's battery life is to:",
       options: [
         "Follow the manufacturer’s recommendations for battery charging",
         "Always keep your battery plugged in when not using your bike",

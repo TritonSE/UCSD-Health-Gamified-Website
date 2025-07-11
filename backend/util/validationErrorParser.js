@@ -18,7 +18,6 @@ const validationErrorParser = (errors) => {
     }
 
     // trim removes the trailing space created in the for loop
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     throw createHttpError(400, errorString.trim());
   }
 };
