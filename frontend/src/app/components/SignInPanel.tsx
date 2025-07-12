@@ -71,7 +71,7 @@ export default function SignInPanel() {
                     })
                     .catch((error) => {
                       console.error("Error updating first login: ", error);
-                      setSignInError('Error updating login. Please try again later.')
+                      setSignInError("Error updating login. Please try again later.");
                     });
                 } else {
                   // TODO: replace with homepage
