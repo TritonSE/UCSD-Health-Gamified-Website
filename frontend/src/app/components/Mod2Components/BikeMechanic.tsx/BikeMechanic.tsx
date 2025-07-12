@@ -136,7 +136,7 @@ export default function BikeMechanic() {
             </g>
             <foreignObject
               width="363"
-              height="138"
+              height="160"
               x="521.178"
               y="272.307"
               transform="rotate(.272 521.178 272.307)"
