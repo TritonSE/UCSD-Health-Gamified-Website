@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Dispatch, MutableRefObject, ReactNode, SetStateAction } from "react";
+import { MutableRefObject, ReactNode } from "react";
 import toast from "react-hot-toast";
 
 import { ModuleNumbers, UserData } from "../ModuleMap/ModuleMap";
@@ -12,7 +12,6 @@ type ModuleMarkerProps = {
   bikeIsAnimating: MutableRefObject<boolean>;
   moduleNumber: ModuleNumbers;
   userData: UserData;
-  setUserData: Dispatch<SetStateAction<UserData>>;
   cx: string;
   cy: string;
   children: ReactNode;
@@ -23,7 +22,6 @@ const TOAST_DURATION = 2500;
 export default function ModuleMarker({
   bikeIsAnimating,
   userData,
-  setUserData,
   moduleNumber,
   cx,
   cy,
@@ -63,8 +61,6 @@ export default function ModuleMarker({
           router.push(`/module${moduleNumber}`);
           return;
         }
-
-        setUserData((prev) => ({ ...prev, currentModule: moduleNumber }));
       }}
     >
       {children}
