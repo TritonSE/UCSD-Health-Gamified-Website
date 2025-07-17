@@ -12,7 +12,8 @@
 }
 
 #svg_container svg {
-  height: 200%;
+  height: 750px;
+  width: 961px;
 }
 
 .mechanic_svg {
