@@ -33,18 +33,6 @@
   line-height: 27px;
 }
 
-.secondary {
-  background: #bbd567;
-  color: #1c3a29;
-  font-weight: 700;
-  line-height: 27px;
-}
-
-.secondary:hover {
-  background: #edf9c4;
-  color: #1c3a29;
-}
-
 .text {
   text-align: center;
   /* Title/XSmall */

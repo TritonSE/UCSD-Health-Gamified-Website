@@ -19,7 +19,7 @@ export const LogoutButton: React.FC<Props> = ({ isCollapsed = false, handleClick
     setIsHovered(false);
   };
 
-  const buttonClass = (styles.button += ` ${styles.primary}`);
+  const buttonClass = `${styles.button}  ${styles.primary}`;
   const Logout = "/logout.svg";
   return (
     <button
