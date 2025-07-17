@@ -66,7 +66,7 @@ export default function BasicMaintenance() {
   };
 
   return (
-    <section className={styles.container}>
+    <section id={styles.container}>
       <div className={styles.text_container}>
         <h2>BASIC MAINTENANCE TIPS:</h2>
         <p>

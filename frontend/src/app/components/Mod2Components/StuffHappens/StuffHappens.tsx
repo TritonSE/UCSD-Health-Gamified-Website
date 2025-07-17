@@ -3,7 +3,7 @@ import styles from "./StuffHappens.module.css";
 
 export default function StuffHappens() {
   return (
-    <section className={styles.stuff_happens_container}>
+    <section className={styles.stuff_happens_container} style={{ height: "80vh" }}>
       <h2 className={styles.title}>Stuff Happens</h2>
       <div className={styles.content_container}>
         <InjuredMascot />
