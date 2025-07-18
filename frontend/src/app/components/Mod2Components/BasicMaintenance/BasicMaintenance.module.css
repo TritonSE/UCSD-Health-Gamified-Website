@@ -1,6 +1,6 @@
-.container {
+#container {
   justify-items: center;
-  gap: 3rem;
+  height: 80vh;
 }
 
 .text_container {

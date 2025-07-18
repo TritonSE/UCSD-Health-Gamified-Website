@@ -91,7 +91,7 @@ export default function BePredictable() {
     }
   };
   return (
-    <section className={styles.container}>
+    <section className={styles.container} style={{ height: "80vh" }}>
       <div className={styles.header_container}>
         <h2>2. Be Predictable</h2>
         <p>Click on the green circles to check your understanding!</p>
