@@ -7,10 +7,10 @@ import styles from "./ForgotPasswordForm.module.css";
 
 export default function ForgotPasswordEmailSent({ _email }: { _email: string }) {
   const resendResetEmail = () => {
-    const isLocalhost = typeof window !== "undefined" && window.location.hostname === "localhost";
-    const redirectUrl = isLocalhost
-      ? "http://localhost:3000/auth"
-      : "https://ucsd-health-gamified-website.vercel.app/auth";
+    const redirectUrl =
+      typeof window !== "undefined"
+        ? `${window.location.origin}/auth`
+        : "https://ucsd-health-gamified-website.vercel.app/auth";
 
     sendPasswordResetEmail(auth, _email, { url: redirectUrl })
       .then(() => {

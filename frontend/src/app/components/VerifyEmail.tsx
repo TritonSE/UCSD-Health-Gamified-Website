@@ -19,10 +19,10 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
   const resendEmail = () => {
     const user = auth.currentUser;
 
-    const isLocalhost = typeof window !== "undefined" && window.location.hostname === "localhost";
-    const redirectUrl = isLocalhost
-      ? "http://localhost:3000/auth"
-      : "https://ucsd-health-gamified-website.vercel.app/auth";
+    const redirectUrl =
+      typeof window !== "undefined"
+        ? `${window.location.origin}/auth`
+        : "https://ucsd-health-gamified-website.vercel.app/auth";
 
     if (user) {
       sendEmailVerification(user, { url: redirectUrl })
