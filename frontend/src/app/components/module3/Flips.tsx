@@ -83,7 +83,7 @@ export default function Mod1WhyRide() {
             front_icon="/module3/visibility.svg"
             front_icon_alt="Visibility"
             front_text="Visibility"
-            back_text="Consider helmets with reflective elements or lights for increased visibility."
+            back_text="Consider light colored helmets with reflective elements or lights for increased visibility."
             frontColor="#FFE5C9"
             backColor="#FFE5C9"
             styles={cardStyle}

@@ -49,7 +49,7 @@ export default function Helmet() {
           <FlipCard
             frontImage="/Icon4.svg"
             frontText="Visibility"
-            backContent="Consider helmets with reflective elements or lights for increased visibility."
+            backContent="Consider light colored helmets with reflective elements or lights for increased visibility."
           />
         </div>
 

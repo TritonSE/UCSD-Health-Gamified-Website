@@ -1,6 +1,5 @@
 // frontend/src/app/contexts/AuthContext.tsx
 "use client";
-
 import { onAuthStateChanged } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
 
@@ -14,18 +13,36 @@ type AuthContextType = {
   currentUser: User | null; // from your backend
   firebaseUser: FirebaseUser | null; // raw Firebase user
   loading: boolean;
+  refreshUser: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextType>({
   currentUser: null,
   firebaseUser: null,
   loading: true,
+  refreshUser: () => Promise.resolve(),
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [firebaseUser, setFirebaseUser] = useState<FirebaseUser | null>(null);
   const [loading, setLoading] = useState(true);
+
+  const refreshUser = async () => {
+    if (auth.currentUser?.email) {
+      try {
+        const result = await getUser(auth.currentUser.email);
+        if (result.success) {
+          setCurrentUser({
+            ...result.data,
+            firstLogin: result.data.firstLogin,
+          });
+        }
+      } catch (error) {
+        console.error("Failed to refresh user:", error);
+      }
+    }
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -50,12 +67,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setLoading(false);
       }
     });
-
     return unsubscribe;
   }, []);
 
   return (
-    <AuthContext.Provider value={{ currentUser, firebaseUser, loading }}>
+    <AuthContext.Provider value={{ currentUser, firebaseUser, loading, refreshUser }}>
       {children}
     </AuthContext.Provider>
   );

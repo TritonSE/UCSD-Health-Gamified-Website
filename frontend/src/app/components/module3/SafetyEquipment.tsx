@@ -10,7 +10,8 @@ export default function SafetyEquipment() {
     {
       title: "01 Bike Headlights & Taillights",
       content:
-        "Help illuminate the pavement around you making the road more visible in dark environments as well as help illuminate you to other drivers on the road",
+        "Help illuminate the pavement around you making the road more visible in dark environments as well as help illuminate you to other drivers on the road. " +
+        "Headlights and rear red refelectors/lights are required by the law for nighttime operation.",
       icon: "/module3/carousel_icon1.svg",
     },
     {

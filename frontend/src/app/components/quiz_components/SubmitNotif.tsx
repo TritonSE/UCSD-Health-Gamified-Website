@@ -7,7 +7,18 @@ export const SubmitNotif = ({
   cancelFunc,
   submitFunc,
   ...props
-}: { cancelFunc: () => void } & { submitFunc: () => void } & React.ComponentProps<"button">) => {
+}: {
+  cancelFunc: () => void;
+  submitFunc: () => void | Promise<void>;
+} & React.ComponentProps<"button">) => {
+  const handleSubmit = async () => {
+    try {
+      await submitFunc();
+    } catch (error) {
+      console.error("Error submitting quiz:", error);
+    }
+  };
+
   return (
     <div className={styles.notif}>
       <Image
@@ -24,7 +35,7 @@ export const SubmitNotif = ({
         <button className={styles.cancelButton} onClick={cancelFunc} {...props}>
           <p className={styles.text}>Cancel</p>
         </button>
-        <button className={styles.submitButton} onClick={submitFunc} {...props}>
+        <button className={styles.submitButton} onClick={() => void handleSubmit()} {...props}>
           <p className={styles.text}>Submit</p>
         </button>
       </div>

@@ -1,6 +1,8 @@
+import ModuleGate from "../../components/ModuleGate/ModuleGate";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { Question, Quiz } from "../../components/quiz_components/Quiz";
-import styles from "../QuizPage.module.css";
+
+import styles from "./Quiz2.module.css";
 
 export default function QuizPage2() {
   const sampleQuestions: Question[] = [
@@ -28,7 +30,7 @@ export default function QuizPage2() {
       type: "single",
     },
     {
-      question: "the best way to prolong your E Bike's battery life is to:",
+      question: "The best way to prolong your E Bike's battery life is to:",
       options: [
         "Follow the manufacturer’s recommendations for battery charging",
         "Always keep your battery plugged in when not using your bike",
@@ -41,15 +43,18 @@ export default function QuizPage2() {
     },
   ];
   return (
-    <div className={styles.quizContainer}>
-      <div className={styles.hideMobile}>
-        <Sidebar />
+    <ModuleGate module={2}>
+      <div className={styles.quizContainer}>
+        <div className={styles.hideMobile}>
+          <Sidebar />
+        </div>
+        <Quiz
+          title="Module 2 Quiz"
+          description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
+          questions={sampleQuestions}
+          module={2}
+        />
       </div>
-      <Quiz
-        title="Module 2 Quiz"
-        description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
-        questions={sampleQuestions}
-      />
-    </div>
+    </ModuleGate>
   );
 }

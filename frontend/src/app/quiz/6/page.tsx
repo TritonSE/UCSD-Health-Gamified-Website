@@ -1,3 +1,4 @@
+import ModuleGate from "../../components/ModuleGate/ModuleGate";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { Question, Quiz } from "../../components/quiz_components/Quiz";
 
@@ -32,15 +33,18 @@ export default function Quiz6() {
     },
   ];
   return (
-    <div className={styles.quizContainer}>
-      <div className={styles.hideMobile}>
-        <Sidebar />
+    <ModuleGate module={6}>
+      <div className={styles.quizContainer}>
+        <div className={styles.hideMobile}>
+          <Sidebar />
+        </div>
+        <Quiz
+          title="Module 6 Quiz"
+          description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
+          questions={questions}
+          module={6}
+        />
       </div>
-      <Quiz
-        title="Module 6 Quiz"
-        description="There is no time limit. You have unlimited attempts, however you will not be able to revisit previous attempts."
-        questions={questions}
-      />
-    </div>
+    </ModuleGate>
   );
 }
