@@ -10,7 +10,7 @@ export default function MiniQuiz() {
     {
       title: "01- Electric Motorcycles vs. Bicycles",
       content:
-        "Electric motorcycles are not bicycles and require a motorcycle license, registration and insurance, and additional modifications to be street legal to operate.",
+        "Electric motorcycles are not bicycles and require a motorcycle license, registration and insurance, and additional modifications to be street legal to operate. Any device that does not have a 1, 2, or 3 classification is NOT an E Bike and cannot be operated on roadways.",
       icon: "/module1/carousel_icon1.svg",
     },
     {

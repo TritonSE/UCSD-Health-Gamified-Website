@@ -7,7 +7,7 @@ export default function Section6() {
   const titles = ["Bike Lanes", "Sharrows", "Wide Roads", "Sidewalks"];
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} style={{ height: "80vh" }}>
       <h2 className={styles.title}>WHERE TO RIDE</h2>
       <ButtonCardSlider titles={titles} />
     </section>

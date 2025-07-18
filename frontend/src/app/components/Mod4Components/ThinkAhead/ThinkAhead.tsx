@@ -40,7 +40,7 @@ export default function ThinkAhead() {
   const currentTextbox = TEXT_BOX[textIndex];
 
   return (
-    <section id={styles.container}>
+    <section id={styles.container} style={{ height: "80vh" }}>
       <div className={styles.header_container}>
         <h2>4. Think Ahead</h2>
         <p className={styles.header_text}>

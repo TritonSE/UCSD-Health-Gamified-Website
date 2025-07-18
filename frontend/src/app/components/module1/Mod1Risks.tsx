@@ -38,7 +38,10 @@ export default function Mod1Risks() {
 
   return (
     <section id={styles.container}>
-      <h1 className={styles.title}>Risks associated with illegal or unclassified bicycles</h1>
+      <h1 className={styles.title}>
+        RISKS ASSOCIATED WITH ILLEGAL OR <br />
+        UNCLASSIFIED BICYCLES
+      </h1>
       <div className={styles.row}>
         <Flip
           front_text="Safety Risks"

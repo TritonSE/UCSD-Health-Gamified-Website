@@ -164,7 +164,7 @@ export default function BikeMechanic() {
             </g>
           </g>
           <g filter="url(#filter0_f_311_5055)">
-            <path fill="#fff" d="M53 493h1307v568H53z"></path>
+            <path fill="#fff" d="M53 493h1960.5v852H53z"></path>
           </g>
           <defs>
             <clipPath id="clip0_311_5055">
