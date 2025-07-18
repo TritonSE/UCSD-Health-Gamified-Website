@@ -4,7 +4,7 @@ import ButtonCardSlider from "./ButtonCardSlider";
 import styles from "./Mod1Factor1.module.css";
 
 export default function Mod1Factor5() {
-  const titles = ["CLASS 1", "CLASS 2", "CLASS 3"];
+  const titles = ["Class 1", "Class 2", "Class 3"];
   const cards = [
     {
       content:
