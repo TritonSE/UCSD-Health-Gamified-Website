@@ -18,8 +18,14 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
 
   const resendEmail = () => {
     const user = auth.currentUser;
+
+    const isLocalhost = typeof window !== "undefined" && window.location.hostname === "localhost";
+    const redirectUrl = isLocalhost
+      ? "http://localhost:3000/auth"
+      : "https://ucsd-health-gamified-website.vercel.app/auth";
+
     if (user) {
-      sendEmailVerification(user)
+      sendEmailVerification(user, { url: redirectUrl })
         .then(() => {
           setVerificationError("");
           setEmailResent("Email resent! Please wait 1 minute before trying again.");
