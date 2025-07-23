@@ -60,7 +60,9 @@ export default function Auth() {
           .catch((error) => {
             alert(error);
             setTitleMessage("Error Verifying Email");
-            setMessage("Please try again.");
+            setMessage(
+              "Your email may already be verified. Please try signing in, or try verifying again.",
+            );
           });
         break;
       default:
