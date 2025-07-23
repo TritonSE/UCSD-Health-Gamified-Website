@@ -24,8 +24,8 @@ export default function Auth() {
   useEffect(() => {
     if (actionExecuted.current) return;
 
-    let mode = searchParams.get("mode");
-    let oobCode = searchParams.get("oobCode");
+    let mode = searchParams.get("mode") ?? new URLSearchParams(window.location.search).get("mode");;
+    let oobCode = searchParams.get("oobCode") ?? new URLSearchParams(window.location.search).get("oobCode");
 
     if (!mode || !oobCode) {
       const urlParams = new URLSearchParams(window.location.search);
