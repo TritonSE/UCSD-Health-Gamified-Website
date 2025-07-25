@@ -46,7 +46,6 @@ export default function Auth() {
 
         applyActionCode(auth, oobCode)
           .then(() => {
-            console.log("email verified!");
             window.location.href = "/emailverified";
           })
           .catch((error) => {

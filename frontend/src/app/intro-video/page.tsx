@@ -21,7 +21,7 @@ export default function IntroVideo() {
     if (textLoaded) {
       router.push("/video");
     } else {
-      console.log("Text not loaded yet");
+      // Text not loaded yet
     }
   };
 

@@ -21,7 +21,6 @@ export default function Certificate({ name, certificateRef }: CertificateNamePro
 
     let fontSize = 31;
     const baseTop = (certificateRef.current?.getBoundingClientRect().height ?? 0) * 0.41;
-    console.log(baseTop);
 
     const maxHeight = 47;
     const nameHeight = nameRef.current.scrollHeight;

@@ -8,7 +8,7 @@ export const Modules = ({ isCollapsed = false, currentModule = 1 }) => {
   }
 
   const handleClick = () => {
-    console.log("Module clicked");
+    // Module clicked
   };
 
   const moduleData = [

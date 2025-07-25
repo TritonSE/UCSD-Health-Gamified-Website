@@ -55,8 +55,7 @@ export default function CreateAccountPanel({ setAccountCreated }: CreateAccountP
           const firebaseError = error as { code?: string; message: string };
           const errorCode = firebaseError.code ?? "unknown_error";
           const errorMessage = firebaseError.message;
-
-          console.log(errorCode, errorMessage);
+          console.error("Create user failed:", errorCode, errorMessage);
 
           setAccountCreated("");
 

@@ -27,7 +27,8 @@ export default function CertificatePage() {
         link.click();
       })
       .catch((err: unknown) => {
-        console.log(err);
+        console.error(err);
+
       });
   };
 
@@ -46,7 +47,7 @@ export default function CertificatePage() {
             console.error("Error fetching user from MongoDB:", err);
           });
       } else {
-        console.log("User is not logged in.");
+        // User is not logged in
       }
     });
 
