@@ -43,6 +43,10 @@
   width: 12px;
 }
 
+.section_wrapper::-webkit-scrollbar:horizontal {
+  height: 12px; /* horizontal scrollbar height */
+}
+
 .section_wrapper::-webkit-scrollbar-thumb {
   background-color: var(--Secondary-Neutral-Gray4, #909090);
   border-radius: 25px;

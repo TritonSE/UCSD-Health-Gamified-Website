@@ -130,7 +130,6 @@ export default function ModuleMap() {
           <ModuleMarker
             key={"module-marker-" + index}
             bikeIsAnimating={bikeIsAnimating}
-            setUserData={setUserData}
             userData={userData}
             moduleNumber={moduleMarker.number}
             cx={moduleMarker.cx}
@@ -140,11 +139,7 @@ export default function ModuleMap() {
             <circle cx={moduleMarker.cx} cy={moduleMarker.cy} r="28.5" fill="white" />
           </ModuleMarker>
         ))}
-        <AnimatedPath
-          bikeIsAnimating={bikeIsAnimating}
-          setUserData={setUserData}
-          modulePreview={userData.currentModule}
-        />
+        <AnimatedPath bikeIsAnimating={bikeIsAnimating} modulePreview={userData.currentModule} />
         <Bike
           bikeIsAnimating={bikeIsAnimating}
           modulePreview={userData.currentModule}

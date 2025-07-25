@@ -5,7 +5,7 @@ import styles from "./Section7.module.css";
 
 export default function Section7() {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} style={{ height: "80vh" }}>
       <h2 className={styles.title}>AVOID DISTRACTIONS</h2>
       <p className={styles.description}>
         Hover over the green circles to see which distractions there are.

@@ -23,7 +23,7 @@ const CIRCLE_DATA: Record<number, CircleData> = {
     height: 361,
   },
   3: {
-    header: "Pedals",
+    header: "Chain, Gears, and Drivetrain",
     text: "Pay attention to rattles, creaks and squeaks If your bike is making strange sounds, or components (like wheels, brakes, cranks, pedals, and front forks) are loose, don’t ride it!  Get the help of a professional to fix it. A clean bike is a safer bike Cleaning your bike is a great opportunity to check all your parts to make sure they’re in good condition. ",
     width: 719,
     height: 397,
@@ -66,7 +66,7 @@ export default function BasicMaintenance() {
   };
 
   return (
-    <section className={styles.container}>
+    <section id={styles.container}>
       <div className={styles.text_container}>
         <h2>BASIC MAINTENANCE TIPS:</h2>
         <p>

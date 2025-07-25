@@ -4,6 +4,7 @@
   padding: 0;
   position: relative; /* Add relative positioning to the container */
   margin-top: 36px;
+  height: 80vh;
   /* overflow-x: auto; */
 }
 
@@ -61,10 +62,6 @@
   top: 10px;
   left: 0px;
   z-index: 1;
-}
-
-.card2 span {
-  color: #fff !important;
 }
 
 .card2 {

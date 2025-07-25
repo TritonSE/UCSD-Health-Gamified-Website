@@ -106,7 +106,7 @@ export default function RideReady() {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} style={{ height: "80vh" }}>
       <div className={styles.header_container}>
         <h2>5. Ride Ready</h2>
         <p>Click on the green circles to check your understanding!</p>

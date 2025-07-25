@@ -4,7 +4,7 @@ import ButtonCardSlider from "./ButtonCardSlider";
 import styles from "./Mod1Factor1.module.css";
 
 export default function Mod1Factor1() {
-  const titles_part1 = ["COMMUTING", "RECREATIONAL RIDING", "MOUNTAIN BIKING"];
+  const titles_part1 = ["Commuting", "Recreational Riding", "Mountain Biking"];
   const cards_part1 = [
     {
       icon: "/module1/road_icon.svg",

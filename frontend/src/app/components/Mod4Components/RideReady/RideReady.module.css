@@ -45,7 +45,7 @@
   box-sizing: border-box;
 }
 
-.textboxContent p {
+.textbox .textboxContent p {
   margin: 0;
   font-size: 14px;
   color: #1c3a29;

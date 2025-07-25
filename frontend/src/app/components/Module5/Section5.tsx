@@ -35,7 +35,7 @@ export default function SimpleWay() {
   const containerClass = `${styles.text_container} ${checked1 && checked2 ? styles.bothChecked : ""}`;
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} style={{ height: "80vh" }}>
       <div className={styles.header_container}>
         <h2 className={styles.headerText}>SAFETY EQUIPMENT</h2>
         <p className={styles.headerSubtext}>Remember to check your understanding: </p>
