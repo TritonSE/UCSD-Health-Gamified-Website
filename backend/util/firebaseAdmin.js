@@ -1,11 +1,8 @@
+import { readFileSync } from "fs";
 import admin from "firebase-admin";
 
 if (!admin.apps.length) {
-  const raw = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
-  if (!raw) {
-    throw new Error("Missing FIREBASE_SERVICE_ACCOUNT_JSON environment variable");
-  }
-
+  const raw = readFileSync("/etc/secrets/firebase-service-account.json", "utf8");
   const serviceAccount = JSON.parse(raw);
 
   admin.initializeApp({
