@@ -101,7 +101,7 @@ export default function ModuleMap() {
           />
         )}
       </Toaster>
-      ;
+
       <svg
         className={styles.svg}
         width="1151"
