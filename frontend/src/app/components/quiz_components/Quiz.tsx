@@ -246,7 +246,9 @@ export const Quiz = ({
         } else if (module === currentUser.module) {
           const nextModule = Math.min(currentUser.module + 1, 10);
           const token = await auth.currentUser?.getIdToken();
-          const headers = token ? { Authorization: `Bearer ${token}` } : {};
+          const headers: Record<string, string> | undefined = token
+            ? { Authorization: `Bearer ${token}` }
+            : undefined;
           await put(`/api/user/update/${currentUser.email}`, { module: nextModule }, headers);
           console.log(`Module updated to ${nextModule}`);
 
