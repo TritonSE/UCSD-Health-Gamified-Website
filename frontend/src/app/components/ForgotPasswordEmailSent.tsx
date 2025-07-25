@@ -7,7 +7,12 @@ import styles from "./ForgotPasswordForm.module.css";
 
 export default function ForgotPasswordEmailSent({ _email }: { _email: string }) {
   const resendResetEmail = () => {
-    sendPasswordResetEmail(auth, _email)
+    const redirectUrl =
+      typeof window !== "undefined"
+        ? `${window.location.origin}/auth`
+        : "https://ucsd-health-gamified-website.vercel.app/auth";
+
+    sendPasswordResetEmail(auth, _email, { url: redirectUrl })
       .then(() => {
         console.log("Success!");
       })
@@ -33,7 +38,7 @@ export default function ForgotPasswordEmailSent({ _email }: { _email: string }) 
       {/* click to resend */}
       <div className={`${styles.formField} ${styles.largeSpaceBelow}`}>
         Didn&apos;t see an email?{" "}
-        <a onClick={resendResetEmail} className={styles.link}>
+        <a href="#" onClick={resendResetEmail} className={styles.link}>
           Click to resend
         </a>
       </div>
