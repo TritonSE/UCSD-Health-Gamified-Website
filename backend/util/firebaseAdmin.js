@@ -1,4 +1,5 @@
 import { readFileSync } from "fs";
+
 import admin from "firebase-admin";
 
 if (!admin.apps.length) {

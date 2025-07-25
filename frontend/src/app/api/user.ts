@@ -31,7 +31,9 @@ export async function createUser(user: User): Promise<APIResult<UserJSON>> {
 
 export async function updateUser(user: User): Promise<APIResult<UserJSON>> {
   const token = await auth.currentUser?.getIdToken();
-  const headers: Record<string, string> | undefined = token ? { Authorization: `Bearer ${token}` } : undefined;
+  const headers: Record<string, string> | undefined = token
+    ? { Authorization: `Bearer ${token}` }
+    : undefined;
   try {
     const response = await put(`/api/user/update/${user.email}`, user, headers);
     const json = (await response.json()) as UserJSON;

@@ -28,7 +28,6 @@ export default function CertificatePage() {
       })
       .catch((err: unknown) => {
         console.error(err);
-
       });
   };
 
