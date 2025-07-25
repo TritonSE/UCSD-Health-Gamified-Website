@@ -1,13 +1,14 @@
-import { readFileSync } from "fs";
-import { resolve } from "path";
-
 import admin from "firebase-admin";
 
-const serviceAccount = JSON.parse(
-  readFileSync(resolve(process.cwd(), process.env.GOOGLE_APPLICATION_CREDENTIALS), "utf8"),
-);
-
 if (!admin.apps.length) {
+  const raw = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
+
+  if (!raw) {
+    throw new Error("Missing FIREBASE_SERVICE_ACCOUNT_JSON environment variable");
+  }
+
+  const serviceAccount = JSON.parse(raw);
+
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
   });
