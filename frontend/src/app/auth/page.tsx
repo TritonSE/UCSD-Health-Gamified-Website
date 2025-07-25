@@ -24,8 +24,16 @@ export default function Auth() {
   useEffect(() => {
     if (actionExecuted.current) return;
 
-    const mode = searchParams.get("mode");
-    const oobCode = searchParams.get("oobCode");
+    let mode = searchParams.get("mode") ?? new URLSearchParams(window.location.search).get("mode");
+
+    let oobCode =
+      searchParams.get("oobCode") ?? new URLSearchParams(window.location.search).get("oobCode");
+
+    if (!mode || !oobCode) {
+      const urlParams = new URLSearchParams(window.location.search);
+      mode = mode ?? urlParams.get("mode");
+      oobCode = oobCode ?? urlParams.get("oobCode");
+    }
 
     if (!oobCode) {
       setTitleMessage("Error Authenticating");
@@ -51,7 +59,9 @@ export default function Auth() {
           .catch((error) => {
             alert(error);
             setTitleMessage("Error Verifying Email");
-            setMessage("Please try again.");
+            setMessage(
+              "Your email may already be verified. Please try signing in, or try verifying again.",
+            );
           });
         break;
       default:

@@ -5,8 +5,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { useAuth } from "../../contexts/AuthContext";
+import { auth } from "../../firebase-config.js";
 
 import { Account } from "./Account";
+import { LogoutButton } from "./LogoutButton";
 import { MapButton } from "./MapButton";
 import { Modules } from "./Modules";
 import { ProgressBar } from "./ProgressBar";
@@ -40,6 +42,15 @@ export default function Sidebar() {
     Router.push("/");
   };
 
+  const handleLogout = async () => {
+    try {
+      await auth.signOut();
+      Router.push("/signin");
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
+
   return (
     <nav className={`${styles.nav} ${isCollapsed ? styles.collapsed : ""}`}>
       <button
@@ -66,6 +77,12 @@ export default function Sidebar() {
       <MapButton isCollapsed={isCollapsed} kind={mapKind} handleClick={handleMap} />
       <Modules currentModule={user?.module} isCollapsed={isCollapsed} />
       {user && <Account user={user} isCollapsed={isCollapsed} />}
+      <LogoutButton
+        isCollapsed={isCollapsed}
+        handleClick={() => {
+          void handleLogout();
+        }}
+      />
     </nav>
   );
 }

@@ -93,8 +93,13 @@ export default function SignInPanel() {
 
   const sendEmail = () => {
     const user = auth.currentUser;
+    const redirectUrl =
+      typeof window !== "undefined"
+        ? `${window.location.origin}/auth`
+        : "https://ucsd-health-gamified-website.vercel.app/auth";
+
     if (user) {
-      sendEmailVerification(user)
+      sendEmailVerification(user, { url: redirectUrl })
         .then(() => {
           setSignInError("Verification email has been sent!");
         })
