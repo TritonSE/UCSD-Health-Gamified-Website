@@ -19,15 +19,12 @@ export default function ForgotPasswordForm({ setEmailState }: ForgotPasswordForm
   const [errorMessage, setErrorMessage] = useState("");
 
   const sendResetEmail = () => {
-    const redirectUrl =
-      typeof window !== "undefined"
-        ? `${window.location.origin}/auth`
-        : "https://ucsd-health-gamified-website.vercel.app/auth";
-
     getUser(email)
       .then((result) => {
         if (result.success) {
-          sendPasswordResetEmail(auth, email, { url: redirectUrl })
+          sendPasswordResetEmail(auth, email, {
+            url: "https://ucsd-health-gamified-website.vercel.app/auth",
+          })
             .then(() => {
               setEmailState(email);
             })
