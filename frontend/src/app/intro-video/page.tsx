@@ -3,9 +3,12 @@
 import { useRouter } from "next/navigation";
 import React, { CSSProperties, useEffect, useRef, useState } from "react";
 
+import { put } from "../api/requests";
 import ModuleGate from "../components/ModuleGate/ModuleGate";
 import TypingAnimation from "../components/TypingAnimation/TypingAnimation";
 import buttonStyles from "../components/VideoButton.module.css";
+import { useAuth } from "../contexts/AuthContext";
+import { auth } from "../firebase-config";
 
 import styles from "./IntroVideo.module.css";
 
@@ -14,12 +17,21 @@ export default function IntroVideo() {
   const [startTyping, setStartTyping] = useState(false);
   const typeAnimationRef = useRef(null);
   const router = useRouter();
+  const { currentUser } = useAuth();
 
-  const handleSubmit = (e?: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e?: React.MouseEvent<HTMLButtonElement>) => {
     if (e) e.preventDefault();
     // Redirect to the video page
     if (textLoaded) {
-      router.push("/video");
+      try {
+        const token = await auth.currentUser?.getIdToken();
+        const headers = token ? { Authorization: `Bearer ${token}` } : {};
+        await put(`/api/user/update/${currentUser.email}`, { firstLogin: false }, headers);
+
+        router.push("/video");
+      } catch (error) {
+        console.error("Error updating firstLogin:", error);
+      }
     } else {
       console.log("Text not loaded yet");
     }
@@ -88,6 +100,7 @@ export default function IntroVideo() {
               </div>
             </div>
             <button
+              type="button"
               style={
                 {
                   "--animation-play-state": startTyping ? "running" : "paused",
@@ -96,7 +109,9 @@ export default function IntroVideo() {
               }
               id={styles.video_intro_button}
               className={`${buttonStyles.start_button}  ${textLoaded ? buttonStyles.buttonFinal : buttonStyles.buttonInitial}`}
-              onClick={handleSubmit}
+              onClick={(e) => {
+                void handleSubmit(e);
+              }}
             >
               <p className={buttonStyles.buttonText}>Let&apos;s get started!</p>
               {/* prettier-ignore */}
