@@ -25,7 +25,12 @@ export default function IntroVideo() {
     if (textLoaded) {
       try {
         const token = await auth.currentUser?.getIdToken();
-        const headers = token ? { Authorization: `Bearer ${token}` } : {};
+        const headers: Record<string, string> | undefined = token
+          ? { Authorization: `Bearer ${token}` }
+          : undefined;
+        if (!currentUser) {
+          throw new Error("User not found");
+        }
         await put(`/api/user/update/${currentUser.email}`, { firstLogin: false }, headers);
 
         router.push("/video");
