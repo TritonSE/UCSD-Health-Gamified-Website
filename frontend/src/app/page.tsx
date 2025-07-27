@@ -21,10 +21,10 @@ export default function Home() {
       });
   }, []);
 
-  if (!isLoading) {
+  if (isLoading) {
     return (
       <div className={styles.loader}>
-        <p>Loading...</p>
+        <p>Loading... This may take a minute.</p>
       </div>
     );
   }
