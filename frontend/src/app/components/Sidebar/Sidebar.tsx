@@ -16,15 +16,12 @@ import styles from "./Sidebar.module.css";
 
 import type { User } from "../../api/user";
 
-type SidebarProps = {
-  isHomePage?: boolean;
-};
-
-export default function Sidebar({ isHomePage = false }: SidebarProps) {
+export default function Sidebar() {
   const { currentUser } = useAuth();
   const [user, setUser] = useState<User | null>(currentUser);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [percent, setPercent] = useState<number>(0);
+  const [mapKind, setMapKind] = useState<"primary" | "secondary">("primary");
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
   };
@@ -39,7 +36,6 @@ export default function Sidebar({ isHomePage = false }: SidebarProps) {
   useEffect(() => {
     setUser(currentUser);
   }, [currentUser]);
-
 
   const handleMap = () => {
     setMapKind((prevKind) => (prevKind === "primary" ? "secondary" : "primary"));
@@ -78,16 +74,9 @@ export default function Sidebar({ isHomePage = false }: SidebarProps) {
         )}
       </button>
       <ProgressBar isCollapsed={isCollapsed} percentage={percent} />
-      <MapButton
-        isCollapsed={isCollapsed}
-        handleClick={() => {
-          Router.push("/");
-        }}
-        isHomePage={isHomePage}
-      />
+      <MapButton isCollapsed={isCollapsed} kind={mapKind} handleClick={handleMap} />
       <Modules currentModule={user?.module} isCollapsed={isCollapsed} />
       {user && <Account user={user} isCollapsed={isCollapsed} />}
-
       <LogoutButton
         isCollapsed={isCollapsed}
         handleClick={() => {
