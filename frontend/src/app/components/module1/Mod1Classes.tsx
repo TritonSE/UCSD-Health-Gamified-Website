@@ -253,6 +253,10 @@ const Mod1Classes: React.FC = () => {
             <ul>
               <li>There are 3 different classes of E Bikes (Class 1-3)</li>
               <li>
+                E Motorcycles and Unclassified Bicycles are <strong>NOT</strong> E Bikes and{" "}
+                <strong>NOT</strong> legal to operate on public roads or in the public right of way.
+              </li>
+              <li>
                 It is important to know class type as it can inform you of speed limit and age
                 restrictions
               </li>

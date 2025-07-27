@@ -25,7 +25,6 @@ export default function BikeMaintSVG({
       xmlns="http://www.w3.org/2000/svg"
       width="944"
       height="403"
-      viewBox="0 0 944 403"
       fill="none"
     >
       <g clipPath="url(#B)">

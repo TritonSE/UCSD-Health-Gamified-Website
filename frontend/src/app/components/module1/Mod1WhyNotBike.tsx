@@ -5,7 +5,7 @@ export default function Mod1WhyNotBike() {
     <div>
       <Accordion
         title="Electric Motorcycles vs. Bicycles"
-        content="Electric motorcycles are not bicycles and require a motorcycle license, registration and insurance, and additional modifications to be street legal to operate."
+        content="Electric motorcycles are not bicycles and require a motorcycle license, registration and insurance, and additional modifications to be street legal to operate. Any device that does not have a 1, 2, or 3 classification is NOT an E Bike and cannot be operated on roadways."
       />
       <Accordion
         title="Recognizing Legal E Bikes"

@@ -1,0 +1,27 @@
+.svg {
+  height: 100%;
+}
+
+.svg_circle {
+  cursor: pointer;
+  transition: scale 0.3s;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.svg_circle[aria-selected="true"] {
+  fill: #1c3a29;
+}
+
+.svg_circle:hover {
+  scale: 1.1;
+}
+
+.svg_text {
+  font-family: "DM Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.44px;
+}

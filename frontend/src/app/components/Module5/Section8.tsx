@@ -15,7 +15,7 @@ export default function Section8() {
   }, []);
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} style={{ height: "80vh" }}>
       <h2 className={styles.title}>PASSENGERS</h2>
       <p className={styles.description}>
         You can only carry passengers on bicycles that are specifically designed and equipped to

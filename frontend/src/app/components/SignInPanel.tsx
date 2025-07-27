@@ -55,7 +55,7 @@ export default function SignInPanel() {
         } else {
           getUser(loginInfo.email)
             .then((result) => {
-              if ("data" in result) {
+              if (result.success && "data" in result) {
                 console.log("Firebase sign in successful");
                 setSignInError("");
 
@@ -71,15 +71,18 @@ export default function SignInPanel() {
                     })
                     .catch((error) => {
                       console.error("Error updating first login: ", error);
+                      setSignInError("Error updating login. Please try again later.");
                     });
                 } else {
                   // TODO: replace with homepage
                   router.push("/");
                 }
+              } else {
+                setSignInError("Error signing in. Please check your connection.");
               }
             })
-            .catch((_) => {
-              setSignInError("Error signing in.");
+            .catch((_error) => {
+              setSignInError("Error signing in. Please check your connection.");
             });
         }
       })
@@ -91,8 +94,11 @@ export default function SignInPanel() {
 
   const sendEmail = () => {
     const user = auth.currentUser;
+
     if (user) {
-      sendEmailVerification(user)
+      sendEmailVerification(user, {
+        url: "https://ucsd-health-gamified-website.vercel.app/auth",
+      })
         .then(() => {
           console.log("Email sent.");
           setSignInError("Verification email has been sent!");

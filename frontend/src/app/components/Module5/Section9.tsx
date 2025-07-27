@@ -5,7 +5,7 @@ import styles from "./Section9.module.css";
 
 export default function Section9() {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} style={{ height: "80vh" }}>
       <h2 className={styles.title}>IMPORTANT NOTES</h2>
       <p className={styles.description}>Keep these notes in mind - they might come in handy!</p>
       <div className={styles.content}>

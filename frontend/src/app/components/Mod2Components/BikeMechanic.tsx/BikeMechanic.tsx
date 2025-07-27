@@ -136,7 +136,7 @@ export default function BikeMechanic() {
             </g>
             <foreignObject
               width="363"
-              height="138"
+              height="160"
               x="521.178"
               y="272.307"
               transform="rotate(.272 521.178 272.307)"
@@ -164,7 +164,7 @@ export default function BikeMechanic() {
             </g>
           </g>
           <g filter="url(#filter0_f_311_5055)">
-            <path fill="#fff" d="M53 493h1307v568H53z"></path>
+            <path fill="#fff" d="M53 493h1960.5v852H53z"></path>
           </g>
           <defs>
             <clipPath id="clip0_311_5055">

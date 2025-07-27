@@ -22,7 +22,9 @@ export default function ForgotPasswordForm({ setEmailState }: ForgotPasswordForm
     getUser(email)
       .then((result) => {
         if (result.success) {
-          sendPasswordResetEmail(auth, email)
+          sendPasswordResetEmail(auth, email, {
+            url: "https://ucsd-health-gamified-website.vercel.app/auth",
+          })
             .then(() => {
               setEmailState(email);
             })
