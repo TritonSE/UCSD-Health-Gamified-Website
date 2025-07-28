@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"; // 🆕
 import { Module } from "./Module";
 import styles from "./Modules.module.css";
 
-export const Modules = ({ isCollapsed = false, currentModule = 1 }) => {
+export const Modules = ({ isCollapsed = false, currentModule = 1, earnedCert = false }) => {
   const router = useRouter();
 
   let buttonClass = styles.moduleContainer;
@@ -17,6 +17,8 @@ export const Modules = ({ isCollapsed = false, currentModule = 1 }) => {
     //only use currentModule
     if (moduleNumber > currentModule) {
       console.log("Modules in progress");
+    } else if (moduleNumber === 9) {
+      router.push(earnedCert ? "/certificate" : "/final-test");
     } else {
       router.push(`/module${moduleNumber}`);
     }

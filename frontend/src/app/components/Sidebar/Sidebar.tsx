@@ -75,7 +75,11 @@ export default function Sidebar() {
       </button>
       <ProgressBar isCollapsed={isCollapsed} percentage={percent} />
       <MapButton isCollapsed={isCollapsed} kind={mapKind} handleClick={handleMap} />
-      <Modules currentModule={user?.module} isCollapsed={isCollapsed} />
+      <Modules
+        currentModule={user?.module}
+        isCollapsed={isCollapsed}
+        earnedCert={user?.module === 10}
+      />
       {user && <Account user={user} isCollapsed={isCollapsed} />}
       <LogoutButton
         isCollapsed={isCollapsed}
