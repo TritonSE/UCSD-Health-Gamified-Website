@@ -18,11 +18,12 @@ import type { User } from "../../api/user";
 
 type SidebarProps = {
   isHomePage?: boolean;
+  currentlyOn?: number | null;
 };
 
 const SIDEBAR_STORAGE_KEY = "sidebar-collapsed-state";
 
-export default function Sidebar({ isHomePage = false }: SidebarProps) {
+export default function Sidebar({ isHomePage = false, currentlyOn = null }: SidebarProps) {
   const { currentUser } = useAuth();
   const [user, setUser] = useState<User | null>(currentUser);
   const [isCollapsed, setIsCollapsed] = useState<boolean>(() => {
@@ -93,6 +94,7 @@ export default function Sidebar({ isHomePage = false }: SidebarProps) {
         currentModule={user?.module}
         isCollapsed={isCollapsed}
         earnedCert={user?.module === 10}
+        currentlyOn={currentlyOn}
       />
       {user && <Account user={user} isCollapsed={isCollapsed} />}
       <LogoutButton

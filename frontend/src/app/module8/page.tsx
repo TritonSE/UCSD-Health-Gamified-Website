@@ -51,7 +51,7 @@ export default function Module8() {
   return (
     <ModuleGate module={8}>
       <div className={styles.container}>
-        <Sidebar />
+        <Sidebar currentlyOn={8} />
         <ModuleSliderContainer moduleText="MODULE 8: Closing Video">
           <ModuleIntro
             moduleNumber={8}

@@ -1,11 +1,20 @@
 "use client";
-
-import { useRouter } from "next/navigation"; // 🆕
+import { useRouter } from "next/navigation";
 
 import { Module } from "./Module";
 import styles from "./Modules.module.css";
 
-export const Modules = ({ isCollapsed = false, currentModule = 1, earnedCert = false }) => {
+export const Modules = ({
+  isCollapsed = false,
+  currentModule = 1,
+  earnedCert = false,
+  currentlyOn = null,
+}: {
+  isCollapsed?: boolean;
+  currentModule?: number;
+  earnedCert?: boolean;
+  currentlyOn?: number | null;
+}) => {
   const router = useRouter();
 
   let buttonClass = styles.moduleContainer;
@@ -14,7 +23,7 @@ export const Modules = ({ isCollapsed = false, currentModule = 1, earnedCert = f
   }
 
   const handleClick = (moduleNumber: number) => {
-    //only use currentModule
+    // only use currentModule
     if (moduleNumber > currentModule) {
       console.log("Modules in progress");
     } else if (moduleNumber === 9) {
@@ -50,6 +59,7 @@ export const Modules = ({ isCollapsed = false, currentModule = 1, earnedCert = f
           } else if (module.number === currentModule) {
             kind = "primary";
           }
+
           return (
             <Module
               key={module.number}
@@ -61,7 +71,7 @@ export const Modules = ({ isCollapsed = false, currentModule = 1, earnedCert = f
                 handleClick(module.number);
               }}
               kind={kind}
-              highlighted={module.number === currentModule}
+              highlighted={currentlyOn !== null && currentlyOn === module.number}
               addLine={module.addLine !== false}
             />
           );
