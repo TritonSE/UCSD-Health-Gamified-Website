@@ -33,6 +33,7 @@ export default function ModuleMarker({
   const isModuleCompleted = userData.lastCompletedModule >= moduleNumber;
   const isModuleNavigatable = userData.lastCompletedModule >= moduleNumber - 1;
   const [play_click] = useSound("/audio/window_open.mp3");
+  const [play_issue] = useSound("/audio/toggle_off.mp3");
 
   const router = useRouter();
 
@@ -48,6 +49,7 @@ export default function ModuleMarker({
         .join(" ")}
       onClick={() => {
         if (!isModuleNavigatable) {
+          play_issue();
           toast(
             <div className={`${styles.module_error_toast} toast`}>
               <p>

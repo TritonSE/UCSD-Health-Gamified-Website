@@ -18,6 +18,7 @@ export default function AnimatedPath({ modulePreview, bikeIsAnimating }: Animate
   const isModuleAccessible = modulePreview >= 9;
   const router = useRouter();
   const [play_click] = useSound("/audio/window_open.mp3");
+  const [play_issue] = useSound("/audio/toggle_off.mp3");
   const getStarColor = () => {
     if (modulePreview < 9) return "#B4B4B4";
     return modulePreview === 9 ? "#FFBC00" : "#3BB966";
@@ -31,6 +32,7 @@ export default function AnimatedPath({ modulePreview, bikeIsAnimating }: Animate
         className={isModuleAccessible ? styles.active : styles.inactive}
         onClick={() => {
           if (!isModuleAccessible) {
+          play_issue();
           toast(
             <div className={`${styles.module_error_toast} toast`}>
               <p>
