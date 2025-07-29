@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useSound } from "use-sound";
 
 import { useAuth } from "../../contexts/AuthContext";
 import { auth } from "../../firebase-config.js";
@@ -26,6 +27,9 @@ const SIDEBAR_STORAGE_KEY = "sidebar-collapsed-state";
 export default function Sidebar({ isHomePage = false, currentlyOn = null }: SidebarProps) {
   const { currentUser } = useAuth();
   const [user, setUser] = useState<User | null>(currentUser);
+  const [play_open] = useSound("/audio/panel_expand.mp3");
+  const [play_close] = useSound("/audio/panel_collapse.mp3");
+  const [play_click] = useSound("/audio/pop_open.mp3");
   const [isCollapsed, setIsCollapsed] = useState<boolean>(() => {
     if (typeof window !== "undefined") {
       const savedState = sessionStorage.getItem(SIDEBAR_STORAGE_KEY);
@@ -37,6 +41,11 @@ export default function Sidebar({ isHomePage = false, currentlyOn = null }: Side
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
     sessionStorage.setItem(SIDEBAR_STORAGE_KEY, JSON.stringify(!isCollapsed));
+    if (isCollapsed) {
+      play_open();
+    } else {
+      play_close();
+    }
   };
 
   const Router = useRouter();
@@ -86,6 +95,7 @@ export default function Sidebar({ isHomePage = false, currentlyOn = null }: Side
       <MapButton
         isCollapsed={isCollapsed}
         handleClick={() => {
+          play_click();
           Router.push("/");
         }}
         isHomePage={isHomePage}

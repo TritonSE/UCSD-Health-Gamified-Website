@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import { useSound } from "use-sound";
 
 import styles from "./TitleScreen.module.css";
 
@@ -12,9 +13,11 @@ export const TitleScreen = ({
   finalModule: boolean;
   handleStart: () => void | Promise<void>;
 } & React.ComponentProps<"button">) => {
+  const [play_click] = useSound("/audio/submit.mp3");
   const handleClick = () => {
     const result = handleStart(); // Should be handleStart, not handleClick
     // Handle the promise if it exists, but don't return it
+    play_click();
     if (result instanceof Promise) {
       result.catch(console.error); // Optional: handle errors
     }

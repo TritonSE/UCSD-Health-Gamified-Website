@@ -1,6 +1,7 @@
 import { useRouter } from "next/navigation";
 import { MutableRefObject } from "react";
 import toast from "react-hot-toast";
+import { useSound } from "use-sound";
 
 import { ModuleNumbers } from "../ModuleMap/ModuleMap";
 
@@ -16,6 +17,7 @@ const TOAST_DURATION = 2500;
 export default function AnimatedPath({ modulePreview, bikeIsAnimating }: AnimatedPathProps) {
   const isModuleAccessible = modulePreview >= 9;
   const router = useRouter();
+  const [play_click] = useSound("/audio/window_open.mp3");
   const getStarColor = () => {
     if (modulePreview < 9) return "#B4B4B4";
     return modulePreview === 9 ? "#FFBC00" : "#3BB966";
@@ -48,6 +50,7 @@ export default function AnimatedPath({ modulePreview, bikeIsAnimating }: Animate
           } else if (modulePreview === 10) {
             router.push(`/certificate`);
           }
+          play_click();
         }}
       >
         <path d="M1010.01 875.209L1023.32 848.395C1023.71 847.619 1024.31 846.967 1025.04 846.51C1025.78 846.054 1026.63 845.812 1027.5 845.812C1028.37 845.812 1029.22 846.054 1029.96 846.51C1030.69 846.967 1031.29 847.619 1031.68 848.395L1044.99 875.209L1074.76 879.535C1075.62 879.654 1076.42 880.012 1077.09 880.568C1077.75 881.124 1078.25 881.856 1078.52 882.68C1078.79 883.504 1078.82 884.387 1078.61 885.228C1078.4 886.07 1077.96 886.835 1077.34 887.437L1055.8 908.296L1060.88 937.765C1061.54 941.547 1057.54 944.427 1054.12 942.644L1027.5 928.724L1000.88 942.644C997.462 944.433 993.465 941.547 994.116 937.76L999.2 908.291L977.664 887.432C977.044 886.83 976.606 886.065 976.398 885.225C976.191 884.385 976.224 883.504 976.492 882.682C976.761 881.86 977.254 881.13 977.917 880.574C978.58 880.019 979.386 879.66 980.242 879.54L1010.01 875.209Z" fill={getStarColor()} stroke={getStarColor()} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

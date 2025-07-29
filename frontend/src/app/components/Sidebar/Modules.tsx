@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { useSound } from "use-sound";
 
 import { Module } from "./Module";
 import styles from "./Modules.module.css";
@@ -16,6 +17,7 @@ export const Modules = ({
   currentlyOn?: number | null;
 }) => {
   const router = useRouter();
+  const [play_click] = useSound("/audio/window_open.mp3");
 
   let buttonClass = styles.moduleContainer;
   if (isCollapsed) {
@@ -29,6 +31,7 @@ export const Modules = ({
     } else if (moduleNumber === 9) {
       router.push(earnedCert ? "/certificate" : "/final-test");
     } else {
+      play_click();
       router.push(`/module${moduleNumber}`);
     }
   };

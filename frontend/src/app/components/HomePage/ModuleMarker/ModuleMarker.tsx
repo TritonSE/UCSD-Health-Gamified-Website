@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { MutableRefObject, ReactNode } from "react";
 import toast from "react-hot-toast";
+import { useSound } from "use-sound";
 
 import { ModuleNumbers, UserData } from "../ModuleMap/ModuleMap";
 
@@ -31,6 +32,8 @@ export default function ModuleMarker({
   const isModuleAccessible = modulePreview >= moduleNumber;
   const isModuleCompleted = userData.lastCompletedModule >= moduleNumber;
   const isModuleNavigatable = userData.lastCompletedModule >= moduleNumber - 1;
+  const [play_click] = useSound("/audio/window_open.mp3");
+
   const router = useRouter();
 
   return (
@@ -58,6 +61,7 @@ export default function ModuleMarker({
         }
         if (bikeIsAnimating.current) return;
         if (modulePreview >= moduleNumber) {
+          play_click();
           router.push(`/module${moduleNumber}`);
           return;
         }

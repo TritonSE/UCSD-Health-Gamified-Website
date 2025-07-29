@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { useSound } from "use-sound";
 
 import { put } from "../../api/requests";
 import { useAuth } from "../../contexts/AuthContext";
@@ -61,6 +62,9 @@ export const Quiz = ({
   const [label, setLabel] = useState<string>("Next Module");
   const [quizTitle, setTitle] = useState<string>(title);
   const [score, setScore] = useState<number>(0);
+  const [play_leave] = useSound("/audio/item_deselect.mp3");
+  const [play_success] = useSound("/audio/success_blip.mp3");
+  const [play_fail] = useSound("/audio/blocked.mp3", { volume: 0.75 });
   const [randomizedQuestions, setRandomizedQuestions] = useState(() =>
     randomized ? shuffleArray(originalQuestions) : originalQuestions,
   );
@@ -211,6 +215,7 @@ export const Quiz = ({
 
   const handleLeave = () => {
     setCancel(false);
+    play_leave();
     if (module === 9) {
       router.push("/");
     } else {
@@ -262,12 +267,14 @@ export const Quiz = ({
     // Set UI state based on score
     if (calculatedScore < 75) {
       setLabel("Retake Quiz");
+      play_fail();
     } else {
       if (module === 9) {
         setLabel("Open Certificate");
       } else {
         setLabel("Next Module");
       }
+      play_success();
     }
 
     if (calculatedScore < 75 && calculatedScore > 74) {
