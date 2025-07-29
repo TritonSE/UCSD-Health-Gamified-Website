@@ -25,7 +25,7 @@ export const Modules = ({
   const handleClick = (moduleNumber: number) => {
     // only use currentModule
     if (moduleNumber > currentModule) {
-      console.log("Modules in progress");
+      return;
     } else if (moduleNumber === 9) {
       router.push(earnedCert ? "/certificate" : "/final-test");
     } else {

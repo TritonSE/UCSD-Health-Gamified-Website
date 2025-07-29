@@ -56,7 +56,6 @@ export default function SignInPanel() {
           getUser(loginInfo.email)
             .then((result) => {
               if (result.success && "data" in result) {
-                console.log("Firebase sign in successful");
                 setSignInError("");
 
                 if (result.data.firstLogin) {
@@ -100,7 +99,6 @@ export default function SignInPanel() {
         url: "https://ucsd-health-gamified-website.vercel.app/auth",
       })
         .then(() => {
-          console.log("Email sent.");
           setSignInError("Verification email has been sent!");
         })
         .catch((error: unknown) => {

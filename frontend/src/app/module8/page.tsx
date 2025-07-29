@@ -32,7 +32,6 @@ export default function Module8() {
           const token = await auth.currentUser?.getIdToken();
           const headers = token ? { Authorization: `Bearer ${token}` } : {};
           await put(`/api/user/update/${currentUser.email}`, { module: nextModule }, headers);
-          console.log(`Module updated to ${nextModule}`);
 
           // Refresh the user data in the context
           await refreshUser();

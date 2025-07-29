@@ -20,19 +20,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-if (app) {
-  console.log("Firebase successfully connected");
-} else {
-  console.log("Firebase connection failed");
-}
 
 //Initialize Firebase authentication
 const auth = getAuth(app);
-if (auth) {
-  console.log("Firebase authentication connected");
-} else {
-  console.log("Firebase authentication failed");
-}
 
 //Create a user functionality
 
