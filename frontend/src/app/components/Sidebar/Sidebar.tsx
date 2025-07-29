@@ -20,14 +20,24 @@ type SidebarProps = {
   isHomePage?: boolean;
 };
 
+const SIDEBAR_STORAGE_KEY = "sidebar-collapsed-state";
+
 export default function Sidebar({ isHomePage = false }: SidebarProps) {
   const { currentUser } = useAuth();
   const [user, setUser] = useState<User | null>(currentUser);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(() => {
+    if (typeof window !== "undefined") {
+      const savedState = sessionStorage.getItem(SIDEBAR_STORAGE_KEY);
+      return savedState !== null ? (JSON.parse(savedState) as boolean) : false;
+    }
+    return false;
+  });
   const [percent, setPercent] = useState<number>(0);
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
+    sessionStorage.setItem(SIDEBAR_STORAGE_KEY, JSON.stringify(!isCollapsed));
   };
+
   const Router = useRouter();
 
   useEffect(() => {
