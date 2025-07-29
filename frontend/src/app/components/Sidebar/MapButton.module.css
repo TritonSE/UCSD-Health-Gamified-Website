@@ -12,6 +12,10 @@
   background: var(--color-action-submit);
   cursor: pointer;
   transition: gap 0.3s ease-in-out;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .button.collapsed {
@@ -19,30 +23,27 @@
   gap: 0;
 }
 
-.primary {
-  border: 1px solid #fff;
-  color: #fff;
-  font-weight: 400;
-  line-height: 24px;
-}
-
-.primary:hover {
+.button:hover {
   background: #edf9c4;
   color: #1c3a29;
   font-weight: 700;
   line-height: 27px;
 }
 
-.secondary {
+.button:active {
+  border: 1px solid #bbd567;
   background: #bbd567;
   color: #1c3a29;
   font-weight: 700;
   line-height: 27px;
 }
 
-.secondary:hover {
-  background: #edf9c4;
+.homePage {
+  border: 1px solid #bbd567;
+  background: #bbd567;
   color: #1c3a29;
+  font-weight: 700;
+  line-height: 27px;
 }
 
 .text {

@@ -6,46 +6,66 @@ import React, { useState } from "react";
 import styles from "./MapButton.module.css";
 
 type Props = {
+  isHomePage?: boolean;
   isCollapsed?: boolean;
-  kind?: "primary" | "secondary";
   handleClick: () => void;
+  isSelected?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
-
 export const MapButton: React.FC<Props> = ({
+  isHomePage = false,
   isCollapsed = false,
-  kind = "primary",
   handleClick,
   ...props
 }) => {
   const [isHovering, setIsHovered] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
+
   const onMouseEnter = () => {
     setIsHovered(true);
   };
   const onMouseLeave = () => {
     setIsHovered(false);
   };
+  const onMouseDown = () => {
+    setIsPressed(true);
+  };
+  const onMouseUp = () => {
+    setIsPressed(false);
+  };
 
-  let buttonClass = styles.button;
-  let Map = "/Map.svg";
-  switch (kind) {
-    case "primary":
-      buttonClass += ` ${styles.primary}`;
-      break;
-    case "secondary":
-      buttonClass += ` ${styles.secondary}`;
-      Map = "/Map_Selected.svg";
-      break;
-  }
+  React.useEffect(() => {
+    const handleGlobalMouseUp = () => {
+      setIsPressed(false);
+    };
+
+    if (isPressed) {
+      document.addEventListener("mouseup", handleGlobalMouseUp);
+    }
+
+    return () => {
+      document.removeEventListener("mouseup", handleGlobalMouseUp);
+    };
+  }, [isPressed]);
+
+  const getImageSrc = () => {
+    // note: order matters here
+    if (isPressed) return "/Map_Selected.svg";
+    if (isHovering) return "/Map_Hover.svg";
+    if (isHomePage) return "/Map_Selected.svg";
+    return "/Map.svg";
+  };
+
   return (
     <button
-      className={isCollapsed ? `${buttonClass} ${styles.collapsed}` : buttonClass}
+      className={`${styles.button} ${isCollapsed ? styles.collapsed : ""} ${isHomePage ? styles.homePage : ""}`}
       onClick={handleClick}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
       {...props}
     >
-      {!isHovering && <Image src={Map} width={24} height={20} alt="Map Picture" />}
-      {isHovering && <Image src={"/Map_Hover.svg"} width={24} height={20} alt="Map Picture" />}
+      <Image src={getImageSrc()} width={24} height={20} alt="Map Picture" />
       <p className={`${styles.text} ${isCollapsed ? styles.collapsed : ""}`}>Map</p>
     </button>
   );
