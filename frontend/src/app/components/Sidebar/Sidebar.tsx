@@ -27,8 +27,8 @@ const SIDEBAR_STORAGE_KEY = "sidebar-collapsed-state";
 export default function Sidebar({ isHomePage = false, currentlyOn = null }: SidebarProps) {
   const { currentUser } = useAuth();
   const [user, setUser] = useState<User | null>(currentUser);
-  const [play_open] = useSound("/audio/panel_expand.mp3");
-  const [play_close] = useSound("/audio/panel_collapse.mp3");
+  const [play_open] = useSound("/audio/panel_expand.mp3", { playbackRate: 3 });
+  const [play_close] = useSound("/audio/panel_collapse.mp3", { playbackRate: 3 });
   const [play_click] = useSound("/audio/pop_open.mp3", { volume: 0.75 });
   const [isCollapsed, setIsCollapsed] = useState<boolean>(() => {
     if (typeof window !== "undefined") {
