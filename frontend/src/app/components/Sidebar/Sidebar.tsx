@@ -29,7 +29,7 @@ export default function Sidebar({ isHomePage = false, currentlyOn = null }: Side
   const [user, setUser] = useState<User | null>(currentUser);
   const [play_open] = useSound("/audio/panel_expand.mp3");
   const [play_close] = useSound("/audio/panel_collapse.mp3");
-  const [play_click] = useSound("/audio/pop_open.mp3");
+  const [play_click] = useSound("/audio/pop_open.mp3", { volume: 0.75 });
   const [isCollapsed, setIsCollapsed] = useState<boolean>(() => {
     if (typeof window !== "undefined") {
       const savedState = sessionStorage.getItem(SIDEBAR_STORAGE_KEY);
