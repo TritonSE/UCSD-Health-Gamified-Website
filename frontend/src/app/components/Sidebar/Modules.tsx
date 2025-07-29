@@ -31,9 +31,9 @@ export const Modules = ({
     } else if (moduleNumber === 9) {
       router.push(earnedCert ? "/certificate" : "/final-test");
     } else {
-      play_click();
       router.push(`/module${moduleNumber}`);
     }
+    play_click();
   };
 
   const moduleData = [
