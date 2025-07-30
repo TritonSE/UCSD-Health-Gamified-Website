@@ -11,14 +11,13 @@ export default function ForgotPasswordEmailSent({ _email }: { _email: string }) 
       url: "https://ucsd-health-gamified-website.vercel.app/auth",
     })
       .then(() => {
-        console.log("Success!");
+        // Success
       })
       .catch((error: unknown) => {
         const firebaseError = error as { code?: string; message: string };
         const errorCode = firebaseError.code ?? "unknown_error";
         const errorMessage = firebaseError.message;
-
-        console.log(errorCode, errorMessage);
+        console.error("Password reset failed:", errorCode, errorMessage);
       });
   };
 

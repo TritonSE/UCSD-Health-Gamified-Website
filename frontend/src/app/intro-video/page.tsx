@@ -38,7 +38,7 @@ export default function IntroVideo() {
         console.error("Error updating firstLogin:", error);
       }
     } else {
-      console.log("Text not loaded yet");
+      // Text not loaded yet
     }
   };
 

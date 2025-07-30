@@ -38,13 +38,12 @@ export default function ModuleMap() {
     const load = async () => {
       try {
         const res = await get(`/api/user/get/${encodeURIComponent(currentUser.email)}`);
-        if (!res.ok) console.log(res);
         const user = (await res.json()) as { module?: number };
         const curMod = Math.max(0, Math.min(10, user.module ?? 0)) as ModuleNumbers;
         const lastMod = Math.max(0, Math.min(9, (user.module ?? 0) - 1)) as ModuleNumbers;
         setUserData({ currentModule: curMod, lastCompletedModule: lastMod });
       } catch (err) {
-        console.log((err as Error).message);
+        console.error("Error loading user data:", err);
       }
     };
     void load();
@@ -102,6 +101,7 @@ export default function ModuleMap() {
           />
         )}
       </Toaster>
+
       <svg
         className={styles.svg}
         width="1151"

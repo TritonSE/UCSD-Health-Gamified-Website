@@ -103,7 +103,6 @@ const TypingAnimation = ({
   };
 
   useEffect(() => {
-    console.log("shouldStart", shouldStart);
     if (shouldStart && !isTyping && !hasFinished) {
       console.time("startTyping");
       startTyping();

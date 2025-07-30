@@ -26,13 +26,14 @@ export default function Module8() {
         const currentModule = 8; // This is module 8
 
         if (currentModule < currentUser.module) {
-          console.log("Module 8 is behind user's current progress - no update needed");
+          // Module 8 is behind user's current progress - no update needed
         } else if (currentModule === currentUser.module) {
           const nextModule = Math.min(currentUser.module + 1, 10);
           const token = await auth.currentUser?.getIdToken();
-          const headers = token ? { Authorization: `Bearer ${token}` } : {};
+          const headers: Record<string, string> | undefined = token
+            ? { Authorization: `Bearer ${token}` }
+            : undefined;
           await put(`/api/user/update/${currentUser.email}`, { module: nextModule }, headers);
-          console.log(`Module updated to ${nextModule}`);
 
           // Refresh the user data in the context
           await refreshUser();
