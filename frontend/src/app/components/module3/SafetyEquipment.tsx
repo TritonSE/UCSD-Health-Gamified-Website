@@ -11,7 +11,7 @@ export default function SafetyEquipment() {
       title: "01 Bike Headlights & Taillights",
       content:
         "Help illuminate the pavement around you making the road more visible in dark environments as well as help illuminate you to other drivers on the road. " +
-        "Headlights and rear red refelectors/lights are required by the law for nighttime operation.",
+        "Headlights and rear red reflectors/lights are required by the law for nighttime operation.",
       icon: "/module3/carousel_icon1.svg",
     },
     {
@@ -19,7 +19,7 @@ export default function SafetyEquipment() {
       content: (
         <span>
           <strong>Wearing high-visible clothing</strong> especially at dusk and dark is important to
-          help prevent accidents
+          help prevent accidents.
         </span>
       ),
       icon: "/module3/carousel_icon2.svg",
@@ -29,7 +29,7 @@ export default function SafetyEquipment() {
       content: (
         <span>
           <strong>Bike and tire light reflectors</strong> can help make your more visible to drivers
-          on the road
+          on the road.
         </span>
       ),
       icon: "/module3/carousel_icon3.svg",
@@ -40,7 +40,7 @@ export default function SafetyEquipment() {
         <span>
           <strong>A handle bar rear view mirror</strong> can help you visualize who is behind you
           while riding, but should not replace looking over your shoulder when changing lanes or
-          making a turn
+          making a turn.
         </span>
       ),
       icon: "/module3/carousel_icon4.svg",
@@ -51,7 +51,7 @@ export default function SafetyEquipment() {
         <span>
           <strong>A velcro strap</strong>, rolling your pant leg, or tucking your pants into your
           sock is recommended to prevent your pants from getting caught in your drive train which
-          can lead you to lose your balance and a crash
+          can lead you to lose your balance and a crash.
         </span>
       ),
       icon: "/module3/carousel_icon5.svg",

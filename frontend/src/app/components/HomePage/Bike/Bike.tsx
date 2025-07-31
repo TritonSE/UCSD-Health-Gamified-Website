@@ -7,7 +7,7 @@ import { ModuleNumbers } from "../ModuleMap/ModuleMap";
 import styles from "./Bike.module.css";
 // import { useRouter } from "next/navigation";
 
-const BIKE_PATHS = {
+const BIKE_PATHS: Record<number, string> = {
   "0": "M 400 160",
   "1": "M 400 160 h 101",
   "2": "M 501 160 c98,0,101.541,89,122.5,140c15,36.5,50,36.5,84,36.5c73,0,76.5,-35,97.5,-91",

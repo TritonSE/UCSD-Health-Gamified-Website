@@ -16,6 +16,10 @@ app.use(cors());
 
 app.use("/api/user", userRoutes);
 
+app.get("/ping", (req, res) => {
+  res.status(200).send("pong");
+});
+
 app.listen(port, () => {
   console.log(`Backend running at http://localhost:${port}`);
 });

@@ -24,7 +24,7 @@ const Page4: React.FC = () => {
       content: (
         <>
           We encourage families to discuss the <b>seriousness and severity of injuries</b> that can
-          occur when riding a bike/ electric bike.
+          occur when riding a bike/electric bike.
         </>
       ),
       icon: "/module7/Timmy2.svg",

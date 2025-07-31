@@ -20,10 +20,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 //Initialize Firebase authentication
 const auth = getAuth(app);
-
 //Create a user functionality
 
 export const analytics = () => {
