@@ -13,14 +13,14 @@ export default function finalTest() {
       type: "single",
     },
     {
-      question: "Do you need a driver's license to ride a Class 1, 2, or 3 e-bike?",
+      question: "True or False: You need a driver's license to ride a Class 1, 2, or 3 E Bike.",
       options: ["True", "False"],
       correctAnswer: "B.",
       type: "single",
     },
     {
       question:
-        "True or false, If you modify an e-bike to go faster than is legal speed, you could get a ticket.",
+        "True or False: If you modify an e-bike to go faster than is legal speed, you could get a ticket.",
       options: ["True", "False"],
       correctAnswer: "A.",
       type: "single",
