@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { Toaster } from "react-hot-toast";
 
 import { put } from "../api/requests";
 import ModuleIntro from "../components/AllModules/ModuleIntro/ModuleIntro";
@@ -12,6 +13,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import { TitleScreen } from "../components/quiz_components/TitleScreen";
 import { useAuth } from "../contexts/AuthContext";
 import { auth } from "../firebase-config";
+import { showErrorToast } from "../utils/toastUtils";
 
 import styles from "./mod8.module.css";
 
@@ -38,10 +40,15 @@ export default function Module8() {
           // Refresh the user data in the context
           await refreshUser();
         } else {
-          console.error("Error: User is attempting a module ahead of their current progress");
+          //console.error("Error: User is attempting a module ahead of their current progress");
+          showErrorToast("You're trying to skip ahead to a locked module.");
         }
       } catch (error) {
-        console.error("Failed to update module:", error);
+        //console.error("Failed to update module:", error);
+        showErrorToast("Failed to update your progress. Please try again.");
+        if (process.env.NODE_ENV !== "production") {
+          console.error("Failed to update module:", error);
+        }
       }
     }
 
@@ -51,6 +58,7 @@ export default function Module8() {
 
   return (
     <ModuleGate module={8}>
+      <Toaster position="top-center" />
       <div className={styles.container}>
         <Sidebar />
         <ModuleSliderContainer moduleText="MODULE 8: Closing Video">

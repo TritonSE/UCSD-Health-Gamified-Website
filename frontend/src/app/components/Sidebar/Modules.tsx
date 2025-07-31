@@ -16,7 +16,7 @@ export const Modules = ({ isCollapsed = false, currentModule = 1, earnedCert = f
   const handleClick = (moduleNumber: number) => {
     //only use currentModule
     if (moduleNumber > currentModule) {
-      console.log("Modules in progress");
+      // Module is in progress
     } else if (moduleNumber === 9) {
       router.push(earnedCert ? "/certificate" : "/final-test");
     } else {

@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import React, { CSSProperties, useEffect, useRef, useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 import { put } from "../api/requests";
 import ModuleGate from "../components/ModuleGate/ModuleGate";
@@ -9,6 +10,7 @@ import TypingAnimation from "../components/TypingAnimation/TypingAnimation";
 import buttonStyles from "../components/VideoButton.module.css";
 import { useAuth } from "../contexts/AuthContext";
 import { auth } from "../firebase-config";
+import { showErrorToast } from "../utils/toastUtils";
 
 import styles from "./IntroVideo.module.css";
 
@@ -35,7 +37,8 @@ export default function IntroVideo() {
 
         router.push("/video");
       } catch (error) {
-        console.error("Error updating firstLogin:", error);
+        // console.error("Error updating firstLogin:", error);
+        showErrorToast();
       }
     } else {
       // Text not loaded yet
@@ -49,6 +52,7 @@ export default function IntroVideo() {
   return (
     <ModuleGate module={0}>
       <main className={styles.main}>
+        <Toaster position="top-center" />
         <div className={styles.wrapper}>
           <h1 className={styles.title}>Welcome to the E-Bike Safety Course!</h1>
           <div className={styles.container}>

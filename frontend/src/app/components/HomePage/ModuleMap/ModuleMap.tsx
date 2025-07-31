@@ -51,27 +51,6 @@ export default function ModuleMap() {
 
   return (
     <div className={styles.svg_container}>
-      {/* <Toaster
-        position="bottom-center"
-        containerStyle={{
-          position: "absolute",
-          left: "0",
-          right: "0",
-          top: "0",
-          bottom: "50px",
-          paddingBottom: "50px",
-          overflow: 'hidden'
-        }}
-        toastOptions={{
-          style: {
-            boxShadow: "none",
-            backgroundColor: "#FAFFEA",
-            borderRadius: "16",
-            maxWidth: "55ch",
-            border: "1px solid #1c3a29",
-          },
-        }}
-      /> */}
       <Toaster
         position="bottom-center"
         containerStyle={{

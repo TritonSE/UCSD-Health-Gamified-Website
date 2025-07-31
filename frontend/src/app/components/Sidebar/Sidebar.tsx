@@ -3,9 +3,11 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 import { useAuth } from "../../contexts/AuthContext";
 import { auth } from "../../firebase-config.js";
+import { showErrorToast } from "../../utils/toastUtils";
 
 import { Account } from "./Account";
 import { LogoutButton } from "./LogoutButton";
@@ -15,7 +17,6 @@ import { ProgressBar } from "./ProgressBar";
 import styles from "./Sidebar.module.css";
 
 import type { User } from "../../api/user";
-
 type SidebarProps = {
   isHomePage?: boolean;
 };
@@ -45,52 +46,56 @@ export default function Sidebar({ isHomePage = false }: SidebarProps) {
       await auth.signOut();
       Router.push("/signin");
     } catch (error) {
-      console.error("Error signing out:", error);
+      //console.error("Error signing out:", error);
+      showErrorToast("Error signing out. Please try again.");
     }
   };
 
   return (
-    <nav className={`${styles.nav} ${isCollapsed ? styles.collapsed : ""}`}>
-      <button
-        className={`${styles.collapseButton} ${isCollapsed ? styles.open : ""}`}
-        onClick={toggleSidebar}
-      >
-        {isCollapsed ? (
-          <Image
-            src={"/sidebar_expanded_icon.svg"}
-            width={23}
-            height={18}
-            alt="Sidebar Expand Icon"
-          />
-        ) : (
-          <Image
-            src={"/sidebar_collapsed_icon.svg"}
-            width={23}
-            height={18}
-            alt="Sidebar Collapse Icon"
-          />
-        )}
-      </button>
-      <ProgressBar isCollapsed={isCollapsed} percentage={percent} />
-      <MapButton
-        isCollapsed={isCollapsed}
-        handleClick={() => {
-          Router.push("/");
-        }}
-        isHomePage={isHomePage}
-      />
-      <Modules
-        currentModule={user?.module}
-        isCollapsed={isCollapsed}
-        earnedCert={user?.module === 10}
-      />
-      {user && <Account user={user} isCollapsed={isCollapsed} />}
-      <LogoutButton
-        isCollapsed={isCollapsed}
-        handleClick={() => {
-          void handleLogout();
-        }}
-      />
-    </nav>
+    <>
+      <Toaster position="top-center" />
+      <nav className={`${styles.nav} ${isCollapsed ? styles.collapsed : ""}`}>
+        <button
+          className={`${styles.collapseButton} ${isCollapsed ? styles.open : ""}`}
+          onClick={toggleSidebar}
+        >
+          {isCollapsed ? (
+            <Image
+              src={"/sidebar_expanded_icon.svg"}
+              width={23}
+              height={18}
+              alt="Sidebar Expand Icon"
+            />
+          ) : (
+            <Image
+              src={"/sidebar_collapsed_icon.svg"}
+              width={23}
+              height={18}
+              alt="Sidebar Collapse Icon"
+            />
+          )}
+        </button>
+        <ProgressBar isCollapsed={isCollapsed} percentage={percent} />
+        <MapButton
+          isCollapsed={isCollapsed}
+          handleClick={() => {
+            Router.push("/");
+          }}
+          isHomePage={isHomePage}
+        />
+        <Modules
+          currentModule={user?.module}
+          isCollapsed={isCollapsed}
+          earnedCert={user?.module === 10}
+        />
+        {user && <Account user={user} isCollapsed={isCollapsed} />}
+        <LogoutButton
+          isCollapsed={isCollapsed}
+          handleClick={() => {
+            void handleLogout();
+          }}
+        />
+      </nav>
+    </>
   );
 }
