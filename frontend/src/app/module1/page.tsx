@@ -32,7 +32,7 @@ export default function Module1() {
       <div className={styles.container}>
         {/* sidebar */}
         <div className={styles.sidebar}>
-          <Sidebar />
+          <Sidebar currentlyOn={1} />
         </div>
 
         {/* content */}
