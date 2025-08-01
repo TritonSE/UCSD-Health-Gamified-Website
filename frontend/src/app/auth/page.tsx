@@ -4,12 +4,12 @@ import { applyActionCode } from "firebase/auth";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
+import { LoginButton } from "../components/LoginButton";
 import WelcomePanel from "../components/WelcomePanel/WelcomePanel";
 // import { useAuth } from "../contexts/AuthContext";
 import { auth } from "../firebase-config.js";
 
 import styles from "./Auth.module.css";
-import { LoginButton } from "../components/LoginButton";
 
 export default function Auth() {
   // Example usage of useAuth
