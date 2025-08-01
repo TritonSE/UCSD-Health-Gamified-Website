@@ -56,7 +56,7 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
       <br />
       <p>
         Didn&apos;t receive an email? <br />
-        Check your spam folder or{" "}
+        Check your <span>spam folder</span> or{" "}
         <a href="#" onClick={resendEmail}>
           click to resend
         </a>
