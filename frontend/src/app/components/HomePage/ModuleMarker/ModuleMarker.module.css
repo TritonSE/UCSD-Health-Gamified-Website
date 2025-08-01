@@ -13,11 +13,11 @@
 }
 
 .active {
-  --marker-color: #fcd579;
+  --marker-color: #ff8500;
 }
 
 .active.navigatable {
-  --marker-color: #fcd579;
+  --marker-color: #ff8500;
 }
 
 .active.completed {

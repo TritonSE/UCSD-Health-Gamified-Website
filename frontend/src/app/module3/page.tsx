@@ -28,7 +28,7 @@ export default function Module3() {
       <div className={styles.container}>
         {/* sidebar */}
         <div className={styles.sidebar}>
-          <Sidebar />
+          <Sidebar currentlyOn={3} />
         </div>
         {/* content */}
         <ModuleSliderContainer moduleText="MODULE 3: Helmet Choice and Safety Equipment">

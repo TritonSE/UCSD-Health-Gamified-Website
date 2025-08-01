@@ -13,7 +13,7 @@ export default function ClosingVideo() {
           id="ytplayer"
           width="854"
           height="480"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          src="https://www.youtube.com/embed/vFmCdl2ASNQ?si=7R3W6hCGWoT9_a2_"
         ></iframe>
       </div>
     </div>
