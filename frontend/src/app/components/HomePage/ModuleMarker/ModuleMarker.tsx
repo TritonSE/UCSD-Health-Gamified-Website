@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { MutableRefObject, ReactNode } from "react";
-// import toast from "react-hot-toast";
 
 import { showErrorToast } from "../../../utils/toastUtils";
 import { ModuleNumbers, UserData } from "../ModuleMap/ModuleMap";
@@ -17,8 +16,6 @@ type ModuleMarkerProps = {
   cy: string;
   children: ReactNode;
 };
-
-// const TOAST_DURATION = 2500;
 
 export default function ModuleMarker({
   bikeIsAnimating,
