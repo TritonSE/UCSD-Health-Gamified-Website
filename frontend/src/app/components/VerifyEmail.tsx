@@ -55,9 +55,10 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
       <br />
       <br />
       <p>
-        Didn&apos;t receive an email?{" "}
+        Didn&apos;t receive an email? <br />
+        Check your spam folder or{" "}
         <a href="#" onClick={resendEmail}>
-          Click to resend
+          click to resend
         </a>
       </p>
       {verificationError && (
