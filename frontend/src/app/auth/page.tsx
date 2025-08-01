@@ -99,11 +99,13 @@ export default function Auth() {
         <WelcomePanel />
       </section>
       <section className={styles.rightSide}>
-        <div className={styles.title}>
-          <h1>{titleMessage}</h1>
-          <p className={styles.text}>{message}</p>
+        <div className={styles.content}>
+          <div className={styles.title}>
+            <h1>{titleMessage}</h1>
+            <p className={styles.text}>{message}</p>
+          </div>
+          {hasError && <LoginButton disabled={false} label="Back to Sign In" onClick={redirect} />}
         </div>
-        {hasError && <LoginButton disabled={false} label="Back to Sign In" onClick={redirect} />}
       </section>
     </main>
   );
