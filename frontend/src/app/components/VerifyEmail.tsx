@@ -22,6 +22,7 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
     if (user) {
       sendEmailVerification(user, {
         url: "https://ucsd-health-gamified-website.vercel.app/auth",
+        handleCodeInApp: true,
       })
         .then(() => {
           setVerificationError("");
