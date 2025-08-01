@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <ModuleGate module={0}>
       <main className={styles.main}>
-        <Sidebar />
+        <Sidebar isHomePage={true} />
         <ModuleMap />
       </main>
     </ModuleGate>

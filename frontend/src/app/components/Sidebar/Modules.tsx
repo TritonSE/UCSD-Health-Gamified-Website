@@ -1,14 +1,27 @@
+"use client";
+
+import { useRouter } from "next/navigation"; // 🆕
+
 import { Module } from "./Module";
 import styles from "./Modules.module.css";
 
-export const Modules = ({ isCollapsed = false, currentModule = 1 }) => {
+export const Modules = ({ isCollapsed = false, currentModule = 1, earnedCert = false }) => {
+  const router = useRouter();
+
   let buttonClass = styles.moduleContainer;
   if (isCollapsed) {
     buttonClass += ` ${styles.collapsed}`;
   }
 
-  const handleClick = () => {
-    // Module clicked
+  const handleClick = (moduleNumber: number) => {
+    //only use currentModule
+    if (moduleNumber > currentModule) {
+      console.log("Modules in progress");
+    } else if (moduleNumber === 9) {
+      router.push(earnedCert ? "/certificate" : "/final-test");
+    } else {
+      router.push(`/module${moduleNumber}`);
+    }
   };
 
   const moduleData = [
@@ -44,7 +57,9 @@ export const Modules = ({ isCollapsed = false, currentModule = 1 }) => {
               moduleName={module.name}
               moduleTime={module.time}
               moduleNumber={module.number}
-              handleClick={handleClick}
+              handleClick={() => {
+                handleClick(module.number);
+              }}
               kind={kind}
               highlighted={module.number === currentModule}
               addLine={module.addLine !== false}
