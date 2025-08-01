@@ -179,9 +179,13 @@ export default function SignInPanel() {
                 </a>
               )}
               {signInError === "Verification email has been sent!" && (
-                <a href="#" onClick={sendEmail}>
-                  <u>Click to resend</u>
-                </a>
+                <>
+                  Check your spam folder or{" "}
+                  <a href="#" onClick={sendEmail}>
+                    <u>click to resend</u>
+                  </a>
+                  .
+                </>
               )}
             </p>
           </div>
