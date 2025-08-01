@@ -21,6 +21,7 @@ export default function Auth() {
 
   const [titleMessage, setTitleMessage] = useState("Redirecting...");
   const [message, setMessage] = useState("Please wait a moment...");
+  const [hasError, setHasError] = useState(false);
 
   const redirect = () => {
     window.location.href = "/signin";
@@ -79,6 +80,8 @@ export default function Auth() {
                 setTitleMessage("Error Verifying Email");
                 setMessage("Please try again or contact support.");
               }
+
+              setHasError(true);
             });
           break;
         default:
@@ -100,7 +103,7 @@ export default function Auth() {
           <h1>{titleMessage}</h1>
           <p className={styles.text}>{message}</p>
         </div>
-        <LoginButton disabled={false} label="Back to Sign In" onClick={redirect} />
+        {hasError && <LoginButton disabled={false} label="Back to Sign In" onClick={redirect} />}
       </section>
     </main>
   );
