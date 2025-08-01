@@ -20,6 +20,7 @@
   align-items: center; /* Centers vertically */
   flex-direction: column;
   gap: 1rem;
+  width: 50%;
 }
 .title h1 {
   color: var(--Secondary-Accent1, #1c3a29);
