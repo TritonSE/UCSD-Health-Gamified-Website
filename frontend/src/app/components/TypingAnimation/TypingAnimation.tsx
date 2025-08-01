@@ -78,7 +78,6 @@ const TypingAnimation = ({
       // Animation finished
       setIsTyping(false);
       setHasFinished(true);
-      console.timeEnd("startTyping");
       requestAnimationFrame(() => {
         onFinishTyping?.();
       });
@@ -104,7 +103,6 @@ const TypingAnimation = ({
 
   useEffect(() => {
     if (shouldStart && !isTyping && !hasFinished) {
-      console.time("startTyping");
       startTyping();
     } else if (!shouldStart) {
       cleanup();

@@ -39,7 +39,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           });
         }
       } catch (error) {
-        console.error("Failed to refresh user:", error);
+        if (process.env.NODE_ENV !== "production") {
+          console.error("Failed to refresh user:", error);
+        }
       }
     }
   };
@@ -60,7 +62,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             setLoading(false);
           })
           .catch((error) => {
-            console.error(error);
+            if (process.env.NODE_ENV !== "production") {
+              console.error("Failed to get user in onAuthStateChanged:", error);
+            }
             setLoading(false);
           });
       } else {

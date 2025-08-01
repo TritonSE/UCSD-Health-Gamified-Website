@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import { put } from "../../api/requests";
 import { useAuth } from "../../contexts/AuthContext";
 import { auth } from "../../firebase-config.js";
+import { showErrorToast } from "../../utils/toastUtils";
 
 import { ExitNotif } from "./ExitNotif";
 import { Grade } from "./Grade";
@@ -254,10 +255,10 @@ export const Quiz = ({
           // Refresh the user data in the context
           await refreshUser();
         } else {
-          console.error("Error: User is attempting a quiz ahead of their current progress");
+          showErrorToast("Error: User is attempting a quiz ahead of their current progress");
         }
       } catch (error) {
-        console.error("Failed to update module:", error);
+        showErrorToast();
       }
     }
 

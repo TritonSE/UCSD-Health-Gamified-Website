@@ -32,7 +32,9 @@ export default function ForgotPasswordForm({ setEmailState }: ForgotPasswordForm
               const firebaseError = error as { code?: string; message: string };
               const errorCode = firebaseError.code ?? "unknown_error";
               const errorM = firebaseError.message;
-              console.error("Password reset failed:", errorCode, errorM);
+              if (process.env.NODE_ENV !== "production") {
+                console.error("Password reset failed:", errorCode, errorM);
+              }
             });
         } else {
           return Promise.reject(new Error("No account associated with this email."));

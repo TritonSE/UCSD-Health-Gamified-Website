@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ToastBar, Toaster } from "react-hot-toast";
 
 import { get } from "../../../api/requests";
 import { useAuth } from "../../../contexts/AuthContext";
+import { showErrorToast } from "../../../utils/toastUtils";
 import AnimatedPath from "../AnimatedPath/AnimatedPath";
 import BackgroundPaths from "../BackgroundPaths/BackgroundPaths";
 import Bike from "../Bike/Bike";
@@ -43,7 +43,7 @@ export default function ModuleMap() {
         const lastMod = Math.max(0, Math.min(9, (user.module ?? 0) - 1)) as ModuleNumbers;
         setUserData({ currentModule: curMod, lastCompletedModule: lastMod });
       } catch (err) {
-        console.error("Error loading user data:", err);
+        showErrorToast("Error loading user data. Please try again.");
       }
     };
     void load();
@@ -51,57 +51,6 @@ export default function ModuleMap() {
 
   return (
     <div className={styles.svg_container}>
-      {/* <Toaster
-        position="bottom-center"
-        containerStyle={{
-          position: "absolute",
-          left: "0",
-          right: "0",
-          top: "0",
-          bottom: "50px",
-          paddingBottom: "50px",
-          overflow: 'hidden'
-        }}
-        toastOptions={{
-          style: {
-            boxShadow: "none",
-            backgroundColor: "#FAFFEA",
-            borderRadius: "16",
-            maxWidth: "55ch",
-            border: "1px solid #1c3a29",
-          },
-        }}
-      /> */}
-      <Toaster
-        position="bottom-center"
-        containerStyle={{
-          position: "absolute",
-          left: "0",
-          right: "0",
-          top: "0",
-          bottom: "50px",
-          paddingBottom: "50px",
-          overflow: "hidden",
-        }}
-      >
-        {(t) => (
-          <ToastBar
-            toast={t}
-            style={{
-              ...t.style,
-              boxShadow: "none",
-              backgroundColor: "#FAFFEA",
-              borderRadius: "16",
-              maxWidth: "55ch",
-              border: "1px solid #1c3a29",
-              animation: t.visible
-                ? `${styles.customEnter} 0.2s ease-in-out`
-                : `${styles.customExit} 0.2s ease-in-out forwards`,
-            }}
-          />
-        )}
-      </Toaster>
-
       <svg
         className={styles.svg}
         width="1151"

@@ -37,7 +37,9 @@ export default function ResetPasswordPanel() {
         const errorCode = firebaseError.code ?? "unknown_error";
         const errorMessage = firebaseError.message;
 
-        console.error("Password reset failed:", errorCode, errorMessage);
+        if (process.env.NODE_ENV !== "production") {
+          console.error("Password reset failed:", errorCode, errorMessage);
+        }
         setPasswordReset(false);
         setResetError("Already reset password!");
       });

@@ -9,6 +9,7 @@ import TypingAnimation from "../components/TypingAnimation/TypingAnimation";
 import buttonStyles from "../components/VideoButton.module.css";
 import { useAuth } from "../contexts/AuthContext";
 import { auth } from "../firebase-config";
+import { showErrorToast } from "../utils/toastUtils";
 
 import styles from "./IntroVideo.module.css";
 
@@ -35,7 +36,7 @@ export default function IntroVideo() {
 
         router.push("/video");
       } catch (error) {
-        console.error("Error updating firstLogin:", error);
+        showErrorToast();
       }
     } else {
       // Text not loaded yet

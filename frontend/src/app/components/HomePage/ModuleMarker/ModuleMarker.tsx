@@ -2,8 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { MutableRefObject, ReactNode } from "react";
-import toast from "react-hot-toast";
 
+import { showErrorToast } from "../../../utils/toastUtils";
 import { ModuleNumbers, UserData } from "../ModuleMap/ModuleMap";
 
 import styles from "./ModuleMarker.module.css";
@@ -16,8 +16,6 @@ type ModuleMarkerProps = {
   cy: string;
   children: ReactNode;
 };
-
-const TOAST_DURATION = 2500;
 
 export default function ModuleMarker({
   bikeIsAnimating,
@@ -45,15 +43,7 @@ export default function ModuleMarker({
         .join(" ")}
       onClick={() => {
         if (!isModuleNavigatable) {
-          toast(
-            <div className={`${styles.module_error_toast} toast`}>
-              <p>
-                <span>Error: </span>This module is locked!
-              </p>
-              <p>{`Make sure you've submitted your answers and passed the previous module quiz.`}</p>
-            </div>,
-            { id: "module_error_toast", duration: TOAST_DURATION },
-          );
+          showErrorToast("This module is locked!");
           return;
         }
         if (bikeIsAnimating.current) return;

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 import { useAuth } from "../../contexts/AuthContext";
 import { auth } from "../../firebase-config.js";
+import { showErrorToast } from "../../utils/toastUtils";
 
 import { Account } from "./Account";
 import { LogoutButton } from "./LogoutButton";
@@ -15,7 +16,6 @@ import { ProgressBar } from "./ProgressBar";
 import styles from "./Sidebar.module.css";
 
 import type { User } from "../../api/user";
-
 type SidebarProps = {
   isHomePage?: boolean;
   currentlyOn?: number | null;
@@ -56,7 +56,7 @@ export default function Sidebar({ isHomePage = false, currentlyOn = null }: Side
       await auth.signOut();
       Router.push("/signin");
     } catch (error) {
-      console.error("Error signing out:", error);
+      showErrorToast("Error signing out. Please try again.");
     }
   };
 
