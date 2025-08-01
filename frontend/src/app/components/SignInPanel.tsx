@@ -31,8 +31,9 @@ export default function SignInPanel() {
           const firebaseError = error as { code?: string; message: string };
           const errorCode = firebaseError.code ?? "unknown_error";
           const errorMessage = firebaseError.message;
-          console.error(errorCode, errorMessage);
-
+          if (process.env.NODE_ENV !== "production") {
+            console.error(errorCode, errorMessage);
+          }
           reject(new Error(errorCode));
         });
     });
@@ -69,7 +70,9 @@ export default function SignInPanel() {
                       router.push("/intro-video");
                     })
                     .catch((error) => {
-                      console.error("Error updating first login: ", error);
+                      if (process.env.NODE_ENV !== "production") {
+                        console.error("Error updating first login: ", error);
+                      }
                       setSignInError("Error updating login. Please try again later.");
                     });
                 } else {
@@ -86,7 +89,9 @@ export default function SignInPanel() {
         }
       })
       .catch((error) => {
-        console.error("Error during the sign-in process:", error);
+        if (process.env.NODE_ENV !== "production") {
+          console.error("Error during the sign-in process:", error);
+        }
         setSignInError("Incorrect email or password.");
       });
   };
@@ -102,8 +107,9 @@ export default function SignInPanel() {
           setSignInError("Verification email has been sent!");
         })
         .catch((error: unknown) => {
-          console.error("Error sending verification email: ", error);
-
+          if (process.env.NODE_ENV !== "production") {
+            console.error("Error sending verification email: ", error);
+          }
           const firebaseError = error as { code?: string; message: string };
           const errorCode = firebaseError.code ?? "unknown_error";
 
@@ -112,7 +118,9 @@ export default function SignInPanel() {
           }
         });
     } else {
-      console.error("No user found.");
+      if (process.env.NODE_ENV !== "production") {
+        console.error("No user found.");
+      }
     }
   };
 

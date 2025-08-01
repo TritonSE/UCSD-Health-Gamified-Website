@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Toaster } from "react-hot-toast";
 
 import { useAuth } from "../../contexts/AuthContext";
 import { auth } from "../../firebase-config.js";
@@ -46,14 +45,12 @@ export default function Sidebar({ isHomePage = false }: SidebarProps) {
       await auth.signOut();
       Router.push("/signin");
     } catch (error) {
-      //console.error("Error signing out:", error);
       showErrorToast("Error signing out. Please try again.");
     }
   };
 
   return (
     <>
-      <Toaster position="top-center" />
       <nav className={`${styles.nav} ${isCollapsed ? styles.collapsed : ""}`}>
         <button
           className={`${styles.collapseButton} ${isCollapsed ? styles.open : ""}`}

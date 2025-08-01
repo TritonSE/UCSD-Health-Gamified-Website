@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
+import { showErrorToast } from "../../utils/toastUtils";
+
 import styles from "./Notif.module.css";
 
 export const SubmitNotif = ({
@@ -15,7 +17,7 @@ export const SubmitNotif = ({
     try {
       await submitFunc();
     } catch (error) {
-      console.error("Error submitting quiz:", error);
+      showErrorToast("Error submitting quiz. Please try again.");
     }
   };
 

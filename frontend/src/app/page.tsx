@@ -16,7 +16,9 @@ export default function Home() {
         setIsLoading(false);
       })
       .catch((err) => {
-        console.error("Backend ping failed:", err);
+        if (process.env.NODE_ENV !== "production") {
+          console.error("Backend ping failed:", err);
+        }
         setIsLoading(false);
       });
   }, []);

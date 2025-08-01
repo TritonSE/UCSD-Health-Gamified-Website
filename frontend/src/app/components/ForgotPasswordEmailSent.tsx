@@ -17,7 +17,9 @@ export default function ForgotPasswordEmailSent({ _email }: { _email: string }) 
         const firebaseError = error as { code?: string; message: string };
         const errorCode = firebaseError.code ?? "unknown_error";
         const errorMessage = firebaseError.message;
-        console.error("Password reset failed:", errorCode, errorMessage);
+        if (process.env.NODE_ENV !== "production") {
+          console.error("Password reset failed:", errorCode, errorMessage);
+        }
       });
   };
 

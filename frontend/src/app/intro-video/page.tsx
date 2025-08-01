@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import React, { CSSProperties, useEffect, useRef, useState } from "react";
-import { Toaster } from "react-hot-toast";
 
 import { put } from "../api/requests";
 import ModuleGate from "../components/ModuleGate/ModuleGate";
@@ -37,7 +36,6 @@ export default function IntroVideo() {
 
         router.push("/video");
       } catch (error) {
-        // console.error("Error updating firstLogin:", error);
         showErrorToast();
       }
     } else {
@@ -52,7 +50,6 @@ export default function IntroVideo() {
   return (
     <ModuleGate module={0}>
       <main className={styles.main}>
-        <Toaster position="top-center" />
         <div className={styles.wrapper}>
           <h1 className={styles.title}>Welcome to the E-Bike Safety Course!</h1>
           <div className={styles.container}>

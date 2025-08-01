@@ -19,7 +19,6 @@ export const TitleScreen = ({
     const result = handleStart(); // Should be handleStart, not handleClick
     // Handle the promise if it exists, but don't return it
     if (result instanceof Promise) {
-      //result.catch(console.error); // Optional: handle errors
       showErrorToast("Something went wrong starting the quiz.");
     }
   };

@@ -52,7 +52,9 @@ export default function ModuleGate({
 
         setAuthenticated(true);
       } catch (err) {
-        console.error("ModuleGate fetch error:", err);
+        if (process.env.NODE_ENV !== "production") {
+          console.error("ModuleGate fetch error:", err);
+        }
       }
     })();
   }, [currentUser, loading, module, router]);

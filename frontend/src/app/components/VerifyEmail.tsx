@@ -28,7 +28,9 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
           setEmailResent("Email resent! Please wait 1 minute before trying again.");
         })
         .catch((error: unknown) => {
-          console.error("Error sending verification email: ", error);
+          if (process.env.NODE_ENV !== "production") {
+            console.error("Error sending verification email: ", error);
+          }
 
           const firebaseError = error as { code?: string; message: string };
           const errorCode = firebaseError.code ?? "unknown_error";
@@ -39,7 +41,9 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
           }
         });
     } else {
-      console.error("No user found.");
+      if (process.env.NODE_ENV !== "production") {
+        console.error("No user found.");
+      }
     }
   };
 

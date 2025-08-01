@@ -55,7 +55,9 @@ export default function CreateAccountPanel({ setAccountCreated }: CreateAccountP
           const firebaseError = error as { code?: string; message: string };
           const errorCode = firebaseError.code ?? "unknown_error";
           const errorMessage = firebaseError.message;
-          console.error("Create user failed:", errorCode, errorMessage);
+          if (process.env.NODE_ENV !== "production") {
+            console.error("Create user failed:", errorCode, errorMessage);
+          }
 
           setAccountCreated("");
 
@@ -91,7 +93,9 @@ export default function CreateAccountPanel({ setAccountCreated }: CreateAccountP
                 })
                 .catch((error: Error) => {
                   setAccountCreated("");
-                  console.error("Error sending verification email: ", error);
+                  if (process.env.NODE_ENV !== "production") {
+                    console.error("Error sending verification email: ", error);
+                  }
                 });
             } else {
               setAccountCreated("");
@@ -107,7 +111,9 @@ export default function CreateAccountPanel({ setAccountCreated }: CreateAccountP
                   });
                 })
                 .catch((error: unknown) => {
-                  console.error(error);
+                  if (process.env.NODE_ENV !== "production") {
+                    console.error(error);
+                  }
                 });
 
               setErrors((prev) => ({
@@ -130,7 +136,9 @@ export default function CreateAccountPanel({ setAccountCreated }: CreateAccountP
                 });
               })
               .catch((error: unknown) => {
-                console.error(error);
+                if (process.env.NODE_ENV !== "production") {
+                  console.error(error);
+                }
               });
 
             setErrors((prev) => ({
