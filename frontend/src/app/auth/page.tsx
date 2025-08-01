@@ -9,6 +9,7 @@ import WelcomePanel from "../components/WelcomePanel/WelcomePanel";
 import { auth } from "../firebase-config.js";
 
 import styles from "./Auth.module.css";
+import { LoginButton } from "../components/LoginButton";
 
 export default function Auth() {
   // Example usage of useAuth
@@ -20,6 +21,10 @@ export default function Auth() {
 
   const [titleMessage, setTitleMessage] = useState("Redirecting...");
   const [message, setMessage] = useState("Please wait a moment...");
+
+  const redirect = () => {
+    window.location.href = "/signin";
+  };
 
   useEffect(() => {
     if (actionExecuted.current) return;
@@ -95,6 +100,7 @@ export default function Auth() {
           <h1>{titleMessage}</h1>
           <p className={styles.text}>{message}</p>
         </div>
+        <LoginButton disabled={false} label="Back to Sign In" onClick={redirect} />
       </section>
     </main>
   );
