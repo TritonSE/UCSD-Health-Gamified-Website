@@ -26,7 +26,7 @@ export default function Module2() {
     <ModuleGate module={2}>
       <div className={styles.container}>
         <div className={styles.sidebarWrapper}>
-          <Sidebar />
+          <Sidebar currentlyOn={2} />
         </div>
         <ModuleSliderContainer moduleText="MODULE 2: Maintaining Your Bike and Keeping it Road Ready">
           <ModuleIntro

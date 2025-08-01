@@ -66,7 +66,7 @@ export default function CertificatePage() {
     <ModuleGate module={10}>
       <main className={styles.main}>
         <div className={styles.sidebar}>
-          <Sidebar />
+          <Sidebar currentlyOn={9} />
         </div>
         <div className={styles.content}>
           <div className={styles.congratsStarsWrapper}>

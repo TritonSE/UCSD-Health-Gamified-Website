@@ -102,6 +102,7 @@ export default function SignInPanel() {
     if (user) {
       sendEmailVerification(user, {
         url: "https://ucsd-health-gamified-website.vercel.app/auth",
+        handleCodeInApp: true,
       })
         .then(() => {
           setSignInError("Verification email has been sent!");
@@ -187,9 +188,13 @@ export default function SignInPanel() {
                 </a>
               )}
               {signInError === "Verification email has been sent!" && (
-                <a href="#" onClick={sendEmail}>
-                  <u>Click to resend</u>
-                </a>
+                <>
+                  Check your spam folder or{" "}
+                  <a href="#" onClick={sendEmail}>
+                    <u>click to resend</u>
+                  </a>
+                  .
+                </>
               )}
             </p>
           </div>

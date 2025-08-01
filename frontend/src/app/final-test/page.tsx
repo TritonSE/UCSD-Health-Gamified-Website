@@ -124,7 +124,7 @@ export default function finalTest() {
     <ModuleGate module={9}>
       <div className={styles.quizContainer}>
         <div className={styles.hideMobile}>
-          <Sidebar />
+          <Sidebar currentlyOn={9} />
         </div>
         <Quiz
           title="Final Test"

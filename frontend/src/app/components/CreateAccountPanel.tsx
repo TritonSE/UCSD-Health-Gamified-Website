@@ -87,6 +87,7 @@ export default function CreateAccountPanel({ setAccountCreated }: CreateAccountP
             if (result.success) {
               sendEmailVerification(userCredential.user, {
                 url: "https://ucsd-health-gamified-website.vercel.app/auth",
+                handleCodeInApp: true,
               })
                 .then(() => {
                   setAccountCreated(formData.email);

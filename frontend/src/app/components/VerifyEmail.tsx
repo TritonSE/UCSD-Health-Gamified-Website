@@ -22,6 +22,7 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
     if (user) {
       sendEmailVerification(user, {
         url: "https://ucsd-health-gamified-website.vercel.app/auth",
+        handleCodeInApp: true,
       })
         .then(() => {
           setVerificationError("");
@@ -58,9 +59,10 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
       <br />
       <br />
       <p>
-        Didn&apos;t receive an email?{" "}
+        Didn&apos;t receive an email? <br />
+        Check your <span>spam folder</span> or{" "}
         <a href="#" onClick={resendEmail}>
-          Click to resend
+          click to resend.
         </a>
       </p>
       {verificationError && (
