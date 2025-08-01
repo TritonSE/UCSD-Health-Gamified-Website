@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
-import { Toaster } from "react-hot-toast";
 
 import { AuthProvider } from "./contexts/AuthContext";
+import ToastProvider from "./utils/ToastProvider";
 
 import type { Metadata } from "next";
 
@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AuthProvider>
-          <Toaster position="top-center" />
+          <ToastProvider />
           {children}
         </AuthProvider>
       </body>

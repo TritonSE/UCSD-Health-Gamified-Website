@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 import { MutableRefObject } from "react";
-import toast from "react-hot-toast";
 
+import { showErrorToast } from "../../../utils/toastUtils";
 import { ModuleNumbers } from "../ModuleMap/ModuleMap";
 
 import styles from "./AnimatedPath.module.css";
@@ -10,8 +10,6 @@ type AnimatedPathProps = {
   modulePreview: ModuleNumbers;
   bikeIsAnimating: MutableRefObject<boolean>;
 };
-
-const TOAST_DURATION = 2500;
 
 export default function AnimatedPath({ modulePreview, bikeIsAnimating }: AnimatedPathProps) {
   const isModuleAccessible = modulePreview >= 9;
@@ -29,15 +27,7 @@ export default function AnimatedPath({ modulePreview, bikeIsAnimating }: Animate
         className={isModuleAccessible ? styles.active : styles.inactive}
         onClick={() => {
           if (!isModuleAccessible) {
-          toast(
-            <div className={`${styles.module_error_toast} toast`}>
-              <p>
-                <span>Error: </span>This module is locked!
-              </p>
-              <p>{`Make sure you've submitted your answers and passed the previous module quiz.`}</p>
-            </div>,
-            { id: "module_error_toast", duration: TOAST_DURATION },
-          );
+          showErrorToast("This module is locked!")
           return;
         }
           if (bikeIsAnimating.current) return;

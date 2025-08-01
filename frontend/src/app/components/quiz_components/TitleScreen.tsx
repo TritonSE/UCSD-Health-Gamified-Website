@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { Toaster } from "react-hot-toast";
 
 import { showErrorToast } from "../../utils/toastUtils";
 
@@ -25,7 +24,6 @@ export const TitleScreen = ({
 
   return (
     <>
-      <Toaster position="top-center" />
       <section id={styles.container}>
         <div className={styles.titleScreen}>
           <Image
