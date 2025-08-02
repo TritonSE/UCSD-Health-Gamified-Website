@@ -22,7 +22,7 @@ export default function Module6() {
   return (
     <ModuleGate module={6}>
       <div className={styles.container}>
-        <Sidebar />
+        <Sidebar currentlyOn={6} />
         <ModuleSliderContainer moduleText="MODULE 6: In Case of a Collision">
           <ModuleIntro
             moduleNumber={6}

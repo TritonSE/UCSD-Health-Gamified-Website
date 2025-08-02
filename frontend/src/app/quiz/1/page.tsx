@@ -30,7 +30,7 @@ export default function QuizPage1() {
     <ModuleGate module={1}>
       <div className={styles.quizContainer}>
         <div className={styles.hideMobile}>
-          <Sidebar />
+          <Sidebar currentlyOn={1} />
         </div>
         <Quiz
           title="Module 1 Quiz"

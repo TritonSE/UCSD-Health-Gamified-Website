@@ -27,7 +27,7 @@ export default function Module5() {
   return (
     <ModuleGate module={5}>
       <div className={styles.container}>
-        <Sidebar />
+        <Sidebar currentlyOn={5} />
         <ModuleSliderContainer moduleText="MODULE 5: Rules of the Road">
           {/* Temporary slides (Section1 borrowed from Module 2) - remove when actual page created*/}
           <Section1 />

@@ -26,7 +26,7 @@ export default function Module4() {
   return (
     <ModuleGate module={4}>
       <div className={styles.container}>
-        <Sidebar />
+        <Sidebar currentlyOn={4} />
         <ModuleSliderContainer moduleText="MODULE 4: FIVE Need to Know Principles">
           <SectionPage />
           <FollowTheLaw />

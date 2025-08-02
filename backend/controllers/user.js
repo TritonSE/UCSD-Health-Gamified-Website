@@ -18,7 +18,9 @@ export const createUser = async (req, res) => {
 
     res.status(201).json(savedUser);
   } catch (err) {
-    console.error("Error signing up user:", err);
+    if (process.env.NODE_ENV !== "production") {
+      console.error("Error signing up user:", err);
+    }
     res.status(500).json({ error: "Internal server error" });
   }
 };
@@ -36,7 +38,9 @@ export const updateUser = async (req, res) => {
 
     res.status(200).json(result);
   } catch (err) {
-    console.error("Error updating user:", err);
+    if (process.env.NODE_ENV !== "production") {
+      console.error("Error updating user:", err);
+    }
     res.status(500).json({ error: "Internal server error" });
   }
 };
@@ -53,7 +57,9 @@ export const getUser = async (req, res) => {
 
     res.status(200).json(user);
   } catch (err) {
-    console.error("Error getting user:", err);
+    if (process.env.NODE_ENV !== "production") {
+      console.error("Error getting user:", err);
+    }
     res.status(500).json({ error: "Internal server error" });
   }
 };

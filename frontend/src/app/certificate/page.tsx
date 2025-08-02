@@ -9,6 +9,7 @@ import Certificate from "../components/Certificate/Certificate";
 import ModuleGate from "../components/ModuleGate/ModuleGate";
 import Sidebar from "../components/Sidebar/Sidebar";
 import { auth } from "../firebase-config.js";
+import { showErrorToast } from "../utils/toastUtils";
 
 import styles from "./CertificatePage.module.css";
 
@@ -27,7 +28,10 @@ export default function CertificatePage() {
         link.click();
       })
       .catch((err: unknown) => {
-        console.error(err);
+        if (process.env.NODE_ENV !== "production") {
+          console.error(err);
+        }
+        showErrorToast();
       });
   };
 
@@ -39,11 +43,14 @@ export default function CertificatePage() {
             if (result.success) {
               setName(result.data.name);
             } else {
-              console.error("No user data found");
+              showErrorToast();
             }
           })
           .catch((err) => {
-            console.error("Error fetching user from MongoDB:", err);
+            if (process.env.NODE_ENV !== "production") {
+              console.error("Error fetching user from MongoDB:", err);
+            }
+            showErrorToast();
           });
       } else {
         // User is not logged in
@@ -59,7 +66,7 @@ export default function CertificatePage() {
     <ModuleGate module={10}>
       <main className={styles.main}>
         <div className={styles.sidebar}>
-          <Sidebar />
+          <Sidebar currentlyOn={9} />
         </div>
         <div className={styles.content}>
           <div className={styles.congratsStarsWrapper}>
