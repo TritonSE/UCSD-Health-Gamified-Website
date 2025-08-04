@@ -10,7 +10,7 @@ export default function Mod1Factor1() {
       icon: "/module1/road_icon.svg",
       content:
         "Consider an efficient E bike with a long range, and ways to carry cargo (like tools for the road, school stuff, your sports gear, etc)",
-      imageUrl: "/module1/bike_commute.svg",
+      imageUrl: "/module1/bike_commute.png",
       iconAlt: "Road icon",
       imageAlt: "Bike for commuting",
     },
@@ -18,7 +18,7 @@ export default function Mod1Factor1() {
       icon: "/module1/beach_icon.svg",
       content:
         "Will you sometimes want to hit the beach, or hop on a path or trail? Opt for a more versatile E bike with features like suspension and off-road capabilities.",
-      imageUrl: "/module1/bike_recreational.svg",
+      imageUrl: "/module1/bike_recreational.png",
       iconAlt: "Beach icon",
       imageAlt: "Bike for recreational riding",
     },
@@ -26,7 +26,7 @@ export default function Mod1Factor1() {
       icon: "/module1/mountain_icon.svg",
       content:
         "Do you mostly want to get out and explore off-road? Choose a full-suspension E bike with powerful motors and durable components.",
-      imageUrl: "/module1/bike_mountain.svg",
+      imageUrl: "/module1/bike_mountain.png",
       iconAlt: "Mountain icon",
       imageAlt: "Bike for mountain biking",
     },
