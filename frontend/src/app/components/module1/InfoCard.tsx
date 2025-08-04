@@ -34,14 +34,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
           {number && <span className={styles.number}>{number}</span>}
           {/* icon */}
           {icon && (
-            <Image
-              className={styles.icon}
-              src={icon}
-              layout="responsive"
-              width={69}
-              height={69}
-              alt={iconAlt ?? ""}
-            />
+            <Image className={styles.icon} src={icon} width={69} height={69} alt={iconAlt ?? ""} />
           )}
           <div className={styles.content}>{content}</div>
         </div>
@@ -51,9 +44,8 @@ const InfoCard: React.FC<InfoCardProps> = ({
             <Image
               className={styles.image}
               src={imageUrl}
-              layout="responsive"
-              width={500}
-              height={300}
+              width={367.45}
+              height={249}
               alt={imageAlt ?? ""}
             />
           </div>

@@ -55,6 +55,7 @@ export default function Module1() {
                 src="/TimmyRiding.svg"
                 width={252}
                 height={329}
+                priority
                 alt="Timmy the tire riding a bike"
               />
             }

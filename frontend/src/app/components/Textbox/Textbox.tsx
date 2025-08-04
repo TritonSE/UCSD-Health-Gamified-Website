@@ -140,6 +140,22 @@ const Textbox: React.FC<TextboxProps> = ({ header, text, width, height, onClose 
             </h2>
           </Dialog.Title>
 
+          <Dialog.Description
+            style={{
+              position: "absolute",
+              width: 1,
+              height: 1,
+              padding: 0,
+              margin: -1,
+              overflow: "hidden",
+              clip: "rect(0 0 0 0)",
+              whiteSpace: "nowrap",
+              border: 0,
+            }}
+          >
+            Maintenance info about {header}. {text.slice(0, 100).trimEnd()}
+          </Dialog.Description>
+
           <Dialog.Close asChild>
             <button
               style={{

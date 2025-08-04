@@ -41,6 +41,7 @@ export default function Module2() {
                 src="/TimmytheTire.svg"
                 width={312}
                 height={320}
+                priority
                 alt="Timmy, the tire mascot"
                 className={styles.mascot}
               />
