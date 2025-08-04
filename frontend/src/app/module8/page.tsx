@@ -73,6 +73,7 @@ export default function Module8() {
               <Image
                 src="/module8/TimmyStudious.svg"
                 alt="Timmy, the tire mascot smiling with a pencil and notebook"
+                priority
                 width={320}
                 height={310.11}
                 className={styles.mascot}

@@ -27,6 +27,7 @@ export default function Mod1Intro() {
               width={446}
               height={229}
               alt="bike"
+              priority
               className={styles.image}
             />
           </span>

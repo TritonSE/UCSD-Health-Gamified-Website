@@ -22,6 +22,7 @@ export default function Section1() {
             <Image
               src="/TimmyOk.svg"
               alt="Timmy, the tire mascot"
+              priority
               width={305}
               height={295.58}
               className={styles.mascot}
