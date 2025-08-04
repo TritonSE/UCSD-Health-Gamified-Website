@@ -21,6 +21,7 @@ export default function WelcomePanel() {
             alt="Timmy, the tire mascot"
             width={320}
             height={417}
+            priority
             aria-hidden
           />
         </div>

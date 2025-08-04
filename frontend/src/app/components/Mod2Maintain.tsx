@@ -18,6 +18,7 @@ export default function Mod2Maintain() {
             alt="Timmy, the tire mascot"
             width={305}
             height={295.58}
+            priority
             className={styles.mascot}
           />
         </div>
