@@ -12,12 +12,9 @@ import { TextBox } from "./TextBox";
 export default function ResetPasswordPanel() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
-
   const [passwordReset, setPasswordReset] = useState(false);
-
   const [resetError, setResetError] = useState("");
 
   const handleSubmit = () => {
@@ -63,6 +60,23 @@ export default function ResetPasswordPanel() {
     }
   };
 
+  // Handle Enter key press for reset password form
+  const handleKeyDownReset = (event: React.KeyboardEvent) => {
+    const isFormValid = password !== confirmPassword || password === "" || confirmPassword === "";
+    if (event.key === "Enter" && !isFormValid) {
+      event.preventDefault();
+      handleSubmit();
+    }
+  };
+
+  // Handle Enter key press for success screen
+  const handleKeyDownSuccess = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      window.location.href = "/signin";
+    }
+  };
+
   useEffect(() => {
     if (password !== "" && confirmPassword !== "") {
       trackPassword();
@@ -73,7 +87,7 @@ export default function ResetPasswordPanel() {
   return (
     <>
       {!passwordReset ? (
-        <div className={styles.formContainer}>
+        <div className={styles.formContainer} onKeyDown={handleKeyDownReset}>
           {/* back to sign in */}
           <BackToSignIn />
           {/* content */}
@@ -124,7 +138,7 @@ export default function ResetPasswordPanel() {
           </div>
         </div>
       ) : (
-        <div className={styles.formContainer}>
+        <div className={styles.formContainer} onKeyDown={handleKeyDownSuccess}>
           <h1 className={styles.formTitle}>Password Reset</h1>
           <div className={styles.formField}>Your password has been successfully reset!</div>
           <div className={styles.formField}>

@@ -139,12 +139,20 @@ export default function SignInPanel() {
     setIsButtonEnabled(isValid);
   };
 
+  // Handle Enter key press anywhere in the form
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter" && isButtonEnabled) {
+      event.preventDefault();
+      handleSubmit();
+    }
+  };
+
   useEffect(() => {
     checkFormValidity();
   }, [loginInfo, emailError]);
 
   return (
-    <div className={styles.rightSideContainer}>
+    <div className={styles.rightSideContainer} onKeyDown={handleKeyDown}>
       <h1 className={styles.loginTitle}>Sign-In</h1>
       <div className={styles.createAccount}>
         <TextBox
@@ -201,7 +209,13 @@ export default function SignInPanel() {
         )}
       </div>
       <div className={styles.createAccount}>
-        <LoginButton label="Sign in" disabled={!isButtonEnabled} onClick={handleSubmit} />
+        <LoginButton
+          label="Sign in"
+          disabled={!isButtonEnabled}
+          onClick={() => {
+            handleSubmit();
+          }}
+        />
         <p className={styles.signInLink}>
           Don&apos;t have an account?{" "}
           <a className={styles.underlined} href="/signup">
