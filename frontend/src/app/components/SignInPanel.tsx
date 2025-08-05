@@ -115,7 +115,9 @@ export default function SignInPanel() {
           const errorCode = firebaseError.code ?? "unknown_error";
 
           if (errorCode === "auth/too-many-requests") {
-            setSignInError("Too many email verification requests. Please try again in 1-2 minutes.");
+            setSignInError(
+              "Too many email verification requests. Please try again in 1-2 minutes.",
+            );
           }
         });
     } else {
