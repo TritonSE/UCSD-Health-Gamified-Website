@@ -15,6 +15,8 @@ export type TextBoxProps = {
   onChange: (value: string) => void;
   onBlur?: () => void;
   error?: string;
+  name?: string;
+  autoComplete?: string;
 };
 
 export function TextBox({
@@ -28,6 +30,8 @@ export function TextBox({
   onChange,
   onBlur,
   error,
+  name,
+  autoComplete,
 }: TextBoxProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [currentInputType, setCurrentInputType] = useState(type);
@@ -64,6 +68,8 @@ export function TextBox({
             type={currentInputType}
             placeholder={placeholder}
             className={styles.input}
+            name={name}
+            autoComplete={autoComplete}
           />
           {type === "password" && value.length > 0 && (
             <button
@@ -83,9 +89,11 @@ export function TextBox({
         </div>
       </form>
       <div className={styles.link}>{linkLabel && <a href={link}>{linkLabel}</a>}</div>
+
       <div className={styles.caption}>
         {caption && !error && value.length === 0 && <p>{caption}</p>}
       </div>
+
       <div>
         {error && (
           <div className={styles.error}>

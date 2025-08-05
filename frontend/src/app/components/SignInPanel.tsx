@@ -161,6 +161,8 @@ export default function SignInPanel() {
             trackEmail(loginInfo.email);
           }}
           error={emailError}
+          name="username"
+          autoComplete="username"
         />
       </div>
       <div>
@@ -172,6 +174,8 @@ export default function SignInPanel() {
           onChange={(value) => {
             handleChange("password", value);
           }}
+          name="password"
+          autoComplete="current-password"
         />
         <a className={styles.forgotPassword} href="/forgotpassword">
           Forgot password?

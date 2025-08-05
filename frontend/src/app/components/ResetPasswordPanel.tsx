@@ -105,6 +105,8 @@ export default function ResetPasswordPanel() {
                 trackConfirmPassword();
               }}
               error={confirmPasswordError}
+              name="password"
+              autoComplete="current-password"
             />
           </div>
           {resetError && (
