@@ -81,7 +81,7 @@ export default function CertificatePage() {
                 />
 
                 <p className={styles.congrats}>
-                  Congratulations! You’ve officially completed the E-Bike safety course!
+                  Congratulations! You’ve officially completed the E Bike safety course!
                 </p>
 
                 <Image

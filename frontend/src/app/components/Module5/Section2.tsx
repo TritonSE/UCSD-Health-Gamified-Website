@@ -10,7 +10,7 @@ export default function SimpleWay() {
       <div className={styles.header_container}>
         <h2 className={styles.headerText}>OBEY TRAFFIC LAWS</h2>
         <p className={styles.headerSubtext}>
-          Check the boxes below to see laws even E-Bike riders must follow:
+          Check the boxes below to see laws even E Bike riders must follow:
         </p>
       </div>
       <Checkbox />

@@ -26,7 +26,7 @@ export default function WelcomePanel() {
           />
         </div>
         <div className={styles.positionedText}>
-          <h2>Welcome to the E-Bike Training Course!</h2>
+          <h2>Welcome to the E Bike Training Course!</h2>
         </div>
         <ul>
           {LOGOS.map((logo, index) => (

@@ -12,7 +12,7 @@ const optionTexts: Record<string, { header: string; text: string; icon: string }
   },
   B: {
     header: "Speed Limit",
-    text: "Observe posted speed limits. That includes E-bikers too!",
+    text: "Observe posted speed limits. That includes E bikers too!",
     icon: "/module5/speedometer.svg",
   },
   C: {

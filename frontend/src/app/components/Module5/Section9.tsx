@@ -34,7 +34,7 @@ export default function Section9() {
           <h1>REMEMBER:</h1>
           <div className={styles.box3}>
             <p>
-              Riding an e-bike is a{" "}
+              Riding an E bike is a{" "}
               <i>
                 <b>privilege</b>
               </i>
