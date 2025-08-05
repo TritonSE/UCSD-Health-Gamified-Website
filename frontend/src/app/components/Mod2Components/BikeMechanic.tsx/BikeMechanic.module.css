@@ -33,13 +33,15 @@
 
 #svg_container .svg_text p {
   font-family: "DM Sans";
+  max-height: 85%;
   padding-inline: 2rem;
-  padding-top: 1.25rem;
+  padding-top: 1rem;
   font-style: normal;
   font-size: 22px;
   line-height: 150%;
   letter-spacing: 0.44px;
   color: #1c3a29;
+  overflow: auto;
 }
 
 .arrow_button {
