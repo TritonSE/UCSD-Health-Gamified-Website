@@ -9,7 +9,7 @@ export default function Mod1Factor1() {
     {
       icon: "/module1/road_icon.svg",
       content:
-        "Consider an efficient E bike with a long range, and ways to carry cargo (like tools for the road, school stuff, your sports gear, etc)",
+        "Consider an efficient E bike with a long range, and ways to carry cargo (like tools for the road, school stuff, your sports gear, etc).",
       imageUrl: "/module1/bike_commute.svg",
       iconAlt: "Road icon",
       imageAlt: "Bike for commuting",

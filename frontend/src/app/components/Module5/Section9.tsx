@@ -12,7 +12,7 @@ export default function Section9() {
         <div className={styles.box1}>
           <p>
             <b>Local Regulations:</b> Always check for any local ordinances or regulations that may
-            apply in your specific area
+            apply in your specific area.
           </p>
         </div>
         <div className={styles.column2}>

@@ -8,7 +8,7 @@ export default function Quiz7() {
   const questions: Question[] = [
     {
       question:
-        "True or False: Parental or guardian models influence child and teen behavior patterns",
+        "True or False: Parental or guardian models influence child and teen behavior patterns.",
       options: ["True", "False"],
       correctAnswer: "A.",
       type: "single",
