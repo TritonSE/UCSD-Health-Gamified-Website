@@ -27,6 +27,14 @@ export default function Auth() {
     window.location.href = "/signin";
   };
 
+  // Handle Enter key press when there's an error
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter" && hasError) {
+      event.preventDefault();
+      redirect();
+    }
+  };
+
   useEffect(() => {
     if (actionExecuted.current) return;
     actionExecuted.current = true;
@@ -94,7 +102,7 @@ export default function Auth() {
   }, [searchParams]);
 
   return (
-    <main className={styles.container}>
+    <main className={styles.container} onKeyDown={handleKeyDown}>
       <section className={styles.leftSide}>
         <WelcomePanel />
       </section>
