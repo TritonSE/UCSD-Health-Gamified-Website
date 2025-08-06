@@ -351,7 +351,7 @@ export const Quiz = ({
                   ),
                 )}
             </div>
-            {!submitted && <Submit handleSubmit={handlePressSubmit} />}
+            {ready && !submitted && <Submit handleSubmit={handlePressSubmit} />}
             {submitted && (
               <div className={styles.nextModule}>
                 <NextButtons kind="primary" label={label} handleClick={handleNextModule} />
