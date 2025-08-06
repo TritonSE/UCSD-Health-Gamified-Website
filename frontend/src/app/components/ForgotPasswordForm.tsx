@@ -45,8 +45,17 @@ export default function ForgotPasswordForm({ setEmailState }: ForgotPasswordForm
       });
   };
 
+  // Handle Enter key press
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    const isFormValid = email.includes("@") && email.split("@")[1].includes(".");
+    if (event.key === "Enter" && isFormValid) {
+      event.preventDefault();
+      sendResetEmail();
+    }
+  };
+
   return (
-    <div className={styles.formContainer}>
+    <div className={styles.formContainer} onKeyDown={handleKeyDown}>
       {/* back to sign in */}
       <BackToSignIn />
       {/* content */}

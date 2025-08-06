@@ -225,12 +225,20 @@ export default function CreateAccountPanel({ setAccountCreated }: CreateAccountP
     setIsButtonEnabled(isValid);
   };
 
+  // Handle Enter key press
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter" && isButtonEnabled) {
+      event.preventDefault();
+      handleSubmit();
+    }
+  };
+
   useEffect(() => {
     checkFormValidity();
   }, [formData, errors]);
 
   return (
-    <div className={styles.createAccountContainer}>
+    <div className={styles.createAccountContainer} onKeyDown={handleKeyDown}>
       <h1 className={styles.loginTitle}>Create an Account</h1>
       <div className={styles.inputContainer}>
         <TextBox
