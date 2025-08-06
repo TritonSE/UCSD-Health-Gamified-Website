@@ -101,6 +101,7 @@ export const Quiz = ({
   const [quizTitle, setTitle] = useState<string>(title);
   const [score, setScore] = useState<number>(0);
   const [randomizedQuestions, setRandomizedQuestions] = useState<Question[]>(originalQuestions);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
@@ -130,6 +131,7 @@ export const Quiz = ({
     } else {
       setRandomizedQuestions(originalQuestions);
     }
+    setReady(true);
   }, [originalQuestions, randomized]);
 
   const handlePressCancel = () => {
@@ -301,52 +303,53 @@ export const Quiz = ({
               {!submitted && <span className={styles.descriptionFont}>{description}</span>}
             </div>
             <div className={styles.questionList}>
-              {randomizedQuestions.map((q, index) =>
-                q.type === "multiple" ? (
-                  <MultiSelectQuestion
-                    key={index}
-                    question={`${index + 1}. ${q.question}`}
-                    subQuestion={q.subQuestion}
-                    image={q.image}
-                    imageW={q.imageW}
-                    imageH={q.imageH}
-                    options={q.options}
-                    selected={selectedAnswers[index] || []}
-                    onSelect={(answer) => {
-                      handleSelect(index, answer);
-                    }}
-                    isSubmitted={submitted}
-                    correctAnswers={q.correctAnswer as string[]}
-                  />
-                ) : (
-                  <Question
-                    key={index}
-                    question={`${index + 1}. ${q.question}`}
-                    subQuestion={q.subQuestion}
-                    image={q.image}
-                    imageW={q.imageW}
-                    imageH={q.imageH}
-                    options={q.options}
-                    selected={
-                      (selectedAnswers[index]?.[0] as
-                        | "A."
-                        | "B."
-                        | "C."
-                        | "D."
-                        | "E."
-                        | "F."
-                        | "G."
-                        | "H.") ?? null
-                    }
-                    onSelect={(answer) => {
-                      handleSelect(index, answer);
-                    }}
-                    isSubmitted={submitted}
-                    isCorrect={selectedAnswers[index]?.[0] === q.correctAnswer}
-                    correctAnswer={q.correctAnswer as string}
-                  />
-                ),
-              )}
+              {ready &&
+                randomizedQuestions.map((q, index) =>
+                  q.type === "multiple" ? (
+                    <MultiSelectQuestion
+                      key={index}
+                      question={`${index + 1}. ${q.question}`}
+                      subQuestion={q.subQuestion}
+                      image={q.image}
+                      imageW={q.imageW}
+                      imageH={q.imageH}
+                      options={q.options}
+                      selected={selectedAnswers[index] || []}
+                      onSelect={(answer) => {
+                        handleSelect(index, answer);
+                      }}
+                      isSubmitted={submitted}
+                      correctAnswers={q.correctAnswer as string[]}
+                    />
+                  ) : (
+                    <Question
+                      key={index}
+                      question={`${index + 1}. ${q.question}`}
+                      subQuestion={q.subQuestion}
+                      image={q.image}
+                      imageW={q.imageW}
+                      imageH={q.imageH}
+                      options={q.options}
+                      selected={
+                        (selectedAnswers[index]?.[0] as
+                          | "A."
+                          | "B."
+                          | "C."
+                          | "D."
+                          | "E."
+                          | "F."
+                          | "G."
+                          | "H.") ?? null
+                      }
+                      onSelect={(answer) => {
+                        handleSelect(index, answer);
+                      }}
+                      isSubmitted={submitted}
+                      isCorrect={selectedAnswers[index]?.[0] === q.correctAnswer}
+                      correctAnswer={q.correctAnswer as string}
+                    />
+                  ),
+                )}
             </div>
             {!submitted && <Submit handleSubmit={handlePressSubmit} />}
             {submitted && (
