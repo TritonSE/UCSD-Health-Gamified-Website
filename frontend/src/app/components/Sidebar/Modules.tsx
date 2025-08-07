@@ -34,14 +34,14 @@ export const Modules = ({
   };
 
   const moduleData = [
-    { name: "What is an E Bike?", time: 10, number: 1 },
-    { name: "Maintaining Your E Bike", time: 10, number: 2 },
-    { name: "Safety Equipment", time: 10, number: 3 },
-    { name: "5 Need to Know Principles", time: 10, number: 4 },
+    { name: "What is an E Bike?", time: 11, number: 1 },
+    { name: "Maintaining Your E Bike", time: 7, number: 2 },
+    { name: "Safety Equipment", time: 7, number: 3 },
+    { name: "5 Need to Know Principles", time: 8, number: 4 },
     { name: "Rules of the Road", time: 10, number: 5 },
-    { name: "In Case of a Collision", time: 10, number: 6 },
-    { name: "Teen & Parent Awareness", time: 10, number: 7 },
-    { name: "Closing Video", time: 10, number: 8 },
+    { name: "In Case of a Collision", time: 5, number: 6 },
+    { name: "Teen & Parent Awareness", time: 6, number: 7 },
+    { name: "Closing Video", time: 9, number: 8 },
     { name: "Test", time: 10, number: 9, addLine: false },
   ];
 
