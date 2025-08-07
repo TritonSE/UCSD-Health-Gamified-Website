@@ -120,6 +120,7 @@ a.secondary {
   gap: 0.5rem;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .built_by_tse a {

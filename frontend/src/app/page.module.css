@@ -34,16 +34,6 @@
   overflow: hidden;
 }
 
-.loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-size: 1.5rem;
-  color: #555;
-  animation: fadeIn 1.5s ease-in-out infinite;
-}
-
 @keyframes fadeIn {
   0%,
   100% {

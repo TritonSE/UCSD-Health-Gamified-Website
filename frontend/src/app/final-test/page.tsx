@@ -7,7 +7,7 @@ import styles from "./final-test.module.css";
 export default function finalTest() {
   const questions: Question[] = [
     {
-      question: "Which class of e-bike is the fastest, reaching 28 mph?",
+      question: "Which class of E Bike is the fastest, reaching 28 mph?",
       options: ["Class 1", "Class 2", "Class 3", "Regular Bike"],
       correctAnswer: "C.",
       type: "single",
@@ -20,7 +20,7 @@ export default function finalTest() {
     },
     {
       question:
-        "True or False: If you modify an e-bike to go faster than is legal speed, you could get a ticket.",
+        "True or False: If you modify an E Bike to go faster than is legal speed, you could get a ticket.",
       options: ["True", "False"],
       correctAnswer: "A.",
       type: "single",
@@ -30,7 +30,7 @@ export default function finalTest() {
       options: [
         "Air in your tires, brakes, and chain",
         "The weather forecast",
-        "If your e-bike looks cool",
+        "If your E Bike looks cool",
         "How fast you can go",
       ],
       correctAnswer: "A.",
@@ -48,7 +48,7 @@ export default function finalTest() {
       type: "single",
     },
     {
-      question: "If your e-bike makes a weird noise, what should you do?",
+      question: "If your E Bike makes a weird noise, what should you do?",
       options: [
         "Ignore it, it will go away",
         "Ride faster to drown out the noise",
@@ -59,7 +59,7 @@ export default function finalTest() {
       type: "single",
     },
     {
-      question: "What is the best way to charge your e-bike battery?",
+      question: "What is the best way to charge your E Bike battery?",
       options: [
         "Follow the manufacturer's instructions",
         "Let it die completely before charging",

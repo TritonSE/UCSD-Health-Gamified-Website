@@ -38,7 +38,7 @@ export default function VerifyEmail({ email }: VerifyEmailProps) {
 
           if (errorCode === "auth/too-many-requests") {
             setEmailResent("");
-            setVerificationError("Too many requests. Please try again later.");
+            setVerificationError("Too many requests. Please try again in 1-2 minutes.");
           }
         });
     } else {

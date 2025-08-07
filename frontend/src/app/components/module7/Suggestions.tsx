@@ -30,10 +30,15 @@ const Page5: React.FC = () => {
       title: "Review, discuss, and sign an E Bike Agreement between the guardian and teen. ",
       content: (
         <p>
-          Link to example agreement that can be downloaded and printed: <br />
-          <a href="https://electra.trekbikes.com/us/en_US/e-bike-agreement/">
-            (https://electra.trekbikes.com/us/en_US/e-bike-agreement/)
+          Link to example agreement that can be downloaded and printed: <br />(
+          <a
+            href="https://electra.trekbikes.com/us/en_US/e-bike-agreement/"
+            style={{ textDecoration: "underline" }}
+            target="_blank"
+          >
+            https://electra.trekbikes.com/us/en_US/e-bike-agreement/
           </a>
+          )
         </p>
       ),
     },

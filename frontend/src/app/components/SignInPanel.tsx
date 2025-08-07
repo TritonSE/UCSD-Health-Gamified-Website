@@ -115,7 +115,9 @@ export default function SignInPanel() {
           const errorCode = firebaseError.code ?? "unknown_error";
 
           if (errorCode === "auth/too-many-requests") {
-            setSignInError("Too many email verification requests. Please try again later.");
+            setSignInError(
+              "Too many email verification requests. Please try again in 1-2 minutes.",
+            );
           }
         });
     } else {
@@ -167,6 +169,8 @@ export default function SignInPanel() {
             trackEmail(loginInfo.email);
           }}
           error={emailError}
+          name="username"
+          autoComplete="username"
         />
       </div>
       <div>
@@ -178,6 +182,8 @@ export default function SignInPanel() {
           onChange={(value) => {
             handleChange("password", value);
           }}
+          name="password"
+          autoComplete="current-password"
         />
         <a className={styles.forgotPassword} href="/forgotpassword">
           Forgot password?
