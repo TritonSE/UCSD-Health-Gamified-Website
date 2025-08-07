@@ -143,7 +143,7 @@ export default function BikeMechanic() {
               className={styles.svg_text}
             >
               <p>
-                If you&apos;re <strong>unsure</strong> about how to perform a{" "}
+                If you&apos;re <strong>unsure</strong> on how to perform a{" "}
                 <strong>particular maintenance task.</strong>
               </p>
             </foreignObject>

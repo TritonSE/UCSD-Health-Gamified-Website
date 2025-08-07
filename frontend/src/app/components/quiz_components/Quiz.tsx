@@ -46,6 +46,44 @@ function shuffleArray<T>(array: T[]): T[] {
   return newArray;
 }
 
+function shuffleQuestions(questions: Question[]): Question[] {
+  return shuffleArray(
+    questions.map((q: Question) => {
+      const letters = ["A.", "B.", "C.", "D.", "E.", "F.", "G.", "H."];
+      const shuffledOptions = shuffleArray(q.options);
+
+      if (q.type === "multiple") {
+        const correctAnswerIndices = (q.correctAnswer as string[]).map((answer) =>
+          letters.indexOf(answer),
+        );
+        const correctOptionTexts = correctAnswerIndices.map((index) => q.options[index]);
+
+        const newCorrectAnswers = correctOptionTexts.map((text) => {
+          const newIndex = shuffledOptions.indexOf(text);
+          return letters[newIndex];
+        });
+
+        return {
+          ...q,
+          options: shuffledOptions,
+          correctAnswer: newCorrectAnswers,
+        };
+      } else {
+        const correctOptionIndex = letters.indexOf(q.correctAnswer as string);
+        const correctOptionText = q.options[correctOptionIndex];
+        const newCorrectIndex = shuffledOptions.indexOf(correctOptionText);
+        const newCorrectAnswer = letters[newCorrectIndex];
+
+        return {
+          ...q,
+          options: shuffledOptions,
+          correctAnswer: newCorrectAnswer,
+        };
+      }
+    }),
+  );
+}
+
 export const Quiz = ({
   title,
   description,
@@ -62,9 +100,8 @@ export const Quiz = ({
   const [label, setLabel] = useState<string>("Next Module");
   const [quizTitle, setTitle] = useState<string>(title);
   const [score, setScore] = useState<number>(0);
-  const [randomizedQuestions, setRandomizedQuestions] = useState(() =>
-    randomized ? shuffleArray(originalQuestions) : originalQuestions,
-  );
+  const [randomizedQuestions, setRandomizedQuestions] = useState<Question[]>(originalQuestions);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
@@ -87,47 +124,14 @@ export const Quiz = ({
     };
   }, [submitted, selectedAnswers]);
 
-  // Auto-initialize quiz on component mount
+  // Initialize quiz questions with proper randomization
   useEffect(() => {
-    setRandomizedQuestions(
-      randomized
-        ? shuffleArray(
-            originalQuestions.map((q: Question) => {
-              const letters = ["A.", "B.", "C.", "D.", "E.", "F.", "G.", "H."];
-              const shuffledOptions = shuffleArray(q.options);
-
-              if (q.type === "multiple") {
-                const correctAnswerIndices = (q.correctAnswer as string[]).map((answer) =>
-                  letters.indexOf(answer),
-                );
-                const correctOptionTexts = correctAnswerIndices.map((index) => q.options[index]);
-
-                const newCorrectAnswers = correctOptionTexts.map((text) => {
-                  const newIndex = shuffledOptions.indexOf(text);
-                  return letters[newIndex];
-                });
-
-                return {
-                  ...q,
-                  options: shuffledOptions,
-                  correctAnswer: newCorrectAnswers,
-                };
-              } else {
-                const correctOptionIndex = letters.indexOf(q.correctAnswer as string);
-                const correctOptionText = q.options[correctOptionIndex];
-                const newCorrectIndex = shuffledOptions.indexOf(correctOptionText);
-                const newCorrectAnswer = letters[newCorrectIndex];
-
-                return {
-                  ...q,
-                  options: shuffledOptions,
-                  correctAnswer: newCorrectAnswer,
-                };
-              }
-            }),
-          )
-        : originalQuestions,
-    );
+    if (randomized) {
+      setRandomizedQuestions(shuffleQuestions(originalQuestions));
+    } else {
+      setRandomizedQuestions(originalQuestions);
+    }
+    setReady(true);
   }, [originalQuestions, randomized]);
 
   const handlePressCancel = () => {
@@ -149,51 +153,7 @@ export const Quiz = ({
       }
 
       if (randomized) {
-        setRandomizedQuestions(
-          shuffleArray(
-            originalQuestions.map((q) => {
-              const letters = ["A.", "B.", "C.", "D.", "E.", "F.", "G.", "H."];
-              const shuffledOptions = shuffleArray(q.options);
-
-              if (q.type === "multiple") {
-                const correctAnswerArray = Array.isArray(q.correctAnswer)
-                  ? q.correctAnswer
-                  : [q.correctAnswer];
-                const correctAnswerIndices = correctAnswerArray.map((answer: string) =>
-                  letters.indexOf(answer),
-                );
-                const correctOptionTexts = correctAnswerIndices.map(
-                  (index: number) => q.options[index],
-                );
-
-                const newCorrectAnswers = correctOptionTexts.map((text: string) => {
-                  const newIndex = shuffledOptions.indexOf(text);
-                  return letters[newIndex];
-                });
-
-                return {
-                  ...q,
-                  options: shuffledOptions,
-                  correctAnswer: newCorrectAnswers,
-                };
-              } else {
-                const correctAnswer = Array.isArray(q.correctAnswer)
-                  ? q.correctAnswer[0]
-                  : q.correctAnswer;
-                const correctOptionIndex = letters.indexOf(correctAnswer);
-                const correctOptionText = q.options[correctOptionIndex];
-                const newCorrectIndex = shuffledOptions.indexOf(correctOptionText);
-                const newCorrectAnswer = letters[newCorrectIndex];
-
-                return {
-                  ...q,
-                  options: shuffledOptions,
-                  correctAnswer: newCorrectAnswer,
-                };
-              }
-            }),
-          ),
-        );
+        setRandomizedQuestions(shuffleQuestions(originalQuestions));
       }
 
       const quizElement = document.getElementById("Quiz");
@@ -343,54 +303,55 @@ export const Quiz = ({
               {!submitted && <span className={styles.descriptionFont}>{description}</span>}
             </div>
             <div className={styles.questionList}>
-              {randomizedQuestions.map((q, index) =>
-                q.type === "multiple" ? (
-                  <MultiSelectQuestion
-                    key={index}
-                    question={`${index + 1}. ${q.question}`}
-                    subQuestion={q.subQuestion}
-                    image={q.image}
-                    imageW={q.imageW}
-                    imageH={q.imageH}
-                    options={q.options}
-                    selected={selectedAnswers[index] || []}
-                    onSelect={(answer) => {
-                      handleSelect(index, answer);
-                    }}
-                    isSubmitted={submitted}
-                    correctAnswers={q.correctAnswer as string[]}
-                  />
-                ) : (
-                  <Question
-                    key={index}
-                    question={`${index + 1}. ${q.question}`}
-                    subQuestion={q.subQuestion}
-                    image={q.image}
-                    imageW={q.imageW}
-                    imageH={q.imageH}
-                    options={q.options}
-                    selected={
-                      (selectedAnswers[index]?.[0] as
-                        | "A."
-                        | "B."
-                        | "C."
-                        | "D."
-                        | "E."
-                        | "F."
-                        | "G."
-                        | "H.") ?? null
-                    }
-                    onSelect={(answer) => {
-                      handleSelect(index, answer);
-                    }}
-                    isSubmitted={submitted}
-                    isCorrect={selectedAnswers[index]?.[0] === q.correctAnswer}
-                    correctAnswer={q.correctAnswer as string}
-                  />
-                ),
-              )}
+              {ready &&
+                randomizedQuestions.map((q, index) =>
+                  q.type === "multiple" ? (
+                    <MultiSelectQuestion
+                      key={index}
+                      question={`${index + 1}. ${q.question}`}
+                      subQuestion={q.subQuestion}
+                      image={q.image}
+                      imageW={q.imageW}
+                      imageH={q.imageH}
+                      options={q.options}
+                      selected={selectedAnswers[index] || []}
+                      onSelect={(answer) => {
+                        handleSelect(index, answer);
+                      }}
+                      isSubmitted={submitted}
+                      correctAnswers={q.correctAnswer as string[]}
+                    />
+                  ) : (
+                    <Question
+                      key={index}
+                      question={`${index + 1}. ${q.question}`}
+                      subQuestion={q.subQuestion}
+                      image={q.image}
+                      imageW={q.imageW}
+                      imageH={q.imageH}
+                      options={q.options}
+                      selected={
+                        (selectedAnswers[index]?.[0] as
+                          | "A."
+                          | "B."
+                          | "C."
+                          | "D."
+                          | "E."
+                          | "F."
+                          | "G."
+                          | "H.") ?? null
+                      }
+                      onSelect={(answer) => {
+                        handleSelect(index, answer);
+                      }}
+                      isSubmitted={submitted}
+                      isCorrect={selectedAnswers[index]?.[0] === q.correctAnswer}
+                      correctAnswer={q.correctAnswer as string}
+                    />
+                  ),
+                )}
             </div>
-            {!submitted && <Submit handleSubmit={handlePressSubmit} />}
+            {ready && !submitted && <Submit handleSubmit={handlePressSubmit} />}
             {submitted && (
               <div className={styles.nextModule}>
                 <NextButtons kind="primary" label={label} handleClick={handleNextModule} />

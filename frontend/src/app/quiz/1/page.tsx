@@ -20,7 +20,7 @@ export default function QuizPage1() {
     },
     {
       question:
-        "True or False: Riding an unclassified or bike modified to surpass the speed of its intended class can result in a fine or other penalties?",
+        "True or False: Riding an unclassified or bike modified to surpass the speed of its intended class can result in a fine or other penalties.",
       options: ["True", "False"],
       correctAnswer: "A.",
       type: "single",

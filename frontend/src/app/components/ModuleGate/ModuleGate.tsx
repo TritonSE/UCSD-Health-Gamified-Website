@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import { get } from "../../api/requests";
 import { useAuth } from "../../contexts/AuthContext";
@@ -14,50 +14,38 @@ export default function ModuleGate({
   module: number;
 }) {
   const { currentUser, firebaseUser, loading } = useAuth();
-  const [authenticated, setAuthenticated] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     if (loading) return;
 
-    if (!firebaseUser) {
-      router.push("/signin");
+    // If not logged in or verified, redirect
+    if (!firebaseUser || !firebaseUser.emailVerified || !currentUser) {
+      router.replace("/signin");
       return;
     }
 
-    if (!firebaseUser.emailVerified) {
-      router.push("/signin");
-      return;
-    }
-
-    if (!currentUser) {
-      router.push("/signin"); // not logged in, redirect to signin
-      return;
-    }
-
+    // Check if user has access to this module
     void (async () => {
       try {
         const res = await get(`/api/user/get/${encodeURIComponent(currentUser.email)}`);
-
         const user = (await res.json()) as { module?: number; firstLogin?: boolean };
 
         if (user.firstLogin) {
-          router.push("/intro-video");
-        }
-
-        if ((user.module === undefined || user.module < module) && !user.firstLogin) {
-          router.push("/"); // unauthorized access, redirect to home
+          router.replace("/intro-video");
           return;
         }
 
-        setAuthenticated(true);
+        if (user.module === undefined || user.module < module) {
+          router.replace("/");
+        }
       } catch (err) {
         if (process.env.NODE_ENV !== "production") {
           console.error("ModuleGate fetch error:", err);
         }
       }
     })();
-  }, [currentUser, loading, module, router]);
-  if (!authenticated) return;
+  }, [currentUser, firebaseUser, loading, module, router]);
+
   return <>{children}</>;
 }

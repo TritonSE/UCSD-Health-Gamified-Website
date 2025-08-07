@@ -26,7 +26,7 @@ export default function QuizPage3() {
     },
     {
       question:
-        "True or False: Helmets can prevent serious head injury and permanent brain damage in bike accidents?",
+        "True or False: Helmets can prevent serious head injury and permanent brain damage in bike accidents.",
       options: ["True", "False"],
       correctAnswer: "A.",
       type: "single",

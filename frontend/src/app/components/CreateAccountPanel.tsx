@@ -279,6 +279,8 @@ export default function CreateAccountPanel({ setAccountCreated }: CreateAccountP
             trackEmail(formData.email);
           }}
           error={errors.emailError}
+          name="username"
+          autoComplete="username"
         />
         <TextBox
           label="Password"
@@ -293,6 +295,8 @@ export default function CreateAccountPanel({ setAccountCreated }: CreateAccountP
             trackPassword(formData.password);
           }}
           error={errors.passwordError}
+          name="password"
+          autoComplete="current-password"
         />
       </div>
       {errors.otherError && (

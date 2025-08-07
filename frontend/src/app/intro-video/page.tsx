@@ -51,7 +51,7 @@ export default function IntroVideo() {
     <ModuleGate module={0}>
       <main className={styles.main}>
         <div className={styles.wrapper}>
-          <h1 className={styles.title}>Welcome to the E-Bike Safety Course!</h1>
+          <h1 className={styles.title}>Welcome to the E Bike Safety Course!</h1>
           <div className={styles.container}>
             {/* prettier-ignore */}
             <svg width="856" height="384" viewBox="0 0 856 384" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,7 +96,7 @@ export default function IntroVideo() {
               </div>
               <div className={styles.description}>
                 <TypingAnimation
-                  text="Over the past three years, we've seen a <b>rise in serious e-bike injuries</b> in San Diego County, including areas like North County and UCSD. These injuries can be <b>serious and life-changing</b>, so it's important to know how to stay safe while riding."
+                  text="Over the past three years, we've seen a <b>rise in serious E Bike injuries</b> in San Diego County, including areas like North County and UCSD. These injuries can be <b>serious and life-changing</b>, so it's important to know how to stay safe while riding."
                   onFinishTyping={() => {
                     isTextLoaded(true);
                   }}
