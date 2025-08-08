@@ -3,10 +3,10 @@ import Image from "next/image";
 import styles from "./WelcomePanel.module.css";
 
 const LOGOS = [
-  { src: "ucsd_logo", alt: "UCSD Logo", width: 154 },
-  { src: "scripps", alt: "Safe Kids Logo", width: 120 },
-  { src: "safe_kids_logo", alt: "Safe Kids Logo", width: 43 },
+  { src: "ucsd_logo", alt: "UCSD Logo", width: 140 },
   { src: "rady_childrens_health_logo", alt: "Rady Children's Health Logo", width: 86 },
+  { src: "safe_kids_logo", alt: "Safe Kids Logo", width: 43 },
+  { src: "scripps", alt: "Safe Kids Logo", width: 120 },
   { src: "bike_coalition_logo", alt: "Bike Coalition Logo", width: 86 },
 ];
 
