@@ -34,7 +34,7 @@ export default function IntroVideo() {
         }
         await put(`/api/user/update/${currentUser.email}`, { firstLogin: false }, headers);
 
-        router.push("/video");
+        router.push("/");
       } catch (error) {
         showErrorToast();
       }
