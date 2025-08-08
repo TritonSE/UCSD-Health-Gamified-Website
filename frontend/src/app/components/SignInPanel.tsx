@@ -19,6 +19,7 @@ export default function SignInPanel() {
   const [emailError, setEmailError] = useState("");
   const [signInError, setSignInError] = useState("");
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const firebaseAuth = (): Promise<UserCredential> => {
@@ -48,11 +49,14 @@ export default function SignInPanel() {
 
   const handleSubmit = (e?: React.FormEvent<HTMLFormElement>) => {
     if (e) e.preventDefault();
+    setIsLoading(true);
+
     firebaseAuth()
       .then((userCredential) => {
         const user = userCredential.user;
         if (!user.emailVerified) {
           setSignInError("Email is not verified!");
+          setIsLoading(false);
         } else {
           getUser(loginInfo.email)
             .then((result) => {
@@ -74,6 +78,7 @@ export default function SignInPanel() {
                         console.error("Error updating first login: ", error);
                       }
                       setSignInError("Error updating login. Please try again later.");
+                      setIsLoading(false);
                     });
                 } else {
                   // TODO: replace with homepage
@@ -81,10 +86,12 @@ export default function SignInPanel() {
                 }
               } else {
                 setSignInError("Error signing in. Please check your connection.");
+                setIsLoading(false);
               }
             })
             .catch((_error) => {
               setSignInError("Error signing in. Please check your connection.");
+              setIsLoading(false);
             });
         }
       })
@@ -93,6 +100,7 @@ export default function SignInPanel() {
           console.error("Error during the sign-in process:", error);
         }
         setSignInError("Incorrect email or password.");
+        setIsLoading(false);
       });
   };
 
@@ -216,8 +224,8 @@ export default function SignInPanel() {
       </div>
       <div className={styles.createAccount}>
         <LoginButton
-          label="Sign in"
-          disabled={!isButtonEnabled}
+          label={isLoading ? "Signing in..." : "Sign in"}
+          disabled={!isButtonEnabled || isLoading}
           onClick={() => {
             handleSubmit();
           }}
