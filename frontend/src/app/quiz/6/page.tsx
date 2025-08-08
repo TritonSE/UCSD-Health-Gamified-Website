@@ -18,8 +18,7 @@ export default function Quiz6() {
       type: "single",
     },
     {
-      question:
-        "What cues help you anticipate how drivers and pedestrians interact with you and other bicyclists?",
+      question: "If you are involved in a crash, or if you witness a crash, what should you do?",
       options: [
         "Move off the road to get to a safe location",
         "Make sure everyone involved and around you is safe",
